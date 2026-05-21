@@ -1,0 +1,44 @@
+[
+  {
+    "name": "3D Art Museum",
+    "desc": "交互式 3D 艺术博物馆，使用 Three.js 构建沉浸式观展体验",
+    "url": "https://aprilssky.github.io/3D-art/",
+    "github": "https://github.com/Aprilssky/3D-art",
+    "thumb": ""
+  },
+  {
+    "name": "p5.js Art",
+    "desc": "使用 p5.js 创作的动态视觉艺术作品合集",
+    "url": "https://aprilssky.github.io/p5js-art/",
+    "github": "https://github.com/Aprilssky/p5js-art",
+    "thumb": ""
+  },
+  {
+    "name": "RictWorld",
+    "desc": "多人沙盒网页游戏，Flask 后端 + p5.js 前端",
+    "url": "https://aprilssky.github.io/rectworld/",
+    "github": "https://github.com/Aprilssky/rectworld",
+    "thumb": ""
+  },
+  {
+    "name": "模拟炒股",
+    "desc": "纯前端模拟炒股，支持做多/做空，一分钟 K 线",
+    "url": "https://aprilssky.github.io/stock-trading",
+    "github": "https://github.com/Aprilssky/stock-trading",
+    "thumb": ""
+  },
+  {
+    "name": "多AI群聊",
+    "desc": "纯前端多 AI 群聊机器人，同时与多个 AI 对话",
+    "url": "https://aprilssky.github.io/multi-ai-chat/",
+    "github": "https://github.com/Aprilssky/multi-ai-chat",
+    "thumb": ""
+  },
+  {
+    "name": "MD Docs",
+    "desc": "富文本 Markdown 编辑器，支持媒体嵌入与浏览器本地存储",
+    "url": "https://aprilssky.github.io/md-docs/",
+    "github": "https://github.com/Aprilssky/md-docs",
+    "thumb": ""
+  }
+]

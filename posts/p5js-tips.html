@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js 创作技巧：从草图到作品 · Aprilssky</title>
+  <meta name="description" content="一些 p5.js 编程绘图的小技巧，包括色彩、运动与交互设计。">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Aprilssky</a>
+      <div class="nav-links">
+        <a href="../">首页</a>
+        <a href="./">文章</a>
+        <a href="../projects.html">项目</a>
+        <a href="../about.html">关于</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-header fade-in">
+        <div class="container">
+          <div class="article-meta">
+            <time>2026/05/19</time>
+            <span class="article-tag">技术</span>
+          </div>
+          <h1>p5.js 创作技巧：从草图到作品</h1>
+        </div>
+      </header>
+
+      <div class="article-content container fade-in delay-1">
+        <p>p5.js 是我用得最多的创意编程工具之一。分享一些在实践中积累的小技巧，希望能对同样在用 p5.js 创作的朋友有帮助。</p>
+
+        <h2>1. 色彩调色板</h2>
+
+        <p>不要直接在代码里写颜色值。先定义一个调色板：</p>
+
+        <pre><code>const palette = [
+  [231, 111, 81],   // 珊瑚
+  [244, 162, 97],   // 杏色
+  [233, 196, 106],  // 金黄
+  [42, 157, 143],   // 青绿
+  [38, 70, 83]      // 深蓝
+];
+
+function pick() {
+  return random(palette);
+}</code></pre>
+
+        <p>这样换配色只需改 palette 数组，不需要翻遍整个代码。而且用随机选取 + 有限调色盘的方式，既能保持和谐，又有变化。</p>
+
+        <h2>2. 噪声运动</h2>
+
+        <p>用 <code>random()</code> 做的运动往往跳动不自然。用 Perlin 噪声会平滑很多：</p>
+
+        <pre><code>let t = 0;
+
+function draw() {
+  let x = noise(t) * width;
+  let y = noise(t + 1000) * height;
+  // 使用两个不同的偏移量得到独立的 x/y 噪声值
+  t += 0.01;
+}</code></pre>
+
+        <p>调整增量（0.01 这个值）可以控制运动速度。增量越小，运动越慢越平滑。</p>
+
+        <h2>3. 画布自适应</h2>
+
+        <p>在不同屏幕上都保持好效果：</p>
+
+        <pre><code>function setup() {
+  createCanvas(windowWidth, windowHeight);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+}</code></pre>
+
+        <p>结合 <code>width</code> 和 <code>height</code> 的相对单位来布局元素，可以让你的作品在各种屏幕上都表现良好。</p>
+
+        <h2>4. 保存输出</h2>
+
+        <p>看到满意的一帧，别犹豫：</p>
+
+        <pre><code>function keyPressed() {
+  if (key === 's') {
+    saveCanvas('my-artwork', 'png');
+  }
+}</code></pre>
+
+        <p>加这个只需两行代码，但能帮你记录下很多偶然的美妙瞬间。</p>
+
+        <hr>
+
+        <p>p5.js 的魅力在于它的即时反馈。改一行代码，画面就变了。多实验，多尝试，最好的作品往往来自意料之外的组合。</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Aprilssky · 用 ❤️ 和代码创作</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

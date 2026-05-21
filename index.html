@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprilssky · 个人博客</title>
+  <meta name="description" content="艺术家 · 创意编程 · 3D 艺术 · 设计与技术">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-inner">
+      <a href="./" class="nav-logo">Aprilssky</a>
+      <div class="nav-links">
+        <a href="./">首页</a>
+        <a href="./posts/">文章</a>
+        <a href="./projects.html">项目</a>
+        <a href="./about.html">关于</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero fade-in">
+      <h1>Aprilssky</h1>
+      <p class="subtitle">
+        艺术家 · 创意编程者<br>
+        用代码探索视觉的边界，在数字世界中寻找诗意
+      </p>
+    </section>
+
+    <!-- Latest Posts -->
+    <section class="container" style="margin-bottom: 40px;">
+      <div class="section-header">
+        <h2>最新文章</h2>
+        <a href="./posts/" class="view-all">查看全部 →</a>
+      </div>
+      <div id="home-posts"></div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="container-wide" style="margin-bottom: 80px;">
+      <div class="section-header">
+        <h2>精选项目</h2>
+        <a href="./projects.html" class="view-all">查看全部 →</a>
+      </div>
+      <div id="home-projects" class="project-grid"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="social-links">
+        <a href="https://github.com/Aprilssky" target="_blank">GitHub</a>
+        <a href="./about.html">关于</a>
+      </div>
+      <p>© 2026 Aprilssky · 用 ❤️ 和代码创作</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>

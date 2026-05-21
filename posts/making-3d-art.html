@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用 Three.js 做 3D 艺术的笔记 · Aprilssky</title>
+  <meta name="description" content="分享我在构建 3D Art Museum 过程中的一些心得和技术细节。">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Aprilssky</a>
+      <div class="nav-links">
+        <a href="../">首页</a>
+        <a href="./">文章</a>
+        <a href="../projects.html">项目</a>
+        <a href="../about.html">关于</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <article>
+      <header class="article-header fade-in">
+        <div class="container">
+          <div class="article-meta">
+            <time>2026/05/20</time>
+            <span class="article-tag">创作</span>
+          </div>
+          <h1>用 Three.js 做 3D 艺术的笔记</h1>
+        </div>
+      </header>
+
+      <div class="article-content container fade-in delay-1">
+        <p>前段时间做了 <a href="https://aprilssky.github.io/3D-art/" target="_blank">3D Art Museum</a>，一个用 Three.js 构建的交互式 3D 艺术馆。记录一些过程中的思考和技巧。</p>
+
+        <h2>为什么做这个</h2>
+
+        <p>去年尝试了一些 p5.js 的 2D 视觉创作后，一直想进入 3D 领域。Three.js 是 Web 上最成熟的 3D 库，文档和社区都很完善。做一个小型 3D 艺术馆，既能练习 Three.js，又能展示作品，一举两得。</p>
+
+        <h2>结构和光照</h2>
+
+        <p>3D 空间的感觉很大程度上取决于光照。我用了几种不同的光源组合：</p>
+
+        <ul>
+          <li><strong>环境光 (AmbientLight)</strong> — 提供基础照明，避免阴影全黑</li>
+          <li><strong>半球光 (HemisphereLight)</strong> — 模拟天空和地面的光线反射，创造更自然的环境</li>
+          <li><strong>点光源 (PointLight)</strong> — 为展品提供重点照明</li>
+        </ul>
+
+        <p>调整光源的颜色和强度花了不少时间。光影的细微差别对氛围影响很大。</p>
+
+        <h2>交互设计</h2>
+
+        <p>对于艺术展示，交互应该自然且不干扰观看体验。我实现了：</p>
+
+        <ul>
+          <li>鼠标拖拽旋转视角（第一人称操控）</li>
+          <li>自动漫游模式（缓慢旋转，展示全景）</li>
+          <li>点击展品触发详情</li>
+        </ul>
+
+        <p>交互要足够直观，让访客可以专注于作品本身，而不是思考怎么操作。</p>
+
+        <h2>一点心得</h2>
+
+        <p>做 3D 和做 2D 很不一样。在 2D 中，你控制的是画布上的每个像素。在 3D 中，你搭建一个世界，然后让光线和相机去决定最终呈现什么。这种失控感既是挑战，也是乐趣。</p>
+
+        <blockquote>
+          你搭建舞台，光影来演出。
+        </blockquote>
+
+        <p>如果你想尝试 Three.js，建议从小场景开始，不要一上来就做大项目。先理解场景 (Scene)、相机 (Camera)、渲染器 (Renderer) 这三个核心概念，然后逐步添加更多组件。</p>
+
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Aprilssky · 用 ❤️ 和代码创作</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
