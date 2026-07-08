@@ -1,17 +1,7 @@
-Fixed 5 entries without file field
 [
-  {
-    "slug": "yc10reddit",
-    "title": "【中配】YC合伙人亲授：如何搞定前10个客户？亲自上门、Reddit私信，这些“笨办法”最有效！",
-    "date": "2026-07-07",
-    "tag": "",
-    "excerpt": "获取前10个客户是创业最艰难的阶段之一。YC访问合伙人Max Kolysh结合数十位YC创始人的真实经验，揭示了冷邮件和自动化工具并非答案——你的前10个客户来自你本人、你的人脉以及那些不可扩展的努力。  本视频将带你了解：如何找到客户真正",
-    "bvid": "BV11oT96EEvf",
-    "file": "yc10reddit.html"
-  },
-  {
-    "slug": "bilibili-1pg7v6",
-    "title": "创作型自由职业，怎么拥有稳定的收入来源",
-    "date": "2026-07-06",
-    "tag": "",
-    "excerpt": "最近发的几期视频，有人在评论里问拍纪录片要怎么赚钱，我觉得可以把
+  {"slug": "yc10reddit", "title": "【中配】YC合伙人亲授：如何搞定前10个客户？亲自上门、Reddit私信，这些\u201c笨办法\u201d最有效！", "date": "2026-07-07", "tag": "", "file": "yc10reddit.html", "excerpt": "获取前10个客户是创业最艰难的阶段之一", "bvid": "BV11oT96EEvf"},
+  {"slug": "bilibili-1pg7v6", "title": "创作型自由职业，怎么拥有稳定的收入来源", "date": "2026-07-06", "tag": "", "file": "bilibili-1pg7v6.html", "excerpt": "UP主桃知了sleepytao分享创作型自由职业的收入稳定心得", "bvid": "BV1PG7V6WEgG"},
+  {"slug": "bilibili-19skd6", "title": "极致的成为任何你想成为的人，做任何你想做到的事！", "date": "2026-07-06", "tag": "", "file": "bilibili-19skd6.html", "excerpt": "UP主焕宇一新分享：极致地去成为任何你想成为的人", "bvid": "BV19sKD6SE2n"},
+  {"slug": "test-fix", "title": "test-fix", "date": "2026-07-06", "tag": "", "file": "test-fix.html", "excerpt": "test"},
+  {"slug": "workhorse-to-freelancer", "title": "从纯打工牛马到自由职业者的步骤拆解", "date": "2026-07-06", "tag": "", "file": "workhorse-to-freelancer.html", "excerpt": "UP主SKY_hahalife拆解从牛马到自由职业者的六步路径"}
+]
