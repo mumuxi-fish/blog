@@ -7,20 +7,23 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 2em 1em; line-height: 1.8; color: #333; }
 h1 { font-size: 1.6em; margin-bottom: 0.5em; }
-h2 { font-size: 1.3em; margin-top: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
-h3 { font-size: 1.1em; margin-top: 1.5em; }
-p { margin: 1em 0; }
-.meta { color: #888; font-size: 0.9em; margin-bottom: 2em; }
-blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
-hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
-.footer { color: #999; font-size: 0.85em; }
-.footer a { color: #666; }
-ul, ol { padding-left: 1.5em; }
-li { margin: 0.5em 0; }
+.meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
 .meta span { margin-right: 1em; }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .content p { margin: 1em 0; }
+blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
+hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+.footer { color: #999; font-size: 0.85em; }
+.footer a { color: #666; }
+.audio-player { margin: 1.5em 0; padding: 1em; background: #f5f5f7; border-radius: 8px; }
+.audio-player audio { width: 100%; }
+.timed-subtitles { margin: 1.5em 0; }
+.sub-line { display: flex; gap: 0.6em; padding: 0.3em 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95em; }
+.sub-time { color: #999; font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; white-space: nowrap; min-width: 3.5em; }
+.sub-text { flex: 1; }
+.sub-srt-download { display: inline-block; margin: 0.5em 0; padding: 0.3em 0.8em; background: #f0f0f0; border-radius: 4px; color: #666; font-size: 0.85em; text-decoration: none; }
+.sub-srt-download:hover { background: #e0e0e0; }
 </style>
 </head>
 <body>
@@ -30,23 +33,38 @@ li { margin: 0.5em 0; }
 <div class="meta">
   <span>🎬 UP主 <strong>于秀英説漢語</strong></span>
   <span>⏱ 5:25</span>
-  <span>👁 3942</span>
+  <span>👁 8383</span>
+</div>
+
+<div class="audio-player">
+  <audio controls preload="metadata">
+    <source src="https://mumuxi-fish.github.io/blog/audio/ii-7-1.mp3" type="audio/mpeg">
+  </audio>
 </div>
 
 <div class="video-wrapper">
   <iframe src="https://player.bilibili.com/player.html?bvid=BV1UCKC6WEx5&page=1&autoplay=0" allowfullscreen></iframe>
 </div>
+
 <div class="content">
-<p>我们记得说导论的第七讲,</p>
-<p>與你低心理肥該低肥,所需說如果我們不理解什麼是單位的話,</p>
-<p>那麼就加上心理肥該低肥,有意義的單位,</p>
-<p>那麼大家就容易理解了,但是它強調,要記者單位否則化我們會產生一個錯誤的想法,</p>
-<p>以為,至有的字是作為單位存在的,那麼意義,符家起象,不是的,只要你說出來的字,它都是有意義的。</p>
-<p>好,那麼所謂有用了三個強調劇,來說什麼是</p>
-<p>字和單位,好,這三個表達是法文的</p>
-<p>打新的封隔壽</p>
-<p>和了Sons</p>
-<p>都表示</p>
+  <p class="sub-srt-download">
+    <a href="data:text/plain;base64,MQowMDowNS40NTkgLS0+IDAwOjQ2LjQzOQrmnIvlj4vku6zvvIzkvaDku6zlpb3vvIzmiJHku6zmjqXnnYDor7Tlr7zorrrnmoTnrKw36K6yVU4gY2l2ZemmluW4jOWwlOivtO+8jOWmguaenOaIkeS7rOS4jeeQhuino+S7gOS5iOaYr+WNleS9jeeahOivne+8jOmCo+S5iOWwseWKoOS4inNpZ25pZmljYW50aXZl5pyJ5oSP5LmJ55qE5Y2V5L2N77yM6YKj5LmI5aSn5a625bCx5a655piT55CG6Kej5LqG44CC5L2G5piv5a6D5by66LCD6KaB6K6w552A5Y2V5L2N77yM5ZCm5YiZ55qE6K+d77yM5oiR5Lus5Lya5Lqn55Sf5LiA5Liq6ZSZ6K+v55qE5oOz5rOV77yM5Lul5Li655ej77yM5pyJ55qE55ej5piv5L2c5Li65Y2V5L2N5a2Y5Zyo55qE77yM6YKj5LmI5oSP5LmJ6ZmE5Yqg5YW25LiK44CC5LiN5piv55qE77yM5Y+q6KaB5L2g6K+05Ye65p2l55qE5a2X77yM5a6D6YO95piv5pyJ5oSP5LmJ55qE44CC5aW977yM6YKj5LmI57Si6ZyA5bCU55So5LqG5LiJ5Liq5by66LCD5Y+l5p2l6K+05LuA5LmI5piv77yfCgoyCjAwOjQ3LjI4MCAtLT4gMDE6MTMuMTU5CuWtl+WSjOWNleS9jeWlvei/meS4ieS4quihqOi+vuW8j+OAguazleaWh+eahExBIHNpZ25pZmljYW50IHNob3flkox0aGUgcmVzb3VyY2Xpg73ooajnpLrmhI/kuYnvvIzpgqPkuYjms5XmlofloZ5zaWduaWZpY2FudOmHjOaYr+aEj+S5ie+8jOmZkOWumuS6huivreivjeWhnuaLiXNpZ25pZmljYW5054aKbGlrZXnmmK/mhI/kuYnvvIzlvaLmiJDkuobljZXkvY3mi4nluKbpgqPkuKpVTuOAggoKMwowMToxMy42ODAgLS0+IDAxOjIwLjAxOQpTIGcgYyBVbml0eeaYr+aEj+S5ieW9ouaIkOS6huOAggoKNAowMToyMC4wMTkgLS0+IDAxOjM4LjYyMArljZXkvY3lpb3vvIzpgqPkuYjor7TliLDljZXkvY3miYDpnIDvvIzlsJTlsLHmj5Dlh7rmnaXopoHmnInkuIDkuKrmoIflh4bvvIzpgqPkuYjms5XmlofnmoRL5Luj5oiR5Lus5rGJ6K+R5Li65qCH5YeG77yM5a6e6ZmF5LiK5oiR5Lus5Lit5paH55So55qE5piv5rC05YeG77yM5Lul5rC05Li65YeG77yM6L+Z5Liq5qCH5YeG5piv5LuA5LmI5ZGi77yf5omA5Lul5bCx6K+05aSn5a625oSP6K+G5Yiw55qE44CCCgo1CjAxOjM4LjYyMCAtLT4gMDE6NDEuMTgwCuaEj+aAneaYr+aciea3sea1heeahOOAggoKNgowMTo0MS4xODAgLS0+IDAyOjQxLjQyMArkvZzkuLrov5nkuKrlrZfor43ljZXkvY3nmoTmoIflh4bvvIzpgqPkuYjmiJHku6znnIvms5XmlofnmoTlg49T77yM5oiR5Lus5YmN6Z2i6K+05Yiw55u4cyBsYXN0IHNvdW5kc3MgTGVz5piv56eR5a2m5oiW6ICF5piv5a2m56eR77yM5Yqg5LiK5LiA5Liq6KGo56S65YWx5ZCM55qE5bel77yM6L+Z5Liq5YmN57yA5bCx5piv5rOV5paH55qE5oSP6K+G77yM6YKj5YWsc291bmRz5piv5a+55bqU5oiR5Lus5Lit5Zu955qE5oSP5oCd77yM5Zyo5Lit5paH55qE5oSP5oCd6YeM6Z2i77yM5a6e5piv5pyJ6KiA5pyJ5Zug5pyJ5p6c55qE5LiJ5Liq6YOo5YiG44CC6KiA5ZKM5Zug55qE5beu5byC5piv6Z+z6YeM6Z2i5Y+j5Lit5pyJ5LiA6K+d77yM5aSa5LqG5LiA6K+d6ICM5bey44CC5Lit5paH6K+05p2l6K+05Y676L+Y5piv5Zyo6K+06YKj5Liq6YGT77yM6YKj5LmI5oiR5Lus566A5YyW5a2X55So6L+Z5Liq5pe25L2g5bCx5LiN5Lya77yM5oiR5Lus55qE6L6o6K+G5Yqb5YeP5L2O77yM5YeP5L2O5LqG5piv5Zug5Li66L+Z5Liq5a2X5Y+Y5LqG44CC5aW96K+05Yiw5oSP5LmJ77yM6YKj5LmI5Zyo5ZGo5piT6YeM6Z2i77yM5Zyo5LmJ5Ye6546w5LmL5YmN77yM55So55qE5piv6YGT5LmJ77yM55So55qE5piv5pe25LmJ77yM5pe26Ze055qE5pe277yM6YGT5LmJ5LmL6Zeo77yM6K+a5oCn57qv44CCCgo3CjAyOjQxLjQyMCAtLT4gMDI6NTAuOTM5Cue6r+WwseaYr+mBk+S5ieacgOaXqeWHuueOsOWcqOWRqOaYk+mHjOmdou+8jOmCo+aIkeS7rOadpeivtOaEj+S5ie+8jOaEj+W/l++8jOS4iumYtOS4i+W/g++8jOiAjOOAggoKOAowMjo1MS40NzkgLS0+IDAzOjE2LjcxOQrkuYnlkaLvvIzmhI/kuYnkuKTkuKrlrZflkIzpn7PlkIzosIPvvIzkvYbmmK/kuI3lkIzlvaLvvIzov5nkuKrkuYnkuIrmiazkuIvmiJHvvIzpgqPkuYjopoHor7TmuIXmpZrmhI/vvIzlsLHlvpfnnIvmiJHov5nkuKrlrZfvvIzmiJHmnInkuKTpg6jliIbnu4TmiJDvvIzlt6bovrnov5nkuKrmmK/pqqjvvIzpqqjlrZfnmoTlnoLvvIzkuIvlnoLnmoTvvIzlj7PovrnmmK/okZvvvIzmiJHvvIznhLblkI7mnInmhI/vvIzov5nkuKrmhI/mmK/jgIIKCjkKMDM6MTcuNTIwIC0tPiAwMzozNS40MzkK5bex5LmL5aiB5Luq55qE5oSP5oCd56e75Ye65p2l5LqG77yM5Luq77yM5Lik5Luq77yM5aSq5p6B55Sf5Lik5Luq55qE5Luq5Yqg5LqG5LiA5Liq5Lq677yM5Yqg6KiA5ZGi77yM5piv6K6u6K6655qE6K6u5aW977yM5oiR5Lus5YmN6Z2i6K+06L+H57Gz5bqm55qE5L2g44CCCgoxMAowMzozNS40NzkgLS0+IDA0OjIyLjkzOQrmmK/mi5/nn6XogIzlkI7oqIDvvIzkuqbnn6XogIzlkI7liqjvvIzmi5/mhI/ogIzmiJDlhbblj5jljJbjgILlnKhC5bqV5LiL5Yqg5YWu77yM5bCx5piv5LyP576y55qE5YWu77yM546L576y5LmL55qE5YWu77yM6L+Z5Liq5a2X6L+Y5rKh57uT5p2f77yM5YaN5Yqg54mb5YWu77yM5a6X5bqZ5LmL55Sf5Lmf44CC5oiR5Lus566A5YyW5a2X5piv6L+Z5Liq6KW/77yM5oC75LmL5YWz57O75bCx6L+Z5qC35a2Q5pat5LqG44CC5oiR5Lus55yL5LqG5Y6f5p2l55qE6L+Z5Liq5a2X77yM5bCx5piO55m95omA6ZyA5YS/5omA55qE5omA6K+055qE6L+Z5Liq5oSP6K+G5ZKM5oSP5LmJ77yM5a6D5piv5pyJ57qn5Yir55qE44CC5aW977yM6YKj5LmI5oiR5a2X5rKh5pyJ57uT5p2f77yM6L+Y5Y+v5Lul6Lef5LiL5YiX6L+Z5Lqb5a2X57uE5ZCI77yM5LiA5YWx5pyJMTLkuKrpg6jpppbvvIzmiJHmiorlroPliJfkuobkuIDkuIvvvIzlpKfmpoLnnIvkuIDkuIvjgIIKCjExCjA0OjIzLjQzOSAtLT4gMDQ6MzUuMzE5CuaIkeS7rOS8muinieW+l+aIkeWSjOWRg+i/meS4quWSjOaIkee7hOWQiOeahOWtl++8jOWPkem5heWRg+WRg++8jOWPquaciei/mTPkuKrlo7DosIPjgIIKCjEyCjA0OjM1LjMxOSAtLT4gMDQ6NTIuNjM5CumprO+8jOi/meS4quaYr+WRg++8jOmlpemlv+eahOmlv+aYrzTlo7DvvIzlhbbku5bnmoTpg73mmK8y5aOw77yM6YKj5LmI5oiR55qE5a6a5LmJ5piv54uu6Lqr6Ieq6LCT5Lmf5rm/6Lqr5Yqo5L2c55qE5Y+R5Ye66ICF77yM6Ieq5oWw6Ieq56ew77yM5oiR5Lus6KeJ5b6X5aW95YOP6L+Z5Liq6Z+z44CCCgoxMwowNDo1Mi42MzkgLS0+IDA1OjE5Ljg3OQrmiJHlkozov5nkuKrlkYPmnInmlq3oo4LvvIzlrp7pmYXkuIrpmZXopb/kurrku4rlpKnlvIDlj6Pku43nhLbor7TlkYPvvIzmiJHku6zlsLHmmI7nmb3ku5bku6zkuYvpl7TmmK/mnInlhbPogZTnmoTjgILlpb3vvIzmiJHku6zkuIvpnaLnq4vliLvov5vlhaXliLDnlLvvvIzpgJrov4fmiYDpnIDlsJTnmoTlpJbpg6jnoJTnqbblkozlhoXpg6jnoJTnqbbmnaXor7TmiJHku6zkuK3lm73nmoTlj5jljJbkuYvnlLvlkozkurrmlofnlLvlsYLnmoTor53vvIzlpb3mnIvlj4vku6zlho3op4HjgIIK" download="ii-7-1.srt">📥 下载字幕 (SRT)</a>
+  </p>
+  <div class="timed-subtitles">
+<p class="sub-line"><span class="sub-time">0:05</span> <span class="sub-text">朋友们，你们好，我们接着说导论的第7讲UN cive首希尔说，如果我们不理解什么是单位的话，那么就加上significantive有意义的单位，那么大家就容易理解了。但是它强调要记着单位，否则的话，我们会产生一个错误的想法，以为痣，有的痣是作为单位存在的，那么意义附加其上。不是的，只要你说出来的字，它都是有意义的。好，那么索需尔用了三个强调句来说什么是？</span></p>
+<p class="sub-line"><span class="sub-time">0:47</span> <span class="sub-text">字和单位好这三个表达式。法文的LA significant show和the resource都表示意义，那么法文塞significant里是意义，限定了语词塞拉significant熊likey是意义，形成了单位拉带那个UN。</span></p>
+<p class="sub-line"><span class="sub-time">1:13</span> <span class="sub-text">S g c Unity是意义形成了。</span></p>
+<p class="sub-line"><span class="sub-time">1:20</span> <span class="sub-text">单位好，那么说到单位所需，尔就提出来要有一个标准，那么法文的K代我们汉译为标准，实际上我们中文用的是水准，以水为准，这个标准是什么呢？所以就说大家意识到的。</span></p>
+<p class="sub-line"><span class="sub-time">1:38</span> <span class="sub-text">意思是有深浅的。</span></p>
+<p class="sub-line"><span class="sub-time">1:41</span> <span class="sub-text">作为这个字词单位的标准，那么我们看法文的像S，我们前面说到相s last soundss Les是科学或者是学科，加上一个表示共同的工，这个前缀就是法文的意识，那公sounds是对应我们中国的意思，在中文的意思里面，实是有言有因有果的三个部分。言和因的差异是音里面口中有一话，多了一话而已。中文说来说去还是在说那个道，那么我们简化字用这个时你就不会，我们的辨识力减低，减低了是因为这个字变了。好说到意义，那么在周易里面，在义出现之前，用的是道义，用的是时义，时间的时，道义之门，诚性纯。</span></p>
+<p class="sub-line"><span class="sub-time">2:41</span> <span class="sub-text">纯就是道义最早出现在周易里面，那我们来说意义，意志，上阴下心，而。</span></p>
+<p class="sub-line"><span class="sub-time">2:51</span> <span class="sub-text">义呢，意义两个字同音同调，但是不同形，这个义上扬下我，那么要说清楚意，就得看我这个字，我有两部分组成，左边这个是骨，骨字的垂，下垂的，右边是葛，我，然后有意，这个意是。</span></p>
+<p class="sub-line"><span class="sub-time">3:17</span> <span class="sub-text">己之威仪的意思移出来了，仪，两仪，太极生两仪的仪加了一个人，加言呢，是议论的议好，我们前面说过米度的你。</span></p>
+<p class="sub-line"><span class="sub-time">3:35</span> <span class="sub-text">是拟知而后言，亦知而后动，拟意而成其变化。在B底下加兮，就是伏羲的兮，王羲之的兮，这个字还没结束，再加牛兮，宗庙之生也。我们简化字是这个西，总之关系就这样子断了。我们看了原来的这个字，就明白所需儿所的所说的这个意识和意义，它是有级别的。好，那么我字没有结束，还可以跟下列这些字组合，一共有12个部首，我把它列了一下，大概看一下。</span></p>
+<p class="sub-line"><span class="sub-time">4:23</span> <span class="sub-text">我们会觉得我和呃这个和我组合的字，发鹅呃呃，只有这3个声调。</span></p>
+<p class="sub-line"><span class="sub-time">4:35</span> <span class="sub-text">马，这个是呃，饥饿的饿是4声，其他的都是2声，那么我的定义是狮身自谓也湿身动作的发出者，自慰自称，我们觉得好像这个音。</span></p>
+<p class="sub-line"><span class="sub-time">4:52</span> <span class="sub-text">我和这个呃有断裂，实际上陕西人今天开口仍然说呃，我们就明白他们之间是有关联的。好，我们下面立刻进入到画，通过所需尔的外部研究和内部研究来说我们中国的变化之画和人文画层的话，好朋友们再见。</span></p>
+</div>
 </div>
 
 <hr>
