@@ -7,37 +7,66 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 2em 1em; line-height: 1.8; color: #333; }
 h1 { font-size: 1.6em; margin-bottom: 0.5em; }
-h2 { font-size: 1.3em; margin-top: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
-h3 { font-size: 1.1em; margin-top: 1.5em; }
-p { margin: 1em 0; }
-.meta { color: #888; font-size: 0.9em; margin-bottom: 2em; }
+.meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
+.meta span { margin-right: 1em; }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.content p { margin: 1em 0; }
 blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
 hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
 .footer { color: #999; font-size: 0.85em; }
 .footer a { color: #666; }
-ul, ol { padding-left: 1.5em; }
-li { margin: 0.5em 0; }
-.meta span { margin-right: 1em; }
-.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
-.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.audio-player { margin: 1.5em 0; padding: 1em; background: #f5f5f7; border-radius: 8px; }
+.audio-player audio { width: 100%; }
+.timed-subtitles { margin: 1.5em 0; }
+.sub-line { display: flex; gap: 0.6em; padding: 0.3em 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95em; }
+.sub-time { color: #999; font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; white-space: nowrap; min-width: 3.5em; }
+.sub-text { flex: 1; }
+.sub-srt-download { display: inline-block; margin: 0.5em 0; padding: 0.3em 0.8em; background: #f0f0f0; border-radius: 4px; color: #666; font-size: 0.85em; text-decoration: none; }
+.sub-srt-download:hover { background: #e0e0e0; }
+/* 导航栏 */
+.nav-post { max-width: 720px; margin: 0 auto 1.5em; padding: 1em 0 0.5em; display: flex; gap: 1.2em; align-items: center; font-size: 0.9em; color: #888; border-bottom: 1px solid #eee; }
+.nav-post a { color: #666; text-decoration: none; }
+.nav-post a:hover { color: #333; }
+.nav-post .logo { font-weight: 600; color: #333; margin-right: auto; }
 </style>
 </head>
 <body>
+
+<div class="nav-post">
+  <a href="https://mumuxi-fish.github.io/blog/" class="logo">Aprilssky</a>
+  <a href="https://mumuxi-fish.github.io/blog/">🏠 首页</a>
+  <a href="https://mumuxi-fish.github.io/blog/posts/">📄 文章</a>
+  <a href="https://mumuxi-fish.github.io/blog/about.html">👤 关于</a>
+</div>
 
 <h1>创业不需要人脉：我们的产品被智谱看到了！</h1>
 
 <div class="meta">
   <span>🎬 UP主 <strong>_缘缘er</strong></span>
   <span>⏱ 1:59</span>
-  <span>👁 3105</span>
+  <span>👁 10529</span>
+</div>
+
+<div class="audio-player">
+  <audio controls preload="metadata">
+    <source src="https://mumuxi-fish.github.io/blog/audio/bilibili-1wymb6.mp3" type="audio/mpeg">
+  </audio>
 </div>
 
 <div class="video-wrapper">
   <iframe src="https://player.bilibili.com/player.html?bvid=BV1WyMb65E37&page=1&autoplay=0" allowfullscreen></iframe>
 </div>
 
-<blockquote>我是缘缘，一名在AI公司工作的博主，上个月智谱看到了我们的AI Agent产品并邀请我们加入了智谱创业计划，他们会给予我们资源和技术扶持。这个从天而降的好消息让我意识到，这个时代真的遍地是红利，只要你有想法/执行力/创造力，哪怕就像我们团队本身在AI领域毫无人脉，也可以通过埋头认真build产品+真诚做内容被智谱的团队看到！
-再次感谢智谱看到Starchild，我们会继续做产品+做内容，和更多人分享创造的快乐！！！</blockquote>
+<div class="content">
+  <p class="sub-srt-download">
+    <a href="data:text/plain;base64,MQowMDowMC4wMDAgLS0+IDAxOjAwLjIxOQrmiJHmmK/kuIDkuKrlnKhBSeWFrOWPuOW3peS9nOeahOWGheWuueWNmuS4u++8jOeEtuWQjuS4iuS4quaciOi0qOactOeci+WIsOS6huaIkeS7rOWFrOWPuOeahEFJ5LiA5pW05Lqn5ZOB77yM5bm25LiU6YKA6K+35oiR5Lus5Y+C5LiO6L+b5LqG5LuW5Lus55qE5Yib5Lia6K6h5YiS77yM5oiR55yL5LqG5LiA5LiL6L+Z5Liq6K6h5YiS55qE5a6Y572R77yM5LuW5Lus5piv5LuO5LuK5bm0M+aciOS7veW8gOWni++8jOaJgOacieeahEFJ5Yid5Yib5Zui6Zif6YO95piv5Y+v5Lul5Y6755Sz6K+355qE77yM5L2g55yL5oiR5Lus5bm25rKh5pyJ5Lu75L2VQUnnmoTkurrohInlkozotYTmupDvvIzlsYXnhLblsLHmmK/otKjmnLTov5nmoLfvvIzlsLHmmK/ku4rlubQx5pyI5Lu977yM6LSo5pmu5L2c5Li65YWo55CD5pyA5pep55qE5LiA5om56L+Z5Liq5LiK5biC55qE5aSn5qih5Z6L5YWs5Y+477yM5LuW5Lus5Yia5LiK5biC55qE5pe25YCZ77yM5LuK5bm0MeaciOS7veWcqOmmmea4r0lQT+aMgueJjO+8jOW4guWAvOaYrzUwMOWkmuS6v+a4r+W4ge+8jOeEtuWQjuS4iuS4quaciDbmnIjku73nmoTml7blgJnvvIzkuZ/lsLHmmK/ku5bku6zlnKjpgoDor7fmiJHku6znmoTml7blgJnvvIzku5bku6zkuZ/mjqjlh7rkuoZHUk01LjLvvIzmiJHku47mnaXmsqHmnInop4Hov4fvvIzlm6DkuLrmiJHku47ljrvlubTlupXlvIDlp4vnlq/ni4LnmoTpq5jlvLrluqbliLfmjqjvvIzmiJHnrKzkuIDmrKHnnIvliLDkuIDlrrbkuK3lm73lpKfmqKHlnovlhazlj7jlh7rnmoTlvIDmupDmqKHlnovvvIzlsYXnhLbog73lnKjmlbTkuKpY5LiK6Z2i77yM5Zyo5oiR55qEdGltZWxpbmXkuLvpobXkuIrpnaLvvIzooqvlhajkuJbnlYzlj6ropoHmmK/lnKjogYpBSeeahOWwsemDveWcqOiBiuS7lu+8jOaIkeiiq+WIt+Wxj+S6huiHs+WwkeS4gOWRqO+8jOWkp+WutumDveWcqOiusui/meS4quaooeWei+eahOiDveWKm+acieWkmuWlveWViu+8jOi/meS5iOmhtue6p+eahOS4gOWutuWFrOWPuO+8jOeul+aYr+ecn+ato+eahG5hdGl2ZeWFrOWPuOS6hu+8jOS7luS7rOWxheeEtuiDveeci+WIsOaIkeS7rOe7meWIsOS4gOS6m+aKgOacr+aUr+aMgeOAggoKMgowMTowMC4yMTkgLS0+IDAxOjUzLjQyMArnu5nliLDkuIDkupvotYTmupDvvIzlm6DkuLrmiJHmiY3liqDlhaXnp5HmioDooYzkuJrvvIzmiYDku6XmiJHop4nlvpflj6/og73ov5nkuZ/mmK/np5HmioDooYzkuJrnmoTkuIDkuKrprYXlipvlkKfvvIzlsLHlsKTlhbbmmK9BSe+8jOWcqEFJ55qE5rWq5r2u5LiL77yM5YW25a6e5rKh5pyJ5Lu75L2V5LiA5Liq5Lq65Y+v5Lul6K+06Ieq5bex5bCx5piv55m+5YiG5LmL55m+55qEQUnkuJPlrrbkuobvvIzlm6DkuLrmsqHmnInkurrlj6/ku6XnnJ/mraPpooTmtYvmnKrmnaXkuIDlubTjgIE15bm044CBMTDlubTlkI7nmoRBSeS8muiuqei/meS4quS4lueVjOWPmOaIkOS7gOS5iOagt+WtkO+8jOS6uuexu+S4gOi1t+WcqOmdouWvueacquefpeeahOaDheWGteS4i++8jOWkp+WutuWPjeiAjOWHneiBmuWKm+avlOi+g+W8uu+8jOaJgOS7pei0qOactOi/meS4gOasoeaJvuWIsOaIkeS7rO+8jOaIkeinieW+l+S5n+mqjOivgeS6huaIkeS7rOi/meS4quaDs+azle+8jOaIluiAheivtOaIkeS7rOi1sOeahOi3r+ehruWunuaYr+ato+ehrueahO+8jOS9oOecn+ato+ebuOS/oeeahOS4nOilv+S8muS9k+eOsOWcqOS9oOeahOS9nOWTgemHjOmdou+8jOS4jeeuoeaYr+S9oOWcqOWBmuS4gOS4quinhumike+8jOi/mOaYr+WBmuS4gOmmluatjO+8jOWwseaYr+aLjeS4queFp++8jOi/mOaYr+WBmuS4gOS4quS6p+WTge+8jOWwseaYr+aXoOiuuuS9oOWcqOWIm+mAoOS7gOS5iO+8jOWBmuS4gOS6m+aJgOacieS6uumDveS4jeeci+WlveeahOS6i+aDhe+8jOWkp+WutumDveeci+S4jeWIsOetlOahiOeahOS6i+aDhe+8jOWPquimgeS9oOacieW8uueDiOeahOS/oeW/teaEn++8jOi/meS4quS/oeW/teaEn+WwseS4gOWumuS8muS8oOi+vue7mei3n+S9oOWQjOmikeeahOS6uu+8jOaIluiAheivtOS9oOaDs+imgeWOu+mdoOi/keeahOS6uuWwseS8muadpeaJvuWIsOS9oO+8jOmCo+WwseivtOi/meS5iOWkmu+8jOeEtuWQjuaIkeS7rOS4i+S4gOS4quinhumike+8jOWGjeinge+8jOiwouiwouWkp+Wutuingueci++8jOaLnOaLnOOAggo=" download="bilibili-1wymb6.srt">📥 下载字幕 (SRT)</a>
+  </p>
+  <div class="timed-subtitles">
+<p class="sub-line"><span class="sub-time">0:00</span> <span class="sub-text">我是一个在AI公司工作的内容博主，然后上个月质朴看到了我们公司的AI一整产品，并且邀请我们参与进了他们的创业计划，我看了一下这个计划的官网，他们是从今年3月份开始，所有的AI初创团队都是可以去申请的，你看我们并没有任何AI的人脉和资源，居然就是质朴这样，就是今年1月份，质普作为全球最早的一批这个上市的大模型公司，他们刚上市的时候，今年1月份在香港IPO挂牌，市值是500多亿港币，然后上个月6月份的时候，也就是他们在邀请我们的时候，他们也推出了GRM5.2，我从来没有见过，因为我从去年底开始疯狂的高强度刷推，我第一次看到一家中国大模型公司出的开源模型，居然能在整个X上面，在我的timeline主页上面，被全世界只要是在聊AI的就都在聊他，我被刷屏了至少一周，大家都在讲这个模型的能力有多好啊，这么顶级的一家公司，算是真正的native公司了，他们居然能看到我们给到一些技术支持。</span></p>
+<p class="sub-line"><span class="sub-time">1:00</span> <span class="sub-text">给到一些资源，因为我才加入科技行业，所以我觉得可能这也是科技行业的一个魅力吧，就尤其是AI，在AI的浪潮下，其实没有任何一个人可以说自己就是百分之百的AI专家了，因为没有人可以真正预测未来一年、5年、10年后的AI会让这个世界变成什么样子，人类一起在面对未知的情况下，大家反而凝聚力比较强，所以质朴这一次找到我们，我觉得也验证了我们这个想法，或者说我们走的路确实是正确的，你真正相信的东西会体现在你的作品里面，不管是你在做一个视频，还是做一首歌，就是拍个照，还是做一个产品，就是无论你在创造什么，做一些所有人都不看好的事情，大家都看不到答案的事情，只要你有强烈的信念感，这个信念感就一定会传达给跟你同频的人，或者说你想要去靠近的人就会来找到你，那就说这么多，然后我们下一个视频，再见，谢谢大家观看，拜拜。</span></p>
+</div>
+</div>
 
 <hr>
 <div class="footer">
