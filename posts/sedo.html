@@ -7,20 +7,23 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 2em 1em; line-height: 1.8; color: #333; }
 h1 { font-size: 1.6em; margin-bottom: 0.5em; }
-h2 { font-size: 1.3em; margin-top: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
-h3 { font-size: 1.1em; margin-top: 1.5em; }
-p { margin: 1em 0; }
-.meta { color: #888; font-size: 0.9em; margin-bottom: 2em; }
-blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
-hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
-.footer { color: #999; font-size: 0.85em; }
-.footer a { color: #666; }
-ul, ol { padding-left: 1.5em; }
-li { margin: 0.5em 0; }
+.meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
 .meta span { margin-right: 1em; }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .content p { margin: 1em 0; }
+blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
+hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+.footer { color: #999; font-size: 0.85em; }
+.footer a { color: #666; }
+.audio-player { margin: 1.5em 0; padding: 1em; background: #f5f5f7; border-radius: 8px; }
+.audio-player audio { width: 100%; }
+.timed-subtitles { margin: 1.5em 0; }
+.sub-line { display: flex; gap: 0.6em; padding: 0.3em 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95em; }
+.sub-time { color: #999; font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; white-space: nowrap; min-width: 3.5em; }
+.sub-text { flex: 1; }
+.sub-srt-download { display: inline-block; margin: 0.5em 0; padding: 0.3em 0.8em; background: #f0f0f0; border-radius: 4px; color: #666; font-size: 0.85em; text-decoration: none; }
+.sub-srt-download:hover { background: #e0e0e0; }
 </style>
 </head>
 <body>
@@ -30,302 +33,33 @@ li { margin: 0.5em 0; }
 <div class="meta">
   <span>🎬 UP主 <strong>猎者出海</strong></span>
   <span>⏱ 8:03</span>
-  <span>👁 375</span>
+  <span>👁 668</span>
+</div>
+
+<div class="audio-player">
+  <audio controls preload="metadata">
+    <source src="https://mumuxi-fish.github.io/blog/audio/sedo.mp3" type="audio/mpeg">
+  </audio>
 </div>
 
 <div class="video-wrapper">
   <iframe src="https://player.bilibili.com/player.html?bvid=BV19qK16KEVh&page=1&autoplay=0" allowfullscreen></iframe>
 </div>
+
 <div class="content">
-<p>今天拆解一个很多人搞错的出海项目用塞豆做预名买占查价</p>
-<p>先说清楚 塞豆不是Flipper 他不卖网站不卖富叶项目 指卖预名国内一堆文章</p>
-<p>把他和买卖网站混着讲赵作 你会发现平台连一个网站都挂不上</p>
-<p>这期把他的赚钱邏輯 拥禁 差价 停放 新手能不能上手 一次讲明白</p>
-<p>先认识平台 塞豆成了于2001年 总不得过是全球罪老牌</p>
-<p>交易量最大的郁民交易市场他就感三件事</p>
-<p>买郁民停放</p>
-<p>吃广告费</p>
-<p>卖郁民转差价</p>
-<p>一单抽10%</p>
-<p>到20%最低560美金起</p>
-<p>他能交易的只有郁民这一种资产</p>
-<p>不能交易网站App</p>
-<p>点上电铺</p>
-<p>更不能交易覆业项目</p>
-<p>这点先定死</p>
-<p>很多人搜国外买完产转钱</p>
-<p>搜到Ciddle</p>
-<p>默认他跟FlyPay了</p>
-<p>这个错</p>
-<p>会让你白忙半天</p>
-<p>打个比方</p>
-<p>郁民就像一块地皮</p>
-<p>一个门拍号</p>
-<p>没内容没流量没收入</p>
-<p>网站是在这块地上盖好</p>
-<p>装修好还能收入的房子</p>
-<p>Cid-G-Mideap</p>
-<p>Mideap-Guy</p>
-<p>Flappa这种平台</p>
-<p>用Cid-Mimei网站的说法</p>
-<p>基本可判定写的人没用过</p>
-<p>Cid-G你看</p>
-<p>Flappa上刮的都是年收入</p>
-<p>120万</p>
-<p>每月纯利</p>
-<p>2万6千美金</p>
-<p>这种有现金流的网站</p>
-<p>这才是买Mimei网站</p>
-<p>赚差价的标击</p>
-<p>想第1买高卖有流量有收入的站</p>
-<p>该去Flappa跟Cid-Guy</p>
-<p>不是一回事</p>
-<p>别搞混</p>
-<p>轻调物区</p>
-<p>在看Cidle真正能赚钱的地方</p>
-<p>Cidle真正能赚钱的就三条路</p>
-<p>越往后越被动</p>
-<p>一条玉明察酱</p>
-<p>第一价拿高价卖</p>
-<p>赚中间察酱</p>
-<p>这是主线</p>
-<p>第二条玉明庭放</p>
-<p>卖不掉的玉明掛广告</p>
-<p>有人点就分成纯被动</p>
-<p>一三条</p>
-<p>当经济或用副卫平孤等增值服</p>
-<p>偏专业新手了解机客</p>
-<p>下面重点讲前两条</p>
-<p>先把被抽多少算明白</p>
-<p>Cidle所有拥禁都从卖加扣</p>
-<p>买家基本不套钱</p>
-<p>分三党第一党百分之十条件事同时挂一口价</p>
-<p>加把玉明停放在Cid-Shan</p>
-<p>第二党百分之十五最常见</p>
-<p>用接受报价走拍卖</p>
-<p>或挂一口价</p>
-<p>但没停放都算这党</p>
-<p>第三党百分之二十</p>
-<p>买家从合作网络Cid-MMS过来成交</p>
-<p>就串这么多相少被抽</p>
-<p>就做了一口价</p>
-<p>加停放所定百分之十</p>
-<p>不了百分比</p>
-<p>还有个最低收费</p>
-<p>最坑小卖家</p>
-<p>欧罪分两类</p>
-<p>主流的典坑</p>
-<p>典内</p>
-<p>典爱</p>
-<p>典爱</p>
-<p>典瘥</p>
-<p>没有最低收费</p>
-<p>成交20美金以上就行</p>
-<p>冷闻的国家地区后罪最低收费高大200美金</p>
-<p>成交还得220</p>
-<p>你拿冷门后罪賣2300</p>
-<p>光拥金就扣200</p>
-<p>基本白干</p>
-<p>所以前期老实做主流后罪以典抗为主</p>
-<p>呼类那个经济夫妻花</p>
-<p>99美金请塞斗帮你谈新手用不上</p>
-<p>预名差价是主线</p>
-<p>最该花时间搞懂一句话</p>
-<p>低价拿到有人想要的预名</p>
-<p>高价賣给那个人赚差价人炒房</p>
-<p>说求些一个邏輯但摸鬼在细节</p>
-<p>能不能赚全看拿什么货</p>
-<p>卖个谁整条练路</p>
-<p>拆四部</p>
-<p>找货判断价值</p>
-<p>定价挂卖交割收款</p>
-<p>美部都告诉你</p>
-<p>零基处怎么借</p>
-<p>AI和工具搞定</p>
-<p>赚差价前提是</p>
-<p>先低价拿货三个区道</p>
-<p>区道一</p>
-<p>在NM7</p>
-<p>GoDead</p>
-<p>这种注册商直接注册新语名</p>
-<p>一个点坑一年才实际美金</p>
-<p>难点是好词</p>
-<p>基本被强光</p>
-<p>区道二</p>
-<p>强住过7语名</p>
-<p>下夜戏奖</p>
-<p>区道三</p>
-<p>低价买入</p>
-<p>在转手</p>
-<p>考演光</p>
-<p>先说换</p>
-<p>最现实的起步是渠道一家二</p>
-<p>用AI帮你享有强力的辞取注册</p>
-<p>同时丁者过期与明显漏</p>
-<p>过期与明单独说</p>
-<p>每天大量与明</p>
-<p>因美序费被释放</p>
-<p>里面藏着有价值的老与明</p>
-<p>可能以激累外戀和权重</p>
-<p>比新注册的之前</p>
-<p>在CIDO直接搜Xperia Domain's</p>
-<p>就刷出一大批</p>
-<p>几百到几万美金不等</p>
-<p>最多有中文界面</p>
-<p>后罪消售类型加格都能</p>
-<p>中文山看不懂就流暖期翻译</p>
-<p>怎么摔干净的好后</p>
-<p>靠下一步的判断这步</p>
-<p>使新手最容易灾</p>
-<p>最该练的地方</p>
-<p>买错等于压一堆</p>
-<p>没人要的库存</p>
-<p>判断价值几四个维度</p>
-<p>一看后罪</p>
-<p>点坑永远用通货</p>
-<p>其次点满</p>
-<p>点温二这几年</p>
-<p>很活的点AI点温</p>
-<p>科技公司特别认</p>
-<p>冷门闭开</p>
-<p>二看有没有热词和商业喊议</p>
-<p>但AI Crypto Cloud需求就大</p>
-<p>你还搜索 Crypto Crypto</p>
-<p>Wild点抗直接挂</p>
-<p>150万欧元</p>
-<p>三看长度和好几程度</p>
-<p>越短越之前</p>
-<p>练给朋友</p>
-<p>能一遍平对</p>
-<p>才合格 自开历史 过去与民一定查</p>
-<p>有没有被污染被搜索引擎拉黑的白送也别要</p>
-<p>零机处怎么查</p>
-<p>两个工具加一个AI</p>
-<p>第一个SML1查预名以前有没有流量</p>
-<p>流量从哪来 上途就是查理在典康的势力</p>
-<p>第二个微白和星</p>
-<p>也就是YP.2开5.org</p>
-<p>把预名书警局就能看他过去几年</p>
-<p>见过什么战 意言判断干不干净</p>
-<p>不动英文就结图</p>
-<p>都给Chad GPD或Cloud</p>
-<p>问他这预名从命名看有没有商业价值</p>
-<p>AI会给个靠谱的初步判断</p>
-<p>拿到预名下一步</p>
-<p>挂到CEDOMai两个决定</p>
-<p>定多少</p>
-<p>怎么卖</p>
-<p>定价新手最容易下定</p>
-<p>天价挂几年</p>
-<p>美人里正确做法是</p>
-<p>参考可比成交</p>
-<p>去CEDO</p>
-<p>和NAMBIA</p>
-<p>这种成交书记复</p>
-<p>看同后队</p>
-<p>同长度的预名历史卖的多少</p>
-<p>照区间地</p>
-<p>CEDO还有负费平股</p>
-<p>单个99美金</p>
-<p>新手前期没必要花</p>
-<p>挂卖享受拥金</p>
-<p>就一口价加停放所百分之时</p>
-<p>没把握</p>
-<p>就用接收报价</p>
-<p>让买家出</p>
-<p>用金15% 罐号就是等很考验耐心</p>
-<p>按龙之后进入交割</p>
-<p>Cid作的挺省心</p>
-<p>内置免费转移服务单宝</p>
-<p>流程式 买家把钱达到Cid的脱管</p>
-<p>你把玉明过户给买家</p>
-<p>买家确认收到Cid的扣掉用金</p>
-<p>再把钱达给你</p>
-<p>全程有平台都底比私下交业安全</p>
-<p>哪怕在平台外谈称的交易</p>
-<p>也能用它转移 只收3</p>
-<p>提线用电汇一般没额外费用</p>
-<p>图快用配票</p>
-<p>超过500美金的部分</p>
-<p>会加收3</p>
-<p>大额能等就用电汇</p>
-<p>講完差價說第二條路</p>
-<p>停放遇名 躺轉廣告費</p>
-<p>最容易被互率停放</p>
-<p>就是在你的遇名上掛一條相關廣告</p>
-<p>有自然流量的人點了</p>
-<p>你就分成 准备動 美運 塞鬥結算</p>
-<p>但我說實話 單個普通遇名</p>
-<p>停放輸入非常少</p>
-<p>一個沒訪問量的遇名</p>
-<p>一個月就幾美分級美金</p>
-<p>掛一年 轉不到一杯咖啡錢</p>
-<p>認證能賺的是自帶流量的遇名</p>
-<p>比如以前做過熱門網站</p>
-<p>或容易被輸錯訪問的老遇名</p>
-<p>一個月做到幾十上百是可能的</p>
-<p>但這種好貨細缺</p>
-<p>也貴,所以定位是賣於名等待期的順手收益</p>
-<p>不是發財主項目,聰明而法是怪口價的同時開廳放</p>
-<p>能買加10,兩頭賺,還所百分之十</p>
-<p>回到最實在的問題,一個不懂英文只會用AI的普通人做</p>
-<p>Cido,CopeCopeA,你個不獲惜你的判斷能上手</p>
-<p>但別當快速賺錢的主項目,更適合當低成本長周期的負險</p>
-<p>能上手的理由,注冊就填用箱,用戶名,密碼</p>
-<p>全程中文,國家選中國,填中文地址</p>
-<p>不用美國銀行賬戶</p>
-<p>能收美金的配有膩 配配好就行</p>
-<p>即使美金就能开始</p>
-<p>但想清楚三个现实</p>
-<p>依使周期卖</p>
-<p>注册的预名大部分可能永远卖不掉</p>
-<p>能卖的也得几个月到几年</p>
-<p>二是眼光靠交学费链</p>
-<p>三是大前属于专业投资人</p>
-<p>普通人吃的是偶尔卖出</p>
-<p>赚几百上千家点听方的小钱</p>
-<p>当富业不贴不错</p>
-<p>替代主业不现实</p>
-<p>最后把最容易采的五个坑</p>
-<p>集中说恒意</p>
-<p>分不清 塞斗和FlyPot跑错平台</p>
-<p>CID指埋遇名买卖网站去Fly跑</p>
-<p>跑索后面全白搭</p>
-<p>恨二乱注策冷漠后罪和长遇名</p>
-<p>全是没人要的</p>
-<p>还得年年交削费</p>
-<p>记住</p>
-<p>并缺无乱主流后罪短</p>
-<p>好几</p>
-<p>恳三</p>
-<p>定天价几年卖不掉</p>
-<p>参考可比成交定价</p>
-<p>别拍脑袋</p>
-<p>坑四</p>
-<p>忽略最低收费</p>
-<p>冷漠后罪</p>
-<p>200美金能吃光小交易的利润</p>
-<p>恨无</p>
-<p>买过七亿名不查历史</p>
-<p>被无人过的白送</p>
-<p>都别要</p>
-<p>搶著前、物幣用微版插清出</p>
-<p>說到底CIDO成爽安全</p>
-<p>撞不撞前不再平台</p>
-<p>在你獲,對不對?</p>
-<p>眼光准不准,有沒有耐心等</p>
-<p>好了,CIDO</p>
-<p>這個項目就拆到這</p>
-<p>它適合有點耐心</p>
-<p>想低成本是數字資產生意的人</p>
-<p>不適合指望這月投下月回本的</p>
-<p>如果你也想做出海賺美金</p>
-<p>不管是譽明獨立戰還是別的海外項目</p>
-<p>可以後台私信留言</p>
-<p>把列著出海</p>
-<p>WiIP的詳細介紹發尼</p>
-<p>裡面有更細的時操教程</p>
-<p>也歡迎關注同名公眾號</p>
+  <p class="sub-srt-download">
+    <a href="data:text/plain;base64,MQowMDowMC4wMDAgLS0+IDAwOjU5LjUwMArku4rlpKnmi4bop6PkuIDkuKrlvojlpJrkurrmkJ7plJnnmoTlh7rmtbfpobnnm67vvIznlKhjZGRsZeWBmuWfn+WQjeS5sOWNlui1muW3ruS7t+OAguWFiOivtOa4healmu+8jENkZGxl5LiN5pivUEggZmxpcCwg5LuW5LiN5Y2W572R56uZ77yM5LiN5Y2W5Ymv5Lia6aG555uu77yM5Y+q5Y2W5Z+f5ZCN44CC5Zu95YaF5LiA5aCG5paH56ug5oqK5a6D5ZKM5Lmw5Y2W572R56uZ5re3552A6K6y77yM54Wn5YGa5L2g5Lya5Y+R546w5bmz5Y+w6L+e5LiA5Liq572R56uZ6YO95oyC5LiN5LiK44CC6L+Z5pyf5oqK5a6D55qE6LWa6ZKx6YC76L6R5L2j6YeR5beu5Lu35YGc5pS+77yM5paw5omL6IO95LiN6IO95LiK5omL77yM5Lul5qyh6K6y5piO55m944CC5YWI6K6k6K+G5bmz5Y+wQ2/miJDnq4vkuo4yMDAx5bm077yM5oC76YOo5b635Zu977yM5piv5YWo55CD5pyA6ICB54mM44CB5Lqk5piT6YeP5pyA5aSn55qE5Z+f5ZCN5Lqk5piT5biC5Zy677yM5LuW5bCx5bmy5LiJ5Lu25LqL5YS/77yM5Lmw5Z+f5ZCN5YGc5pS+77yM5ZCD5bm/5ZGK6LS577yM5Y2W5Z+f5ZCN6LWa5beu5Lu377yM5LiA5Y2V5oq9MTAlfjIwJe+8jOacgOS9juS6lOWFreWNgee+jumHkei1t+OAguS7luiDveS6pOaYk+eahOWPquacieWfn+WQjei/meS4gOenjei1hOS6p++8jOS4jeiDveS6pOaYk+e9keermeOAgUFQUOOAgeeUteWVhuW6l+mTuu+8jOabtOS4jeiDveS6pOaYk+WJr+S4mumhueebruOAgui/meeCueWFiOWumuatu++8jOW+iOWkmuS6uuaQnOWbveWkluS5sOWNlue9keermei1mumSse+8jOaQnOWIsGNkZGxl77yM6buY6K6k5LuW6LefZmxpcOS4gOexu++8jOi/meS4qumUmeS8muiuqeS9oOeZveW/meWNiuWkqeOAguaJk+S4quavlOaWue+8jOWfn+WQjeWwseWDj+S4gOWdl+WEv+WcsOearu+8jOS4gOS4qumXqOeJjOWPt++8jOayoeWGheWuue+8jOayoea1gemHj++8jOayoeaUtuWFpe+8jOe9keermeaYr+WcqOi/meWdl+WcsOS4iuebluWlve+8jOijheS/ruWlvei/mOiDveaUtuenn+eahOaIv+WtkOOAggoKMgowMDo1OS41MDAgLS0+IDAxOjU5Ljc1OQpD6LGG5Y+q5Y2W5Zyw55qu5Y2W5oi/5a2Q5b2SZmxpcHBh6L+Z56eN5bmz5Y+w5oyJ54Wn55SoQ+ixhuS5sOWNlue9keermeeahOivtOazle+8jOWfuuacrOWPr+WIpOWumuWGmeeahOS6uuayoeeUqOi/h0PosYbjgILkvaDnnItmbGlwcGHkuIrmjILnmoTpg73mmK/lubTmlLblhaUxMjDkuIfvvIzmr4/mnIjnuq/liKkyNjAwMOe+jumHkei/meenjeacieeOsOmHkea1geeahOe9keerme+8jOi/meaJjeaYr+S5sOWNlue9keermei1muW3ruS7t+eahOagh+eahOOAguaDs+S9juS5sOmrmOWNlu+8jOaciea1gemHj+acieaUtuWFpeeahOermeivpeWOu2ZsaXDjgILot59D5paX5LiN5piv5LiA5Zue5LqL5YS/77yM5Yir5pCe5re377yM5riF5o6J6K+v5Yy677yM5YaN55yLQ+aWl+ecn+ato+iDvei1mumSseeahOWcsOaWueOAgkPmlpfnnJ/mraPog73otZrpkrHnmoTlsLHkuInmnaHot6/vvIzotorlvoDlkI7otorooqvliqjjgILnrKzkuIDmnaHvvIzln5/lkI3lt67ku7fvvIzkvY7ku7fmi7/vvIzpq5jku7fljZbvvIzotZrkuK3pl7Tlt67ku7fvvIzov5nmmK/kuLvnur/jgILnrKzkuozmnaHvvIzln5/lkI3lgZzmlL7vvIzljZbkuI3mjonnmoTln5/lkI3mjILlub/lkYrvvIzmnInkurrngrnlsLHliIbmiJDnuq/ooqvliqjjgILnrKzkuInmnaHvvIzlvZPnu4/mtY7miJbnlKjku5jotLnor4TkvLDnrYnlop7lgLzmnI3liqHvvIzlgY/kuJPkuJrvvIzmlrDmiYvkuobop6PljbPlj6/jgILkuIvpnaLph43ngrnorrLliY3kuKTmnaHvvIzlhYjmiorooqvmir3lpJrlsJHnrpfmmI7nmb3vvIxD5omA5pyJ5L2j6YeR6YO95LuO5Y2W5a625omj77yM5Lmw5a625Z+65pys5LiN5o6P6ZKx44CC5YiG5LiJ5qGj77yM56ys5LiA5qGjMTAl77yM5p2h5Lu25piv5ZCM5pe25oyC5LiA5Y+j5Lu35Yqg5oqK5Z+f5ZCN5YGc5pS+5ZyoQ+aWl+S4iu+8jOesrOS6jOahozE1Je+8jOacgOW4uOS7tueUqOaOpeWPl+aKpeS7t+i1sOaLjeWNluOAggoKMwowMTo1OS43NTkgLS0+IDAyOjU5LjgwMArmiJbmjILkuIDlj6Pku7fkvYbmsqHlgZzmlL7pg73nrpfov5nmoaPnrKzkuInmoaMyMCXkubDlrrbku47lkIjkvZznvZHnu5xDTUxT6L+H5p2l5oiQ5Lqk5bCx5oq96L+Z5LmI5aSa77yM5oOz5bCR6KKr5oq95bCx5YGa5LiA5Y+j5Lu35Yqg5YGc5pS+6ZSB5a6aMTAl44CC6Zmk5LqG55m+5YiG5q+U77yM6L+Y5pyJ5Liq5pyA5L2O5pS26LS577yM5pyA5Z2R44CC5bCP6bqm5a625ZCO57yA5YiG5Lik57G777yM5Li75rWB55qE54K55bq344CB54K56ICQ44CB54K5SeeCueeZjOOAgeeCuU/vvIzmsqHmnInmnIDkvY7mlLbotLnvvIzmiJDkuqQyMOe+jumHkeS7peS4iuWwseihjO+8jOWGt+mXqOeahOWbveWutuWcsOWMuuWQjue8gOacgOS9juaUtui0uemrmOi+vjIwMOe+jumHke+8jOaIkOS6pOi/mOW+lzIyMOS7peS4iu+8jOS9oOaLv+WGt+mXqOWQjue8gOWNluS4pOS4ieeZvu+8jOWFieS9o+mHkeWwseaJozIwMO+8jOWfuuacrOeZveW5suOAguaJgOS7peWJjeacn+iAgeW4iOWBmuS4u+a1geWQjue8gOS7peeCueaKl+S4uuS4u+OAgua5lumHjOmCo+S4que7j+a1juacjeWKoeaYr+iKsTk5576O6YeR6K+3Q+aWl+W4ruS9oOiwiOOAguaWsOaJi+eUqOS4jeS4iuWfn+WQjeW3ruS7t+aYr+S4u+e6v++8jOacgOivpeiKseaXtumXtOaQnuaHguS4gOWPpeivne+8jOS9juS7t+aLv+WIsOacieS6uuaDs+imgeeahOWfn+WQje+8jOmrmOS7t+WNlue7memCo+S4quS6uui1muW3ruS7t+i3n+eCkuaIv+aUtueQg+mei+S4gOS4qumAu+i+ke+8jOS9humtlOmsvOWcqOe7huiKgu+8jOiDveS4jeiDvei1mu+8jOWFqOeci+aLv+S7gOS5iOi0p+WNlue7meiwge+8n+aVtOadoemTvui3r+aLhjTmraXvvIzmib7otKfjgIHliKTmlq3ku7flgLzjgIHlrprku7fjgIHmjILljZbjgIHkuqTlibLjgIHmlLbmrL7vvIzmr4/mraXpg73lkYror4nkvaAw5Z+656GA5oCO5LmI5YCfQUnlkozlt6XlhbfmkJ7lrprjgIIKCjQKMDI6NTkuODAwIC0tPiAwMzo1OS44MTkK6LWa5beu5Lu35YmN5o+Q5piv5YWI5L2O5Lu35ou/6LSn44CC5LiJ5Liq5rig6YGT5rig6YGT5LiA77yM5ZyobmFtZSBjaGVhcCBnbyBkYWRkeei/meenjeazqOWGjOWVhuebtOaOpeazqOWGjOaWsOWfn+WQje+8jOS4gOS4queCueWdkeS4gOW5tOaJjeWNgeWHoOe+jumHke+8jOmavueCueaYr+WlveivjeWfuuacrOiiq+aKouWFieOAgua4oOmBk+S6jO+8jOaKouazqOi/hzfln5/lkI3vvIzkuIvkuIDpobXnu4borrLjgILmuKDpgZPkuInvvIzkvY7ku7fkubDlhaXlho3ovazmiYvpnaDnnLzlhYnmlrDmiYvnvJPmnIDnjrDlrp7nmoTotbfmraXmmK/muKDpgZMxKzLvvIznlKhBSeW4ruS9oOS6q+aciea9nOWKm+eahOivjeWOu+azqOWGjO+8jOWQjOaXtuebr+edgOi/h+acn+Wfn+WQjeaNoea8j+i/h+acn+Wfn+WQjeWNleeLrOivtO+8jOavj+WkqeWkp+mHj+Wfn+WQjeWboOayoee7rei0ueiiq+mHiuaUvu+8jOmHjOmdouiXj+edgOacieS7t+WAvOeahOiAgeWfn+WQje+8jOWPr+iDveS7peenr+e0r+WklumTvuWSjOadg+mHjeavlOaWsOazqOWGjOeahOOAguS5i+WJjeWcqENv55u05o6l5pCcZXhwcmUgZG9tYWluc+WwseWIt+WHuuS4gOWkp+aJueWHoOeZvuWIsOWHoOS4h+e+jumHkeS4jeetieOAgkPosYbmnInkuK3mlofnlYzpnaLvvIzlkI7nvIDvvIzplIDllK7nsbvlnovjgIHku7fmoLzpg73og73kuK3mlofnrZvvvIznnIvkuI3mh4LlsLHmtY/op4jlmajnv7vor5HjgILmgI7kuYjnrZvlubLlh4DnmoTlpb3otKfpnaDkuIvkuIDmraXnmoTliKTmlq3vvIzov5nmraXmmK/mlrDmiYvmnIDlrrnmmJPmoL3vvIzmnIDor6Xnu4PnmoTlnLDmlrnvvIzkubDplJnnrYnkuo7ljovkuIDloIbmsqHkurropoHnmoTlupPlrZjvvIzliKTmlq3ku7flgLzljbPlm5vkuKrnu7TluqbvvIwx44CB55yL5ZCO57yA54K55Z2R77yM5rC46L+c56Gs6YCa6LSn77yM5YW25qyh54K56ICQ54K5b3IgMuOAgei/meWHoOW5tOW+iOOAggoKNQowMzo1OS44MTkgLS0+IDA0OjI3LjM3OQrojrflvpcuYWkub++8jOenkeaKgOWFrOWPuOeJueWIq+iupO+8jOWGt+mXqOmBv+W8gOOAguS6jOeci+acieayoeacieeDreivjeWSjOWVhuS4muWQq+S5ie+8jOW4pkFJIGNyeSBjbG91ZOmcgOaxguWwseWkp++8jOS9oOeci2NyeS5jb23vvIznm7TmjqXmjIIxNTDkuIfmrKflhYPjgILkuInnnIvplb/luqblkozlpb3orrDnqIvluqbvvIzotornn63otorlgLzpkrHvvIzlv7Xnu5nmnIvlj4vog73kuIDpgY3mi7zlr7nmiY3lkIjmoLzjgILoh6rnnIvljoblj7LvvIzov4fljrvln5/lkI3kuIDlrprmn6XmnInmsqHmnInooqvmsaHmn5PvvIzooqvmkJzntKLlvJXmk47mi4npu5HnmoTnmb3pgIHkuZ/liKvopoHpm7bln7rnoYDmgI7kuYjmn6XvvJ/kuKTkuKrlt6XlhbfliqDkuIDkuKpBSe+8jOesrOS4gOS4qnNpbWlsYXIgd2Vi5p+l5Z+f5ZCN5Lul5YmN5pyJ5rKh5pyJ5rWB6YeP44CCCgo2CjA0OjI3LjM3OSAtLT4gMDU6MjcuNjgwCua1gemHj+S7juWTquadpe+8n+S4iuWbvuWwseaYr+afpeeQhnouY29t55qE5LqL5L6L77yM56ys5LqM5Liqd2UgYmFjayBtYWNoaW5lLCDkuZ/lsLHmmK93ZWIucml2ZS5vcuWTpeaKiuWfn+WQjei+k+i/m+WOu+WwseiDveeci+S7lui/h+WOu+WHoOW5tOingei/h+S7gOS5iOerme+8jOS4gOecvOWIpOaWreW5suS4jeW5suWHgO+8jOS4jeaHguiLseaWh+WwseaIquWbvuS4oue7mWNoYXQgR1BU5oiWY2xvdWTvvIzpl67ku5bov5nln5/lkI3ku47lkb3lkI3nnIvmnInmsqHmnInllYbkuJrku7flgLzvvIxBSeS8mue7meS4qumdoOiwseeahOWIneatpeWIpOaWreOAguaLv+WIsOWfn+WQjeS4i+S4gOatpeaMguWIsGNkZGxl5Y2W5Lik5Liq5Yaz5a6a5a6a5aSa5bCR77yM5oCO5LmI5Y2W77yM5a6a5Lu35paw5omL5pyA5a655piT5LiL5a6a77yM5aSp5Lu35oyC5Yeg5bm05rKh5Lq655CG44CC5q2j56Gu5YGa5rOV5piv5Y+C6ICD5Y+v5q+U5oiQ5Lqk5Y67c2FkZGxl5oiWbmFtZSBiaW/ov5nnp43miJDkuqTmlbDmja7lupPvvIznnIvlkIzlkI7nvIDlkIzplb/luqbnmoTln5/lkI3ljoblj7LljZbkuoblpJrlsJHvvIznhafljLrpl7TlrppjZGRsZe+8jOi/mOacieS7mOi0ueivhOS8sO+8jOWNleS4qjk5576O6YeR77yM5paw5omL5YmN5pyf5rKh5b+F6KaB6Iqx5oyC5Y2W77yM5oOz55yB5L2j6YeR5bCx5LiA5Y+j5Lu35Yqg5YGc5pS+6ZSBMTAl77yM5rKh5oqK5o+h5bCx55So5o6l5Y+X5oql5Lu377yM6K6p5Lmw5a625Ye65L2j6YeRMTUl5oyC5aW95bCx5piv562J77yM5b6I6ICD6aqM6ICQ5b+D77yM5a6J5oui5LmL5ZCO6L+b5YWl5Lqk5Ymy77yMQ+aWl+WBmueahOaMuuecgeW/g++8jOWGhee9ruWFjei0uei9rOenu+acjeWKoeaLheS/ne+8jOa1geeoi+aYr+S5sOWutuaKiumSseaJk+WIsEPmlpfmiZjnrqHvvIzkvaDmiorln5/lkI3ov4fmiLfnu5nkubDlrrbvvIzkubDlrrbnoa7orqTmlLbliLBD5paX77yM5omj5o6J5L2j6YeR77yM5YaN5oqK44CCCgo3CjA1OjI3LjY4MCAtLT4gMDY6MjcuNzIwCumSseaJk+e7meS9oO+8jOWFqOeoi+acieW5s+WPsOWFnOW6le+8jOavlOengeS4i+S6pOaYk+WuieWFqO+8jOWTquaAleWcqOW5s+WPsOWkluiwiOaIkOeahOS6pOaYk+S5n+iDveeUqOWug+i9rOenu++8jOWPquaUtjMl44CC5o+Q546w55So55S15rGH5LiA6Iis5rKh6aKd5aSW6LS555So77yM5Zu+5b+r55SoUGF5UGFs77yM6LaF6L+HNTAw576O6YeR55qE6YOo5YiG5Lya5Yqg5pS2MyXvvIzlpKfpop3og73nrYnlsLHnlKjnlLXmsYfjgILorrLlrozlt67ku7for7TnrKzkuozmnaHot6/vvIzlgZzmlL7ln5/lkI3ourrotZrlub/lkYrotLnmnIDlrrnmmJPooqvlv73nlaXlgZzmlL7lsLHmmK/lnKjkvaDnmoTln5/lkI3kuIrmjILkuIDmnaHnm7jlhbPlub/lkYrvvIzmnInoh6rnhLbmtYHph4/nmoTkurrngrnkuobkvaDlsLHliIbmiJDnuq/ooqvliqjmr4/mnIhD5paX57uT566X44CC5L2G5oiR6K+05a6e6K+d77yM5Y2V5Liq5pmu6YCa5Z+f5ZCN5YGc5pS+5pS25YWl6Z2e5bi45bCR77yM5LiA5Liq5rKh6K6/6Zeu6YeP55qE5Z+f5ZCN77yM5LiA5Liq5pyI5bCx5Yeg576O5YiG77yM5Yeg576O6YeR5oyC5LiA5bm06LWa5LiN5Yiw5LiA5p2v5ZKW5ZWh6ZKx44CC55yf5q2j6IO96LWa55qE5piv6Ieq5bim5rWB6YeP55qE5Z+f5ZCN77yM5q+U5aaC5Lul5YmN5YGa6L+H54Ot6Zeo572R56uZ5oiW5a655piT6KKr6L6T6ZSZ6K6/6Zeu55qE6ICB5Z+f5ZCN77yM5LiA5Liq5pyI5YGa5Yiw5Yeg5Y2B5LiK55m+5piv5Y+v6IO955qE77yM5L2G6L+Z56eN5aW96LSn56iA57y65Lmf6LS177yM5omA5Lul5a6a5L2N5piv5Y2W546J5ZCN562J5b6F5pyf55qE6aG65omL5pS255uK77yM5LiN5piv5Y+R6LSi5Li76aG555uu44CC6IGq5piO546p5rOV5piv5oyC5LiA5Y+j5Lu355qE5ZCM5pe25byA5YGc5pS+77yM562J5Lmw5a625pe25Lik5aS06L2s77yM6L+Y6ZSBMTAl44CC5Zue5Yiw5pyA5a6e5Zyo55qE6Zeu6aKY77yM5LiA5Liq5LiN5oeC6Iux5paH5Y+q5Lya55SoQUnnmoTmma7pgJrkurrlgZpD5paX6Z2g5LiN6Z2g6LCx77yf57uZ5L2g5Liq5LiN5ZKM56iA5rOl55qE5Yik5pat6IO944CCCgo4CjA2OjI3LjcyMCAtLT4gMDY6NTguMTY4CuiDveS4iuaJi++8jOS9huWIq+W9k+W/q+mAn+i1mumSseeahOS4u+mhueebru+8jOabtOmAguWQiOW9k+S9juaIkOacrOmVv+WRqOacn+eahOWJr+e6v+OAguiDveS4iuaJi+eahOeQhueUse+8jOazqOWGjOWwseWhq+mCrueuseOAgeeUqOaIt+WQjeOAgeWvhuegge+8jOWFqOeoi+S4reaWh++8jOWbveWutumAieS4reWbve+8jOWhq+S4reaWh+WcsOWdgO+8jOS4jeeUqOe+juWbvemTtuihjOi0puaIt++8jOiDveaUtue+jumHkeeahHBheW/ljL9QYXlQYWzlsLHooYzvvIzlh6DljYHnvo7ph5HlsLHog73lvIDlp4vjgILkvYbmg7PmuIXmpZrkuInkuKrnjrDlrp7vvIzkuIDmmK/lkajmnJ/mhaLvvIzms6jlhoznmoTln5/lkI3lpKfpg6jliIblj6/og73msLjov5zljZbkuI3mjonvvIzog73ljZbnmoTkuZ/lvpfnrYnlh6DkuKrmnIjliLDlh6DlubTvvIzkuozmmK/nnLzlhYnpnaDkuqTlrabotLnpk77vvIzkuInmmK/lpKfpkrHvvIzlsZ7kuo7kuJPkuJrmipXotYTkurrvvIzmma7pgJrkurrlkIPnmoTmmK/lgbblsJTljZblh7rotZrlh6Dnmb7kuIrljYPliqDngrnlgZzmlL7nmoTlsI/pkrHjgIIK" download="sedo.srt">📥 下载字幕 (SRT)</a>
+  </p>
+  <div class="timed-subtitles">
+<p class="sub-line"><span class="sub-time">0:00</span> <span class="sub-text">今天拆解一个很多人搞错的出海项目，用cddle做域名买卖赚差价。先说清楚，Cddle不是PH flip, 他不卖网站，不卖副业项目，只卖域名。国内一堆文章把它和买卖网站混着讲，照做你会发现平台连一个网站都挂不上。这期把它的赚钱逻辑佣金差价停放，新手能不能上手，以次讲明白。先认识平台Co成立于2001年，总部德国，是全球最老牌、交易量最大的域名交易市场，他就干三件事儿，买域名停放，吃广告费，卖域名赚差价，一单抽10%~20%，最低五六十美金起。他能交易的只有域名这一种资产，不能交易网站、APP、电商店铺，更不能交易副业项目。这点先定死，很多人搜国外买卖网站赚钱，搜到cddle，默认他跟flip一类，这个错会让你白忙半天。打个比方，域名就像一块儿地皮，一个门牌号，没内容，没流量，没收入，网站是在这块地上盖好，装修好还能收租的房子。</span></p>
+<p class="sub-line"><span class="sub-time">0:59</span> <span class="sub-text">C豆只卖地皮卖房子归flippa这种平台按照用C豆买卖网站的说法，基本可判定写的人没用过C豆。你看flippa上挂的都是年收入120万，每月纯利26000美金这种有现金流的网站，这才是买卖网站赚差价的标的。想低买高卖，有流量有收入的站该去flip。跟C斗不是一回事儿，别搞混，清掉误区，再看C斗真正能赚钱的地方。C斗真正能赚钱的就三条路，越往后越被动。第一条，域名差价，低价拿，高价卖，赚中间差价，这是主线。第二条，域名停放，卖不掉的域名挂广告，有人点就分成纯被动。第三条，当经济或用付费评估等增值服务，偏专业，新手了解即可。下面重点讲前两条，先把被抽多少算明白，C所有佣金都从卖家扣，买家基本不掏钱。分三档，第一档10%，条件是同时挂一口价加把域名停放在C斗上，第二档15%，最常件用接受报价走拍卖。</span></p>
+<p class="sub-line"><span class="sub-time">1:59</span> <span class="sub-text">或挂一口价但没停放都算这档第三档20%买家从合作网络CMLS过来成交就抽这么多，想少被抽就做一口价加停放锁定10%。除了百分比，还有个最低收费，最坑。小麦家后缀分两类，主流的点康、点耐、点I点癌、点O，没有最低收费，成交20美金以上就行，冷门的国家地区后缀最低收费高达200美金，成交还得220以上，你拿冷门后缀卖两三百，光佣金就扣200，基本白干。所以前期老师做主流后缀以点抗为主。湖里那个经济服务是花99美金请C斗帮你谈。新手用不上域名差价是主线，最该花时间搞懂一句话，低价拿到有人想要的域名，高价卖给那个人赚差价跟炒房收球鞋一个逻辑，但魔鬼在细节，能不能赚，全看拿什么货卖给谁？整条链路拆4步，找货、判断价值、定价、挂卖、交割、收款，每步都告诉你0基础怎么借AI和工具搞定。</span></p>
+<p class="sub-line"><span class="sub-time">2:59</span> <span class="sub-text">赚差价前提是先低价拿货。三个渠道渠道一，在name cheap go daddy这种注册商直接注册新域名，一个点坑一年才十几美金，难点是好词基本被抢光。渠道二，抢注过7域名，下一页细讲。渠道三，低价买入再转手靠眼光新手缓最现实的起步是渠道1+2，用AI帮你享有潜力的词去注册，同时盯着过期域名捡漏过期域名单独说，每天大量域名因没续费被释放，里面藏着有价值的老域名，可能以积累外链和权重比新注册的。之前在Co直接搜expre domains就刷出一大批几百到几万美金不等。C豆有中文界面，后缀，销售类型、价格都能中文筛，看不懂就浏览器翻译。怎么筛干净的好货靠下一步的判断，这步是新手最容易栽，最该练的地方，买错等于压一堆没人要的库存，判断价值即四个维度，1、看后缀点坑，永远硬通货，其次点耐点or 2、这几年很。</span></p>
+<p class="sub-line"><span class="sub-time">3:59</span> <span class="sub-text">获得.ai.o，科技公司特别认，冷门避开。二看有没有热词和商业含义，带AI cry cloud需求就大，你看cry.com，直接挂150万欧元。三看长度和好记程度，越短越值钱，念给朋友能一遍拼对才合格。自看历史，过去域名一定查有没有被污染，被搜索引擎拉黑的白送也别要零基础怎么查？两个工具加一个AI，第一个similar web查域名以前有没有流量。</span></p>
+<p class="sub-line"><span class="sub-time">4:27</span> <span class="sub-text">流量从哪来？上图就是查理z.com的事例，第二个we back machine, 也就是web.rive.or哥把域名输进去就能看他过去几年见过什么站，一眼判断干不干净，不懂英文就截图丢给chat GPT或cloud，问他这域名从命名看有没有商业价值，AI会给个靠谱的初步判断。拿到域名下一步挂到cddle卖两个决定定多少，怎么卖，定价新手最容易下定，天价挂几年没人理。正确做法是参考可比成交去saddle或name bio这种成交数据库，看同后缀同长度的域名历史卖了多少，照区间定cddle，还有付费评估，单个99美金，新手前期没必要花挂卖，想省佣金就一口价加停放锁10%，没把握就用接受报价，让买家出佣金15%挂好就是等，很考验耐心，安拢之后进入交割，C斗做的挺省心，内置免费转移服务担保，流程是买家把钱打到C斗托管，你把域名过户给买家，买家确认收到C斗，扣掉佣金，再把。</span></p>
+<p class="sub-line"><span class="sub-time">5:27</span> <span class="sub-text">钱打给你，全程有平台兜底，比私下交易安全，哪怕在平台外谈成的交易也能用它转移，只收3%。提现用电汇一般没额外费用，图快用PayPal，超过500美金的部分会加收3%，大额能等就用电汇。讲完差价说第二条路，停放域名躺赚广告费最容易被忽略停放就是在你的域名上挂一条相关广告，有自然流量的人点了你就分成纯被动每月C斗结算。但我说实话，单个普通域名停放收入非常少，一个没访问量的域名，一个月就几美分，几美金挂一年赚不到一杯咖啡钱。真正能赚的是自带流量的域名，比如以前做过热门网站或容易被输错访问的老域名，一个月做到几十上百是可能的，但这种好货稀缺也贵，所以定位是卖玉名等待期的顺手收益，不是发财主项目。聪明玩法是挂一口价的同时开停放，等买家时两头转，还锁10%。回到最实在的问题，一个不懂英文只会用AI的普通人做C斗靠不靠谱？给你个不和稀泥的判断能。</span></p>
+<p class="sub-line"><span class="sub-time">6:27</span> <span class="sub-text">能上手，但别当快速赚钱的主项目，更适合当低成本长周期的副线。能上手的理由，注册就填邮箱、用户名、密码，全程中文，国家选中国，填中文地址，不用美国银行账户，能收美金的payo匿PayPal就行，几十美金就能开始。但想清楚三个现实，一是周期慢，注册的域名大部分可能永远卖不掉，能卖的也得等几个月到几年，二是眼光靠交学费链，三是大钱，属于专业投资人，普通人吃的是偶尔卖出赚几百上千加点停放的小钱。</span></p>
+</div>
 </div>
 
 <hr>
