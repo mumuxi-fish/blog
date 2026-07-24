@@ -7,20 +7,23 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 2em 1em; line-height: 1.8; color: #333; }
 h1 { font-size: 1.6em; margin-bottom: 0.5em; }
-h2 { font-size: 1.3em; margin-top: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
-h3 { font-size: 1.1em; margin-top: 1.5em; }
-p { margin: 1em 0; }
-.meta { color: #888; font-size: 0.9em; margin-bottom: 2em; }
-blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
-hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
-.footer { color: #999; font-size: 0.85em; }
-.footer a { color: #666; }
-ul, ol { padding-left: 1.5em; }
-li { margin: 0.5em 0; }
+.meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
 .meta span { margin-right: 1em; }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .content p { margin: 1em 0; }
+blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
+hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+.footer { color: #999; font-size: 0.85em; }
+.footer a { color: #666; }
+.audio-player { margin: 1.5em 0; padding: 1em; background: #f5f5f7; border-radius: 8px; }
+.audio-player audio { width: 100%; }
+.timed-subtitles { margin: 1.5em 0; }
+.sub-line { display: flex; gap: 0.6em; padding: 0.3em 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95em; }
+.sub-time { color: #999; font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; white-space: nowrap; min-width: 3.5em; }
+.sub-text { flex: 1; }
+.sub-srt-download { display: inline-block; margin: 0.5em 0; padding: 0.3em 0.8em; background: #f0f0f0; border-radius: 4px; color: #666; font-size: 0.85em; text-decoration: none; }
+.sub-srt-download:hover { background: #e0e0e0; }
 </style>
 </head>
 <body>
@@ -30,170 +33,46 @@ li { margin: 0.5em 0; }
 <div class="meta">
   <span>🎬 UP主 <strong>宇宙常数圆周率</strong></span>
   <span>⏱ 7:04</span>
-  <span>👁 1593</span>
+  <span>👁 308631</span>
+</div>
+
+<div class="audio-player">
+  <audio controls preload="metadata">
+    <source src="https://mumuxi-fish.github.io/blog/audio/790.mp3" type="audio/mpeg">
+  </audio>
 </div>
 
 <div class="video-wrapper">
   <iframe src="https://player.bilibili.com/player.html?bvid=BV1XaKE6REYf&page=1&autoplay=0" allowfullscreen></iframe>
 </div>
+
 <div class="content">
-<p>国内的很多读力游戏制作者的认知,和勇哥直播见的宝妈差不多。最近主帮杀到了很多关于读力游戏的开发视频。大部分读力游戏的视频,都是关于读力游戏上价失败后的经验分享。</p>
-<p>看他们视频时,我观察到了,大多数读力游戏开发者在做项目时,都陷入过下面两种情况。</p>
-<p>第一种是做读力游戏,只谈想法和梦想,对于自己要做的游戏规模没有任何认知的。</p>
-<p>第二種是做出來了發現沒有受眾群體消量跨零的</p>
-<p>獨立遊戲行業失敗的視頻很多</p>
-<p>成功的經驗都藏著業者</p>
-<p>主包在2000人以上的遊戲公司引擎部門工作了3年</p>
-<p>細菅大大小小經歷了也有78個項目了</p>
-<p>有一個月流水幾千萬的SLG</p>
-<p>也有在新品間拿到同品類前2名好成績的單記遊戲</p>
-<p>今天主包就給大貨分享在遊戲行業帶了3年學到的傳證干貨</p>
-<p>開發獨立遊戲一定要有的兩個能力</p>
-<p>一 會善遊戲項目的人越成的</p>
-<p>按 知道怎麼做戲長調言</p>
-<p>商業項目和獨立遊戲的項目開發是有很大的區別</p>
-<p>但很多遊戲開發的經驗</p>
-<p>其實是通用的</p>
-<p>主包這機系品</p>
-<p>緊從項目立項方面來分享經驗</p>
-<p>不會涉及到任何遊戲實際開發和遊戲內容相關的內容</p>
-<p>首先說明遊戲開發的最基礎的第一個能力</p>
-<p>對作遊戲項目的人,越成本的認知能力</p>
-<p>首先說明我這裡講的人越成本的概念是什麼?</p>
-<p>即一個遊戲開發需要的人數,X遊戲開發的時間</p>
-<p>關於人越成本,我希望每一個獨立遊戲開發者都能做到兩點</p>
-<p>一,能判斷是面上的遊戲項目的人越成本是多少?</p>
-<p>二,能認知到自己要開發的遊戲的人,越成本是多少?</p>
-<p>先從比較輕量級的獨立遊戲幾力</p>
-<p>小丘牌作者一個人花了兩年時間製作出來</p>
-<p>那么小丑牌的人越成本就是两人年</p>
-<p>辛路谷物与作者,一个人花了五年时间制作出来</p>
-<p>辛路谷的人越成本就是五人年</p>
-<p>而带三球计划五个人花了两年时间制作出来</p>
-<p>那么带三球计划人越成本就是十人年</p>
-<p>而大型的游戏,王王是几百人年上切人年</p>
-<p>马上要发售的GTA6,可能已经有上万人年了</p>
-<p>而很多独立游戏开发者的问题就是</p>
-<p>他们根本不清楚自己要做的游戏,究竟要花费多少人年</p>
-<p>以上來就給自己畫一個非常大的餅</p>
-<p>有經驗的遊戲從業者一看</p>
-<p>這個大餅幾百人年都做不出來</p>
-<p>但這些作者可能做了大半年才發現自己給自己畫的餅太大了</p>
-<p>關於人越成本還有一個非常重要的點</p>
-<p>遊戲歷相的具體人越成本的合作</p>
-<p>如果你的遊戲要一美數圍賣點</p>
-<p>那麼你這個項目的美數的人越成本一定是戰比最高的</p>
-<p>如果你的遊戲是一劇情圍賣點</p>
-<p>呈現和美數的人越成本就會戰的比較低</p>
-<p>如果你的遊戲是以玩法為賣點</p>
-<p>那麼策劃和程序的人越成本就會佔得比較高</p>
-<p>作獨立遊戲一定要避免的情況就是</p>
-<p>陷入到美術人越成本的無限堆記憶</p>
-<p>因為美術的人越成本是最市場透明的東西</p>
-<p>一個美術資產要做多少時間</p>
-<p>就是要他多少錢</p>
-<p>而策劃和程序很看個人水平</p>
-<p>多加的需求也不一定會非常陷進的算到人越成本上</p>
-<p>所以作獨立遊戲</p>
-<p>千萬要避免到美術堆量的情況</p>
-<p>看到这里,你对于人越成本在游戏开发的重要性可能已经有了一些认知</p>
-<p>对于人越成本没有规划的项目,百分百会失败</p>
-<p>接下来我们来讲第二个问题,作游戏不做市场调言</p>
-<p>我个人非常喜欢看永哥</p>
-<p>永哥直播间很多深人有时会断出各种奇葩产品</p>
-<p>比如说重要奶茶,洋灾奶茶,目前国内的很多独立游戏制作者的认知</p>
-<p>是停留在永哥直播间保骂这一阶段的</p>
-<p>其实并不是所有类型的游戏赛道</p>
-<p>都是和独立遊戲</p>
-<p>就像勇哥會推薦很多人做主角範圍一樣</p>
-<p>独立遊戲也有適合的賽道</p>
-<p>和不適合的賽道</p>
-<p>在避戰</p>
-<p>我殺到了不少一人做開放世界</p>
-<p>一人做大戰場的独立遊戲開發視頻</p>
-<p>開放世界和大戰場就是點心對独立遊戲不友好的賽道</p>
-<p>如果你想全職做独立遊戲並且賺錢的話</p>
-<p>那麼你在遊戲力上前</p>
-<p>一定要花時間去做產品調言</p>
-<p>產品調言的第一不是想好自己到底要做什麼品類</p>
-<p>不要先有想法讓想法驅動項目推進</p>
-<p>想法驅動的工程後期</p>
-<p>幾乎百分百會遇到的兩個問題</p>
-<p>一</p>
-<p>玩法做出來了之後發現不好玩</p>
-<p>二</p>
-<p>言越成本管理是空項目混亂</p>
-<p>下一步就是判斷這個品類是否適合獨立遊戲</p>
-<p>我自己是用以下的方法來判斷這個品類</p>
-<p>是否適合獨立遊戲</p>
-<p>先查這個品類多數產品的言越成本</p>
-<p>如果這個品類有很多時間連發為內的作品</p>
-<p>且很多都有不错的消量</p>
-<p>那么这就是一个适合独立游戏的频内</p>
-<p>不是和独立游戏的频内</p>
-<p>一 只有少数即换产品账了99%以上的市场的频内</p>
-<p>比如动作游戏</p>
-<p>哎 整个频内的人越成本都非常高</p>
-<p>比如大战场和开放世界内</p>
-<p>在我的评价体系中</p>
-<p>只有十人年以下的游戏项目</p>
-<p>才是和独立游戏开发者去投入</p>
-<p>不同人越成本范围的游戏是不同的赛道</p>
-<p>身为独立游戏开发者的我们</p>
-<p>就不要去嘗試去做工作式機別</p>
-<p>阿阿耳耳之3A機別的產品了</p>
-<p>如果像數兩點你都做到了的話</p>
-<p>那麼恭喜你已經超越了99%的獨立遊戲開發者了</p>
-<p>最後我想說</p>
-<p>獨立遊戲確實是一個高風險低程功率的行業</p>
-<p>像是我講的每一條</p>
-<p>其實你全部都做得很好</p>
-<p>也不能保證說你一定能賺到錢</p>
-<p>頂多是把你從必死</p>
-<p>拉到了有可能活</p>
-<p>視頻節微講一下我對於獨立遊戲的認知</p>
-<p>獨有開發者最大的優勢就是成本低</p>
-<p>成本低所以我們可以做更小的市場</p>
-<p>中大廠的成本結構決定了</p>
-<p>他們根本不會去碰一年前的賣幾萬份的遊戲品類</p>
-<p>主報公司那個新品節前三的遊戲</p>
-<p>最後修量應該有幾萬份</p>
-<p>但還是虧的庫查字都不上了</p>
-<p>而我們做出一份能賣幾萬份的遊戲</p>
-<p>可能性比終極百萬才跳大得多</p>
-<p>這就是我做獨立遊戲的原因</p>
-<p>誰還沒有一個發殘夢呢</p>
-<p>很多獨立遊戲開發者</p>
-<p>都会说自己做毒油只为了梦想</p>
-<p>和钱没有任何关系</p>
-<p>成任自己做毒力游戏是为了钱</p>
-<p>没什么好休息的</p>
-<p>就是为了钱我们才会去主动学习更多知识</p>
-<p>就是为了钱</p>
-<p>我们才能客观地去看待自己游戏的不足之处</p>
-<p>让我们的游戏变得更好</p>
-<p>感谢你看到这里</p>
-<p>主包在评论区放了一个钱量</p>
-<p>想要参加主包游戏测试</p>
-<p>对游戏开发感兴趣的都可以加主包的钱量</p>
-<p>游任何游戏开发相关的一问主包</p>
-<p>都会在权力解答</p>
-<p>后边我会在这个帐号下继续分享</p>
-<p>独立游戏开发相关的干货</p>
-<p>和我的游戏的观察设计</p>
-<p>欢迎大家关注主包</p>
-<p>看主包最后游戏正式版发布后</p>
-<p>能不能赚到钱</p>
-<p>如果觉得这期你学到了的话</p>
-<p>请一个一键三连</p>
-<p>支持一下主包</p>
-<p>最后留一个讨论议题</p>
-<p>开发</p>
-<p>独立游戏</p>
-<p>是否要把自己不做游戏上班的话</p>
-<p>能获得多少公资</p>
-<p>也算进成本</p>
-<p>欢迎在评论去发出你的看法</p>
+  <p class="sub-srt-download">
+    <a href="data:text/plain;base64,MQowMDowMC4wMDAgLS0+IDAwOjMwLjMwMArlm73lhoXnmoTlvojlpJrni6znq4vmuLjmiI/liLbkvZzogIXnmoTorqTnn6Xlkozli4flk6Xnm7Tmkq3pl7TnmoTlrp3lpojlt67kuI3lpJrjgILmnIDov5HkuLvmkq3liLfliLDkuoblvojlpJrlhbPkuo7ni6znq4vmuLjmiI/nmoTlvIDlj5Hop4bpopHvvIzlpKfpg6jliIbni6znq4vmuLjmiI/nmoTop4bpopHpg73mmK/lhbPkuo7ni6znq4vmuLjmiI/kuIrmnrblpLHotKXlkI7nmoTnu4/pqozliIbkuqvjgILnnIvku5bku6zop4bpopHml7bvvIzmiJHop4Llr5/liLDkuoblpKflpJrmlbDni6znq4vmuLjmiI/lvIDlj5HogIXlnKjlgZrpobnnm67ml7bpg73pmbflhaXov4fkuIvovrnkuKTnp43mg4XlhrXvvIznrKzkuIDnp43mmK/lgZrni6znq4vmuLjmiI/lj6rosIjmg7Pms5Xlkozmoqbmg7PvvIzlr7nkuo7oh6rlt7HopoHlgZrnmoTmuLjmiI/op4TmqKHmsqHmnInku7vkvZXorqTnn6XnmoTvvIznrKzkuoznp43mmK/lgZrlh7rmnaXkuoblj5HnjrDmsqHmnInlj5fkvJfnvqTkvZPvvIzplIDph4/mjIIw55qE44CCCgoyCjAwOjMwLjMwMCAtLT4gMDA6NDEuOTM5CueLrOeri+a4uOaIj+ihjOS4muWksei0peeahOinhumikeW+iOWkmu+8jOaIkOWKn+eahOe7j+mqjOmDveiXj+edgOaOluedgOerueWMheWcqDIwMDDkurrku6XkuIrnmoTmuLjmiI/lhazlj7jlvJXmk47pg6jpl6jlt6XkvZzkuoYz5bm077yM5pyf6Ze05aSn5aSn5bCP5bCP57uP5Y6G5LqG5Lmf5pyJ5LiD5YWr5Liq6aG555uu5LqG44CCCgozCjAwOjQxLjkzOSAtLT4gMDA6NDguODQwCuacieS4gOS4quaciOa1geawtOWHoOWNg+S4h+eahFNMR++8jOS5n+acieWcqOaWsOWTgeiKguaLv+WIsOWQjOWTgeexu+WJjeS6jOWQjeWlveaIkOe7qeeahOWNleacuua4uOaIj+OAggoKNAowMDo0OC44NDAgLS0+IDAwOjU2LjY0MArku4rlpKnvvIznq7nljIXlsLHnu5nlpKfkvJnlhL/liIbkuqvlnKjmuLjmiI/ooYzkuJrlvoXkuoYz5bm05a2m5Yiw55qE57qv5q2j5bmy6LSn77yM5byA5Y+R54us56uL5ri45oiP5LiA5a6a6KaB5pyJ55qEMuS4quiDveWKm+OAggoKNQowMDo1Ni42NDAgLS0+IDAxOjAxLjg4MArkuIDkvJrnrpfmuLjmiI/pobnnm67nmoTkurrmnIjmiJDmnKzvvIzkuoznn6XpgZPmgI7kuYjlgZrluILlnLrosIPnoJTjgIIKCjYKMDE6MDEuODgwIC0tPiAwMTowOS4zNzkK5ZWG5Lia6aG555uu5ZKM54us56uL5ri45oiP55qE6aG555uu5byA5Y+R5piv5pyJ5b6I5aSn55qE5Yy65Yir77yM5L2G5b6I5aSa5ri45oiP5byA5Y+R55qE57uP6aqM5YW25a6e5piv6YCa55So55qE44CCCgo3CjAxOjA5LjM3OSAtLT4gMDE6MTcuNTk5CuS4u+WMhei/meacn+inhumikeS7heS7jumhueebrueri+mhueaWuemdouadpeWIhuS6q+e7j+mqjO+8jOS4jeS8mua2ieWPiuWIsOS7u+S9lea4uOaIj+WunumZheW8gOWPkeWSjOa4uOaIj+WGheWuueebuOWFs+eahOWGheWuueOAggoKOAowMToxNy41OTkgLS0+IDAxOjIxLjE0MArpppblhYjor7TmmI7muLjmiI/lvIDlj5HnmoTmnIDln7rnoYDnmoTnrKzkuIDkuKrog73lipvjgIIKCjkKMDE6MjEuMTQwIC0tPiAwMToyOC4wMDAK5a+55YGa5ri45oiP6aG555uu55qE5Lq65pyI5oiQ5pys55qE6K6k55+l6IO95Yqb44CC6aaW5YWI6K+05piO5oiR6L+Z6YeM6K6y55qE5Lq65pyI5oiQ5pys55qE5qaC5b+15piv5LuA5LmI77yfCgoxMAowMToyOC4yMzkgLS0+IDAyOjE1LjU2MArlj4rkuIDkuKrmuLjmiI/lvIDlj5HpnIDopoHnmoTkurrmlbBY5ri45oiP5byA5Y+R55qE5pe26Ze044CC5YWz5LqO5Lq65pyI5oiQ5pys77yM5oiR5biM5pyb5q+P5LiA5Liq54us56uL5ri45oiP5byA5Y+R6ICF6YO96IO95YGa5Yiw5Lik54K577yM5LiA44CB6IO95Yik5pat5biC6Z2i5LiK55qE5ri45oiP6aG555uu55qE5Lq65pyI5oiQ5pys5piv5aSa5bCR77yM5LqM44CB6IO96K6k55+l5Yiw6Ieq5bex6KaB5byA5Y+R55qE5ri45oiP55qE5Lq65pyI5oiQ5pys5piv5aSa5bCR44CC5YWI5LuO5q+U6L6D6L276YeP57qn55qE54us56uL5ri45oiP5Li+5L6L77yM5bCP5LiR54mM5L2c6ICF5LiA5Liq5Lq66Iqx5LqG5Lik5bm05pe26Ze05Yi25L2c5Ye65p2l77yM6YKj5LmI5bCP5LiR54mM55qE5Lq65pyI5oiQ5pys5bCx5pivMuS6uuW5tO+8jOaYn+i3r+iwt+eJqeivreS9nOiAheS4gOS4quS6uuiKseS6hjXlubTml7bpl7TliLbkvZzlh7rmnaXvvIzmmJ/pnLLosLfku6PkurrmnIjmiJDmnKzlsLHmmK815Lq65bm077yM6ICM5oi05qOu55CD6K6h5YiSNeS4quS6uuiKseS6huS4pOW5tOaXtumXtOWItuS9nOWHuuadpe+8jOmCo+S5iOaItOajrueQg+iuoeWIkuS6uuaciOaIkOacrOWwseaYrzEw5Lq65bm044CC6ICM5aSn5Z6L55qE5ri45oiP5b6A5b6A5piv5Yeg55m+5Lq65bm044CB5LiK5Y2D5Lq65bm077yM6ams5LiK6KaB5Y+R5ZSu55qER1RBNuWPr+iDveW3sue7j+acieS4iuS4h+S6uuW5tOS6huOAguiAjOW+iOWkmueLrOeri+a4uOaIj+W8gOWPkeiAheeahOmXrumimOWwseaYr+OAggoKMTEKMDI6MTUuNTYwIC0tPiAwMjo0Mi42MzkK5LuW5Lus5qC55pys5LiN5riF5qWa6Ieq5bex6KaB5YGa55qE5ri45oiP56m256uf6KaB6Iqx6LS55aSa5bCR5Lq65bm077yM5LiA5LiK5p2l5bCx57uZ6Ieq5bex55S75LiA5Liq6Z2e5bi45aSn55qE6aW877yM5pyJ57uP6aqM55qE5ri45oiP5LuO5Lia6ICF5LiA55yL6L+Z5Liq5aSn6aW877yM5Yeg55m+5Lq65bm06YO95YGa5LiN5Ye65p2l77yM5L2G6L+Z5Lqb5L2c6ICF5Y+v6IO95YGa5LqG5aSn5Y2K5bm05omN5Y+R546w6Ieq5bex57uZ6Ieq5bex6Iqx55qE6aW85aSq5aSn5LqG44CC5YWz5LqO5Lq65pyI5oiQ5pys6L+Y5pyJ5LiA5Liq6Z2e5bi46YeN6KaB55qE54K577yM5ri45oiP56uL6aG555qE5YW35L2T5Lq65pyI5oiQ5pys55qE5qC4566X44CC5aaC5p6c5L2g55qE5ri45oiP6KaB5Lul576O5pyv5Li65Y2W54K577yM6YKj5LmI5L2g6L+Z5Liq6aG555uu55qE576O5pyv55qE5Lq65pyI5oiQ5pys5LiA5a6a5piv5Y2g5q+U5pyA6auY55qE44CCCgoxMgowMjo0Mi42MzkgLS0+IDAzOjA2LjI1OQrlpoLmnpzkvaDnmoTmuLjmiI/mmK/ku6Xliafmg4XkuLrljZbngrnvvIznqIvluo/lkoznvo7mnK/nmoTkurrmnIjmiJDmnKzlsLHkvJrljaDlvpfmr5TovoPkvY7vvIzlpoLmnpzkvaDnmoTmuLjmiI/mmK/ku6Xnjqnms5XkuLrljZbngrnvvIzpgqPkuYjnrZbliJLlkoznqIvluo/nmoTkurrpmIXmiJDmnKzlsLHkvJrljaDlvpfmr5TovoPpq5jjgILlgZrni6znq4vmuLjmiI/kuIDlrpropoHpgb/lhY3nmoTmg4XlhrXlsLHmmK/pmbflhaXliLDnvo7mnK/kurrmnIjmiJDmnKznmoTml6DpmZDloIbnp6/kuK3vvIzlm6DkuLrnvo7mnK/nmoTkurrmnIjmiJDmnKzmmK/mnIDluILlnLrpgI/mmI7nmoTkuJzopb/vvIzkuIDkuKrnvo7mnK/otYTkuqfopoHlgZrlpJrlsJHml7bpl7TlsLHmmK/opoHmjo/lpJrlsJHpkrHjgIIKCjEzCjAzOjA2LjI1OSAtLT4gMDM6NDMuMzAwCuiAjOetluWIkuWSjOeoi+W6j+W+iOeci+S4quS6uuawtOW5s++8jOWkmuWutueahOmcgOaxguS5n+S4jeS4gOWumuS8mumdnuW4uOe6v+aAp+eahOeul+WIsOS6uuaciOaIkOacrOS4iu+8jOaJgOS7peWBmueLrOeri+a4uOaIj+WNg+S4h+imgemBv+WFjeWIsOe+juacr+WghumHj+eahOaDheWGteOAgueci+WIsOi/memHjO+8jOS9oOWvueS6juS6uuaciOaIkOacrOWcqOa4uOaIj+W8gOWPkeeahOmHjeimgeaAp+WPr+iDveW3sue7j+acieS6huS4gOS6m+iupOefpe+8jOWvueS6juS6uuaciOaIkOacrOayoeacieinhOWIkueahOmhueebrueZvuWIhueZvuS8muWksei0peOAguaOpeS4i+adpeaIkeS7rOadpeiusuesrOS6jOS4qumXrumimO+8jOWBmua4uOaIj+S4jeWBmuW4guWcuuiwg+eglOOAguaIkeS4quS6uumdnuW4uOWWnOasoueci+WLh+WTpe+8jOWLh+WTpeebtOaSremXtOW+iOWkmuelnuS6uuacieaXtuS8muerr+WHuuWQhOenjeWlh+iRqeS6p+WTge+8jOavlOWmguivtOS4reiNr+WltuiMtuOAgee+iuadguWltuiMtuOAguebruWJjeWbveWGheeahOW+iOWkmueLrOeri+a4uOaIj+WItuS9nOiAheeahOiupOefpeaYr+WBnOeVmeWcqOWLh+WTpeebtOaSremXtOWuneWmiOi/meS4gOmYtuauteeahOOAggoKMTQKMDM6NDMuMzAwIC0tPiAwNDozMC40MjAK5YW25a6e5bm25LiN5piv5omA5pyJ57G75Z6L55qE5ri45oiP6LWb6YGT6YO96YCC5ZCI54us56uL5ri45oiP77yM5bCx5YOP5YuH5ZOl5Lya5o6o6I2Q5b6I5aSa5Lq65YGa54yq6ISa6aWt5LiA5qC377yM54us56uL5ri45oiP5Lmf5pyJ6YCC5ZCI55qE6LWb6YGT5ZKM5LiN6YCC5ZCI55qE6LWb6YGT44CC5ZyoQuermeaIkeadgOWIsOS6huS4jeWwkeiJuuS6uuWBmuW8gOaUvuS4lueVjO+8jOiJuuS6uuWBmuWkp+aImOWcuueahOeLrOeri+a4uOaIj+W8gOWPkeinhumike+8jOW8gOaUvuS4lueVjOWSjOWkp+aImOWcuuWwseaYr+WFuOWei+WvueeLrOeri+a4uOaIj+S4jeWPi+WlveeahOi1m+mBk+OAguWmguaenOS9oOaDs+WFqOiBjOWBmueLrOeri+a4uOaIj+W5tuS4lOi1mumSseeahOivne+8jOmCo+S5iOS9oOWcqOa4uOaIj+eri+mhueWJjeS4gOWumuimgeiKseaXtumXtOWOu+WBmuS6p+WTgeiwg+eglOOAguS6p+WTgeiwg+eglOeahOesrOS4gOatpeaYr+aDs+WlveiHquW3seWIsOW6leimgeWBmuS7gOS5iOWTgeexu++8jOS4jeimgeWFiOacieaDs+azle+8jOiuqeaDs+azlempseWKqOmhueebruaOqOi/m+aDs+azlempseWKqOeahOW3peeoi+WQjuacn+WHoOS5jueZvuWIhueZvuS8mumBh+WIsOeahOS4pOS4qumXrumimO+8jOS4gOOAgeeOqeazleWBmuWHuuadpeS6huS5i+WQjuWPkeeOsOS4jeWlveeOqe+8jOS6jOOAgeS6uuaciOaIkOacrOeuoeeQhuaYr+aOp+mhueebrua3t+S5seOAguS4i+S4gOatpeWwseaYr+WIpOaWrei/meS4quWTgeexu+aYr+WQpumAguWQiOeLrOeri+a4uOaIj+OAggoKMTUKMDQ6MzAuNDIwIC0tPiAwNToxMy41NjAK5oiR6Ieq5bex6K+V55So5Lul5LiL55qE5pa55rOV5p2l5Yik5pat6L+Z5Liq5ZOB57G75piv5ZCm6YCC5ZCI54us56uL5ri45oiP44CC5YWI5p+l6L+Z5Liq5ZOB57G75aSa5pWw5Lqn5ZOB55qE5Lq65pyI5oiQ5pys77yM5aaC5p6c6L+Z5Liq5ZOB57G75pyJ5b6I5aSaMTDkurrlubTojIPlm7TlhoXnmoTkvZzlk4HvvIzkuJTlvojlpJrpg73mnInkuI3plJnnmoTplIDph4/vvIzpgqPkuYjov5nlsLHmmK/kuIDkuKrpgILlkIjni6znq4vmuLjmiI/nmoTlk4HnsbvjgILkuI3pgILlkIjni6znq4vmuLjmiI/nmoTlk4HnsbvvvIzkuIDjgIHlj6rmnInlsJHmlbDlh6DmrL7kuqflk4HljaDkuoY5MCXku6XkuIrnmoTluILlnLrnmoTlk4HnsbvvvIzmr5TlpoLliqjkvZzmuLjmiI/vvIzkuozjgIHmlbTkuKrlk4HnsbvnmoTkurrmnIjmiJDmnKzpg73pnZ7luLjpq5jvvIzmr5TlpoLlpKfmiJjlnLrlkozlvIDmlL7kuJbnlYznsbvjgILlnKjmiJHnmoTor4Tku7fkvZPns7vkuK3vvIzlj6rmnIkxMOS6uuW5tOS7peS4i+eahOa4uOaIj+mhueebruaJjemAguWQiOeLrOeri+a4uOaIj+W8gOWPkeiAheWOu+aKleWFpeOAguS4jeWQjOS6uuaciOaIkOacrOiMg+WbtOeahOa4uOaIj+aYr+S4jeWQjOeahOi1m+mBk++8jOi6q+S4uueLrOeri+a4uOaIj+W8gOWPkeiAheeahOaIkeS7rOWwseS4jeimgeWOu+WwneivleWOu+WBmuW3peS9nOWupOe6p+WIq1JBQeS5gzNB57qn5Yir55qE5Lqn5ZOB5LqG44CCCgoxNgowNToxMy41NjAgLS0+IDA1OjIwLjE2MArlpoLmnpzkuIrov7DkuKTngrnkvaDpg73lgZrliLDkuobnmoTor53vvIzpgqPkuYjmga3llpzkvaDvvIzlt7Lnu4/otoXotorkuoY5MCXnmoTni6znq4vmuLjmiI/lvIDlj5HogIXkuobjgIIKCjE3CjA1OjIwLjUwMCAtLT4gMDU6MzQuMTk5CuacgOWQjuaIkeaDs+ivtO+8jOeLrOeri+a4uOaIj+ehruWunuaYr+S4gOS4qumrmOmjjumZqeS9juaIkOWKn+eOh+eahOihjOS4mu+8jOS4iui/sOaIkeiusueahOavj+S4gOadoe+8jOWNs+S9v+S9oOWFqOmDqOmDveWBmueahOW+iOWlve+8jOS5n+S4jeiDveS/neivgeivtOS9oOS4gOWumuiDvei1muWIsOmSse+8jOmhtuWkmuaYr+aKiuS9oOS7juW/heatu+aLieWIsOS6huacieWPr+iDvea0u+OAggoKMTgKMDU6MzQuMTk5IC0tPiAwNjowMy44MDAK6KeG6aKR57uT5bC+6K6y5LiA5LiL5oiR5a+55LqO54us56uL5ri45oiP55qE6K6k55+l77yM54us55Sx5byA5Y+R6ICF5pyA5aSn55qE5LyY5Yq/5bCx5piv5oiQ5pys5L2O77yM5oiQ5pys5L2O77yM5omA5Lul5oiR5Lus5Y+v5Lul5YGa5pu05bCP55qE5biC5Zy644CC5Lit5aSn5Y6C55qE5oiQ5pys57uT5p6E5Yaz5a6a5LqG5LuW5Lus5qC55pys5LiN5Lya5Y6756Kw5LiA5bm05Y+q6IO95Y2W5Yeg5LiH5Lu955qE5ri45oiP5ZOB57G744CC54+g5a6d5YWs5Y+46YKj5Liq5paw5ZOB6IqC5YmN5LiJ55qE5ri45oiP5pyA5ZCO6ZSA6YeP5bqU6K+l55Sx5Yeg5LiH5Lu977yM5L2G6L+Y5piv5LqP5b6X6KOk6KGp5a2Q6YO95LiN5Ymp5LqG44CC6ICM5oiR5Lus5YGa5Ye65LiA5Lu96IO95Y2W5Yeg5LiH5Lu955qE5ri45oiP77yM5Y+v6IO95oCn5q+U5Lit5Yeg55m+5LiH5b2p56Wo5aSn5b6X5aSa44CC6L+Z5bCx5piv5oiR5YGa54us56uL5ri45oiP55qE5Y6f5Zug77yM6LCB6L+Y5rKh5pyJ5LiA5Liq5Y+R6LSi5qKm5ZGi77yfCgoxOQowNjowMy44NjAgLS0+IDA2OjQ3LjYwMArlvojlpJrni6znq4vmuLjmiI/lvIDlj5HogIXpg73kvJror7Toh6rlt7HlgZrni6zmuLjlj6rkuLrkuobmoqbmg7PvvIzlkozpkrHmsqHmnInku7vkvZXlhbPns7vvvIzmib/orqToh6rlt7HlgZrni6znq4vmuLjmiI/mmK/kuLrkuobpkrHvvIzmsqHku4DkuYjlpb3nvp7ogLvnmoTjgILmraPmmK/kuLrkuobpkrHvvIzmiJHku6zmiY3kvJrljrvkuLvliqjlrabkuaDmm7TlpJrkuYvor4bvvIzmraPmmK/kuLrkuobpkrHvvIzmiJHku6zmiY3og73lrqLop4LnmoTljrvnnIvlvoXoh6rlt7HmuLjmiI/nmoTkuI3otrPkuYvlpITvvIzorqnmiJHku6znmoTmuLjmiI/lj5jlvpfmm7Tlpb3jgILmhJ/osKLkvaDvvIznnIvliLDov5nph4zvvIzkuLvljIXlnKjor4TorrrljLrmlL7kuobkuIDkuKrnvqTogYrvvIzmg7PopoHlj4LliqDkuLvljIXmuLjmiI/mtYvor5XvvIzlr7nmuLjmiI/lvIDlj5HmhJ/lhbTotqPnmoTpg73lj6/ku6XliqDkuLvmkq3nmoTnvqTogYrvvIzmnInku7vkvZXmuLjmiI/lvIDlj5Hnm7jlhbPnmoTnlpHpl67vvIzkuLvljIXpg73kvJrlnKjnvqTph4zop6PnrZTvvIzlkI7ovrnmiJHkvJrlnKjov5nkuKrotKblj7fkuIvnu6fnu63liIbkuqvni6znq4vmuLjmiI/lvIDlj5Hnm7jlhbPnmoTlubLotKflkozmiJHnmoTmuLjmiI/nmoTlhbPljaHorr7orqHvvIzmrKLov47lpKflrrblhbPms6jkuLvljIXvvIznnIvkuLvljIXmnIDlkI7muLjmiI/mraPlvI/niYjlj5HluIPlkI7og73kuI3og73otZrliLDpkrHjgIIKCjIwCjA2OjQ3LjYwMCAtLT4gMDY6NTIuOTU5CuWmguaenOinieW+l+i/meacn+S9oOWtpuWIsOS6hueahOivne+8jOaxguS4gOS4quS4gOmUruS4iei/nuaUr+aMgeS4gOS4i+S4u+WMheOAggoKMjEKMDY6NTIuOTU5IC0tPiAwNzowMy41NzcK5pyA5ZCO55WZ5LiA5Liq6K6o6K666K6u6aKY77yM5byA5Y+R54us56uL5ri45oiP5piv5ZCm6KaB5oqK6Ieq5bex5LiN5YGa5ri45oiP5LiK54+t55qE6K+d6IO96I635b6X5aSa5bCR5bel6LWE5Lmf566X6L+b5oiQ5pys77yf5qyi6L+O5Zyo6K+E6K665Yy65Y+R5Ye65L2g55qE55yL5rOV44CCCg==" download="790.srt">📥 下载字幕 (SRT)</a>
+  </p>
+  <div class="timed-subtitles">
+<p class="sub-line"><span class="sub-time">0:00</span> <span class="sub-text">国内的很多独立游戏制作者的认知和勇哥直播间的宝妈差不多。最近主播刷到了很多关于独立游戏的开发视频，大部分独立游戏的视频都是关于独立游戏上架失败后的经验分享。看他们视频时，我观察到了大多数独立游戏开发者在做项目时都陷入过下边两种情况，第一种是做独立游戏只谈想法和梦想，对于自己要做的游戏规模没有任何认知的，第二种是做出来了发现没有受众群体，销量挂0的。</span></p>
+<p class="sub-line"><span class="sub-time">0:30</span> <span class="sub-text">独立游戏行业失败的视频很多，成功的经验都藏着掖着竹包在2000人以上的游戏公司引擎部门工作了3年，期间大大小小经历了也有七八个项目了。</span></p>
+<p class="sub-line"><span class="sub-time">0:41</span> <span class="sub-text">有一个月流水几千万的SLG，也有在新品节拿到同品类前二名好成绩的单机游戏。</span></p>
+<p class="sub-line"><span class="sub-time">0:48</span> <span class="sub-text">今天，竹包就给大伙儿分享在游戏行业待了3年学到的纯正干货，开发独立游戏一定要有的2个能力。</span></p>
+<p class="sub-line"><span class="sub-time">0:56</span> <span class="sub-text">一会算游戏项目的人月成本，二知道怎么做市场调研。</span></p>
+<p class="sub-line"><span class="sub-time">1:01</span> <span class="sub-text">商业项目和独立游戏的项目开发是有很大的区别，但很多游戏开发的经验其实是通用的。</span></p>
+<p class="sub-line"><span class="sub-time">1:09</span> <span class="sub-text">主包这期视频仅从项目立项方面来分享经验，不会涉及到任何游戏实际开发和游戏内容相关的内容。</span></p>
+<p class="sub-line"><span class="sub-time">1:17</span> <span class="sub-text">首先说明游戏开发的最基础的第一个能力。</span></p>
+<p class="sub-line"><span class="sub-time">1:21</span> <span class="sub-text">对做游戏项目的人月成本的认知能力。首先说明我这里讲的人月成本的概念是什么？</span></p>
+<p class="sub-line"><span class="sub-time">1:28</span> <span class="sub-text">及一个游戏开发需要的人数X游戏开发的时间。关于人月成本，我希望每一个独立游戏开发者都能做到两点，一、能判断市面上的游戏项目的人月成本是多少，二、能认知到自己要开发的游戏的人月成本是多少。先从比较轻量级的独立游戏举例，小丑牌作者一个人花了两年时间制作出来，那么小丑牌的人月成本就是2人年，星路谷物语作者一个人花了5年时间制作出来，星露谷代人月成本就是5人年，而戴森球计划5个人花了两年时间制作出来，那么戴森球计划人月成本就是10人年。而大型的游戏往往是几百人年、上千人年，马上要发售的GTA6可能已经有上万人年了。而很多独立游戏开发者的问题就是。</span></p>
+<p class="sub-line"><span class="sub-time">2:15</span> <span class="sub-text">他们根本不清楚自己要做的游戏究竟要花费多少人年，一上来就给自己画一个非常大的饼，有经验的游戏从业者一看这个大饼，几百人年都做不出来，但这些作者可能做了大半年才发现自己给自己花的饼太大了。关于人月成本还有一个非常重要的点，游戏立项的具体人月成本的核算。如果你的游戏要以美术为卖点，那么你这个项目的美术的人月成本一定是占比最高的。</span></p>
+<p class="sub-line"><span class="sub-time">2:42</span> <span class="sub-text">如果你的游戏是以剧情为卖点，程序和美术的人月成本就会占得比较低，如果你的游戏是以玩法为卖点，那么策划和程序的人阅成本就会占得比较高。做独立游戏一定要避免的情况就是陷入到美术人月成本的无限堆积中，因为美术的人月成本是最市场透明的东西，一个美术资产要做多少时间就是要掏多少钱。</span></p>
+<p class="sub-line"><span class="sub-time">3:06</span> <span class="sub-text">而策划和程序很看个人水平，多家的需求也不一定会非常线性的算到人月成本上，所以做独立游戏千万要避免到美术堆量的情况。看到这里，你对于人月成本在游戏开发的重要性可能已经有了一些认知，对于人月成本没有规划的项目百分百会失败。接下来我们来讲第二个问题，做游戏不做市场调研。我个人非常喜欢看勇哥，勇哥直播间很多神人有时会端出各种奇葩产品，比如说中药奶茶、羊杂奶茶。目前国内的很多独立游戏制作者的认知是停留在勇哥直播间宝妈这一阶段的。</span></p>
+<p class="sub-line"><span class="sub-time">3:43</span> <span class="sub-text">其实并不是所有类型的游戏赛道都适合独立游戏，就像勇哥会推荐很多人做猪脚饭一样，独立游戏也有适合的赛道和不适合的赛道。在B站我杀到了不少艺人做开放世界，艺人做大战场的独立游戏开发视频，开放世界和大战场就是典型对独立游戏不友好的赛道。如果你想全职做独立游戏并且赚钱的话，那么你在游戏立项前一定要花时间去做产品调研。产品调研的第一步是想好自己到底要做什么品类，不要先有想法，让想法驱动项目推进想法驱动的工程后期几乎百分百会遇到的两个问题，一、玩法做出来了之后发现不好玩，二、人月成本管理是控项目混乱。下一步就是判断这个品类是否适合独立游戏。</span></p>
+<p class="sub-line"><span class="sub-time">4:30</span> <span class="sub-text">我自己试用以下的方法来判断这个品类是否适合独立游戏。先查这个品类多数产品的人月成本，如果这个品类有很多10人年范围内的作品，且很多都有不错的销量，那么这就是一个适合独立游戏的品类。不适合独立游戏的品类，一、只有少数几款产品占了90%以上的市场的品类，比如动作游戏，二、整个品类的人月成本都非常高，比如大战场和开放世界类。在我的评价体系中，只有10人年以下的游戏项目才适合独立游戏开发者去投入。不同人月成本范围的游戏是不同的赛道，身为独立游戏开发者的我们就不要去尝试去做工作室级别RAA乃3A级别的产品了。</span></p>
+<p class="sub-line"><span class="sub-time">5:13</span> <span class="sub-text">如果上述两点你都做到了的话，那么恭喜你，已经超越了90%的独立游戏开发者了。</span></p>
+<p class="sub-line"><span class="sub-time">5:20</span> <span class="sub-text">最后我想说，独立游戏确实是一个高风险低成功率的行业，上述我讲的每一条，即使你全部都做的很好，也不能保证说你一定能赚到钱，顶多是把你从必死拉到了有可能活。</span></p>
+<p class="sub-line"><span class="sub-time">5:34</span> <span class="sub-text">视频结尾讲一下我对于独立游戏的认知，独由开发者最大的优势就是成本低，成本低，所以我们可以做更小的市场。中大厂的成本结构决定了他们根本不会去碰一年只能卖几万份的游戏品类。珠宝公司那个新品节前三的游戏最后销量应该由几万份，但还是亏得裤衩子都不剩了。而我们做出一份能卖几万份的游戏，可能性比中几百万彩票大得多。这就是我做独立游戏的原因，谁还没有一个发财梦呢？</span></p>
+<p class="sub-line"><span class="sub-time">6:03</span> <span class="sub-text">很多独立游戏开发者都会说自己做独游只为了梦想，和钱没有任何关系，承认自己做独立游戏是为了钱，没什么好羞耻的。正是为了钱，我们才会去主动学习更多之识，正是为了钱，我们才能客观的去看待自己游戏的不足之处，让我们的游戏变得更好。感谢你，看到这里，主包在评论区放了一个群聊，想要参加主包游戏测试，对游戏开发感兴趣的都可以加主播的群聊，有任何游戏开发相关的疑问，主包都会在群里解答，后边我会在这个账号下继续分享独立游戏开发相关的干货和我的游戏的关卡设计，欢迎大家关注主包，看主包最后游戏正式版发布后能不能赚到钱。</span></p>
+<p class="sub-line"><span class="sub-time">6:47</span> <span class="sub-text">如果觉得这期你学到了的话，求一个一键三连支持一下主包。</span></p>
+<p class="sub-line"><span class="sub-time">6:52</span> <span class="sub-text">最后留一个讨论议题，开发独立游戏是否要把自己不做游戏上班的话能获得多少工资也算进成本？欢迎在评论区发出你的看法。</span></p>
+</div>
 </div>
 
 <hr>
