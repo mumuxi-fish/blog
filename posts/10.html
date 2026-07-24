@@ -7,20 +7,23 @@
 <style>
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 2em 1em; line-height: 1.8; color: #333; }
 h1 { font-size: 1.6em; margin-bottom: 0.5em; }
-h2 { font-size: 1.3em; margin-top: 2em; border-bottom: 1px solid #eee; padding-bottom: 0.3em; }
-h3 { font-size: 1.1em; margin-top: 1.5em; }
-p { margin: 1em 0; }
-.meta { color: #888; font-size: 0.9em; margin-bottom: 2em; }
-blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
-hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
-.footer { color: #999; font-size: 0.85em; }
-.footer a { color: #666; }
-ul, ol { padding-left: 1.5em; }
-li { margin: 0.5em 0; }
+.meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
 .meta span { margin-right: 1em; }
 .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
 .video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 .content p { margin: 1em 0; }
+blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
+hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+.footer { color: #999; font-size: 0.85em; }
+.footer a { color: #666; }
+.audio-player { margin: 1.5em 0; padding: 1em; background: #f5f5f7; border-radius: 8px; }
+.audio-player audio { width: 100%; }
+.timed-subtitles { margin: 1.5em 0; }
+.sub-line { display: flex; gap: 0.6em; padding: 0.3em 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95em; }
+.sub-time { color: #999; font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; white-space: nowrap; min-width: 3.5em; }
+.sub-text { flex: 1; }
+.sub-srt-download { display: inline-block; margin: 0.5em 0; padding: 0.3em 0.8em; background: #f0f0f0; border-radius: 4px; color: #666; font-size: 0.85em; text-decoration: none; }
+.sub-srt-download:hover { background: #e0e0e0; }
 </style>
 </head>
 <body>
@@ -30,53 +33,33 @@ li { margin: 0.5em 0; }
 <div class="meta">
   <span>🎬 UP主 <strong>LetsDoBetter</strong></span>
   <span>⏱ 1:05</span>
-  <span>👁 338</span>
+  <span>👁 401</span>
 </div>
 
 <div class="video-wrapper">
   <iframe src="https://player.bilibili.com/player.html?bvid=BV1QxKA6CE8f&page=1&autoplay=0" allowfullscreen></iframe>
 </div>
+
 <div class="content">
-<p>我们将会喜欢你最特别的阻伍,</p>
-<p>希望能把你的想法给你一切最特别的生活。</p>
-<p>希望你用太多的一个当中什么声音,</p>
-<p>希望会放在手上进来的收拾的感觉,</p>
-<p>感觉肯定能在我这边,</p>
-<p>无法放在手上。</p>
-<p>我本身不喜欢,</p>
-<p>对所有所言犯阻伍,</p>
-<p>但我们说之后,</p>
-<p>所以这些让我 avevaids来开了我的心里,</p>
-<p>所以它厄企劲,</p>
-<p>学生帮助你,</p>
-<p>想法来开回家,</p>
-<p>是否能增加多少 новых物?</p>
-<p>自然會免 Chick Out of Japanese</p>
-<p>啊,Tendawabil is really honest</p>
-<p>$10 倍</p>
-<p>是真的</p>
-<p>實在下降</p>
-<p>$5</p>
-<p>這就是很好的</p>
-<p>這是很好的</p>
-<p>你都覺得</p>
-<p>你都覺得</p>
-<p>但是你覺得</p>
-<p>其實是比起降最多</p>
-<p>是超過大</p>
-<p>你覺得</p>
-<p>超過大</p>
-<p>超過大</p>
-<p>還是會是如何</p>
-<p>你覺得</p>
-<p>你覺得</p>
-<p>你覺得</p>
-<p>你覺得</p>
-<p>你覺得</p>
-<p>你覺得</p>
-<p>他們覺得</p>
-<p>他們覺得</p>
-<p>他們覺得</p>
+  <p class="sub-srt-download">
+    <a href="data:text/plain;base64,MQowMDowMC41NDAgLS0+IDAwOjAzLjI1OQpTbyB5b3UncmUgc3RhcnRpbmcgdGhhdCBzaWRlIGh1c3RsZS4KCjIKMDA6MDMuMjU5IC0tPiAwMDoxMi41MzkKT3IgeW91IGZvdW5kIGEgcHJvZHVjdCB0aGF0IHlvdSBqdXN0IGxvdmUgYW5kIHlvdSB3b3VsZCBsaWtlIHRvIHN0YXJ0IGEgYnVzaW5lc3Mgc2VsbGluZyBpdCB5b3UgaGF2ZSByZWFsbHkgZ29vZCBhZHZpY2UgYWJvdXQgZmVhci4KCjMKMDA6MTIuNjc5IC0tPiAwMDoyNC44MjAKSXQncyByZWFsbHkgZWFzeSB0byBjb25mbGF0ZSBvdXIgZmVhciB3aXRoIHRoZSB0YXNrcyB0byBiZSBkb25lIHNvIG15IG15IHByb2R1Y3QgaXNuJ3QgZ29vZCBlbm91Z2ggSSBjYW4ndCBzaGlwIGl0IHlldCB3ZWxsIHRoYXQncyBub3QgcmVhbGx5IHdoYXQgeW91J3JlIGFmcmFpZCBvZiBzbyBoZXJlJ1MndCBleGVyY2lzZSB0aGF0IHlvdSBzaG91bGQgYWN0dWFsbHkgdHJ5IGluIHJlYWwgbGlmZS4KCjQKMDA6MjUuMzU5IC0tPiAwMDoyNy4yMzkKR28gdG8gdGhlIGJ1cyBzdGF0aW9uLgoKNQowMDoyNy43NjAgLS0+IDAwOjI5Ljc2MApBbmQgYnJpbmcgd2l0aCB5b3UuCgo2CjAwOjMwLjAzOSAtLT4gMDA6MzEuNzM5CkEgdGVuIERvbGxhciBCaWxsLgoKNwowMDozMS45NjAgLS0+IDAwOjM0LjQyMApBbmQgd2FsayB1cCB0byBzb21lYm9keSBhbmQgc2F5LgoKOAowMDozNC41NzkgLS0+IDAwOjM3LjA3OQpXZSBnaXZlIG1lIGEgZml2ZSBmb3IgdGhpcyB0ZW4gRG9sbGFyIEJpbGwuCgo5CjAwOjM3LjI4MCAtLT4gMDA6NDkuMDc5Ck5vdyBpdCdzIHJlYWxseSBvYnZpb3VzIHRoYXQgaXQncyBhIHJlYWwgdGVuIERvbGxhciBCaWxsIGl0J3MgcmVhbGx5IG9idmlvdXMgaXQncyB3b3J0aCBtb3JlIHRoYW4gZml2ZSBkb2xsYXJzIHRoaXMgaXMgdmVyeSBoYXJkIHRvIGRvIHRoaXMgaXMgc2NhcnkgdG8gZG8geW91IGZlZWwuCgoxMAowMDo0OS4wNzkgLS0+IDAwOjUwLjg0MApUb3RhbGx5IG91dCBvZiB5b3VyIGRlcHRoLgoKMTEKMDA6NTAuODQwIC0tPiAwMDo1NC42MTkKQnV0IHlvdSdyZSBzZWxsaW5nIHNvbWV0aGluZydzIG9idmlvdXNseSB3b3J0aCBtb3JlIHRoYW4geW91J3JlIHNlbGxpbmcgaXQuCgoxMgowMDo1NC44ODAgLS0+IDAwOjU3LjIwMApJdCB0dXJucyBvdXQgdGhhdCBmZWVsaW5nLgoKMTMKMDA6NTcuMjAwIC0tPiAwMTowMi40NzkKSXMgd2h5IHlvdSdhZnJhaWQgeW91J3JlIGFmcmFpZCBvZiBoYXZpbmcgYSB0cmFuc2FjdGlvbiB3aXRoIHNvbWVib2R5IHdobyBtaWdodCBzYXkgbm8uCgoxNAowMTowMi40NzkgLS0+IDAxOjA0LjA0MApJJ1ZFIHRyYWluZWQgdGhvdXNhbmRzLgo=" download="10.srt">📥 下载字幕 (SRT)</a>
+  </p>
+  <div class="timed-subtitles">
+<p class="sub-line"><span class="sub-time">0:00</span> <span class="sub-text">So you're starting that side hustle.</span></p>
+<p class="sub-line"><span class="sub-time">0:03</span> <span class="sub-text">Or you found a product that you just love and you would like to start a business selling it you have really good advice about fear.</span></p>
+<p class="sub-line"><span class="sub-time">0:12</span> <span class="sub-text">It's really easy to conflate our fear with the tasks to be done so my my product isn't good enough I can't ship it yet well that's not really what you're afraid of so here'S't exercise that you should actually try in real life.</span></p>
+<p class="sub-line"><span class="sub-time">0:25</span> <span class="sub-text">Go to the bus station.</span></p>
+<p class="sub-line"><span class="sub-time">0:27</span> <span class="sub-text">And bring with you.</span></p>
+<p class="sub-line"><span class="sub-time">0:30</span> <span class="sub-text">A ten Dollar Bill.</span></p>
+<p class="sub-line"><span class="sub-time">0:31</span> <span class="sub-text">And walk up to somebody and say.</span></p>
+<p class="sub-line"><span class="sub-time">0:34</span> <span class="sub-text">We give me a five for this ten Dollar Bill.</span></p>
+<p class="sub-line"><span class="sub-time">0:37</span> <span class="sub-text">Now it's really obvious that it's a real ten Dollar Bill it's really obvious it's worth more than five dollars this is very hard to do this is scary to do you feel.</span></p>
+<p class="sub-line"><span class="sub-time">0:49</span> <span class="sub-text">Totally out of your depth.</span></p>
+<p class="sub-line"><span class="sub-time">0:50</span> <span class="sub-text">But you're selling something's obviously worth more than you're selling it.</span></p>
+<p class="sub-line"><span class="sub-time">0:54</span> <span class="sub-text">It turns out that feeling.</span></p>
+<p class="sub-line"><span class="sub-time">0:57</span> <span class="sub-text">Is why you'afraid you're afraid of having a transaction with somebody who might say no.</span></p>
+<p class="sub-line"><span class="sub-time">1:02</span> <span class="sub-text">I'VE trained thousands.</span></p>
+</div>
 </div>
 
 <hr>
