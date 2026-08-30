@@ -147,7 +147,7 @@
           uploader: post.uploader || '',
           duration: post.duration || '',
           views: post.views || '',
-          audioUrl: post.hasAudio ? BLOG + '/audio/' + postId + '.mp3' : '',
+          audioUrl: post.audioUrl || (post.hasAudio ? 'https://files.just4.tech/audio/' + postId + '.mp3' : ''),
           bvid: post.bvid || '',
           srtData: post.srtData || '',
           srtFilename: post.srtFilename || postId + '.srt',

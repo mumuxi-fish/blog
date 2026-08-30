@@ -331,7 +331,7 @@
         var item = playlist[index];
         currentIndex = index;
         
-        audio.src = '/audio/' + item.slug + '.mp3';
+        audio.src = 'https://files.just4.tech/audio/' + item.slug + '.mp3';
         audio.load();
         audio.play().catch(function() {
           // 音频不存在，尝试下一首
@@ -529,7 +529,7 @@
       });
 
       // 加载视频列表
-      fetch('/data/video-subtitles.json')
+      fetch('../data/video-subtitles.json')
         .then(function(r) { return r.json(); })
         .then(function(posts) {
           allVideos = posts;
