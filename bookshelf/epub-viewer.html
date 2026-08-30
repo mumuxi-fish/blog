@@ -133,6 +133,7 @@
     }
 
     const base = window.location.pathname.replace(/\/[^/]*$/, '/');
+    const FILES_BASE = 'https://files.just4.tech/books/';
     const docTitle = document.getElementById('doc-title');
     const chInfo = document.getElementById('chapter-info');
     const prevBtn = document.getElementById('prev-btn');
@@ -145,14 +146,14 @@
 
     // Download link (file 已被 URLSearchParams 解码,拼接 URL 需重新编码)
     const downloadBtn = document.getElementById('download-btn');
-    downloadBtn.href = base + 'books/' + encodeURIComponent(file);
+    downloadBtn.href = FILES_BASE + encodeURIComponent(file);
     downloadBtn.download = file;
 
     let book, rendition, tocOpen = false, currentIndex = 0;
 
     async function loadEPUB() {
       try {
-        book = ePub(base + 'books/' + file);
+        book = ePub(FILES_BASE + encodeURIComponent(file));
         rendition = book.renderTo('epub-viewport', {
           width: '100%',
           height: '100%',

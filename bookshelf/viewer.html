@@ -164,12 +164,13 @@
 
     // Download link (file 已被 URLSearchParams 解码,拼接 URL 需重新编码)
     const downloadBtn = document.getElementById('download-btn');
-    downloadBtn.href = 'books/' + encodeURIComponent(file);
+    const FILES_BASE = 'https://files.just4.tech/books/';
+    downloadBtn.href = FILES_BASE + encodeURIComponent(file);
     downloadBtn.download = file;
 
     async function loadPDF() {
       try {
-        const pdfPath = 'books/' + file;
+        const pdfPath = FILES_BASE + encodeURIComponent(file);
         pdfDoc = await pdfjsLib.getDocument(pdfPath).promise;
         
         loadingViewer.style.display = 'none';
