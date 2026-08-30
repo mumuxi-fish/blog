@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>教程 · Aprilssky</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>">
+  <style>
+    .tutorial-body { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+    .tutorial-body .back-link {
+      display: inline-block; margin-bottom: 20px; color: var(--text-muted);
+      text-decoration: none; font-size: 0.9rem;
+    }
+    .tutorial-body .back-link:hover { color: var(--accent); }
+    .tutorial-body h1 { font-size: 1.8rem; margin: 0.6em 0; }
+    .tutorial-body h2 { font-size: 1.35rem; margin: 1.4em 0 0.5em; padding-bottom: 0.3em; border-bottom: 1px solid var(--border); }
+    .tutorial-body h3 { font-size: 1.1rem; margin: 1.2em 0 0.4em; }
+    .tutorial-body p { margin: 0.8em 0; line-height: 1.8; }
+    .tutorial-body ul, .tutorial-body ol { margin: 0.8em 0; padding-left: 1.6em; line-height: 1.8; }
+    .tutorial-body li { margin: 0.3em 0; }
+    .tutorial-body blockquote {
+      border-left: 4px solid var(--accent); margin: 1.2em 0; padding: 0.5em 1em;
+      background: var(--surface-hover, #f5f5f5); color: var(--text-muted); border-radius: 0 6px 6px 0;
+    }
+    .tutorial-body code {
+      font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 0.9em;
+      background: var(--surface-hover, #f0f0f0); padding: 0.15em 0.4em; border-radius: 4px;
+    }
+    .tutorial-body pre {
+      background: #1e1e2e; color: #e0e0e0; padding: 16px; border-radius: 8px;
+      overflow-x: auto; margin: 1.2em 0; line-height: 1.6;
+    }
+    .tutorial-body pre code { background: none; padding: 0; color: inherit; }
+    .tutorial-body table { border-collapse: collapse; margin: 1.2em 0; width: 100%; }
+    .tutorial-body th, .tutorial-body td { border: 1px solid var(--border); padding: 8px 12px; text-align: left; }
+    .tutorial-body th { background: var(--surface-hover, #f5f5f5); }
+    .tutorial-body img { max-width: 100%; border-radius: 8px; margin: 1em 0; }
+    .tutorial-body hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
+    .tutorial-body a { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Aprilssky</a>
+      <div class="nav-links">
+        <a href="../">首页</a>
+        <a href="../lines/">台词</a>
+        <a href="../posts/">文章</a>
+        <a href="../videos/">视频字幕</a>
+        <a href="../projects.html">项目</a>
+        <a href="../links/">常用网站</a>
+        <a href="../bookshelf/">书架</a>
+        <a href="./" class="active">教程</a>
+        <a href="../pinyin-table/">拼音表</a>
+        <a href="../metaphor/">隐喻</a>
+        <a href="../2026/">日历</a>
+        <a href="../about.html">关于</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <div class="tutorial-body">
+      <a class="back-link" href="./">← 返回教程列表</a>
+      <article id="tutorial-content">
+        <p style="color:var(--text-muted)">加载中…</p>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Aprilssky · 用 ❤️ 和代码创作</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script src="vendor/marked.min.js"></script>
+  <script>
+    (function() {
+      const ALLOWED = ['Blender学习笔记-完整版.md', 'Godot学习教材-第1-8课.md'];
+      const params = new URLSearchParams(window.location.search);
+      const file = ALLOWED.includes(params.get('file')) ? params.get('file') : null;
+      const content = document.getElementById('tutorial-content');
+      if (!file) { window.location.href = './'; return; }
+
+      fetch(file)
+        .then(function(r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.text(); })
+        .then(function(md) {
+          const titleMatch = md.match(/^#\s+(.+)$/m);
+          if (titleMatch) document.title = titleMatch[1].trim() + ' · Aprilssky';
+          content.innerHTML = marked.parse(md);
+        })
+        .catch(function() {
+          content.innerHTML = '<p style="color:var(--text-muted)">教程加载失败,请返回重试</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

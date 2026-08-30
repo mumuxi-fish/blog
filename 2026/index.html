@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>年份格子日历</title>
+<style>
+  :root { --cell: 6px; --gap: 1px; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; font-family: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f4f6f9; color: #1f2937; font-size: 14px;
+  }
+  header {
+    position: sticky; top: 0; z-index: 20; background: #fff;
+    padding: 10px 16px; box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px;
+  }
+  header h1 { margin: 0; font-size: 17px; white-space: nowrap; }
+  #rangeLabel { font-weight: 400; color: #6b7280; }
+  .today-badge { font-size: 13px; color: #b91c1c; white-space: nowrap; }
+  .today-badge b { font-weight: 600; }
+  .view-switch { display: inline-flex; border: 1px solid #d1d5db; border-radius: 8px; overflow: hidden; }
+  .view-switch button {
+    border: none; background: #fff; padding: 5px 16px; font: inherit; font-size: 13px;
+    cursor: pointer; color: #4b5563;
+  }
+  .view-switch button + button { border-left: 1px solid #d1d5db; }
+  .view-switch button.on { background: #1f2937; color: #fff; }
+  .range-ctl { display: inline-flex; align-items: center; gap: 4px; color: #4b5563; font-size: 13px; white-space: nowrap; }
+  .range-ctl input {
+    width: 72px; font: inherit; font-size: 13px; padding: 3px 6px;
+    border: 1px solid #d1d5db; border-radius: 6px; background: #fff;
+  }
+  .tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px; }
+  .tools label { display: inline-flex; align-items: center; gap: 6px; color: #4b5563; font-size: 13px; white-space: nowrap; }
+  button { font: inherit; padding: 4px 12px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; color: #1f2937; }
+  button:hover { background: #f3f4f6; }
+  button.danger { color: #dc2626; border-color: #fca5a5; }
+  button.danger:hover { background: #fef2f2; }
+  #legend {
+    background: #eef1f5; padding: 6px 16px; display: flex; flex-wrap: wrap; gap: 4px 12px;
+    align-items: center; border-bottom: 1px solid #e2e8f0; font-size: 12px;
+  }
+  #legend .lg-hint { color: #64748b; }
+  .lg-state { display: inline-flex; align-items: center; gap: 4px; color: #334155; }
+  .lg-state .sw { width: 10px; height: 10px; border-radius: 2px; display: inline-block; }
+  .lg-state .sw.past { background: #cbd2da; }
+  .lg-state .sw.today { background: #fff; box-shadow: 0 0 0 2px #ef4444; }
+  .lg-state .sw.future { background: #e7eaee; }
+  .lg-group { display: inline-flex; align-items: center; gap: 4px; }
+  .lg-group > b { font-size: 12px; color: #334155; }
+  .lg-chip {
+    display: inline-flex; align-items: center; gap: 5px; padding: 1px 8px;
+    border-radius: 999px; background: #fff; border: 1px solid #e2e8f0; cursor: pointer; font-size: 12px; user-select: none;
+  }
+  .lg-chip .dot { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+  .lg-chip.fil { outline: 2px solid #3b82f6; outline-offset: 1px; }
+
+  /* ===== 批量工具条 ===== */
+  #batchBar {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px;
+    background: #fff7ed; border-bottom: 1px solid #fdba74; padding: 6px 16px; font-size: 13px;
+  }
+  #batchBar[hidden] { display: none; }
+  #batchBar .bb-count { font-weight: 600; color: #9a3412; white-space: nowrap; }
+  #batchBar .bb-label { color: #9a3412; font-size: 12px; white-space: nowrap; }
+  #batchBar .bb-sep { width: 1px; height: 20px; background: #fdba74; }
+  .bb-pal { display: flex; gap: 4px; align-items: center; }
+  .bb-pal .sw {
+    width: 16px; height: 16px; border-radius: 3px; cursor: pointer;
+    border: 1px solid rgba(0,0,0,.15);
+  }
+  .bb-pal .sw:hover { transform: scale(1.2); }
+  .bb-pal .sw.clear { background: linear-gradient(135deg, #e5e7eb 45%, #ef4444 46%, #ef4444 54%, #e5e7eb 55%); }
+  .bb-wrap { position: relative; }
+  .bb-pop {
+    position: absolute; top: calc(100% + 6px); left: 0; z-index: 40;
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.18); max-width: 340px; max-height: 60vh; overflow-y: auto;
+  }
+  .bb-pop .gname { font-size: 12px; color: #334155; margin: 6px 0 4px; display: flex; align-items: center; gap: 5px; }
+  .bb-pop .gname .dot { width: 9px; height: 9px; border-radius: 50%; }
+  .bb-pop .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  #grid-scroll { overflow-x: auto; padding: 4px 16px 30px; }
+  .yrow { display: flex; align-items: center; }
+  .ylabel {
+    width: 58px; flex: none; text-align: right; padding-right: 10px;
+    font-size: 12px; color: #6b7280; font-variant-numeric: tabular-nums;
+    position: sticky; left: 0; z-index: 6; background: #f4f6f9;
+  }
+  /* ===== 顶部月标尺(整个格子区域上方一条) ===== */
+  #ruler {
+    display: flex; align-items: center; position: sticky; top: 0; z-index: 8;
+    background: #f4f6f9; border-bottom: 1px solid #d8dee6; margin-bottom: 3px;
+  }
+  #ruler[hidden] { display: none; }
+  .ruler-label {
+    width: 58px; flex: none; position: sticky; left: 0; z-index: 2; background: #f4f6f9;
+    text-align: right; padding-right: 10px; font-size: 12px; color: #6b7280;
+  }
+  .ruler-cells { display: flex; align-items: center; }
+  .mseg {
+    flex: none; position: relative; font-size: 10px; line-height: 14px; color: #6b7280;
+    padding-left: 3px; white-space: nowrap; overflow: hidden;
+  }
+  .mseg::before {
+    content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: #94a3b8;
+  }
+
+  .cells { display: flex; gap: var(--gap); padding: 0 0 3px; user-select: none; }
+
+  /* ===== 日视图格子 ===== */
+  .day {
+    width: var(--cell); height: var(--cell); flex: none;
+    background: #e7eaee; border-radius: 1px; cursor: pointer;
+  }
+  .day[data-st="past"] { background: #cbd2da; }
+  .day[data-st="today"] { background: #fff; box-shadow: 0 0 0 2px #ef4444; position: relative; z-index: 2; }
+  .day.ms { border-left: 1px solid #9ca3af; }
+  .day:hover { outline: 1px solid #111827; position: relative; z-index: 3; }
+  .day.has-tag { box-shadow: inset 0 0 0 1px #475569; }
+  .day[data-st="today"].has-tag { box-shadow: inset 0 0 0 1px #475569, 0 0 0 2px #ef4444; }
+  .day.hl { box-shadow: 0 0 0 2px #3b82f6; position: relative; z-index: 2; }
+  .day.sel { box-shadow: 0 0 0 2px #f59e0b; position: relative; z-index: 4; }
+  .day.flash { animation: flash .9s ease 3; position: relative; z-index: 4; }
+  @keyframes flash {
+    0%, 100% { box-shadow: 0 0 0 3px #f59e0b; }
+    50% { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0); }
+  }
+
+  /* ===== 月/年视图格子 ===== */
+  .mcell {
+    width: 36px; height: 22px; flex: none; border-radius: 4px; background: #e7eaee;
+    font-size: 11px; color: #4b5563; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; position: relative; margin-right: var(--gap);
+  }
+  .mcell[data-st="past"] { background: #cbd2da; }
+  .mcell[data-st="today"] { box-shadow: 0 0 0 2px #ef4444; background: #fff; }
+  .mcell .tdot {
+    position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
+    width: 5px; height: 5px; border-radius: 50%; background: #1f2937;
+  }
+  .mcell:hover, .ycell:hover { outline: 1px solid #111827; }
+  .ycell {
+    width: 56px; height: 28px; flex: none; border-radius: 5px; background: #e7eaee;
+    font-size: 12px; color: #4b5563; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; position: relative; margin-right: var(--gap);
+  }
+  .ycell[data-st="past"] { background: #cbd2da; }
+  .ycell[data-st="today"] { box-shadow: 0 0 0 2px #ef4444; background: #fff; }
+
+  #tip {
+    position: fixed; z-index: 100; pointer-events: none; max-width: 260px;
+    background: #111827; color: #f9fafb; font-size: 12px; line-height: 1.5;
+    padding: 6px 10px; border-radius: 6px; box-shadow: 0 4px 12px rgba(0,0,0,.25); white-space: pre-line;
+  }
+  .overlay {
+    position: fixed; inset: 0; background: rgba(15,23,42,.45);
+    display: flex; align-items: center; justify-content: center; z-index: 50;
+  }
+  .overlay[hidden] { display: none; }
+  .modal {
+    background: #fff; border-radius: 12px; padding: 16px 18px; width: min(460px, 94vw);
+    max-height: 84vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,.3);
+  }
+  .m-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+  .m-head h3 { margin: 0; font-size: 15px; }
+  .m-sub { font-size: 12px; color: #9ca3af; margin: -2px 0 10px; }
+  .m-batch { font-size: 12px; color: #92400e; background: #fef3c7; border: 1px solid #fde68a; border-radius: 6px; padding: 6px 10px; margin: 8px 0; }
+  .m-batch[hidden] { display: none; }
+  .x { border: none; background: none; font-size: 20px; line-height: 1; color: #6b7280; cursor: pointer; padding: 2px 6px; }
+  .m-sec { margin: 12px 0; }
+  .m-label { font-size: 12px; color: #6b7280; margin-bottom: 6px; }
+  #palette { display: flex; flex-wrap: wrap; gap: 6px; }
+  .sw {
+    width: 26px; height: 26px; border-radius: 6px; cursor: pointer; border: 2px solid transparent;
+    box-shadow: inset 0 0 0 1px rgba(0,0,0,.12);
+  }
+  .sw.on { border-color: #111827; box-shadow: inset 0 0 0 1px #fff, 0 0 0 1px #111827; }
+  .sw.clear { background: linear-gradient(135deg, #e5e7eb 45%, #ef4444 46%, #ef4444 54%, #e5e7eb 55%); }
+  .sw:hover { transform: scale(1.08); }
+  .gblock { margin: 10px 0; }
+  .gblock .gname { display: flex; align-items: center; gap: 6px; font-size: 13px; color: #334155; margin-bottom: 6px; }
+  .gblock .gname .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .gblock .gname .cnt { font-size: 11px; color: #9ca3af; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 999px;
+    background: #f1f5f9; border: 1px solid #e2e8f0; cursor: pointer; font-size: 12px; user-select: none;
+  }
+  .chip.on { color: #fff; border-color: transparent; }
+  .chip .rm { opacity: .6; cursor: pointer; font-style: normal; }
+  .chip .rm:hover { opacity: 1; }
+  .quick { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .quick select, .quick input {
+    font: inherit; font-size: 13px; padding: 4px 8px; border: 1px solid #d1d5db; border-radius: 6px; background: #fff;
+  }
+  .quick input { flex: 1; min-width: 120px; }
+  .m-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; padding-top: 10px; border-top: 1px solid #f1f5f9; flex-wrap: wrap; gap: 6px; }
+  .m-foot .hint { font-size: 12px; color: #9ca3af; }
+  .m-foot .right { display: flex; gap: 8px; }
+  .addgroup { display: flex; gap: 6px; margin-top: 14px; }
+  .addgroup input { flex: 1; font: inherit; font-size: 13px; padding: 4px 8px; border: 1px solid #d1d5db; border-radius: 6px; }
+  .empty { color: #9ca3af; font-size: 12px; padding: 8px 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>年份格子日历 <span id="rangeLabel"></span></h1>
+  <div class="view-switch" id="viewSwitch">
+    <button data-view="day" class="on" title="每格 = 一天,一行一年">日</button>
+    <button data-view="month" title="每格 = 一个月,一行一年">月</button>
+    <button data-view="year" title="每格 = 一年">年</button>
+  </div>
+  <div class="today-badge" id="todayBadge">今天:—</div>
+  <div class="range-ctl">
+    <input id="startYear" type="number" min="1" max="9999" title="起始年份">
+    <span>至</span>
+    <input id="endYear" type="number" min="1" max="9999" title="结束年份">
+    <button id="applyRange">应用</button>
+  </div>
+  <div class="tools">
+    <label>格子 <input type="range" id="cellSize" min="3" max="14" value="6"> px</label>
+    <label><input type="checkbox" id="showMS" checked> 月份分隔</label>
+    <button id="btnTags">🏷 标签管理</button>
+    <button id="btnExport">⬇ 导出</button>
+    <button id="btnImport">⬆ 导入</button>
+    <button id="btnClearAll" class="danger">清空所有格子</button>
+  </div>
+</header>
+
+<div id="legend">
+  <span class="lg-hint">图例:</span>
+  <span class="lg-state"><span class="sw past"></span>过去</span>
+  <span class="lg-state"><span class="sw today"></span>今天</span>
+  <span class="lg-state"><span class="sw future"></span>未来</span>
+  <span id="legendTags"></span>
+</div>
+
+<!-- 批量编辑工具条 -->
+<div id="batchBar" hidden>
+  <span class="bb-count" id="bbCount"></span>
+  <span class="bb-sep"></span>
+  <span class="bb-label">颜色</span>
+  <div class="bb-pal" id="bbPalette"></div>
+  <span class="bb-sep"></span>
+  <span class="bb-wrap">
+    <button id="bbTagBtn">标签 ▾</button>
+    <div class="bb-pop" id="bbTagPop" hidden></div>
+  </span>
+  <button id="bbClearColor">清颜色</button>
+  <button id="bbClearAll" class="danger">清空标记</button>
+  <button id="bbCancel">取消选择</button>
+</div>
+
+<div id="grid-scroll">
+  <div id="ruler" hidden>
+    <div class="ruler-label">月份</div>
+    <div class="ruler-cells" id="rulerCells"></div>
+  </div>
+  <div id="grid"></div>
+</div>
+
+<div id="tip" hidden></div>
+
+<!-- 格子/月份/年份 编辑模态 -->
+<div class="overlay" id="cellOverlay" hidden>
+  <div class="modal" id="cellModal">
+    <div class="m-head">
+      <h3 id="scopeTitle">—</h3>
+      <button class="x" data-close="cellOverlay">×</button>
+    </div>
+    <div class="m-sub" id="scopeSub"></div>
+    <div class="m-batch" id="batchHint" hidden>此视图下,颜色/标签操作将应用到该范围的全部天数。</div>
+    <div class="m-sec">
+      <div class="m-label">颜色(点击预设色块,再点清除可取消)</div>
+      <div id="palette"></div>
+    </div>
+    <div class="m-sec">
+      <div class="m-label">标签(可多选,点击切换)</div>
+      <div id="cellTags"></div>
+      <div class="quick">
+        <select id="qaGroup"></select>
+        <input id="qaName" placeholder="新标签名,回车添加" maxlength="30">
+        <button id="qaAdd">添加</button>
+      </div>
+    </div>
+    <div class="m-foot">
+      <span class="hint" id="scopeState"></span>
+      <div class="right">
+        <button id="btnZoom" hidden>在日视图查看</button>
+        <button id="cellClear" class="danger">清除这一天</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 标签管理模态 -->
+<div class="overlay" id="tagOverlay" hidden>
+  <div class="modal">
+    <div class="m-head">
+      <h3>标签管理(标签分组、增删改名)</h3>
+      <button class="x" data-close="tagOverlay">×</button>
+    </div>
+    <div id="tagBody"></div>
+    <div class="addgroup">
+      <input id="ngName" placeholder="新分组名称,回车添加" maxlength="20">
+      <button id="ngAdd">新建分组</button>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="fileInput" accept=".json,application/json" hidden>
+
+<script>
+"use strict";
+
+/* ============ 常量与数据 ============ */
+var DEFAULT_START = 1996, DEFAULT_END = 2026;
+var LS_KEY = "dayGrid_v3";
+var PALETTE = [
+  "#ef4444", "#f97316", "#facc15", "#22c55e", "#10b981", "#06b6d4", "#3b82f6", "#6366f1",
+  "#a855f7", "#ec4899", "#d946ef", "#84cc16", "#0ea5e9", "#f43f5e", "#78716c", "#64748b"
+];
+var GROUP_COLORS = ["#e11d48", "#f97316", "#eab308", "#22c55e", "#06b6d4", "#6366f1", "#a855f7", "#ec4899", "#64748b"];
+
+var state = { cells: {}, groups: [], tags: [], view: "day", startYear: DEFAULT_START, endYear: DEFAULT_END };
+// cells: {"YYYY-MM-DD": {c: hex|null, tags: [tagId]}}
+var dayMap = {};      // dateKey -> DOM element
+var rowsCols = [];    // 日视图:每行格子元素数组(按列)
+var filterTags = {};  // tagId -> true (图例筛选高亮)
+var currentScope = null;  // 编辑弹窗的 {type:"day"|"month"|"year", y, m?, d?}
+var todayKey = "", todayLabel = "";
+
+/* ===== 批量选择状态 ===== */
+var selKeys = {};     // 选中的 dateKey -> true
+var selRng = null;    // {r0,c0,r1,c1}
+var dragState = null; // {r0,c0, moved}
+var justDragged = false;
+
+/* ============ 工具函数 ============ */
+function isLeap(y) { return (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0; }
+function daysInMonth(y, m) { return [31, isLeap(y) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m]; }
+function pad(n) { return n < 10 ? "0" + n : "" + n; }
+function dateKey(y, m, d) { return y + "-" + pad(m + 1) + "-" + pad(d); }
+function keyToYMD(key) { var p = key.split("-"); return { y: +p[0], m: +p[1] - 1, d: +p[2] }; }
+function uid() { return "t" + Date.now().toString(36) + Math.random().toString(36).slice(2, 7); }
+function $(s) { return document.querySelector(s); }
+function tagById(id) { for (var i = 0; i < state.tags.length; i++) if (state.tags[i].id === id) return state.tags[i]; return null; }
+function groupById(id) { for (var i = 0; i < state.groups.length; i++) if (state.groups[i].id === id) return state.groups[i]; return null; }
+function groupColor(gid) { for (var i = 0; i < state.groups.length; i++) if (state.groups[i].id === gid) return state.groups[i].color; return "#64748b"; }
+function yearStart() { return state.startYear; }
+function yearEnd() { return state.endYear; }
+
+/* 一个范围(日/月/年)对应的全部日期 key */
+function scopeKeys(scope) {
+  var keys = [];
+  if (scope.type === "day") {
+    keys.push(dateKey(scope.y, scope.m, scope.d));
+  } else if (scope.type === "month") {
+    for (var d = 1; d <= daysInMonth(scope.y, scope.m); d++) keys.push(dateKey(scope.y, scope.m, d));
+  } else {
+    for (var m = 0; m < 12; m++) for (var d = 1; d <= daysInMonth(scope.y, m); d++) keys.push(dateKey(scope.y, m, d));
+  }
+  return keys;
+}
+function scopeDays(scope) {
+  if (scope.type === "day") return 1;
+  if (scope.type === "month") return daysInMonth(scope.y, scope.m);
+  return isLeap(scope.y) ? 366 : 365;
+}
+function scopeLabel(scope) {
+  if (scope.type === "day") return scope.y + "年" + (scope.m + 1) + "月" + scope.d + "日";
+  if (scope.type === "month") return scope.y + "年" + (scope.m + 1) + "月";
+  return scope.y + "年";
+}
+
+/* 过去/今天/未来: 'YYYY-MM-DD' 字符串可直接比较 */
+function stateOfKey(key) {
+  if (key < todayKey) return "past";
+  if (key === todayKey) return "today";
+  return "future";
+}
+function stateOfScope(scope) {
+  var keys = scopeKeys(scope);
+  var first = keys[0], last = keys[keys.length - 1];
+  if (last < todayKey) return "past";
+  if (first > todayKey) return "future";
+  return "today";
+}
+
+/* ============ 存储 ============ */
+function load() {
+  try {
+    var raw = localStorage.getItem(LS_KEY);
+    if (!raw) {
+      var rawOld = localStorage.getItem("dayGrid_" + DEFAULT_START + "_" + DEFAULT_END + "_v2");
+      if (!rawOld) rawOld = localStorage.getItem("dayGrid_" + DEFAULT_START + "_" + DEFAULT_END + "_v1");
+      if (rawOld) {
+        var dOld = JSON.parse(rawOld);
+        if (dOld && dOld.groups && dOld.tags && dOld.cells) {
+          state = { cells: dOld.cells, groups: dOld.groups, tags: dOld.tags, view: "day", startYear: DEFAULT_START, endYear: DEFAULT_END };
+          save();
+          localStorage.removeItem("dayGrid_" + DEFAULT_START + "_" + DEFAULT_END + "_v2");
+          localStorage.removeItem("dayGrid_" + DEFAULT_START + "_" + DEFAULT_END + "_v1");
+        }
+      }
+      return;
+    }
+    var d = JSON.parse(raw);
+    if (d && d.groups && d.tags && d.cells) state = d;
+    if (!state.view) state.view = "day";
+    if (!state.startYear) state.startYear = DEFAULT_START;
+    if (!state.endYear) state.endYear = DEFAULT_END;
+    if (state.startYear > state.endYear) { var t = state.startYear; state.startYear = state.endYear; state.endYear = t; }
+  } catch (e) { console.warn("load failed", e); }
+}
+function save() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+  catch (e) { console.warn("save failed", e); }
+}
+function confirm_(msg) { return window.confirm(msg); }
+
+/* ============ 网格渲染(按视图) ============ */
+var RULER_DIMS = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; /* 顶部标尺按平年布局 */
+
+function renderGrid() {
+  clearSelection(true);
+  if (state.view === "month") { $("#ruler").hidden = true; renderMonthGrid(); }
+  else if (state.view === "year") { $("#ruler").hidden = true; renderYearGrid(); }
+  else { renderRuler(); $("#ruler").hidden = false; renderDayGrid(); }
+}
+
+function renderRuler() {
+  var rc = $("#rulerCells");
+  rc.innerHTML = "";
+  var cell = getCellPx();
+  for (var m = 0; m < 12; m++) {
+    var n = RULER_DIMS[m];
+    var seg = document.createElement("div");
+    seg.className = "mseg";
+    seg.textContent = m + 1;
+    seg.title = (m + 1) + "月(" + n + " 天)";
+    seg.dataset.n = n;
+    seg.dataset.last = (m === 11) ? "1" : "";
+    seg.style.width = segWidth(cell, n, m === 11);
+    rc.appendChild(seg);
+  }
+}
+
+function renderDayGrid() {
+  var g = $("#grid");
+  g.innerHTML = "";
+  dayMap = {};
+  rowsCols = [];
+  var showMs = $("#showMS").checked;
+  for (var y = yearStart(); y <= yearEnd(); y++) {
+    var row = document.createElement("div");
+    row.className = "yrow";
+    var lb = document.createElement("div");
+    lb.className = "ylabel";
+    lb.textContent = y;
+    row.appendChild(lb);
+    var cells = document.createElement("div");
+    cells.className = "cells";
+    row.appendChild(cells);
+    var col = 0;
+    var colArr = [];
+    for (var mm = 0; mm < 12; mm++) {
+      var dim = daysInMonth(y, mm);
+      for (var d = 1; d <= dim; d++) {
+        var key = dateKey(y, mm, d);
+        var cd = document.createElement("div");
+        cd.className = "day" + (d === 1 ? " ms" : "");
+        cd.setAttribute("data-date", key);
+        cd.setAttribute("data-st", stateOfKey(key));
+        cd.setAttribute("data-r", rowsCols.length);
+        cd.setAttribute("data-c", col);
+        if (!showMs) cd.classList.remove("ms");
+        cells.appendChild(cd);
+        dayMap[key] = cd;
+        colArr.push(cd);
+        paintDay(key, cd);
+        col++;
+      }
+    }
+    rowsCols.push(colArr);
+    g.appendChild(row);
+  }
+  applyFilter();
+}
+
+function getCellPx() { return parseInt(document.documentElement.style.getPropertyValue("--cell")) || 6; }
+/* 月段宽 = 天数*(格子+缝隙);12 月段去掉尾部缝隙,使标尺总宽 = 格子行总宽 */
+function segWidth(cell, n, isLast) {
+  var w = cell * n + n;
+  if (isLast) w -= 1;
+  return w + "px";
+}
+function paintDay(key, el) {
+  var cell = state.cells[key];
+  el.style.background = (cell && cell.c) ? cell.c : "";
+  el.classList.toggle("has-tag", !!(cell && cell.tags && cell.tags.length));
+}
+
+/* 聚合:范围内有颜色的日期取众数色,有标签的天数 */
+function aggregateColor(keys) {
+  var count = {}, best = null, bestN = 0;
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (cell && cell.c) {
+      count[cell.c] = (count[cell.c] || 0) + 1;
+      if (count[cell.c] > bestN) { bestN = count[cell.c]; best = cell.c; }
+    }
+  }
+  return best;
+}
+function aggregateTaggedCount(keys) {
+  var n = 0;
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (cell && cell.tags && cell.tags.length) n++;
+  }
+  return n;
+}
+function aggregateTagNames(keys) {
+  var seen = {}, names = [];
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (!cell || !cell.tags) continue;
+    for (var j = 0; j < cell.tags.length; j++) {
+      var t = tagById(cell.tags[j]);
+      if (t && !seen[t.id]) { seen[t.id] = true; names.push(t.name); }
+    }
+  }
+  return names;
+}
+
+function renderMonthGrid() {
+  var g = $("#grid");
+  g.innerHTML = "";
+  dayMap = {};
+  rowsCols = [];
+  for (var y = yearStart(); y <= yearEnd(); y++) {
+    var row = document.createElement("div");
+    row.className = "yrow";
+    var lb = document.createElement("div");
+    lb.className = "ylabel";
+    lb.textContent = y;
+    row.appendChild(lb);
+    var cells = document.createElement("div");
+    cells.className = "cells";
+    row.appendChild(cells);
+    for (var m = 0; m < 12; m++) {
+      var scope = { type: "month", y: y, m: m };
+      var keys = scopeKeys(scope);
+      var el = document.createElement("div");
+      el.className = "mcell";
+      el.setAttribute("data-st", stateOfScope(scope));
+      el.setAttribute("data-scope", "month:" + y + ":" + m);
+      el.textContent = m + 1;
+      var ag = aggregateColor(keys);
+      if (ag) el.style.background = ag;
+      if (aggregateTaggedCount(keys) > 0) {
+        var td = document.createElement("span");
+        td.className = "tdot";
+        el.appendChild(td);
+      }
+      cells.appendChild(el);
+    }
+    g.appendChild(row);
+  }
+  applyFilter();
+}
+
+function renderYearGrid() {
+  var g = $("#grid");
+  g.innerHTML = "";
+  dayMap = {};
+  rowsCols = [];
+  var row = document.createElement("div");
+  row.className = "yrow";
+  var lb = document.createElement("div");
+  lb.className = "ylabel";
+  lb.textContent = "年份";
+  row.appendChild(lb);
+  var cells = document.createElement("div");
+  cells.className = "cells";
+  row.appendChild(cells);
+  for (var y = yearStart(); y <= yearEnd(); y++) {
+    var scope = { type: "year", y: y };
+    var keys = scopeKeys(scope);
+    var el = document.createElement("div");
+    el.className = "ycell";
+    el.setAttribute("data-st", stateOfScope(scope));
+    el.setAttribute("data-scope", "year:" + y);
+    el.textContent = y;
+    var ag = aggregateColor(keys);
+    if (ag) el.style.background = ag;
+    cells.appendChild(el);
+  }
+  g.appendChild(row);
+  applyFilter();
+}
+
+function applyFilter() {
+  for (var key in dayMap) {
+    var el = dayMap[key];
+    var cell = state.cells[key];
+    var hit = false;
+    if (cell && cell.tags) {
+      for (var i = 0; i < cell.tags.length; i++) {
+        if (filterTags[cell.tags[i]]) { hit = true; break; }
+      }
+    }
+    el.classList.toggle("hl", hit);
+  }
+}
+
+/* ============ 图例 ============ */
+function renderLegend() {
+  var lt = $("#legendTags");
+  lt.innerHTML = "";
+  state.groups.forEach(function (g) {
+    var gd = document.createElement("span");
+    gd.className = "lg-group";
+    var b = document.createElement("b");
+    b.textContent = g.name + ":";
+    gd.appendChild(b);
+    var any = false;
+    state.tags.forEach(function (t) {
+      if (t.groupId !== g.id) return;
+      any = true;
+      var c = document.createElement("span");
+      c.className = "lg-chip" + (filterTags[t.id] ? " fil" : "");
+      c.innerHTML = '<span class="dot" style="background:' + t.color + '"></span>' + escapeHtml(t.name);
+      c.addEventListener("click", (function (tid) {
+        return function () {
+          if (filterTags[tid]) delete filterTags[tid];
+          else filterTags[tid] = true;
+          renderLegend();
+          applyFilter();
+        };
+      })(t.id));
+      gd.appendChild(c);
+    });
+    if (any) lt.appendChild(gd);
+  });
+  if (!state.groups.length) {
+    var h = document.createElement("span");
+    h.className = "lg-hint";
+    h.textContent = " (还没有标签,点右上角「标签管理」创建)";
+    lt.appendChild(h);
+  }
+}
+function escapeHtml(s) {
+  s = String(s);
+  var out = "";
+  for (var i = 0; i < s.length; i++) {
+    var c = s.charAt(i);
+    if (c === "&") out += "&amp;";
+    else if (c === "<") out += "&lt;";
+    else if (c === ">") out += "&gt;";
+    else if (c === '"') out += "&quot;";
+    else if (c === "'") out += "&#39;";
+    else out += c;
+  }
+  return out;
+}
+
+/* ============ 批量选择(日视图拖拽框选) ============ */
+function clearSelection(silent) {
+  if (selRng) {
+    for (var r = selRng.r0; r <= selRng.r1; r++) {
+      if (!rowsCols[r]) continue;
+      for (var c = selRng.c0; c <= selRng.c1; c++) {
+        var el = rowsCols[r][c];
+        if (el) el.classList.remove("sel");
+      }
+    }
+  }
+  selKeys = {};
+  selRng = null;
+  if (!silent) $("#batchBar").hidden = true;
+}
+
+function updateSelection() {
+  clearSelection(true);
+  var r0 = Math.min(dragState.r0, dragState.r1), r1 = Math.max(dragState.r0, dragState.r1);
+  var c0 = Math.min(dragState.c0, dragState.c1), c1 = Math.max(dragState.c0, dragState.c1);
+  selRng = { r0: r0, r1: r1, c0: c0, c1: c1 };
+  for (var r = r0; r <= r1; r++) {
+    if (!rowsCols[r]) continue;
+    for (var c = c0; c <= c1; c++) {
+      var el = rowsCols[r][c];
+      if (!el) continue;
+      el.classList.add("sel");
+      selKeys[el.getAttribute("data-date")] = true;
+    }
+  }
+}
+
+function showBatchBar() {
+  var n = Object.keys(selKeys).length;
+  if (!n) { $("#batchBar").hidden = true; return; }
+  $("#bbCount").textContent = "已选 " + n + " 天";
+  renderBbPalette();
+  renderBbTags();
+  $("#batchBar").hidden = false;
+}
+
+function renderBbPalette() {
+  var p = $("#bbPalette");
+  p.innerHTML = "";
+  var sw = document.createElement("div");
+  sw.className = "sw clear";
+  sw.title = "清除颜色";
+  sw.addEventListener("click", function () { batchSetColor(null); });
+  p.appendChild(sw);
+  PALETTE.forEach(function (hex) {
+    var s = document.createElement("div");
+    s.className = "sw";
+    s.style.background = hex;
+    s.title = hex;
+    s.addEventListener("click", function () { batchSetColor(hex); });
+    p.appendChild(s);
+  });
+}
+function renderBbTags() {
+  var pop = $("#bbTagPop");
+  pop.innerHTML = "";
+  if (!state.groups.length) {
+    var e = document.createElement("div");
+    e.className = "empty";
+    e.textContent = "还没有标签,先创建。";
+    pop.appendChild(e);
+    return;
+  }
+  state.groups.forEach(function (g) {
+    var tagsOf = state.tags.filter(function (t) { return t.groupId === g.id; });
+    if (!tagsOf.length) return;
+    var gn = document.createElement("div");
+    gn.className = "gname";
+    gn.innerHTML = '<span class="dot" style="background:' + g.color + '"></span>' + escapeHtml(g.name);
+    pop.appendChild(gn);
+    var chips = document.createElement("div");
+    chips.className = "chips";
+    tagsOf.forEach(function (t) {
+      var all = selHasAll(t.id);
+      var c = document.createElement("span");
+      c.className = "chip" + (all ? " on" : "");
+      c.style.background = all ? t.color : "";
+      c.textContent = t.name;
+      c.addEventListener("click", function () { batchToggleTag(t.id); });
+      chips.appendChild(c);
+    });
+    pop.appendChild(chips);
+  });
+}
+function selKeysArr() { return Object.keys(selKeys); }
+function selHasAll(tagId) {
+  var keys = selKeysArr();
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (!(cell && cell.tags && cell.tags.indexOf(tagId) >= 0)) return false;
+  }
+  return true;
+}
+function batchSetColor(hex) {
+  var keys = selKeysArr();
+  for (var i = 0; i < keys.length; i++) {
+    if (!state.cells[keys[i]]) state.cells[keys[i]] = { c: null, tags: [] };
+    state.cells[keys[i]].c = hex;
+  }
+  save();
+  for (var j = 0; j < keys.length; j++) paintDay(keys[j], dayMap[keys[j]]);
+  applyFilter();
+  if (state.view === "month" || state.view === "year") renderGrid();
+}
+function batchToggleTag(tagId) {
+  var keys = selKeysArr();
+  var all = true;
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (!(cell && cell.tags && cell.tags.indexOf(tagId) >= 0)) { all = false; break; }
+  }
+  for (var j = 0; j < keys.length; j++) {
+    if (!state.cells[keys[j]]) state.cells[keys[j]] = { c: null, tags: [] };
+    var arr = state.cells[keys[j]].tags;
+    var idx = arr.indexOf(tagId);
+    if (all) { if (idx >= 0) arr.splice(idx, 1); }
+    else if (idx < 0) arr.push(tagId);
+  }
+  save();
+  for (var k = 0; k < keys.length; k++) paintDay(keys[k], dayMap[keys[k]]);
+  applyFilter();
+  renderBbTags();
+}
+function batchClearColor() {
+  var keys = selKeysArr();
+  for (var i = 0; i < keys.length; i++) {
+    if (state.cells[keys[i]]) state.cells[keys[i]].c = null;
+  }
+  save();
+  for (var j = 0; j < keys.length; j++) paintDay(keys[j], dayMap[keys[j]]);
+}
+function batchClearAll() {
+  var keys = selKeysArr();
+  for (var i = 0; i < keys.length; i++) delete state.cells[keys[i]];
+  save();
+  for (var j = 0; j < keys.length; j++) paintDay(keys[j], dayMap[keys[j]]);
+  applyFilter();
+}
+
+/* ============ 编辑模态(日/月/年通用) ============ */
+function openScopeModal(scope) {
+  currentScope = scope;
+  var st = stateOfScope(scope);
+  var stName = st === "today" ? " · 今天" : (st === "past" ? " · 过去" : " · 未来");
+  $("#scopeTitle").textContent = scopeLabel(scope) + stName;
+  $("#scopeSub").textContent = scope.type === "day"
+    ? "单日视图"
+    : (scope.type === "month"
+        ? "月视图 · 涵盖 " + scopeDays(scope) + " 天(点击颜色/标签会应用到本月全部天数)"
+        : "年视图 · 涵盖 " + scopeDays(scope) + " 天(点击颜色/标签会应用到本年全部天数)");
+  $("#batchHint").hidden = (scope.type === "day");
+  $("#btnZoom").hidden = (scope.type === "day");
+  $("#cellClear").textContent = scope.type === "day" ? "清除这一天"
+    : (scope.type === "month" ? "清除本月标记" : "清除本年标记");
+  renderPalette();
+  renderScopeTags();
+  updateScopeState();
+  $("#cellOverlay").hidden = false;
+}
+
+function updateScopeState() {
+  var keys = scopeKeys(currentScope);
+  var tagged = 0, colored = 0, tagNames = aggregateTagNames(keys);
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (!cell) continue;
+    if (cell.c) colored++;
+    if (cell.tags && cell.tags.length) tagged++;
+  }
+  var parts = ["共 " + scopeDays(currentScope) + " 天"];
+  parts.push("标记 " + tagged + " 天");
+  parts.push("有颜色 " + colored + " 天");
+  if (tagNames.length) parts.push("标签: " + tagNames.join("、"));
+  $("#scopeState").textContent = parts.join(" · ");
+}
+
+function renderPalette() {
+  var p = $("#palette");
+  p.innerHTML = "";
+  var keys = scopeKeys(currentScope);
+  var cur = aggregateColor(keys);
+  var sw = document.createElement("div");
+  sw.className = "sw clear" + (cur ? "" : " on");
+  sw.title = "清除颜色";
+  sw.addEventListener("click", function () { setScopeColor(null); renderPalette(); updateScopeState(); });
+  p.appendChild(sw);
+  PALETTE.forEach(function (hex) {
+    var s = document.createElement("div");
+    s.className = "sw" + (cur === hex ? " on" : "");
+    s.style.background = hex;
+    s.title = hex;
+    s.addEventListener("click", function () { setScopeColor(hex); renderPalette(); updateScopeState(); });
+    p.appendChild(s);
+  });
+}
+function setScopeColor(hex) {
+  var keys = scopeKeys(currentScope);
+  for (var i = 0; i < keys.length; i++) {
+    if (!state.cells[keys[i]]) state.cells[keys[i]] = { c: null, tags: [] };
+    state.cells[keys[i]].c = hex;
+  }
+  save();
+  refreshAfterWrite();
+}
+function renderScopeTags() {
+  var box = $("#cellTags");
+  box.innerHTML = "";
+  var keys = scopeKeys(currentScope);
+  var any = false;
+  state.groups.forEach(function (g) {
+    var tagsOf = state.tags.filter(function (t) { return t.groupId === g.id; });
+    if (!tagsOf.length) return;
+    any = true;
+    var blk = document.createElement("div");
+    blk.className = "gblock";
+    var gn = document.createElement("div");
+    gn.className = "gname";
+    gn.innerHTML = '<span class="dot" style="background:' + g.color + '"></span>' + escapeHtml(g.name);
+    blk.appendChild(gn);
+    var chips = document.createElement("div");
+    chips.className = "chips";
+    tagsOf.forEach(function (t) {
+      var on = scopeHasTag(keys, t.id);
+      var c = document.createElement("span");
+      c.className = "chip" + (on ? " on" : "");
+      c.style.background = on ? t.color : "";
+      c.textContent = t.name;
+      c.addEventListener("click", function () { toggleScopeTag(t.id); });
+      chips.appendChild(c);
+    });
+    blk.appendChild(chips);
+    box.appendChild(blk);
+  });
+  if (!any) {
+    var e = document.createElement("div");
+    e.className = "empty";
+    e.textContent = "还没有标签,先点右上角「标签管理」创建分组和标签,或在下框直接添加。";
+    box.appendChild(e);
+  }
+  renderQaGroup();
+}
+function scopeHasTag(keys, tagId) {
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (cell && cell.tags && cell.tags.indexOf(tagId) >= 0) return true;
+  }
+  return false;
+}
+function toggleScopeTag(tagId) {
+  var keys = scopeKeys(currentScope);
+  var all = true;
+  for (var i = 0; i < keys.length; i++) {
+    var cell = state.cells[keys[i]];
+    if (!(cell && cell.tags && cell.tags.indexOf(tagId) >= 0)) { all = false; break; }
+  }
+  for (var j = 0; j < keys.length; j++) {
+    if (!state.cells[keys[j]]) state.cells[keys[j]] = { c: null, tags: [] };
+    var arr = state.cells[keys[j]].tags;
+    var idx = arr.indexOf(tagId);
+    if (all) { if (idx >= 0) arr.splice(idx, 1); }
+    else if (idx < 0) arr.push(tagId);
+  }
+  save();
+  refreshAfterWrite();
+  renderScopeTags();
+  updateScopeState();
+}
+function renderQaGroup() {
+  var sel = $("#qaGroup");
+  sel.innerHTML = "";
+  state.groups.forEach(function (g) {
+    var o = document.createElement("option");
+    o.value = g.id;
+    o.textContent = g.name;
+    sel.appendChild(o);
+  });
+  if (!state.groups.length) {
+    var o2 = document.createElement("option");
+    o2.value = "";
+    o2.textContent = "(先新建分组)";
+    sel.appendChild(o2);
+  }
+}
+function quickAddTag() {
+  var gid = $("#qaGroup").value;
+  var name = $("#qaName").value.trim();
+  if (!gid) { alert("请先在「标签管理」中新建一个分组。"); return; }
+  if (!name) { alert("请输入标签名。"); return; }
+  var g = groupById(gid);
+  var tag = { id: uid(), name: name, groupId: gid, color: g.color };
+  state.tags.push(tag);
+  var keys = scopeKeys(currentScope);
+  for (var i = 0; i < keys.length; i++) {
+    if (!state.cells[keys[i]]) state.cells[keys[i]] = { c: null, tags: [] };
+    state.cells[keys[i]].tags.push(tag.id);
+  }
+  save();
+  $("#qaName").value = "";
+  renderScopeTags();
+  renderLegend();
+  refreshAfterWrite();
+  updateScopeState();
+}
+
+/* 写操作后刷新:日视图局部刷新,月/年视图整体重建 */
+function refreshAfterWrite() {
+  if (state.view === "day" && currentScope && currentScope.type === "day") {
+    paintDay(dateKey(currentScope.y, currentScope.m, currentScope.d), dayMap[dateKey(currentScope.y, currentScope.m, currentScope.d)]);
+    applyFilter();
+  } else {
+    renderGrid();
+  }
+}
+
+/* ============ 标签管理模态 ============ */
+function renderTagManager() {
+  var body = $("#tagBody");
+  body.innerHTML = "";
+  if (!state.groups.length) {
+    var e = document.createElement("div");
+    e.className = "empty";
+    e.textContent = "还没有分组。在下方的输入框新建第一个分组。";
+    body.appendChild(e);
+    return;
+  }
+  state.groups.forEach(function (g) {
+    var blk = document.createElement("div");
+    blk.className = "gblock";
+    var gn = document.createElement("div");
+    gn.className = "gname";
+    gn.innerHTML = '<span class="dot" style="background:' + g.color + '"></span>';
+    var gname = document.createElement("b");
+    gname.textContent = g.name;
+    gn.appendChild(gname);
+    var cnt = document.createElement("span");
+    cnt.className = "cnt";
+    var n = state.tags.filter(function (t) { return t.groupId === g.id; }).length;
+    cnt.textContent = n + " 个标签";
+    gn.appendChild(cnt);
+    var spacer = document.createElement("span");
+    spacer.style.flex = "1";
+    gn.appendChild(spacer);
+    var rn = document.createElement("button");
+    rn.textContent = "✎ 改名";
+    rn.addEventListener("click", function () {
+      var nn = prompt("重命名分组「" + g.name + "」为:", g.name);
+      if (nn && nn.trim()) { g.name = nn.trim(); save(); renderTagManager(); renderLegend(); }
+    });
+    var del = document.createElement("button");
+    del.className = "danger";
+    del.textContent = "✕ 删除";
+    del.addEventListener("click", function () {
+      if (!confirm_("删除分组「" + g.name + "」及其下所有标签?")) return;
+      var removeIds = {};
+      state.tags.forEach(function (t) { if (t.groupId === g.id) removeIds[t.id] = true; });
+      state.tags = state.tags.filter(function (t) { return t.groupId !== g.id; });
+      for (var key in state.cells) {
+        if (state.cells[key].tags) state.cells[key].tags = state.cells[key].tags.filter(function (tid) { return !removeIds[tid]; });
+      }
+      state.groups = state.groups.filter(function (x) { return x.id !== g.id; });
+      save();
+      renderTagManager(); renderLegend(); renderGrid();
+    });
+    gn.appendChild(rn);
+    gn.appendChild(del);
+    blk.appendChild(gn);
+
+    var chips = document.createElement("div");
+    chips.className = "chips";
+    state.tags.forEach(function (t) {
+      if (t.groupId !== g.id) return;
+      var c = document.createElement("span");
+      c.className = "chip";
+      c.style.background = t.color;
+      c.style.color = "#fff";
+      c.innerHTML = escapeHtml(t.name) + ' <i class="rm" title="删除标签">✕</i>';
+      c.addEventListener("click", function (ev) {
+        if (ev.target.classList.contains("rm")) {
+          if (!confirm_("删除标签「" + t.name + "」?")) return;
+          for (var key in state.cells) {
+            if (state.cells[key].tags) state.cells[key].tags = state.cells[key].tags.filter(function (tid) { return tid !== t.id; });
+          }
+          state.tags = state.tags.filter(function (x) { return x.id !== t.id; });
+          delete filterTags[t.id];
+          save();
+          renderTagManager(); renderLegend(); renderGrid();
+        } else {
+          var nn = prompt("重命名标签「" + t.name + "」为:", t.name);
+          if (nn && nn.trim()) { t.name = nn.trim(); save(); renderTagManager(); renderLegend(); }
+        }
+      });
+      chips.appendChild(c);
+    });
+    blk.appendChild(chips);
+
+    var q = document.createElement("div");
+    q.className = "quick";
+    var inp = document.createElement("input");
+    inp.placeholder = "在「" + g.name + "」中添加标签,回车";
+    inp.maxLength = 30;
+    var btn = document.createElement("button");
+    btn.textContent = "添加";
+    function doAdd() {
+      var nm = inp.value.trim();
+      if (!nm) return;
+      var exists = state.tags.some(function (t) { return t.groupId === g.id && t.name === nm; });
+      if (exists) { alert("该分组下已有同名标签。"); return; }
+      state.tags.push({ id: uid(), name: nm, groupId: g.id, color: g.color });
+      save();
+      inp.value = "";
+      renderTagManager(); renderLegend();
+    }
+    btn.addEventListener("click", doAdd);
+    inp.addEventListener("keydown", function (ev) { if (ev.key === "Enter") doAdd(); });
+    q.appendChild(inp);
+    q.appendChild(btn);
+    blk.appendChild(q);
+    body.appendChild(blk);
+  });
+}
+
+/* ============ 年份范围 ============ */
+function applyRange() {
+  var s = parseInt($("#startYear").value, 10);
+  var e = parseInt($("#endYear").value, 10);
+  if (isNaN(s) || isNaN(e) || s < 1 || e > 9999 || s > e) {
+    alert("请输入有效年份:起始 ≤ 结束,且范围在 1–9999 之间。");
+    return;
+  }
+  if (e - s + 1 > 60 && !confirm_("年份跨度超过 60 年,格子会很多,可能较卡。仍然继续?")) {
+    $("#startYear").value = state.startYear;
+    $("#endYear").value = state.endYear;
+    return;
+  }
+  state.startYear = s;
+  state.endYear = e;
+  save();
+  $("#rangeLabel").textContent = s + " – " + e;
+  renderGrid();
+}
+
+/* ============ 导出 / 导入 ============ */
+function exportData() {
+  var data = { app: "day-grid", range: [state.startYear, state.endYear], groups: state.groups, tags: state.tags, cells: state.cells };
+  var blob = new Blob([JSON.stringify(data, null, 1)], { type: "application/json" });
+  var a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "day-grid-" + state.startYear + "-" + state.endYear + ".json";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 200);
+}
+function importData(file) {
+  var rd = new FileReader();
+  rd.onload = function () {
+    try {
+      var d = JSON.parse(rd.result);
+      if (!d || !Array.isArray(d.groups) || !Array.isArray(d.tags) || !d.cells) throw new Error("格式不对");
+      if (!confirm_("导入将覆盖当前所有数据,确定?")) return;
+      var newStart = (d.range && d.range[0]) ? d.range[0] : state.startYear;
+      var newEnd = (d.range && d.range[1]) ? d.range[1] : state.endYear;
+      state = { cells: d.cells || {}, groups: d.groups || [], tags: d.tags || [], view: state.view, startYear: newStart, endYear: newEnd };
+      save();
+      $("#startYear").value = state.startYear;
+      $("#endYear").value = state.endYear;
+      $("#rangeLabel").textContent = state.startYear + " – " + state.endYear;
+      renderGrid(); renderLegend();
+      alert("导入成功");
+    } catch (e) {
+      alert("导入失败:" + e.message);
+    }
+  };
+  rd.readAsText(file);
+}
+
+/* ============ tooltip ============ */
+function showTip(ev, text) {
+  var tip = $("#tip");
+  tip.textContent = text;
+  tip.hidden = false;
+  var w = tip.offsetWidth, h = tip.offsetHeight;
+  var x = ev.clientX + 14, y = ev.clientY + 14;
+  if (x + w > window.innerWidth - 8) x = ev.clientX - w - 10;
+  if (y + h > window.innerHeight - 8) y = ev.clientY - h - 10;
+  tip.style.left = x + "px";
+  tip.style.top = y + "px";
+}
+
+/* ============ 事件绑定 ============ */
+function init() {
+  /* 今天 */
+  var now = new Date();
+  todayKey = dateKey(now.getFullYear(), now.getMonth(), now.getDate());
+  var weeks = ["日", "一", "二", "三", "四", "五", "六"];
+  todayLabel = todayKey + " 星期" + weeks[now.getDay()];
+  $("#todayBadge").innerHTML = "今天: <b>" + todayLabel + "</b>";
+
+  load();
+  $("#startYear").value = state.startYear;
+  $("#endYear").value = state.endYear;
+  $("#rangeLabel").textContent = state.startYear + " – " + state.endYear;
+  renderGrid();
+  renderLegend();
+  syncViewButtons();
+
+  /* 视图切换 */
+  $("#viewSwitch").addEventListener("click", function (ev) {
+    var b = ev.target.closest("[data-view]");
+    if (!b) return;
+    state.view = b.getAttribute("data-view");
+    save();
+    syncViewButtons();
+    renderGrid();
+    $("#grid-scroll").scrollLeft = 0;
+    $("#grid-scroll").scrollTop = 0;
+  });
+  function syncViewButtons() {
+    var btns = document.querySelectorAll("#viewSwitch button");
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle("on", btns[i].getAttribute("data-view") === state.view);
+    }
+    var showMS = $("#showMS");
+    showMS.disabled = (state.view !== "day");
+    showMS.parentNode.style.opacity = (state.view === "day") ? "1" : ".4";
+    if (state.view !== "day") clearSelection(true);
+  }
+
+  /* 年份范围 */
+  $("#applyRange").addEventListener("click", applyRange);
+  $("#startYear").addEventListener("keydown", function (ev) { if (ev.key === "Enter") applyRange(); });
+  $("#endYear").addEventListener("keydown", function (ev) { if (ev.key === "Enter") applyRange(); });
+
+  var grid = $("#grid");
+  var scroll = $("#grid-scroll");
+
+  /* 拖拽框选(仅日视图 .day) */
+  grid.addEventListener("mousedown", function (ev) {
+    if (ev.button !== 0) return;
+    if (state.view !== "day") return;
+    var d = ev.target.closest(".day");
+    if (!d) return;
+    if ($("#cellOverlay").hidden === false) return;
+    dragState = { r0: +d.getAttribute("data-r"), c0: +d.getAttribute("data-c"), r1: +d.getAttribute("data-r"), c1: +d.getAttribute("data-c"), moved: false };
+    ev.preventDefault();
+  });
+  document.addEventListener("mousemove", function (ev) {
+    if (!dragState) return;
+    var el = document.elementFromPoint(ev.clientX, ev.clientY);
+    var d = el && el.closest ? el.closest(".day") : null;
+    if (d) {
+      var r = +d.getAttribute("data-r"), c = +d.getAttribute("data-c");
+      if (Math.abs(r - dragState.r0) + Math.abs(c - dragState.c0) >= 3) dragState.moved = true;
+      dragState.r1 = r;
+      dragState.c1 = c;
+      if (dragState.moved) updateSelection();
+    }
+  });
+  document.addEventListener("mouseup", function () {
+    if (!dragState) return;
+    var ds = dragState;
+    dragState = null;
+    if (ds.moved) {
+      updateSelection();
+      showBatchBar();
+      justDragged = true;
+    } else {
+      clearSelection(true);
+    }
+  });
+
+  grid.addEventListener("click", function (ev) {
+    if (justDragged) { justDragged = false; return; }
+    var d = ev.target.closest(".day");
+    if (d) {
+      var k = keyToYMD(d.getAttribute("data-date"));
+      openScopeModal({ type: "day", y: k.y, m: k.m, d: k.d });
+      return;
+    }
+    var mc = ev.target.closest(".mcell");
+    if (mc) {
+      var sp = mc.getAttribute("data-scope").split(":");
+      openScopeModal({ type: "month", y: +sp[1], m: +sp[2] });
+      return;
+    }
+    var yc = ev.target.closest(".ycell");
+    if (yc) {
+      var sy = yc.getAttribute("data-scope").split(":");
+      openScopeModal({ type: "year", y: +sy[1] });
+      return;
+    }
+  });
+
+  /* 批量条 */
+  $("#bbTagBtn").addEventListener("click", function (ev) {
+    ev.stopPropagation();
+    var pop = $("#bbTagPop");
+    pop.hidden = !pop.hidden;
+  });
+  document.addEventListener("click", function (ev) {
+    if (!ev.target.closest(".bb-wrap")) $("#bbTagPop").hidden = true;
+  });
+  $("#bbClearColor").addEventListener("click", function () {
+    if (!confirm_("清除所选 " + Object.keys(selKeys).length + " 天的颜色?")) return;
+    batchClearColor();
+  });
+  $("#bbClearAll").addEventListener("click", function () {
+    if (!confirm_("清空所选 " + Object.keys(selKeys).length + " 天的颜色和标签?")) return;
+    batchClearAll();
+  });
+  $("#bbCancel").addEventListener("click", function () { clearSelection(); });
+
+  /* tooltip */
+  grid.addEventListener("mousemove", function (ev) {
+    if (dragState) return;
+    var d = ev.target.closest(".day");
+    if (d) {
+      var key = d.getAttribute("data-date");
+      var st = { past: "过去", today: "今天", future: "未来" }[stateOfKey(key)];
+      var lines = [key + "(" + st + ")"];
+      var cell = state.cells[key];
+      if (cell && cell.c) lines.push("■ " + cell.c);
+      if (cell && cell.tags && cell.tags.length) {
+        var names = cell.tags.map(function (tid) { var t = tagById(tid); return t ? t.name : "?"; });
+        lines.push("🏷 " + names.join("、"));
+      }
+      showTip(ev, lines.join("\n"));
+      return;
+    }
+    var mc = ev.target.closest(".mcell");
+    if (mc) {
+      var sp = mc.getAttribute("data-scope").split(":");
+      var scope = { type: "month", y: +sp[1], m: +sp[2] };
+      var keys = scopeKeys(scope);
+      var lines = [scopeLabel(scope) + " · " + keys.length + " 天"];
+      var colored = aggregateColor(keys);
+      if (colored) lines.push("■ 主要颜色 " + colored);
+      var tg = aggregateTaggedCount(keys);
+      if (tg) lines.push("🏷 " + tg + " 天有标签");
+      var tn = aggregateTagNames(keys);
+      if (tn.length) lines.push("标签: " + tn.join("、"));
+      showTip(ev, lines.join("\n"));
+      return;
+    }
+    var yc = ev.target.closest(".ycell");
+    if (yc) {
+      var sy = yc.getAttribute("data-scope").split(":");
+      var scope2 = { type: "year", y: +sy[1] };
+      var keys2 = scopeKeys(scope2);
+      var lines2 = [scopeLabel(scope2) + " · " + keys2.length + " 天"];
+      var colored2 = aggregateColor(keys2);
+      if (colored2) lines2.push("■ 主要颜色 " + colored2);
+      var tg2 = aggregateTaggedCount(keys2);
+      if (tg2) lines2.push("🏷 " + tg2 + " 天有标签");
+      var tn2 = aggregateTagNames(keys2);
+      if (tn2.length) lines2.push("标签: " + tn2.join("、"));
+      showTip(ev, lines2.join("\n"));
+      return;
+    }
+    $("#tip").hidden = true;
+  });
+  grid.addEventListener("mouseleave", function () { $("#tip").hidden = true; });
+
+  /* 格子大小:重算月标尺段宽 */
+  $("#cellSize").addEventListener("input", function (ev) {
+    var v = ev.target.value;
+    document.documentElement.style.setProperty("--cell", v + "px");
+    var segs = document.querySelectorAll(".mseg");
+    for (var i = 0; i < segs.length; i++) {
+      var n = +segs[i].dataset.n;
+      segs[i].style.width = segWidth(v, n, segs[i].dataset.last === "1");
+    }
+  });
+  $("#showMS").addEventListener("change", function (ev) {
+    var on = ev.target.checked;
+    var days = document.querySelectorAll(".day");
+    for (var i = 0; i < days.length; i++) {
+      var key = days[i].getAttribute("data-date");
+      if (key && key.endsWith("-01")) days[i].classList.toggle("ms", on);
+    }
+  });
+
+  $("#btnTags").addEventListener("click", function () {
+    renderTagManager();
+    $("#tagOverlay").hidden = false;
+  });
+  $("#ngAdd").addEventListener("click", addGroup);
+  $("#ngName").addEventListener("keydown", function (ev) { if (ev.key === "Enter") addGroup(); });
+  function addGroup() {
+    var nm = $("#ngName").value.trim();
+    if (!nm) { alert("请输入分组名称。"); return; }
+    var dup = state.groups.some(function (g) { return g.name === nm; });
+    if (dup) { alert("已有同名分组。"); return; }
+    var color = GROUP_COLORS[state.groups.length % GROUP_COLORS.length];
+    state.groups.push({ id: uid(), name: nm, color: color });
+    save();
+    $("#ngName").value = "";
+    renderTagManager();
+    renderLegend();
+    renderQaGroup();
+  }
+
+  $("#qaAdd").addEventListener("click", quickAddTag);
+  $("#qaName").addEventListener("keydown", function (ev) { if (ev.key === "Enter") quickAddTag(); });
+
+  $("#cellClear").addEventListener("click", function () {
+    if (!currentScope) return;
+    var label = currentScope.type === "day" ? "这一天" : (currentScope.type === "month" ? "本月" : "本年");
+    if (!confirm_("确定清除" + label + "的所有颜色和标签?")) return;
+    var keys = scopeKeys(currentScope);
+    for (var i = 0; i < keys.length; i++) delete state.cells[keys[i]];
+    save();
+    refreshAfterWrite();
+    renderPalette();
+    renderScopeTags();
+    updateScopeState();
+  });
+
+  $("#btnZoom").addEventListener("click", function () {
+    if (!currentScope) return;
+    var targetKey;
+    if (currentScope.type === "month") targetKey = dateKey(currentScope.y, currentScope.m, 1);
+    else targetKey = dateKey(currentScope.y, 0, 1);
+    if (state.view !== "day") {
+      state.view = "day";
+      save();
+      syncViewButtons();
+      renderGrid();
+    }
+    var el = dayMap[targetKey];
+    if (el) {
+      el.scrollIntoView({ block: "nearest", inline: "nearest" });
+      el.classList.add("flash");
+      setTimeout(function () { el.classList.remove("flash"); }, 3200);
+    }
+    $("#cellOverlay").hidden = true;
+  });
+
+  $("#btnExport").addEventListener("click", exportData);
+  $("#btnImport").addEventListener("click", function () { $("#fileInput").click(); });
+  $("#fileInput").addEventListener("change", function (ev) {
+    if (ev.target.files && ev.target.files[0]) importData(ev.target.files[0]);
+    ev.target.value = "";
+  });
+
+  $("#btnClearAll").addEventListener("click", function () {
+    if (!confirm_("确定清空所有格子(颜色和标签引用)?标签库保留。")) return;
+    state.cells = {};
+    save();
+    renderGrid();
+  });
+
+  document.addEventListener("click", function (ev) {
+    var c = ev.target.closest("[data-close]");
+    if (c) $("#" + c.getAttribute("data-close")).hidden = true;
+  });
+  document.addEventListener("keydown", function (ev) {
+    if (ev.key === "Escape") {
+      if (!$("#cellOverlay").hidden || !$("#tagOverlay").hidden) {
+        $("#cellOverlay").hidden = true;
+        $("#tagOverlay").hidden = true;
+      } else if (Object.keys(selKeys).length) {
+        clearSelection();
+      }
+    }
+  });
+  document.querySelectorAll(".overlay").forEach(function (ov) {
+    ov.addEventListener("click", function (ev) { if (ev.target === ov) ov.hidden = true; });
+  });
+}
+
+init();
+</script>
+</body>
+</html>

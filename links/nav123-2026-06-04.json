@@ -1,0 +1,1501 @@
+{
+  "websites": [
+    {
+      "id": "1772908247246",
+      "name": "GitHub",
+      "url": "https://github.com",
+      "icon": "💻",
+      "category": "开发",
+      "description": "",
+      "createdAt": "2026-03-07T18:30:47.246Z",
+      "updatedAt": "2026-03-07T18:30:47.246Z"
+    },
+    {
+      "id": "1772932243911",
+      "name": "天翼云",
+      "url": "http://203.83.228.3:9527/b4bcb51e68",
+      "icon": "☁️",
+      "category": "云服务",
+      "description": "天翼云服务",
+      "createdAt": "2026-03-08T01:10:43.911Z",
+      "updatedAt": "2026-03-08T01:10:43.911Z"
+    },
+    {
+      "id": "1772932248878",
+      "name": "京东云",
+      "url": "http://117.72.180.177:9527/dream",
+      "icon": "☁️",
+      "category": "云服务",
+      "description": "京东云服务",
+      "createdAt": "2026-03-08T01:10:48.878Z",
+      "updatedAt": "2026-03-08T01:10:48.878Z"
+    },
+    {
+      "id": "1772932248892",
+      "name": "kk网络2026-11-03",
+      "url": "http://150.242.81.12:9527/dream",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "kk网络服务",
+      "createdAt": "2026-03-08T01:10:48.892Z",
+      "updatedAt": "2026-03-08T01:10:48.892Z"
+    },
+    {
+      "id": "1772932248906",
+      "name": "香港狐蒂云2027-1-8",
+      "url": "http://103.106.189.120:9527/dream",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "香港狐蒂云服务",
+      "createdAt": "2026-03-08T01:10:48.906Z",
+      "updatedAt": "2026-03-08T01:10:48.906Z"
+    },
+    {
+      "id": "1772937255862",
+      "name": "Floor796",
+      "url": "https://floor796.com/#b3l3,284,955",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.862Z",
+      "updatedAt": "2026-03-10T13:35:32.788Z"
+    },
+    {
+      "id": "1772937255889",
+      "name": "instructables D'i'y 平台",
+      "url": "https://www.instructables.com/",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.889Z",
+      "updatedAt": "2026-03-10T13:35:39.025Z"
+    },
+    {
+      "id": "1772937255904",
+      "name": "【万字长文】K8s部署前后端分离web应用避坑指南之一：从源代码到docker compose到k8",
+      "url": "https://cloud.tencent.com/developer/article/2351935",
+      "icon": "🔖",
+      "category": "开发",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.904Z",
+      "updatedAt": "2026-03-10T13:35:43.373Z"
+    },
+    {
+      "id": "1772937255926",
+      "name": "1Panel-家",
+      "url": "http://150.242.81.12:6001/",
+      "icon": "🔖",
+      "category": "云服务",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.926Z",
+      "updatedAt": "2026-03-08T01:22:00.000Z"
+    },
+    {
+      "id": "1772937255939",
+      "name": "完美许愿器 - 所有的愿望都已标好了代价",
+      "url": "https://wish.closeai.moe/",
+      "icon": "🔖",
+      "category": "开发",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.939Z",
+      "updatedAt": "2026-03-08T02:34:15.939Z"
+    },
+    {
+      "id": "1772937255952",
+      "name": "第三章：注意力机制 · Transformers快速入门",
+      "url": "https://transformers.run/c1/attention/",
+      "icon": "🔖",
+      "category": "开发",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.952Z",
+      "updatedAt": "2026-03-10T13:44:04.466Z"
+    },
+    {
+      "id": "1772937255966",
+      "name": "Transformer模型详解 - Welcome to AI World",
+      "url": "https://terrifyzhao.github.io/2019/01/11/Transformer%E6%A8%A1%E5%9E%8B%E8%AF%A6%E8%A7%A3.html",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.966Z",
+      "updatedAt": "2026-03-10T13:44:11.616Z"
+    },
+    {
+      "id": "1772937255981",
+      "name": "moltbook - the front page of the agent internet",
+      "url": "https://www.moltbook.com/",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.981Z",
+      "updatedAt": "2026-03-10T12:37:54.289Z"
+    },
+    {
+      "id": "1772937256011",
+      "name": "PDF24",
+      "url": "https://tools.pdf24.org/zh/compress-pdf",
+      "icon": "🔖",
+      "category": "工具",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:16.011Z",
+      "updatedAt": "2026-03-10T13:44:20.300Z"
+    },
+    {
+      "id": "1772937256025",
+      "name": "刘明野的工具箱",
+      "url": "https://tools.liumingye.cn/#/",
+      "icon": "🔖",
+      "category": "工具",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:16.025Z",
+      "updatedAt": "2026-03-10T13:44:08.365Z"
+    },
+    {
+      "id": "1772937256043",
+      "name": "Access Authorization - SiYuan",
+      "url": "http://103.106.189.120:6806/check-auth?to=%2F",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:16.043Z",
+      "updatedAt": "2026-03-08T02:34:16.043Z"
+    },
+    {
+      "id": "1741569600000",
+      "name": "言盏 StageWeaver",
+      "url": "http://103.106.189.120:10006",
+      "icon": "🎭",
+      "category": "我的服务",
+      "description": "StageWeaver 导演工作站 - 互动剧院系统",
+      "createdAt": "2026-03-10T00:24:00.000Z",
+      "updatedAt": "2026-03-10T13:44:04.466Z"
+    },
+    {
+      "id": "1741569600003",
+      "name": "Cockpit 控制面板",
+      "url": "https://103.106.189.120:9090",
+      "icon": "🔧",
+      "category": "我的服务",
+      "description": "Cockpit Web 控制台 - 系统和服务管理",
+      "createdAt": "2026-03-10T01:22:00.000Z",
+      "updatedAt": "2026-03-10T13:44:20.300Z"
+    },
+    {
+      "id": "1773149717715",
+      "name": "飞书",
+      "url": "https://g010j68b5yh.feishu.cn/next/messenger/",
+      "icon": "🌐",
+      "category": "工具",
+      "description": "",
+      "updatedAt": "2026-03-10T13:35:17.715Z"
+    },
+    {
+      "id": "1773150089307",
+      "name": "狐蒂云官网",
+      "url": "https://www.szhdy.com/servicedetail?id=38510",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "",
+      "updatedAt": "2026-03-10T13:41:29.307Z"
+    },
+    {
+      "id": "1773150132453",
+      "name": "一块剪贴板",
+      "url": "https://ykjtb.com/",
+      "icon": "📚",
+      "category": "工具",
+      "description": "",
+      "updatedAt": "2026-03-10T13:42:12.453Z"
+    },
+    {
+      "id": "1773849258237",
+      "name": "ai新闻",
+      "url": "https://tech.armyja-online.uk/rss",
+      "icon": "📰",
+      "category": "未分类",
+      "description": "",
+      "createdAt": "2026-03-18T15:54:18.237Z",
+      "updatedAt": "2026-03-18T15:54:18.237Z"
+    },
+    {
+      "id": "1741840000000",
+      "name": "3D跳绳游戏",
+      "url": "http://103.106.189.120:10011",
+      "icon": "🤸",
+      "category": "我的服务",
+      "description": "3D跳绳游戏 - 按空格键或点击屏幕控制角色跳绳，避开障碍物",
+      "createdAt": "2026-03-21T07:00:00.000Z",
+      "updatedAt": "2026-03-21T07:00:00.000Z"
+    },
+    {
+      "id": "1743312000000",
+      "name": "日程管理 Scheduler",
+      "url": "http://103.106.189.120:10012",
+      "icon": "📅",
+      "category": "我的服务",
+      "description": "Web 日程管理工具 - 支持日、周、月三种视图，24小时时间轴，事项管理",
+      "createdAt": "2026-03-26T10:30:00.000Z",
+      "updatedAt": "2026-03-26T10:30:00.000Z"
+    },
+    {
+      "id": "1743500000000",
+      "name": "🎭 舞台表演",
+      "url": "http://103.106.189.120:10013",
+      "icon": "🎭",
+      "category": "我的服务",
+      "description": "3D 交互式舞台场景 - 演员表演与舞台灯光控制",
+      "createdAt": "2026-03-30T12:50:00.000Z",
+      "updatedAt": "2026-03-30T16:20:00.000Z"
+    },
+    {
+      "id": "1775829242965",
+      "name": "文件服务器+便签",
+      "url": "http://103.106.189.120:10014",
+      "icon": "📁",
+      "category": "我的服务",
+      "description": "文件上传下载和便签记录服务",
+      "createdAt": "2026-04-10T13:54:02.965Z",
+      "updatedAt": "2026-04-10T14:47:00.000Z"
+    },
+    {
+      "id": "1744200000000",
+      "name": "OpenClaw Admin",
+      "url": "http://103.106.189.120:10015",
+      "icon": "🦞",
+      "category": "我的服务",
+      "description": "OpenClaw 管理后台 - 智能体管理、会话监控、模型配置、频道管理",
+      "createdAt": "2026-04-10T15:30:00.000Z",
+      "updatedAt": "2026-04-10T15:30:00.000Z"
+    },
+    {
+      "id": "1744300000000",
+      "name": "🧠 思维导图编辑器",
+      "url": "http://103.106.189.120:10016",
+      "icon": "🧠",
+      "category": "我的服务",
+      "description": "在线思维导图编辑器 - 自由布局节点编辑、拖拽连接、箭头方向设置",
+      "createdAt": "2026-04-11T16:10:00.000Z",
+      "updatedAt": "2026-04-11T16:10:00.000Z"
+    },
+    {
+      "id": "1746000000000",
+      "name": "🎨 p5.js 生成艺术",
+      "url": "http://103.106.189.120:10017",
+      "icon": "🎨",
+      "category": "我的服务",
+      "description": "p5.js 生成艺术平台 - 流场/粒子/波浪/万花筒/细胞自动机，多种艺术模式",
+      "createdAt": "2026-04-30T17:41:00.000Z",
+      "updatedAt": "2026-04-30T17:41:00.000Z"
+    },
+    {
+      "id": "1744700000000",
+      "name": "🏛️ 3D艺术博物馆",
+      "url": "http://103.106.189.120:10010",
+      "icon": "🏛️",
+      "category": "我的服务",
+      "description": "沉浸式3D虚拟博物馆 - 第一人称视角探索三个展厅，欣赏世界名画",
+      "createdAt": "2026-04-15T13:53:00.000Z",
+      "updatedAt": "2026-04-15T13:53:00.000Z"
+    },
+    {
+      "id": "1777572390643",
+      "name": "✏️ p5.js 作品集",
+      "url": "http://103.106.189.120:10018",
+      "icon": "🎨",
+      "category": "我的服务",
+      "description": "p5.js 艺术作品集编辑器 - 创建、编辑代码、实时预览效果",
+      "createdAt": "2026-04-30T18:06:30.643Z",
+      "updatedAt": "2026-04-30T18:06:30.644Z"
+    },
+    {
+      "id": "1777573138399",
+      "name": "DeepSeek平台",
+      "url": "https://platform.deepseek.com/usage",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "",
+      "createdAt": "2026-04-30T18:18:58.399Z",
+      "updatedAt": "2026-04-30T18:18:58.399Z"
+    },
+    {
+      "id": "1777783885569",
+      "name": "📑 网站导航",
+      "url": "http://103.106.189.120:10000",
+      "icon": "🧭",
+      "category": "我的服务",
+      "description": "Web导航管理页面",
+      "createdAt": "2026-05-03T04:51:25.568406",
+      "updatedAt": "2026-05-03T04:51:25.568429"
+    },
+    {
+      "id": "1777783885570",
+      "name": "📋 截止日管理",
+      "url": "http://103.106.189.120:10008",
+      "icon": "📅",
+      "category": "我的服务",
+      "description": "截止日与提醒管理",
+      "createdAt": "2026-05-03T04:51:25.568433",
+      "updatedAt": "2026-05-03T04:51:25.568434"
+    },
+    {
+      "id": "1746249879000",
+      "name": "CC-Connect 管理面板",
+      "url": "http://103.106.189.120:10019",
+      "icon": "🔗",
+      "category": "我的服务",
+      "description": "CC-Connect AI代理桥接管理面板",
+      "createdAt": "2026-05-03T05:24:00.000Z",
+      "updatedAt": "2026-05-03T05:24:00.000Z"
+    },
+    {
+      "id": "1777816849000",
+      "name": "🐟 服务舰队",
+      "url": "http://103.106.189.120:10020",
+      "icon": "🚢",
+      "category": "我的服务",
+      "createdAt": 1777816849000
+    },
+    {
+      "id": "1747641600001",
+      "name": "rectworld",
+      "url": "https://aprilssky.github.io/rectworld/",
+      "icon": "🌍",
+      "category": "GitHub Pages",
+      "description": "多人沙盒世界",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600002",
+      "name": "3D-art",
+      "url": "https://aprilssky.github.io/3D-art/",
+      "icon": "🖼️",
+      "category": "GitHub Pages",
+      "description": "3D艺术作品集",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600003",
+      "name": "fish-dream",
+      "url": "https://aprilssky.github.io/fish-dream/",
+      "icon": "🐟",
+      "category": "GitHub Pages",
+      "description": "鱼之梦",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600004",
+      "name": "4fun.github.io",
+      "url": "https://aprilssky.github.io/4fun.github.io/",
+      "icon": "🎮",
+      "category": "GitHub Pages",
+      "description": "娱乐小站",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600005",
+      "name": "resume",
+      "url": "https://aprilssky.github.io/resume/",
+      "icon": "📄",
+      "category": "GitHub Pages",
+      "description": "在线简历",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600006",
+      "name": "multi-agent-workflow",
+      "url": "https://aprilssky.github.io/multi-agent-workflow/",
+      "icon": "🤖",
+      "category": "GitHub Pages",
+      "description": "多Agent工作流",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600007",
+      "name": "p5js-art",
+      "url": "https://aprilssky.github.io/p5js-art/",
+      "icon": "🎨",
+      "category": "GitHub Pages",
+      "description": "p5.js生成艺术",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600008",
+      "name": "3d-dominoes",
+      "url": "https://aprilssky.github.io/3d-dominoes/",
+      "icon": "🎲",
+      "category": "GitHub Pages",
+      "description": "3D多米诺骨牌",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1777816849001",
+      "name": "md-docs",
+      "url": "https://aprilssky.github.io/md-docs/",
+      "icon": "📝",
+      "category": "GitHub Pages",
+      "description": "Markdown富文本编辑器",
+      "createdAt": "2026-05-20T14:00:00.000Z",
+      "updatedAt": "2026-05-20T14:00:00.000Z"
+    },
+    {
+      "id": "1777816849002",
+      "name": "stock-trading",
+      "url": "https://aprilssky.github.io/stock-trading",
+      "icon": "📈",
+      "category": "GitHub Pages",
+      "description": "模拟炒股 · 纯前端 · 做多/做空 · 一分钟K线",
+      "createdAt": "2026-05-20T14:00:00.000Z",
+      "updatedAt": "2026-05-20T14:00:00.000Z"
+    },
+    {
+      "id": "1777816849003",
+      "name": "multi-ai-chat",
+      "url": "https://aprilssky.github.io/multi-ai-chat/",
+      "icon": "🤖",
+      "category": "GitHub Pages",
+      "description": "多AI群聊机器人",
+      "createdAt": "2026-05-20T14:00:00.000Z",
+      "updatedAt": "2026-05-20T14:00:00.000Z"
+    },
+    {
+      "id": "1779542101032",
+      "name": "3d-portfolio",
+      "url": "https://aprilssky.github.io/3d-portfolio/",
+      "icon": "🏛️",
+      "category": "GitHub Pages",
+      "description": "AI 3D Portfolio — 3D艺术作品集",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779542101033",
+      "name": "3d-skill-demo",
+      "url": "https://aprilssky.github.io/3d-skill-demo/",
+      "icon": "🔧",
+      "category": "GitHub Pages",
+      "description": "AI Blender → Three.js 3D Pipeline Demo",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779542101034",
+      "name": "blog",
+      "url": "https://aprilssky.github.io/blog/",
+      "icon": "✍️",
+      "category": "GitHub Pages",
+      "description": "个人博客",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779542101035",
+      "name": "bowling-game",
+      "url": "https://aprilssky.github.io/bowling-game/",
+      "icon": "🎳",
+      "category": "GitHub Pages",
+      "description": "Three.js 保龄球游戏",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779542101036",
+      "name": "r3f-editor",
+      "url": "https://aprilssky.github.io/r3f-editor/",
+      "icon": "🟩",
+      "category": "GitHub Pages",
+      "description": "R3F 编辑器",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1780576110964",
+      "name": "adhd",
+      "url": "https://aprilssky.github.io/adhd/",
+      "icon": "🧩",
+      "category": "GitHub Pages",
+      "description": "ADHD 友好网站",
+      "createdAt": "2026-06-04T12:28:30.000Z",
+      "updatedAt": "2026-06-04T12:28:30.000Z"
+    },
+    {
+      "id": "1780576110965",
+      "name": "pinyin-table",
+      "url": "https://aprilssky.github.io/pinyin-table/",
+      "icon": "🔤",
+      "category": "GitHub Pages",
+      "description": "汉语拼音表",
+      "createdAt": "2026-06-04T12:28:30.000Z",
+      "updatedAt": "2026-06-04T12:28:30.000Z"
+    },
+    {
+      "id": "1780576110966",
+      "name": "robot-scenes",
+      "url": "https://aprilssky.github.io/robot-scenes/",
+      "icon": "🤖",
+      "category": "GitHub Pages",
+      "description": "小机器人 · 零件组装 & 垃圾压缩 — p5.js 双场景交互",
+      "createdAt": "2026-06-04T12:28:30.000Z",
+      "updatedAt": "2026-06-04T12:28:30.000Z"
+    },
+    {
+      "id": "1780576110967",
+      "name": "metaphor",
+      "url": "https://aprilssky.github.io/metaphor/",
+      "icon": "🌌",
+      "category": "GitHub Pages",
+      "description": "万物隐喻 · 创作思维系统",
+      "createdAt": "2026-06-04T12:28:30.000Z",
+      "updatedAt": "2026-06-04T12:28:30.000Z"
+    },
+    {
+      "id": "4fun1000",
+      "name": "Review on JSTOR",
+      "url": "https://www.jstor.org/stable/23729059?read-now=1&refreqid=excelsior%3A623cd7f89c6fb7e84064ebaf8558c6c3&seq=1#page_scan_tab_contents",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1001",
+      "name": "Review on JSTOR",
+      "url": "https://www.jstor.org/stable/495392?newaccount=true&read-now=1&seq=1#page_scan_tab_contents",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1002",
+      "name": "...Stone: Intertextuality, Ancient Chinese Stone ..._百度学术",
+      "url": "http://xueshu.baidu.com/s?wd=The+Story+of+Stone%3A+Intertextuality%2C+Ancient+Chinese+Stone+Lore%2C+and+the+Stone+Symbolism+in+Dream+of+the+Red+Chamber%2C+Water+Margin%2C+and+The+Journey+to+the+West&tn=SE_baiduxueshu_c1gjeupa&cl=3&ie=utf-8&bs=Journey+to+the+West+and+stone&f=8&rsv_bp=1&rsv_sug2=1&sc_f_para=sc_tasktype%3D%7BfirstSimpleSearch%7D&rsv_spt=3",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1003",
+      "name": "The Stone as a Motif in Narration of A Dream of Red Mansions - 中国知网",
+      "url": "http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=SSBD&dbname=SSBD_U&filename=SSBD0D001C930E188E01EEB5D9C9589729E2&uid=WEEvREcwSlJHSldRa1FhdkJkVWI3Y2ZLZmt4MGZrRTgzOUNEQUI4UHpxOD0=$9A4hF_YAuvQ5obgVAqNKPCYcEjKensW4ggI8Fm4gTkoUKaID8j8gFw!!&v=MDU2NjBDSlVhRjF1UVVyL1BKbGNTYm1LQ0dZQ0dRbGZDcExVdzV0aGl4Ym02eGFvPU5qN0phclBNSHRITjNJWkdaSjRPQkhSTXp4ZG1uMDE0UEhhUnBSYzljTFdXVE0rZA==",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1004",
+      "name": "Library Genesis: Daiyun Yue (auth.) - China and the West at the Crossroads: Essays on Comparative Literature and Culture",
+      "url": "http://gen.lib.rus.ec/book/index.php?md5=ed283397ec3c920ad0a9a200b45a6e5a",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1005",
+      "name": "The Story of the Stone (The Dream of the Red Chamber, vol. 1: The Golden Days) - ProQuest",
+      "url": "https://search.proquest.com/docview/220494065/fulltextPDF/68F254A06F394F1FPQ/1?accountid=45721",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1006",
+      "name": "Rereading the Stone: Desire and the Making of Ficton in Dream of the Red Chamber - ProQuest",
+      "url": "https://search.proquest.com/docview/217144297/B5FA30BBAF444F46PQ/5?accountid=45721#center",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1007",
+      "name": "The Story of Stone: Intertextuality, Ancient ..._百度学术",
+      "url": "http://xueshu.baidu.com/s?wd=paperuri%3A(a7005d9a2b18ba786ab0b96ffcd8fe8d)&filter=sc_long_sign&tn=SE_baiduxueshu_c1gjeupa&ie=utf-8&sc_ks_para=q%3DThe%20Story%20of%20Stone%3A%20Intertextuality%2C%20Ancient%20Chinese%20Stone%20Lore%2C%20and%20the%20Stone%20Symbolism%20of%20Dream%20of%20the%20Red%20Chamber%2C%20Water%20Margin%2C%20and%20The%20Journey%20to%20the%20...",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1008",
+      "name": "Reviews of books -- The Story of Stone: Intertextuality, Ancient Chinese Stone Lore, and the Stone Symbolism of Dream of",
+      "url": "https://search.proquest.com/docview/217138096/fulltext/6A08A791D1614AC3PQ/2?accountid=45721#center",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1009",
+      "name": "检索结果 - ProQuest",
+      "url": "https://search.proquest.com/results/6A08A791D1614AC3PQ/1?accountid=45721",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1010",
+      "name": "Google",
+      "url": "https://www.google.com.hk/?gws_rd=cr,ssl",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1011",
+      "name": "BYRBT :: 种子 - Powered by NexusPHP",
+      "url": "https://bt.byr.cn/torrents.php",
+      "icon": "🔖",
+      "category": "资源",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1012",
+      "name": "北洋园PT :: 种子 - Powered by NexusPHP",
+      "url": "https://www.tjupt.org/torrents.php",
+      "icon": "🔖",
+      "category": "资源",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1013",
+      "name": "天津大学场馆中心",
+      "url": "http://cgzx.tju.edu.cn:8080/index.php/Book/Login/index.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1014",
+      "name": "纯IPv6环境下远程办公及上网 - 简书",
+      "url": "https://www.jianshu.com/p/0f36ac5a97de",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1015",
+      "name": "无量纲量 - 维基百科，自由的百科全书",
+      "url": "https://zh.wikipedia.org/wiki/%E6%97%A0%E9%87%8F%E7%BA%B2%E9%87%8F",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1016",
+      "name": "呼啦",
+      "url": "http://haokan.baidu.com/v?pd=wisenatural&vid=7539457437401762673",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1017",
+      "name": "中舞",
+      "url": "http://www.chinadance.cn/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1018",
+      "name": "中地",
+      "url": "http://www.dili360.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1019",
+      "name": "中艺",
+      "url": "http://art.china.cn/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1020",
+      "name": "FLUENT6.3使用说明及例题_图文_百度文库",
+      "url": "https://wenku.baidu.com/view/fc94d285a0116c175f0e4853.html",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1021",
+      "name": "小白的CFD之旅_流沙CAE_新浪博客",
+      "url": "http://blog.sina.com.cn/s/articlelist_1503498154_7_1.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1022",
+      "name": "《ANSYS FLUENT 16.0超级学习手册》——2.5 FLUENT 16.0的基本...",
+      "url": "http://echo.logphp.com/?a=url&k=b9cfdb6e&u=aHR0cDovL3d3dy5iYWlkdS5jb20vbGluaz91cmw9VTgzazVYQ1BCWmhzeWpCUU9DNGxTZ09WR1FzdXdEeHVUWnNTQlBrNWpvS1lkR245MnBhSHhxWmc0cVhIdGFTcg==&t=44CKQU5TWVMgRkxVRU5UIDE2LjDotoXnuqflrabkuaDmiYvlhozjgIvigJTigJQyLjUgRkxVRU5UIDE2LjDnmoTln7rmnKwuLi4=&s=YW5zeXMgZmx1ZW505pWZ56iL",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1023",
+      "name": "ANSYS Fluent——流体动力学软件 --科学软件网",
+      "url": "http://www.sciencesoftware.com.cn/Newsoftware_detail.aspx?sid=1291",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1024",
+      "name": "【Gambit】Gambit使用教程 - _Hoshi - 博客园",
+      "url": "https://www.cnblogs.com/tenderwx/p/5245895.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1025",
+      "name": "【图文】Fluent6.3_入门基础培训_百度文库",
+      "url": "https://wenku.baidu.com/view/c65722d258f5f61fb73666d6.html?rec_flag=default&mark_pay_doc=2&mark_rec_page=1&mark_rec_position=2&mark_rec=view_r_1&clear_uda_param=1&sxts=1527507334062",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1026",
+      "name": "FLUENT经典算例合集7个_百度文库",
+      "url": "https://wenku.baidu.com/view/da07d802eff9aef8941e0631.html",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1027",
+      "name": "圆柱绕流成功算例_图文_百度文库",
+      "url": "https://wenku.baidu.com/view/e6d9ec1c227916888486d703.html",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1028",
+      "name": "Search, Register and Transfer Web Domain Names and More",
+      "url": "http://www.usdomaincenter.com/default.aspx",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1029",
+      "name": "淘宝网 - 淘！我喜欢",
+      "url": "https://www.taobao.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1030",
+      "name": "33个网站搞定一切中外电子书籍及杂志│超全整理",
+      "url": "https://weibo.com/ttarticle/p/show?id=2309403983003423514944",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1031",
+      "name": "Toaster vs. Freezer",
+      "url": "https://what-if.xkcd.com/155/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1032",
+      "name": "KIM主页 - 主页从未如此惊艳",
+      "url": "https://www.zhuye.kim/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1033",
+      "name": "Wolfram|Alpha: Computational Intelligence",
+      "url": "http://www.wolframalpha.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1034",
+      "name": "PlayOK - Play Gomoku Online Free",
+      "url": "https://www.playok.com/en/gomoku/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1035",
+      "name": "深度学习",
+      "url": "https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_17809039122020971260%22%7D&n_type=0&p_from=1",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1036",
+      "name": "用 Python 编写一个国际象棋 AI 程序 - 文章 - 伯乐在线",
+      "url": "http://blog.jobbole.com/80007/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1037",
+      "name": "Hello World · GitHub Guides",
+      "url": "https://guides.github.com/activities/hello-world/",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1038",
+      "name": "CSDN-专业IT技术社区",
+      "url": "https://www.csdn.net/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1039",
+      "name": "推荐十一个开源的微信/QQ机器人 - - ITeye博客",
+      "url": "http://zsuxiong.iteye.com/blog/2384776",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1040",
+      "name": "Google Arts",
+      "url": "https://artsandculture.google.com/",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1041",
+      "name": "Category:Google Art Project works by Vincent van Gogh - Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/wiki/Category:Google_Art_Project_works_by_Vincent_van_Gogh",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1042",
+      "name": "Google Arts & Culture",
+      "url": "https://artsandculture.google.com/?hl=zh-cn",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1043",
+      "name": "在线试用 Google 输入工具 – Google 输入工具",
+      "url": "https://www.google.com/intl/zh-CN/inputtools/try/",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1044",
+      "name": "免费在线OCR - 在线图片识别 - 免费OCR软件 - 免费OCR转换成Word - 在线文字识别转换 - 图片文字识别软件 - 图片转文字",
+      "url": "https://zhcn.109876543210.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1045",
+      "name": "在线拆分PDF文件。免费拆分PDF文件",
+      "url": "https://www.ilovepdf.com/zh_cn/fencai_pdf",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1046",
+      "name": "在线工具",
+      "url": "http://www.atool.org/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1047",
+      "name": "百度网盘-全部文件",
+      "url": "https://pan.baidu.com/disk/home?errno=0&errmsg=Auth%20Login%20Sucess&&bduss=&ssnerror=0&traceid=#/all?path=%2F&vmode=list",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1048",
+      "name": "天翼云盘 极速安全 网盘|文件备份|资源分享",
+      "url": "https://cloud.189.cn/main.action#home/folder/-15",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1049",
+      "name": "图片无损放大工具PhotoZoom pro 7破解版_激活码-就是爱分享的博客-51CTO博客",
+      "url": "http://blog.51cto.com/13692878/2095805",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1050",
+      "name": "用U盘安装Linux图解 - CSDN博客",
+      "url": "https://blog.csdn.net/xiazdong/article/details/7523331",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1051",
+      "name": "树莓派网线直连笔记本电脑 - CSDN博客",
+      "url": "https://blog.csdn.net/u013151320/article/details/51059328",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1052",
+      "name": "使用U盘安装Linux系统经验总结 - CSDN博客",
+      "url": "https://blog.csdn.net/haoxinqing9698/article/details/11833971",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1053",
+      "name": "云盘精灵 - 百度网盘、百度云资源搜索引擎",
+      "url": "https://www.yunpanjingling.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1054",
+      "name": "看过的最好的FLUENT中文教程_图文_百度文库",
+      "url": "https://wenku.baidu.com/view/5b8b4802bed5b9f3f90f1c96.html",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1055",
+      "name": "化妆如何入门？ - 知乎",
+      "url": "https://www.zhihu.com/question/20829553",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1056",
+      "name": "天津大学教学服务平台",
+      "url": "http://202.113.5.143/eduPlat/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1057",
+      "name": "用Fluent计算二维圆柱绕流_图文_百度文库",
+      "url": "https://wenku.baidu.com/view/9facfadf5022aaea998f0f1a.html",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1058",
+      "name": "登录",
+      "url": "http://202.113.5.133/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1059",
+      "name": "天津大学办公网",
+      "url": "http://e.tju.edu.cn/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1060",
+      "name": "Rainy Mood - Helps you to focus, relax, and sleep. Now available for iOS and Android",
+      "url": "http://www.rainymood.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1061",
+      "name": "Quora - A place to share knowledge and better understand the world.",
+      "url": "https://www.quora.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1062",
+      "name": "139邮箱",
+      "url": "http://appmail.mail.10086.cn/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1063",
+      "name": "有意思吧",
+      "url": "http://www.u148.net/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1064",
+      "name": "Coursera | Online Courses From Top Universities. Join for Free",
+      "url": "https://www.coursera.org/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1065",
+      "name": "NPR : National Public Radio : News & Analysis, World, US, Music & Arts : NPR",
+      "url": "http://www.npr.org/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1066",
+      "name": "Sketch Swap - 一画换一画",
+      "url": "http://www.sketchswap.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1067",
+      "name": "译言网 | 译文学习区",
+      "url": "http://article.yeeyan.org/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1068",
+      "name": "OpenStax",
+      "url": "https://openstax.org/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1069",
+      "name": "Thisissand沙画",
+      "url": "https://thisissand.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1070",
+      "name": "实验楼",
+      "url": "https://www.shiyanlou.com/courses/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1071",
+      "name": "解决UnicodeDecodeError: 'ascii' codec can't decode byte 0xcf in position 7: ordinal not in range(128) - DerMond - 博客园",
+      "url": "http://www.cnblogs.com/ingd/p/6185347.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1072",
+      "name": "USTC Open Source Software Mirror",
+      "url": "http://ipv6.mirrors.ustc.edu.cn/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1073",
+      "name": "Lynda: Online Courses, Classes, Training, Tutorials",
+      "url": "https://www.lynda.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1074",
+      "name": "Metasearch Search Engine - Search.com",
+      "url": "https://www.search.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1075",
+      "name": "Bartleby.com: Great Books Online -- Quotes, Poems, Novels, Classics and hundreds more",
+      "url": "http://www.bartleby.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1076",
+      "name": "Liquid Particles 3D | spielzeugz.de/lab",
+      "url": "http://www.spielzeugz.de/html5/liquid-particles-3D/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1077",
+      "name": "Shape Magazine: Diet, fitness and beauty features, with an online community.",
+      "url": "https://www.shape.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1078",
+      "name": "韓愈 - 萌典",
+      "url": "https://www.moedict.tw/%E9%9F%93%E6%84%88",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1079",
+      "name": "reddit: the front page of the internet",
+      "url": "https://www.reddit.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1080",
+      "name": "Optical Illusions and Visual Phenomena",
+      "url": "http://www.michaelbach.de/ot/index.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1081",
+      "name": "数的性质 2018",
+      "url": "https://zh.numberempire.com/2018",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1082",
+      "name": "Tecplot 常用数据格式排列 - 逆流的日志 - 网易博客",
+      "url": "http://blog.163.com/happy_blog/blog/static/122568838201412114155241/",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1083",
+      "name": "玩转MCskin3D——十分钟了解/入门这款皮肤制作软件！（图文教程）_网易我的世界论坛",
+      "url": "http://mc.netease.com/thread-2395-1-4.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1084",
+      "name": "超简单绘画教学，学会这些你可以当网红大触！ - 有意思吧",
+      "url": "http://www.u148.net/article/141281.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1085",
+      "name": "蓝点网|给你感兴趣的内容！",
+      "url": "https://www.landiannews.com/",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1086",
+      "name": "【资源/下载/教程/解答】物理沙盘吧导航_物理沙盘吧_百度贴吧",
+      "url": "https://tieba.baidu.com/p/4593630645",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1088",
+      "name": "python之yield函数 - 知行Lee - 博客园",
+      "url": "https://www.cnblogs.com/BigFishFly/p/6337081.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1089",
+      "name": "老码农冒死揭开行业黑幕：如何编写无法维护的代码",
+      "url": "https://mp.weixin.qq.com/s?__biz=MzA5MzY4NTQwMA==&mid=2651003249&idx=1&sn=35ab6e2eea7bf245bd67d9dd7d51e50c&chksm=8badaa86bcda2390d888fc6d67b052530d2a38f2ff54ba2fc6f1f5d8224bd3951b4c1dae0141&scene=21#wechat_redirect",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1090",
+      "name": "人是怎么废掉的？ - 有意思吧",
+      "url": "http://www.u148.net/article/142696.html",
+      "icon": "🔖",
+      "category": "其他",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1091",
+      "name": "技巧 - 百度脑图",
+      "url": "http://naotu.baidu.com/file/12bb00928cb62b9641558b9a2938efe4",
+      "icon": "🔖",
+      "category": "学术",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1092",
+      "name": "GitHub",
+      "url": "https://github.com/",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    },
+    {
+      "id": "4fun1093",
+      "name": "如何用github page搭建博客？ - 知乎",
+      "url": "https://www.zhihu.com/question/59088760/answer/161640592",
+      "icon": "🔖",
+      "category": "常用",
+      "description": "从 4fun 收藏夹导入",
+      "createdAt": "2026-08-16T00:00:00.000Z",
+      "updatedAt": "2026-08-16T00:00:00.000Z"
+    }
+  ],
+  "categoriesOrder": [
+    "GitHub Pages",
+    "我的服务",
+    "云服务",
+    "工具",
+    "开发",
+    "未分类",
+    "学术",
+    "资源",
+    "常用",
+    "其他"
+  ]
+}

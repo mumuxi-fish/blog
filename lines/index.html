@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>台词 · Aprilssky</title>
+  <meta name="description" content="台词精选">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>">
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Aprilssky</a>
+      <div class="nav-links">
+        <a href="../">首页</a>
+        <a href="./">台词</a>
+        <a href="../posts/">文章</a>
+        <a href="../videos/">视频字幕</a>
+        <a href="../projects.html">项目</a>
+        <a href="../links/">常用网站</a>
+        <a href="../bookshelf/">书架</a>
+        <a href="../learning-tutorials/">教程</a>
+        <a href="../pinyin-table/">拼音表</a>
+        <a href="../metaphor/">隐喻</a>
+        <a href="../2026/">日历</a>
+        <a href="../about.html">关于</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="archive fade-in">
+      <div class="container">
+        <h1>台词</h1>
+        <p style="color: var(--text-muted); margin-bottom: 48px;">戏剧、影视、文学中的对白与独白</p>
+        <div id="lines-list" class="archive-list">
+          <div class="post-loading">加载中...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Aprilssky · 用 ❤️ 和代码创作</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    (function() {
+      var container = document.getElementById('lines-list');
+      if (!container) return;
+
+      fetch('/blog/data/posts.json')
+        .then(function(r) { return r.json(); })
+        .then(function(posts) {
+          container.innerHTML = '';
+          var lines = posts.filter(function(p) { return p.tag === '台词'; });
+          if (lines.length === 0) {
+            container.innerHTML = '<p style="color:var(--text-muted)">暂无台词</p>';
+            return;
+          }
+          lines.forEach(function(post) {
+            var d = new Date(post.date);
+            var dateStr = d.getFullYear() + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0');
+            var el = document.createElement('a');
+            el.href = '/blog/posts/' + post.file;
+            el.className = 'archive-item';
+            el.innerHTML =
+              '<span class="archive-date">' + dateStr + '</span>' +
+              '<span class="archive-title">' + post.title + '</span>' +
+              '<span class="archive-tag">' + post.tag + '</span>';
+            container.appendChild(el);
+          });
+        })
+        .catch(function() {
+          container.innerHTML = '<p style="color:var(--text-muted)">暂无台词</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

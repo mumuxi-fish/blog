@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频字幕 · Aprilssky</title>
+  <meta name="description" content="B站视频字幕归档">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+  <style>
+    .archive-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .archive-item:hover {
+      background: var(--bg-alt);
+    }
+    .archive-item.playing {
+      background: var(--bg-alt);
+    }
+    .archive-item.no-audio {
+      opacity: 0.6;
+    }
+    .archive-item .archive-date,
+    .archive-item .archive-tag {
+      flex-shrink: 0;
+    }
+    .archive-item .archive-title {
+      flex: 1;
+      min-width: 0;
+    }
+    .archive-item .archive-title a {
+      color: var(--text);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .archive-item .archive-title a:hover {
+      color: var(--accent);
+    }
+    .play-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .play-btn:hover {
+      transform: scale(1.1);
+    }
+    .play-btn svg {
+      width: 16px;
+      height: 16px;
+      fill: white;
+      margin-left: 2px;
+    }
+    .play-btn.playing {
+      background: var(--text-muted);
+    }
+
+    /* 底部播放器 */
+    .player-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--card-bg);
+      border-top: 1px solid var(--border);
+      padding: 12px 24px;
+      display: none;
+      z-index: 100;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+    }
+    .player-bar.show {
+      display: block;
+    }
+    .player-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .player-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .player-controls button {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: none;
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .player-controls button:hover {
+      background: var(--bg-alt);
+    }
+    .player-controls button svg {
+      width: 18px;
+      height: 18px;
+      fill: var(--text);
+    }
+    .player-controls .btn-play-main {
+      width: 44px;
+      height: 44px;
+      background: var(--accent);
+    }
+    .player-controls .btn-play-main:hover {
+      background: var(--accent-hover);
+    }
+    .player-controls .btn-play-main svg {
+      fill: white;
+    }
+    .player-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .player-title {
+      font-size: 0.9em;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .player-time {
+      font-size: 0.8em;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .player-progress {
+      flex: 1;
+      max-width: 300px;
+    }
+    .player-progress input[type="range"] {
+      width: 100%;
+      height: 4px;
+      -webkit-appearance: none;
+      background: var(--border);
+      border-radius: 2px;
+      outline: none;
+    }
+    .player-progress input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+    }
+    .player-volume {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .player-volume input[type="range"] {
+      width: 80px;
+      height: 4px;
+      -webkit-appearance: none;
+      background: var(--border);
+      border-radius: 2px;
+      outline: none;
+    }
+    .player-volume input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+    }
+    .player-link {
+      flex-shrink: 0;
+    }
+    .player-link a {
+      font-size: 0.8em;
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .player-link a:hover {
+      color: var(--accent);
+    }
+
+    /* 列表底部留出播放器空间 */
+    .archive-list {
+      padding-bottom: 80px;
+    }
+
+    /* 筛选按钮 */
+    .filter-btn {
+      padding: 6px 14px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .filter-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: white;
+    }
+    .filter-btn span {
+      margin-left: 4px;
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../" class="nav-logo">Aprilssky</a>
+      <div class="nav-links">
+        <a href="../">首页</a>
+        <a href="../lines/">台词</a>
+        <a href="../posts/">文章</a>
+        <a href="./">视频字幕</a>
+        <a href="../projects.html">项目</a>
+        <a href="../links/">常用网站</a>
+        <a href="../bookshelf/">书架</a>
+        <a href="../learning-tutorials/">教程</a>
+        <a href="../pinyin-table/">拼音表</a>
+        <a href="../metaphor/">隐喻</a>
+        <a href="../2026/">日历</a>
+        <a href="../about.html">关于</a>
+        <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+      </div>
+      <button class="nav-toggle" aria-label="菜单">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 12h18M3 6h18M3 18h18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="archive fade-in">
+      <div class="container">
+        <h1>视频字幕</h1>
+        <p style="color: var(--text-muted); margin-bottom: 24px;">B站视频完整字幕 · 时间轴 · 可下载 SRT</p>
+        <div id="filter-bar" style="margin-bottom: 24px; display: flex; gap: 12px; align-items: center;">
+          <button class="filter-btn active" data-filter="all">全部 <span id="count-all">0</span></button>
+          <button class="filter-btn" data-filter="audio">有音频 <span id="count-audio">0</span></button>
+          <button class="filter-btn" data-filter="subtitles">有字幕 <span id="count-subtitles">0</span></button>
+        </div>
+        <div id="videos-list" class="archive-list">
+          <div class="post-loading">加载中...</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 底部播放器 -->
+  <div class="player-bar" id="player-bar">
+    <div class="player-inner">
+      <div class="player-controls">
+        <button onclick="playPrev()" title="上一首">
+          <svg viewBox="0 0 24 24"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+        </button>
+        <button class="btn-play-main" onclick="togglePlay()" id="btn-play-main" title="播放/暂停">
+          <svg viewBox="0 0 24 24" id="icon-play"><polygon points="5,3 19,12 5,21"/></svg>
+          <svg viewBox="0 0 24 24" id="icon-pause" style="display:none"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>
+        </button>
+        <button onclick="playNext()" title="下一首">
+          <svg viewBox="0 0 24 24"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+        </button>
+      </div>
+      <div class="player-info">
+        <div class="player-title" id="player-title">未在播放</div>
+        <div class="player-time">
+          <span id="player-current">0:00</span> / <span id="player-duration">0:00</span>
+        </div>
+      </div>
+      <div class="player-progress">
+        <input type="range" min="0" max="100" value="0" id="progress-bar" oninput="seek(this.value)">
+      </div>
+      <div class="player-volume">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="var(--text-muted)"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+        <input type="range" min="0" max="100" value="100" id="volume-bar" oninput="setVolume(this.value)">
+      </div>
+      <div class="player-link">
+        <a href="#" id="player-link" target="_blank">查看视频</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Aprilssky · 用 ❤️ 和代码创作</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <script>
+    (function() {
+      var container = document.getElementById('videos-list');
+      if (!container) return;
+
+      var playlist = [];
+      var currentIndex = -1;
+      var audio = new Audio();
+      var isPlaying = false;
+      var allVideos = [];
+      var currentFilter = 'all';
+
+      // 播放指定索引
+      function playAt(index) {
+        if (index < 0 || index >= playlist.length) return;
+        
+        var item = playlist[index];
+        currentIndex = index;
+        
+        audio.src = '/audio/' + item.slug + '.mp3';
+        audio.load();
+        audio.play().catch(function() {
+          // 音频不存在，尝试下一首
+          playNext();
+        });
+        
+        isPlaying = true;
+        updateUI();
+      }
+
+      // 切换播放/暂停
+      window.togglePlay = function() {
+        if (currentIndex < 0) {
+          if (playlist.length > 0) playAt(0);
+          return;
+        }
+        
+        if (isPlaying) {
+          audio.pause();
+          isPlaying = false;
+        } else {
+          audio.play();
+          isPlaying = true;
+        }
+        updateUI();
+      };
+
+      // 上一首
+      window.playPrev = function() {
+        if (playlist.length === 0) return;
+        var index = currentIndex <= 0 ? playlist.length - 1 : currentIndex - 1;
+        playAt(index);
+      };
+
+      // 下一首
+      window.playNext = function() {
+        if (playlist.length === 0) return;
+        var index = (currentIndex + 1) % playlist.length;
+        playAt(index);
+      };
+
+      // 跳转
+      window.seek = function(value) {
+        if (audio.duration) {
+          audio.currentTime = (value / 100) * audio.duration;
+        }
+      };
+
+      // 设置音量
+      window.setVolume = function(value) {
+        audio.volume = value / 100;
+      };
+
+      // 更新 UI
+      function updateUI() {
+        // 更新播放按钮图标
+        var iconPlay = document.getElementById('icon-play');
+        var iconPause = document.getElementById('icon-pause');
+        if (isPlaying) {
+          iconPlay.style.display = 'none';
+          iconPause.style.display = 'block';
+        } else {
+          iconPlay.style.display = 'block';
+          iconPause.style.display = 'none';
+        }
+
+        // 更新标题
+        var titleEl = document.getElementById('player-title');
+        var linkEl = document.getElementById('player-link');
+        if (currentIndex >= 0) {
+          var item = playlist[currentIndex];
+          titleEl.textContent = item.title;
+          linkEl.href = 'https://www.bilibili.com/video/' + item.bvid;
+          document.getElementById('player-bar').classList.add('show');
+        }
+
+        // 更新列表中的播放状态
+        document.querySelectorAll('.archive-item').forEach(function(el) {
+          var idx = parseInt(el.dataset.playlistIndex);
+          var btn = el.querySelector('.play-btn');
+          if (!btn) return;
+          
+          if (idx === currentIndex && isPlaying) {
+            el.classList.add('playing');
+            btn.classList.add('playing');
+            btn.innerHTML = '<svg viewBox="0 0 24 24"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>';
+          } else {
+            el.classList.remove('playing');
+            btn.classList.remove('playing');
+            btn.innerHTML = '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>';
+          }
+        });
+      }
+
+      // 渲染列表
+      function renderList() {
+        container.innerHTML = '';
+        playlist = [];
+        currentIndex = -1;
+        
+        var filtered = allVideos.filter(function(v) {
+          if (currentFilter === 'audio') return v.hasAudio;
+          if (currentFilter === 'subtitles') return v.hasSubtitles;
+          return true;
+        });
+
+        if (filtered.length === 0) {
+          container.innerHTML = '<p style="color:var(--text-muted)">暂无视频</p>';
+          return;
+        }
+
+        filtered.forEach(function(post) {
+          var d = new Date(post.date);
+          var dateStr = d.getFullYear() + '/' + String(d.getMonth()+1).padStart(2,'0') + '/' + String(d.getDate()).padStart(2,'0');
+          var slug = post.slug || post.id;
+          var playlistIndex = playlist.length;
+          
+          if (post.hasAudio) {
+            playlist.push({
+              slug: slug,
+              title: post.title,
+              bvid: post.bvid || ''
+            });
+          }
+          
+          var el = document.createElement('div');
+          el.className = 'archive-item' + (post.hasAudio ? '' : ' no-audio');
+          el.dataset.playlistIndex = post.hasAudio ? playlistIndex : -1;
+          
+          if (post.hasAudio) {
+            el.innerHTML =
+              '<span class="archive-date">' + dateStr + '</span>' +
+              '<span class="archive-title"><a href="/videos/watch.html?id=' + slug + '" target="_blank">' + post.title + '</a></span>' +
+              '<button class="play-btn">' +
+                '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>' +
+              '</button>';
+            
+            var playBtn = el.querySelector('.play-btn');
+            playBtn.addEventListener('click', function(e) {
+              e.preventDefault();
+              e.stopPropagation();
+              var idx = parseInt(el.dataset.playlistIndex);
+              if (currentIndex === idx && isPlaying) {
+                togglePlay();
+              } else {
+                playAt(idx);
+              }
+            });
+          } else {
+            el.innerHTML =
+              '<span class="archive-date">' + dateStr + '</span>' +
+              '<span class="archive-title"><a href="/videos/watch.html?id=' + slug + '" target="_blank">' + post.title + '</a></span>' +
+              '<span class="archive-tag" style="color:var(--text-muted);font-size:0.85em">无音频</span>';
+          }
+          
+          container.appendChild(el);
+        });
+      }
+
+      // 音频事件
+      audio.addEventListener('timeupdate', function() {
+        if (audio.duration) {
+          var percent = (audio.currentTime / audio.duration) * 100;
+          document.getElementById('progress-bar').value = percent;
+          document.getElementById('player-current').textContent = formatTime(audio.currentTime);
+          document.getElementById('player-duration').textContent = formatTime(audio.duration);
+        }
+      });
+
+      audio.addEventListener('ended', function() {
+        playNext();
+      });
+
+      audio.addEventListener('error', function() {
+        // 音频加载失败，跳过
+        if (playlist.length > 1) {
+          playNext();
+        }
+      });
+
+      function formatTime(sec) {
+        var m = Math.floor(sec / 60);
+        var s = Math.floor(sec % 60);
+        return m + ':' + (s < 10 ? '0' : '') + s;
+      }
+
+      // 筛选按钮
+      document.querySelectorAll('.filter-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          renderList();
+        });
+      });
+
+      // 加载视频列表
+      fetch('/data/video-subtitles.json')
+        .then(function(r) { return r.json(); })
+        .then(function(posts) {
+          allVideos = posts;
+          
+          // 更新计数
+          document.getElementById('count-all').textContent = posts.length;
+          document.getElementById('count-audio').textContent = posts.filter(function(p) { return p.hasAudio; }).length;
+          document.getElementById('count-subtitles').textContent = posts.filter(function(p) { return p.hasSubtitles; }).length;
+          
+          renderList();
+        })
+        .catch(function() {
+          container.innerHTML = '<p style="color:var(--text-muted)">暂无视频字幕</p>';
+        });
+    })();
+  </script>
+</body>
+</html>

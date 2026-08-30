@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>万物隐喻 · 创作练习工具</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #faf6f0;
+    --surface: #ffffff;
+    --text: #2d2a26;
+    --text-soft: #6b655c;
+    --text-muted: #9f968b;
+    --accent: #c47a4f;
+    --accent-soft: #e8c8b4;
+    --accent-light: #f5e8dd;
+    --accent-dark: #9e5f3d;
+    --emerald: #4a7c6b;
+    --emerald-light: #cfe4db;
+    --saffron: #d4a843;
+    --saffron-light: #f0e0b8;
+    --berry: #9b5e7a;
+    --berry-light: #e8cfe0;
+    --border: #e8e0d6;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.05);
+    --shadow-hover: 0 6px 28px rgba(0,0,0,0.08);
+    --transition: 0.3s ease;
+  }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100dvh;
+  }
+
+  /* ── Header ── */
+  .app-header {
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    background: rgba(255,255,255,0.92);
+  }
+  .header-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+  }
+  .logo a {
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    text-decoration: none;
+  }
+  .logo span { color: var(--text-muted); font-weight: 400; }
+  .header-actions { display: flex; gap: 8px; align-items: center; }
+  .icon-btn {
+    width: 36px; height: 36px;
+    border: none; background: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    transition: var(--transition);
+    color: var(--text-soft);
+  }
+  .icon-btn:hover { background: var(--accent-light); color: var(--accent); }
+  .ai-status {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: var(--bg);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .ai-status.on { background: var(--emerald-light); color: var(--emerald); }
+  .ai-status.off { background: var(--bg); color: var(--text-muted); }
+
+  /* ── Tabs ── */
+  .tab-bar {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 500;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+    white-space: nowrap;
+    font-family: inherit;
+  }
+  .tab-btn:hover { color: var(--text-soft); }
+  .tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 600;
+  }
+  .tab-btn .num {
+    display: inline-block;
+    width: 20px; height: 20px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+  .tab-btn[data-tab="1"] .num { background: var(--accent-light); color: var(--accent-dark); }
+  .tab-btn[data-tab="2"] .num { background: var(--emerald-light); color: var(--emerald); }
+  .tab-btn[data-tab="3"] .num { background: var(--saffron-light); color: #8a7228; }
+  .tab-btn[data-tab="4"] .num { background: var(--berry-light); color: var(--berry); }
+  .tab-btn[data-tab="kb"] .num { background: #e0d8e8; color: #6b5b7a; }
+
+  @media (max-width: 480px) {
+    .tab-btn { padding: 8px 12px; font-size: 12px; }
+    .tab-btn .label-text { display: none; }
+  }
+
+  /* ── Main ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 20px 60px; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ── Section head ── */
+  .section-head {
+    margin-bottom: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .section-head .left h2 {
+    font-size: clamp(20px, 3.6vw, 26px);
+    font-weight: 700;
+  }
+  .section-head .left p {
+    color: var(--text-soft);
+    font-size: 14px;
+  }
+  .section-head .hint {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 3px 12px;
+    border-radius: 12px;
+    margin-top: 6px;
+  }
+
+  /* ── Form ── */
+  .form-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+  }
+  .form-group { margin-bottom: 16px; }
+  .form-group:last-child { margin-bottom: 0; }
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-soft);
+    margin-bottom: 6px;
+  }
+  .form-group label .label-hint {
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+  input[type="text"], input[type="date"], input[type="password"], textarea, select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--bg);
+    color: var(--text);
+    transition: var(--transition);
+    outline: none;
+  }
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(196,122,79,0.1);
+  }
+  textarea {
+    resize: vertical;
+    min-height: 64px;
+    line-height: 1.7;
+  }
+  textarea.sm { min-height: 48px; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 24px;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+  }
+  .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  .btn-ai {
+    background: linear-gradient(135deg, #6b5b7a, #9b5e7a);
+    color: #fff;
+  }
+  .btn-ai:hover { opacity: 0.9; transform: translateY(-1px); }
+  .btn-ai:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+  .btn-soft {
+    background: var(--accent-light);
+    color: var(--accent-dark);
+  }
+  .btn-outline {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-sm { padding: 5px 14px; font-size: 12px; }
+  .btn-danger { background: #e88282; color: #fff; }
+  .btn-danger:hover { background: #c25b5b; }
+  .btn-right { display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+  .btn-group { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  /* ── Chips ── */
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .chip {
+    padding: 4px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: var(--transition);
+    background: var(--surface);
+    color: var(--text-soft);
+    user-select: none;
+  }
+  .chip:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-light);
+  }
+
+  /* ── AI response ── */
+  .ai-response {
+    background: linear-gradient(135deg, #f8f0fa, #f5e8dd10);
+    border: 1px solid #e0d8e8;
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: var(--text-soft);
+    animation: slideIn 0.3s ease;
+    display: none;
+  }
+  .ai-response.show { display: block; }
+  .ai-response .ai-header {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--berry);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .ai-response .ai-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+  .ai-response .ai-loading .spinner {
+    width: 16px; height: 16px;
+    border: 2px solid var(--border);
+    border-top-color: var(--berry);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .ai-response .ai-error {
+    color: #e88282;
+    font-size: 13px;
+  }
+  .ai-response .ai-done { white-space: pre-wrap; }
+
+  .ai-btn-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+  }
+
+  /* ── History ── */
+  .history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+  .history-header h3 {
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .history-header .count {
+    color: var(--text-muted);
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .entry-list { display: flex; flex-direction: column; gap: 10px; }
+  .entry-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+    animation: slideIn 0.3s ease;
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .entry-card .e-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  .entry-card .e-date {
+    font-size: 11px;
+    color: var(--text-muted);
+  }
+  .entry-card .e-del {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    transition: var(--transition);
+  }
+  .entry-card .e-del:hover { color: #e88282; background: #fef0f0; }
+  .entry-card .e-title {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .entry-card .e-body { font-size: 13px; color: var(--text-soft); line-height: 1.8; }
+  .entry-card .e-body .e-field { margin-bottom: 2px; }
+  .entry-card .e-body .e-label { font-weight: 500; color: var(--text); }
+  .entry-card .e-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+  }
+  .entry-card .e-tags span {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: var(--bg);
+    color: var(--text-soft);
+  }
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .empty-state .big { font-size: 36px; margin-bottom: 8px; }
+
+  /* ── KB Browser ── */
+  .kb-search {
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .kb-search input { padding-left: 36px; }
+  .kb-search .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+  .kb-grid { display: grid; gap: 12px; }
+  .kb-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  .kb-card:hover {
+    border-color: var(--accent-soft);
+    box-shadow: var(--shadow);
+  }
+  .kb-card .kb-name {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .kb-card .kb-themes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+  .kb-card .kb-themes span {
+    font-size: 11px;
+    padding: 2px 10px;
+    border-radius: 10px;
+    background: var(--accent-light);
+    color: var(--accent-dark);
+  }
+  .kb-card .kb-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+  .kb-card .kb-detail {
+    display: none;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-soft);
+    line-height: 1.8;
+  }
+  .kb-card.expanded .kb-detail { display: block; }
+
+  @media (min-width: 640px) {
+    .kb-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ── Toast ── */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: var(--text);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.4s ease;
+    pointer-events: none;
+    z-index: 200;
+    white-space: nowrap;
+  }
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ── Modal ── */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 300;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.show { display: flex; }
+  .modal {
+    background: var(--surface);
+    border-radius: var(--radius);
+    max-width: 480px;
+    width: 100%;
+    padding: 28px;
+    box-shadow: 0 16px 60px rgba(0,0,0,0.15);
+    animation: modalIn 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.95) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .modal-head h3 { font-size: 18px; font-weight: 700; }
+  .modal-close {
+    width: 32px; height: 32px;
+    border: none; background: none;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--text-muted);
+    transition: var(--transition);
+  }
+  .modal-close:hover { background: var(--bg); color: var(--text); }
+  .modal .form-group { margin-bottom: 14px; }
+  .modal .form-hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 3px;
+    line-height: 1.6;
+  }
+  .modal .test-result {
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 8px;
+    display: none;
+  }
+  .modal .test-result.success {
+    display: block;
+    background: var(--emerald-light);
+    color: var(--emerald);
+  }
+  .modal .test-result.fail {
+    display: block;
+    background: #fef0f0;
+    color: #c25b5b;
+  }
+
+  /* ── Footer ── */
+  .app-footer {
+    text-align: center;
+    padding: 24px 20px;
+    font-size: 12px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ Header ══ -->
+<header class="app-header">
+  <div class="header-inner">
+    <div class="logo"><a href="#">万物隐喻</a> <span>· 创作练习</span></div>
+    <div class="header-actions">
+      <span class="ai-status off" id="aiStatus" onclick="openSettings()">🤖 AI 未配置</span>
+      <button class="icon-btn" onclick="openSettings()" title="AI 设置">⚙️</button>
+    </div>
+  </div>
+  <nav class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="1"><span class="num">❶</span><span class="label-text">主题拆解</span></button>
+    <button class="tab-btn" data-tab="2"><span class="num">❷</span><span class="label-text">创作日记</span></button>
+    <button class="tab-btn" data-tab="3"><span class="num">❸</span><span class="label-text">案例复述</span></button>
+    <button class="tab-btn" data-tab="4"><span class="num">❹</span><span class="label-text">物件联想</span></button>
+    <button class="tab-btn" data-tab="kb"><span class="num">📖</span><span class="label-text">隐喻库</span></button>
+  </nav>
+</header>
+
+<!-- ══ AI Settings Modal ══ -->
+<div class="modal-overlay" id="settingsModal">
+  <div class="modal">
+    <div class="modal-head">
+      <h3>⚙️ AI 设置</h3>
+      <button class="modal-close" onclick="closeSettings()">✕</button>
+    </div>
+    <p style="font-size:13px;color:var(--text-soft);margin-bottom:16px;">
+      配置 LLM API 后，每个练习中会出现「🤖 AI 辅助」按钮，帮你拓展思路、生成方案。
+    </p>
+    <div class="form-group">
+      <label>API 地址</label>
+      <input type="text" id="apiEndpoint" placeholder="https://api.openai.com/v1" autocomplete="off">
+      <div class="form-hint">支持 OpenAI 兼容接口。常用：<strong>OpenAI</strong> api.openai.com/v1 · <strong>DeepSeek</strong> api.deepseek.com/v1 · <strong>Ollama 本地</strong> http://localhost:11434/v1</div>
+    </div>
+    <div class="form-group">
+      <label>API Key</label>
+      <input type="password" id="apiKey" placeholder="sk-..." autocomplete="off">
+    </div>
+    <div class="form-group">
+      <label>模型名称</label>
+      <input type="text" id="apiModel" placeholder="gpt-4o / deepseek-chat / qwen2.5" autocomplete="off">
+      <div class="form-hint">常用的免费/付费模型均可，确保 API 地址支持该模型</div>
+    </div>
+    <div class="form-group" style="margin-bottom:10px">
+      <label>系统提示词 <span class="label-hint">（可选）</span></label>
+      <textarea id="apiSystem" rows="2" placeholder="你是一个专业的艺术创作导师..." style="min-height:44px;font-size:13px;"></textarea>
+    </div>
+    <div class="btn-group" style="justify-content:space-between;margin-bottom:10px;">
+      <button class="btn btn-outline btn-sm" onclick="testConnection()" id="testBtn">🔌 测试连接</button>
+      <div class="btn-group">
+        <button class="btn btn-outline btn-sm" onclick="closeSettings()">取消</button>
+        <button class="btn btn-primary" onclick="saveSettings()">✓ 保存</button>
+      </div>
+    </div>
+    <div class="test-result" id="testResult"></div>
+  </div>
+</div>
+
+<!-- ══ Toast ══ -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ Main ══ -->
+<main class="container">
+
+  <!-- ──────────────────── TAB 1: 主题拆解 ──────────────────── -->
+  <section class="tab-content active" id="tab1">
+    <div class="section-head">
+      <div class="left">
+        <h2>❶ 主题拆解练习</h2>
+        <p>把抽象主题拆成具体的物件、场景、动作、材料</p>
+      </div>
+      <button class="btn btn-ai btn-sm" onclick="aiE1()" id="aiBtn1">🤖 AI 辅助</button>
+    </div>
+    <div class="form-card">
+      <div class="form-group">
+        <label>选择一个抽象主题 <span class="label-hint">（或输入你自己的）</span></label>
+        <div class="chips" data-target="e1Theme">
+          <span class="chip" data-value="孤独">孤独</span>
+          <span class="chip" data-value="自由">自由</span>
+          <span class="chip" data-value="时间">时间</span>
+          <span class="chip" data-value="记忆">记忆</span>
+          <span class="chip" data-value="身份">身份</span>
+          <span class="chip" data-value="失去">失去</span>
+          <span class="chip" data-value="等待">等待</span>
+          <span class="chip" data-value="束缚">束缚</span>
+          <span class="chip" data-value="重生">重生</span>
+          <span class="chip" data-value="家园">家园</span>
+        </div>
+        <input type="text" id="e1Theme" placeholder="输入抽象主题…" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>🏠 对应什么物件？</label>
+        <input type="text" id="e1Object" placeholder="例：空椅子、未读消息、关掉的电视…" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>🌄 对应什么场景？</label>
+        <input type="text" id="e1Scene" placeholder="例：深夜便利店、空荡的房间、雨天的站台…" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>👋 对应什么动作？</label>
+        <input type="text" id="e1Action" placeholder="例：反复刷新页面、独自举杯、关灯…" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>🧵 对应什么材料？</label>
+        <input type="text" id="e1Material" placeholder="例：冷金属、旧布料、褪色照片纸…" autocomplete="off">
+      </div>
+      <div class="btn-right">
+        <button class="btn btn-primary" onclick="saveE1()">✓ 记录拆解</button>
+      </div>
+      <div class="ai-response" id="aiE1"></div>
+    </div>
+    <div class="history-header">
+      <h3>拆解记录 <span class="count" id="e1count"></span></h3>
+      <button class="btn btn-outline btn-sm" onclick="clearE1()">清空</button>
+    </div>
+    <div class="entry-list" id="e1list"><div class="empty-state"><div class="big">💡</div>点击主题标签，填入你对它的拆解<br>然后点击「记录拆解」保存</div></div>
+  </section>
+
+  <!-- ──────────────────── TAB 2: 三句创作日记 ──────────────────── -->
+  <section class="tab-content" id="tab2">
+    <div class="section-head">
+      <div class="left">
+        <h2>❷ 三句创作日记</h2>
+        <p>每天三句话，把感受快速转成判断</p>
+      </div>
+      <button class="btn btn-ai btn-sm" onclick="aiE2()" id="aiBtn2">🤖 AI 辅助</button>
+    </div>
+    <div class="form-card">
+      <div class="form-group">
+        <label>日期</label>
+        <input type="date" id="e2Date">
+      </div>
+      <div class="form-group">
+        <label>① 今天我注意到了什么？ <span class="label-hint">一个细节、一个画面、一段对话</span></label>
+        <textarea id="e2Q1" rows="2" placeholder="例：地铁里对面的人睡着了，头靠在玻璃上，随着列车晃动..." class="sm"></textarea>
+      </div>
+      <div class="form-group">
+        <label>② 它为什么吸引我？ <span class="label-hint">触动了什么感受或联想？</span></label>
+        <textarea id="e2Q2" rows="2" placeholder="例：那种在不稳定的环境中依然陷入沉睡的状态，有种奇异的信任感..." class="sm"></textarea>
+      </div>
+      <div class="form-group">
+        <label>③ 它可以发展成怎样的作品线索？ <span class="label-hint">形式、主题、材料、方向</span></label>
+        <textarea id="e2Q3" rows="2" placeholder="例：可以做一个关于「信任」的影像作品..." class="sm"></textarea>
+      </div>
+      <div class="btn-right">
+        <button class="btn btn-primary" onclick="saveE2()">✓ 记录日记</button>
+      </div>
+      <div class="ai-response" id="aiE2"></div>
+    </div>
+    <div class="history-header">
+      <h3>日记历史 <span class="count" id="e2count"></span></h3>
+      <button class="btn btn-outline btn-sm" onclick="clearE2()">清空</button>
+    </div>
+    <div class="entry-list" id="e2list"><div class="empty-state"><div class="big">📝</div>今天你注意到了什么？<br>写下来，它会成为创作的起点</div></div>
+  </section>
+
+  <!-- ──────────────────── TAB 3: 案例复述 ──────────────────── -->
+  <section class="tab-content" id="tab3">
+    <div class="section-head">
+      <div class="left">
+        <h2>❸ 案例复述训练</h2>
+        <p>从「喜欢」走向「分析」—— 拆解你欣赏的作品</p>
+      </div>
+      <button class="btn btn-ai btn-sm" onclick="aiE3()" id="aiBtn3">🤖 AI 辅助</button>
+    </div>
+    <div class="form-card">
+      <div class="form-group">
+        <label>作品名称</label>
+        <input type="text" id="e3Title" placeholder="例：《白日梦想家》" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>创作者 / 艺术家</label>
+        <input type="text" id="e3Artist" placeholder="例：Ben Stiller" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>🎯 它在处理什么主题？</label>
+        <textarea id="e3Theme" rows="2" placeholder="例：平凡生活中的冒险精神、身份认同与自我发现..." class="sm"></textarea>
+      </div>
+      <div class="form-group">
+        <label>🔧 它借助了什么物件或材料？</label>
+        <textarea id="e3Materials" rows="2" placeholder="例：旅行箱、滑板、底片、杂志封面..." class="sm"></textarea>
+      </div>
+      <div class="form-group">
+        <label>✨ 这种形式为什么成立？</label>
+        <textarea id="e3Analysis" rows="3" placeholder="分析它为什么打动人——叙事结构、材质选择、氛围营造..." class="sm"></textarea>
+      </div>
+      <div class="btn-right">
+        <button class="btn btn-primary" onclick="saveE3()">✓ 记录分析</button>
+      </div>
+      <div class="ai-response" id="aiE3"></div>
+    </div>
+    <div class="history-header">
+      <h3>分析记录 <span class="count" id="e3count"></span></h3>
+      <button class="btn btn-outline btn-sm" onclick="clearE3()">清空</button>
+    </div>
+    <div class="entry-list" id="e3list"><div class="empty-state"><div class="big">🎨</div>看完喜欢的作品，试着复述它为什么成立<br>记录你的分析，建立自己的审美判断体系</div></div>
+  </section>
+
+  <!-- ──────────────────── TAB 4: 物件联想 ──────────────────── -->
+  <section class="tab-content" id="tab4">
+    <div class="section-head">
+      <div class="left">
+        <h2>❹ 物件联想练习</h2>
+        <p>选一个日常物件，探索它承载的主题与情绪</p>
+      </div>
+      <button class="btn btn-ai btn-sm" onclick="aiE4()" id="aiBtn4">🤖 AI 辅助</button>
+    </div>
+    <div class="form-card">
+      <div class="form-group">
+        <label>选择一个物件 <span class="label-hint">（或输入你自己的）</span></label>
+        <div class="chips" data-target="e4Object">
+          <span class="chip" data-value="肥皂">肥皂</span>
+          <span class="chip" data-value="床单">床单</span>
+          <span class="chip" data-value="镜子">镜子</span>
+          <span class="chip" data-value="塑料袋">塑料袋</span>
+          <span class="chip" data-value="空椅子">空椅子</span>
+          <span class="chip" data-value="钥匙">钥匙</span>
+          <span class="chip" data-value="门">门</span>
+          <span class="chip" data-value="灯">灯</span>
+          <span class="chip" data-value="时钟">时钟</span>
+          <span class="chip" data-value="绳子">绳子</span>
+          <span class="chip" data-value="信封">信封</span>
+          <span class="chip" data-value="照片">照片</span>
+        </div>
+        <input type="text" id="e4Object" placeholder="输入一个日常物件…" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <label>🔗 它能关联哪些主题？</label>
+        <textarea id="e4Themes" rows="2" placeholder="例：孤独、记忆、等待、缺席、对话..." class="sm"></textarea>
+      </div>
+      <div class="form-group">
+        <label>💭 它能承载什么情绪？</label>
+        <textarea id="e4Emotions" rows="2" placeholder="例：惆怅、温暖、不安、怀念..." class="sm"></textarea>
+      </div>
+      <div class="form-group">
+        <label>🤝 它能隐喻什么关系？</label>
+        <textarea id="e4Relations" rows="2" placeholder="例：人与自我、人与人、人与时间..." class="sm"></textarea>
+      </div>
+      <div class="btn-right">
+        <button class="btn btn-primary" onclick="saveE4()">✓ 记录联想</button>
+      </div>
+      <div class="ai-response" id="aiE4"></div>
+    </div>
+    <div class="history-header">
+      <h3>联想记录 <span class="count" id="e4count"></span></h3>
+      <button class="btn btn-outline btn-sm" onclick="clearE4()">清空</button>
+    </div>
+    <div class="entry-list" id="e4list"><div class="empty-state"><div class="big">🔍</div>点击一个物件标签，开始探索它的隐喻世界<br>每一个日常物件，都是创作的入口</div></div>
+  </section>
+
+  <!-- ──────────────────── TAB KB: 隐喻库 ──────────────────── -->
+  <section class="tab-content" id="tabkb">
+    <div class="section-head">
+      <div class="left">
+        <h2>📖 万物隐喻库</h2>
+        <p>以物为线索，浏览物件 → 主题 → 材料 → 形式的关联路径</p>
+      </div>
+    </div>
+    <div class="kb-search">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="kbFilter" placeholder="搜索物件名称…" oninput="renderKB()" autocomplete="off">
+    </div>
+    <div class="kb-grid" id="kbGrid"></div>
+  </section>
+
+</main>
+
+<footer class="app-footer">
+  <a href="https://aprilssky.github.io" style="color:var(--accent);text-decoration:none;">Aprilssky</a> · 万物隐喻 · 数据保存在本地浏览器
+</footer>
+
+<script>
+// ══════════════════════════════════════════════════════════
+//  State
+// ══════════════════════════════════════════════════════════
+const LS_KEY = 'metaphor_data';
+const AI_KEY = 'metaphor_ai_config';
+
+function loadData() {
+  try { const r = localStorage.getItem(LS_KEY); if (r) return JSON.parse(r); } catch(e) {}
+  return { e1:[], e2:[], e3:[], e4:[] };
+}
+function saveData(data) {
+  localStorage.setItem(LS_KEY, JSON.stringify(data));
+}
+function loadAI() {
+  try { const r = localStorage.getItem(AI_KEY); if (r) return JSON.parse(r); } catch(e) {}
+  return { endpoint:'', key:'', model:'', system:'' };
+}
+function saveAI(cfg) {
+  localStorage.setItem(AI_KEY, JSON.stringify(cfg));
+}
+
+let D = loadData();
+let AICfg = loadAI();
+
+// ══════════════════════════════════════════════════════════
+//  AI helper
+// ══════════════════════════════════════════════════════════
+function hasAI() {
+  return !!(AICfg.endpoint && AICfg.key && AICfg.model);
+}
+
+function callAI(messages) {
+  const systemMsg = AICfg.system
+    ? { role:'system', content:AICfg.system }
+    : { role:'system', content:'你是一个专业的艺术创作导师。你的回答要具体、有启发性、有可操作性。使用中文。避免空泛的赞美，直接给出有深度的分析和建议。' };
+  const allMsgs = [systemMsg].concat(messages);
+
+  return fetch(AICfg.endpoint.replace(/\/+$/, '') + '/chat/completions', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + AICfg.key
+    },
+    body: JSON.stringify({
+      model: AICfg.model,
+      messages: allMsgs,
+      temperature: 0.8,
+      max_tokens: 1500
+    })
+  }).then(r => {
+    if (!r.ok) return r.text().then(t => { throw new Error('HTTP ' + r.status + ': ' + t.slice(0,200)); });
+    return r.json();
+  }).then(j => {
+    if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
+    return j.choices[0].message.content;
+  });
+}
+
+function updateAIStatus() {
+  const el = document.getElementById('aiStatus');
+  if (hasAI()) {
+    el.className = 'ai-status on';
+    el.textContent = '🤖 ' + AICfg.model;
+  } else {
+    el.className = 'ai-status off';
+    el.textContent = '🤖 AI 未配置';
+  }
+  document.querySelectorAll('[id^="aiBtn"]').forEach(b => {
+    b.style.display = hasAI() ? '' : 'none';
+  });
+}
+
+// ── Show AI response box ──
+function showAIResp(id, loading) {
+  const box = document.getElementById('ai' + id);
+  box.classList.add('show');
+  if (loading) {
+    box.innerHTML = '<div class="ai-loading"><div class="spinner"></div> AI 正在思考...</div>';
+  }
+  return box;
+}
+
+function fillAIResp(id, text) {
+  const box = document.getElementById('ai' + id);
+  box.innerHTML = '<div class="ai-header">✦ AI 辅助建议</div><div class="ai-done">' + esc(text) + '</div>';
+}
+
+function failAI(id, err) {
+  const box = document.getElementById('ai' + id);
+  box.innerHTML = '<div class="ai-header">✦ AI 辅助</div><div class="ai-error">⚠️ ' + esc(err) + '</div>';
+}
+
+// ══════════════════════════════════════════════════════════
+//  Tab Switching
+// ══════════════════════════════════════════════════════════
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+    document.getElementById('tab' + btn.dataset.tab).classList.add('active');
+    history.replaceState(null, '', '#tab-' + btn.dataset.tab);
+  });
+});
+if (location.hash.startsWith('#tab-')) {
+  const tab = location.hash.replace('#tab-', '');
+  const btn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+  if (btn) btn.click();
+}
+
+// ══════════════════════════════════════════════════════════
+//  Chip click → fill input
+// ══════════════════════════════════════════════════════════
+document.addEventListener('click', e => {
+  const chip = e.target.closest('.chip');
+  if (!chip) return;
+  const targetDataset = chip.closest('[data-target]');
+  if (targetDataset) {
+    const input = document.getElementById(targetDataset.dataset.target);
+    if (input) { input.value = chip.dataset.value; input.focus(); return; }
+  }
+  const container = chip.closest('.form-group') || chip.closest('.form-card');
+  if (container) {
+    const inp = container.querySelector('input, textarea');
+    if (inp) { inp.value = chip.dataset.value; inp.focus(); }
+  }
+});
+
+// ══════════════════════════════════════════════════════════
+//  Toast
+// ══════════════════════════════════════════════════════════
+let toastTimer;
+function toast(msg) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2000);
+}
+
+// ══════════════════════════════════════════════════════════
+//  Helpers
+// ══════════════════════════════════════════════════════════
+function fmtDate() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0') + ' ' +
+    String(d.getHours()).padStart(2,'0') + ':' + String(d.getMinutes()).padStart(2,'0');
+}
+function fmtDateShort(ts) {
+  const d = new Date(ts);
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+function esc(s) {
+  const div = document.createElement('div');
+  div.textContent = s || '';
+  return div.innerHTML;
+}
+function getToday() {
+  const d = new Date();
+  return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+}
+
+// ══════════════════════════════════════════════════════════
+//  AI — Exercise helpers
+// ══════════════════════════════════════════════════════════
+
+function aiE1() {
+  if (!hasAI()) { toast('请先配置 AI（点击右上角 ⚙️）'); return; }
+  const theme = document.getElementById('e1Theme').value.trim();
+  if (!theme) { toast('请先输入一个抽象主题'); return; }
+  showAIResp('E1', true);
+  callAI([
+    { role:'user', content:
+`用户正在做「主题拆解练习」。想要拆解的主题是：**${theme}**
+
+请从以下4个维度各给出3-5个具体、有画面感的建议。不需要解释，直接输出结果。
+
+格式：
+🏠 物件：xxx · yyy · zzz
+🌄 场景：xxx · yyy · zzz
+👋 动作：xxx · yyy · zzz
+🧵 材料：xxx · yyy · zzz` }
+  ]).then(t => fillAIResp('E1', t)).catch(e => failAI('E1', e.message));
+}
+
+function aiE2() {
+  if (!hasAI()) { toast('请先配置 AI（点击右上角 ⚙️）'); return; }
+  const q1 = document.getElementById('e2Q1').value.trim();
+  const q2 = document.getElementById('e2Q2').value.trim();
+  const q3 = document.getElementById('e2Q3').value.trim();
+  if (!q1 && !q2 && !q3) { toast('请先写几句日记再使用 AI 辅助'); return; }
+  showAIResp('E2', true);
+  let prompt = '用户写了创作日记：\n';
+  if (q1) prompt += '① 注意到：' + q1 + '\n';
+  if (q2) prompt += '② 为什么：' + q2 + '\n';
+  if (q3) prompt += '③ 线索：' + q3 + '\n';
+  prompt += `\n请从以下角度帮用户深化这个日记：
+1. 这个观察中隐藏的创作可能性（3个方向）
+2. 可以尝试的创作形式（影像、装置、绘画、文字等）
+3. 可以关联的物件或材料
+4. 下一步可以做什么`;
+
+  callAI([{ role:'user', content:prompt }])
+    .then(t => fillAIResp('E2', t))
+    .catch(e => failAI('E2', e.message));
+}
+
+function aiE3() {
+  if (!hasAI()) { toast('请先配置 AI（点击右上角 ⚙️）'); return; }
+  const title = document.getElementById('e3Title').value.trim();
+  const artist = document.getElementById('e3Artist').value.trim();
+  const theme = document.getElementById('e3Theme').value.trim();
+  const materials = document.getElementById('e3Materials').value.trim();
+  const analysis = document.getElementById('e3Analysis').value.trim();
+  if (!title && !theme && !materials) { toast('请至少填写作品名称或主题信息'); return; }
+  showAIResp('E3', true);
+  let prompt = '用户在分析一个作品：\n';
+  if (title) prompt += '作品：' + title + '\n';
+  if (artist) prompt += '艺术家：' + artist + '\n';
+  if (theme) prompt += '主题：' + theme + '\n';
+  if (materials) prompt += '物件/材料：' + materials + '\n';
+  if (analysis) prompt += '用户分析：' + analysis + '\n';
+  prompt += `\n请从以下角度补充和深化分析：
+1. 这个作品的形式为什么有效（材料、空间、叙事角度等）
+2. 可以对比的艺术家或作品（2-3个）
+3. 这个分析中可以再深化的方向`;
+
+  callAI([{ role:'user', content:prompt }])
+    .then(t => fillAIResp('E3', t))
+    .catch(e => failAI('E3', e.message));
+}
+
+function aiE4() {
+  if (!hasAI()) { toast('请先配置 AI（点击右上角 ⚙️）'); return; }
+  const object = document.getElementById('e4Object').value.trim();
+  if (!object) { toast('请先输入或选择一个物件'); return; }
+  showAIResp('E4', true);
+  callAI([{ role:'user', content:
+`用户正在做「物件联想练习」。选定的物件是：**${object}**
+
+请从以下三个维度帮用户打开思路。每个维度给出具体、可操作的可能性：
+
+🔗 关联主题（给出5-8个主题，每个配一句简短说明为什么这个物件能关联该主题）
+💭 承载情绪（给出4-6种情绪，描述具体）
+🤝 隐喻关系（给出3-5种关系，附一句话说明）` }
+  ]).then(t => fillAIResp('E4', t)).catch(e => failAI('E4', e.message));
+}
+
+// ══════════════════════════════════════════════════════════
+//  Settings Modal
+// ══════════════════════════════════════════════════════════
+function openSettings() {
+  document.getElementById('apiEndpoint').value = AICfg.endpoint || '';
+  document.getElementById('apiKey').value = AICfg.key || '';
+  document.getElementById('apiModel').value = AICfg.model || '';
+  document.getElementById('apiSystem').value = AICfg.system || '';
+  document.getElementById('testResult').className = 'test-result';
+  document.getElementById('testResult').textContent = '';
+  document.getElementById('settingsModal').classList.add('show');
+}
+function closeSettings() {
+  document.getElementById('settingsModal').classList.remove('show');
+}
+document.getElementById('settingsModal').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeSettings();
+});
+
+function saveSettings() {
+  AICfg.endpoint = document.getElementById('apiEndpoint').value.trim();
+  AICfg.key = document.getElementById('apiKey').value.trim();
+  AICfg.model = document.getElementById('apiModel').value.trim();
+  AICfg.system = document.getElementById('apiSystem').value.trim();
+  saveAI(AICfg);
+  updateAIStatus();
+  closeSettings();
+  if (hasAI()) toast('✓ AI 已配置：' + AICfg.model);
+  else toast('请填写 API 信息');
+}
+
+function testConnection() {
+  const endpoint = document.getElementById('apiEndpoint').value.trim();
+  const key = document.getElementById('apiKey').value.trim();
+  const model = document.getElementById('apiModel').value.trim();
+  if (!endpoint || !key || !model) {
+    document.getElementById('testResult').className = 'test-result fail';
+    document.getElementById('testResult').textContent = '请先填写 API 地址、Key 和模型名称';
+    return;
+  }
+  const btn = document.getElementById('testBtn');
+  btn.disabled = true;
+  btn.textContent = '⏳ 测试中...';
+  document.getElementById('testResult').className = 'test-result';
+  document.getElementById('testResult').textContent = '';
+
+  const url = endpoint.replace(/\/+$/, '') + '/chat/completions';
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type':'application/json', 'Authorization':'Bearer ' + key },
+    body: JSON.stringify({ model, messages:[{ role:'user', content:'Hi' }], max_tokens:5 })
+  }).then(r => {
+    if (!r.ok) return r.text().then(t => { throw new Error('HTTP ' + r.status + ': ' + t.slice(0,150)); });
+    return r.json();
+  }).then(j => {
+    if (j.error) throw new Error(j.error.message || JSON.stringify(j.error));
+    document.getElementById('testResult').className = 'test-result success';
+    document.getElementById('testResult').textContent = '✓ 连接成功！模型响应正常。';
+  }).catch(e => {
+    document.getElementById('testResult').className = 'test-result fail';
+    document.getElementById('testResult').textContent = '✗ 连接失败：' + e.message;
+  }).finally(() => {
+    btn.disabled = false;
+    btn.textContent = '🔌 测试连接';
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  Exercise 1: 主题拆解
+// ══════════════════════════════════════════════════════════
+function saveE1() {
+  const theme = document.getElementById('e1Theme').value.trim();
+  const object = document.getElementById('e1Object').value.trim();
+  const scene = document.getElementById('e1Scene').value.trim();
+  const action = document.getElementById('e1Action').value.trim();
+  const material = document.getElementById('e1Material').value.trim();
+  if (!theme) { toast('请先输入一个抽象主题'); return; }
+  D.e1.unshift({ theme, object, scene, action, material, ts: Date.now() });
+  saveData(D);
+  document.getElementById('e1Theme').value = '';
+  document.getElementById('e1Object').value = '';
+  document.getElementById('e1Scene').value = '';
+  document.getElementById('e1Action').value = '';
+  document.getElementById('e1Material').value = '';
+  renderE1();
+  toast('✓ 已记录');
+}
+function clearE1() {
+  if (!D.e1.length) return;
+  if (!confirm('确定清空所有拆解记录？')) return;
+  D.e1 = []; saveData(D); renderE1(); toast('已清空');
+}
+function delE1(idx) {
+  D.e1.splice(idx, 1); saveData(D); renderE1();
+}
+function renderE1() {
+  const list = document.getElementById('e1list');
+  const cnt = document.getElementById('e1count');
+  cnt.textContent = '· ' + D.e1.length + ' 条';
+  if (!D.e1.length) { list.innerHTML = '<div class="empty-state"><div class="big">💡</div>点击主题标签，填入你对它的拆解<br>然后点击「记录拆解」保存</div>'; return; }
+  list.innerHTML = D.e1.map((e, i) => `<div class="entry-card">
+    <div class="e-top"><span class="e-date">${fmtDateShort(e.ts)}</span><button class="e-del" onclick="delE1(${i})">✕</button></div>
+    <div class="e-title">${esc(e.theme)}</div>
+    <div class="e-body">
+      ${e.object ? `<div class="e-field"><span class="e-label">物件</span> ${esc(e.object)}</div>` : ''}
+      ${e.scene ? `<div class="e-field"><span class="e-label">场景</span> ${esc(e.scene)}</div>` : ''}
+      ${e.action ? `<div class="e-field"><span class="e-label">动作</span> ${esc(e.action)}</div>` : ''}
+      ${e.material ? `<div class="e-field"><span class="e-label">材料</span> ${esc(e.material)}</div>` : ''}
+    </div>
+  </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════
+//  Exercise 2
+// ══════════════════════════════════════════════════════════
+function saveE2() {
+  const date = document.getElementById('e2Date').value || getToday();
+  const q1 = document.getElementById('e2Q1').value.trim();
+  const q2 = document.getElementById('e2Q2').value.trim();
+  const q3 = document.getElementById('e2Q3').value.trim();
+  if (!q1 && !q2 && !q3) { toast('请至少写一句话'); return; }
+  D.e2.unshift({ date, q1, q2, q3, ts: Date.now() });
+  saveData(D);
+  document.getElementById('e2Q1').value = '';
+  document.getElementById('e2Q2').value = '';
+  document.getElementById('e2Q3').value = '';
+  renderE2();
+  toast('✓ 已记录');
+}
+function clearE2() {
+  if (!D.e2.length) return;
+  if (!confirm('确定清空所有日记？')) return;
+  D.e2 = []; saveData(D); renderE2(); toast('已清空');
+}
+function delE2(idx) {
+  D.e2.splice(idx, 1); saveData(D); renderE2();
+}
+function renderE2() {
+  const list = document.getElementById('e2list');
+  const cnt = document.getElementById('e2count');
+  cnt.textContent = '· ' + D.e2.length + ' 条';
+  if (!D.e2.length) { list.innerHTML = '<div class="empty-state"><div class="big">📝</div>今天你注意到了什么？<br>写下来，它会成为创作的起点</div>'; return; }
+  list.innerHTML = D.e2.map((e, i) => `<div class="entry-card">
+    <div class="e-top"><span class="e-date">${esc(e.date)}</span><button class="e-del" onclick="delE2(${i})">✕</button></div>
+    <div class="e-body">
+      ${e.q1 ? `<div class="e-field"><span class="e-label">① 注意到</span> ${esc(e.q1)}</div>` : ''}
+      ${e.q2 ? `<div class="e-field"><span class="e-label">② 为什么</span> ${esc(e.q2)}</div>` : ''}
+      ${e.q3 ? `<div class="e-field"><span class="e-label">③ 线索</span> ${esc(e.q3)}</div>` : ''}
+    </div>
+  </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════
+//  Exercise 3
+// ══════════════════════════════════════════════════════════
+function saveE3() {
+  const title = document.getElementById('e3Title').value.trim();
+  const artist = document.getElementById('e3Artist').value.trim();
+  const theme = document.getElementById('e3Theme').value.trim();
+  const materials = document.getElementById('e3Materials').value.trim();
+  const analysis = document.getElementById('e3Analysis').value.trim();
+  if (!title) { toast('请输入作品名称'); return; }
+  D.e3.unshift({ title, artist, theme, materials, analysis, ts: Date.now() });
+  saveData(D);
+  document.getElementById('e3Title').value = '';
+  document.getElementById('e3Artist').value = '';
+  document.getElementById('e3Theme').value = '';
+  document.getElementById('e3Materials').value = '';
+  document.getElementById('e3Analysis').value = '';
+  renderE3();
+  toast('✓ 已记录');
+}
+function clearE3() {
+  if (!D.e3.length) return;
+  if (!confirm('确定清空所有分析记录？')) return;
+  D.e3 = []; saveData(D); renderE3(); toast('已清空');
+}
+function delE3(idx) {
+  D.e3.splice(idx, 1); saveData(D); renderE3();
+}
+function renderE3() {
+  const list = document.getElementById('e3list');
+  const cnt = document.getElementById('e3count');
+  cnt.textContent = '· ' + D.e3.length + ' 条';
+  if (!D.e3.length) { list.innerHTML = '<div class="empty-state"><div class="big">🎨</div>看完喜欢的作品，试着复述它为什么成立<br>记录你的分析，建立自己的审美判断体系</div>'; return; }
+  list.innerHTML = D.e3.map((e, i) => `<div class="entry-card">
+    <div class="e-top"><span class="e-date">${fmtDateShort(e.ts)}</span><button class="e-del" onclick="delE3(${i})">✕</button></div>
+    <div class="e-title">${esc(e.title)}${e.artist ? ' · ' + esc(e.artist) : ''}</div>
+    <div class="e-body">
+      ${e.theme ? `<div class="e-field"><span class="e-label">🎯 主题</span> ${esc(e.theme)}</div>` : ''}
+      ${e.materials ? `<div class="e-field"><span class="e-label">🔧 物件/材料</span> ${esc(e.materials)}</div>` : ''}
+      ${e.analysis ? `<div class="e-field"><span class="e-label">✨ 分析</span> ${esc(e.analysis)}</div>` : ''}
+    </div>
+  </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════
+//  Exercise 4
+// ══════════════════════════════════════════════════════════
+function saveE4() {
+  const object = document.getElementById('e4Object').value.trim();
+  const themes = document.getElementById('e4Themes').value.trim();
+  const emotions = document.getElementById('e4Emotions').value.trim();
+  const relations = document.getElementById('e4Relations').value.trim();
+  if (!object) { toast('请选择一个物件'); return; }
+  D.e4.unshift({ object, themes, emotions, relations, ts: Date.now() });
+  saveData(D);
+  document.getElementById('e4Object').value = '';
+  document.getElementById('e4Themes').value = '';
+  document.getElementById('e4Emotions').value = '';
+  document.getElementById('e4Relations').value = '';
+  renderE4();
+  toast('✓ 已记录');
+}
+function clearE4() {
+  if (!D.e4.length) return;
+  if (!confirm('确定清空所有联想记录？')) return;
+  D.e4 = []; saveData(D); renderE4(); toast('已清空');
+}
+function delE4(idx) {
+  D.e4.splice(idx, 1); saveData(D); renderE4();
+}
+function renderE4() {
+  const list = document.getElementById('e4list');
+  const cnt = document.getElementById('e4count');
+  cnt.textContent = '· ' + D.e4.length + ' 条';
+  if (!D.e4.length) { list.innerHTML = '<div class="empty-state"><div class="big">🔍</div>点击一个物件标签，开始探索它的隐喻世界<br>每一个日常物件，都是创作的入口</div>'; return; }
+  list.innerHTML = D.e4.map((e, i) => `<div class="entry-card">
+    <div class="e-top"><span class="e-date">${fmtDateShort(e.ts)}</span><button class="e-del" onclick="delE4(${i})">✕</button></div>
+    <div class="e-title">${esc(e.object)}</div>
+    <div class="e-body">
+      ${e.themes ? `<div class="e-field"><span class="e-label">🔗 主题</span> ${esc(e.themes)}</div>` : ''}
+      ${e.emotions ? `<div class="e-field"><span class="e-label">💭 情绪</span> ${esc(e.emotions)}</div>` : ''}
+      ${e.relations ? `<div class="e-field"><span class="e-label">🤝 关系</span> ${esc(e.relations)}</div>` : ''}
+    </div>
+  </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════
+//  Knowledge Base
+// ══════════════════════════════════════════════════════════
+const KB = [
+  { name:'空椅子', themes:['孤独','等待','缺席','对话'], materials:['木材','金属','旧布料'], forms:['装置艺术','摄影','戏剧道具'], desc:'没有人坐的椅子暗示着缺席者的存在。一个人的椅子也可以是自我对话的空间。' },
+  { name:'镜子', themes:['自我认知','虚幻','真相','双重'], materials:['玻璃','银箔','水银'], forms:['摄影','装置','绘画'], desc:'反射既是确认也是欺骗。镜中人是自己还是另一个自己？' },
+  { name:'肥皂', themes:['清洁','消逝','记忆','罪恶'], materials:['油脂','碱液','香料'], forms:['雕塑','行为艺术','影像'], desc:'随时间消融的肥皂，如同慢慢淡去的记忆。泡沫升起又破灭。' },
+  { name:'床单', themes:['睡眠','亲密','包裹','隐私'], materials:['棉','亚麻','丝绸'], forms:['装置','纺织艺术','摄影'], desc:'最私密的织物。褶皱记录辗转的夜晚，白色承载梦与不安。' },
+  { name:'塑料袋', themes:['轻浮','困顿','飘荡','消费'], materials:['聚乙烯','回收塑料'], forms:['装置','雕塑','行为'], desc:'被风吹起的塑料袋在城市飘荡，轻盈却无处可归。消费时代的流浪者。' },
+  { name:'钥匙', themes:['秘密','权力','归属','解锁'], materials:['金属','黄铜','铁'], forms:['装置','摄影','综合材料'], desc:'一把钥匙对应一扇门。拥有钥匙意味着拥有进入的权利或被锁住的秘密。' },
+  { name:'门', themes:['选择','边界','机会','隔离'], materials:['木材','玻璃','金属'], forms:['装置','摄影','空间艺术'], desc:'门既是通道也是屏障。打开还是关闭，是行动也是决定。' },
+  { name:'灯', themes:['指引','温暖','真相','孤独'], materials:['玻璃','金属','灯泡','油'], forms:['装置','摄影','绘画'], desc:'黑暗中的光总带来希望。但一盏孤灯也可能放大周围的空旷。' },
+  { name:'时钟', themes:['时间','流逝','压迫','循环'], materials:['金属','玻璃','齿轮'], forms:['装置','雕塑','数字艺术'], desc:'指针永不停歇的循环，既是秩序也是牢笼。时间从不等待。' },
+  { name:'绳子', themes:['束缚','连接','拉扯','危险'], materials:['麻','尼龙','钢丝'], forms:['装置','行为','摄影'], desc:'绳子用来捆绑还是用来攀爬？它连接两端，也可能勒得太紧。' },
+  { name:'信封', themes:['秘密','沟通','等待','距离'], materials:['纸张','牛皮纸','蜡封'], forms:['绘画','装置','综合材料'], desc:'未拆的信封里有无限可能。拆开后，秘密就失去了力量。' },
+  { name:'照片', themes:['记忆','定格','缺席','怀念'], materials:['相纸','数码','相框'], forms:['摄影','拼贴','装置'], desc:'照片中的那一刻已经过去了。它们证明存在过，也提醒已失去。' },
+  { name:'鞋', themes:['行走','路径','身份','旅程'], materials:['皮革','帆布','橡胶'], forms:['雕塑','装置','摄影'], desc:'鞋子承载人的重量和方向。磨损的鞋底诉说着走过的路。' },
+  { name:'水杯', themes:['承载','干渴','透明','日常'], materials:['玻璃','陶瓷','塑料'], forms:['摄影','绘画','装置'], desc:'杯子等待被装满。空杯比满杯更有叙事性——它充满可能。' },
+  { name:'楼梯', themes:['上升','下降','过渡','重复'], materials:['木材','混凝土','金属'], forms:['摄影','装置','绘画'], desc:'楼梯意味着位置的改变。上上下下中的每一个台阶都是决定。' },
+  { name:'伞', themes:['保护','遮蔽','分离','临时'], materials:['布','金属骨架','塑料'], forms:['装置','摄影','绘画'], desc:'伞撑开是保护空间，收起是行走的拐杖。两个人撑一把伞是亲密也是距离。' },
+  { name:'沙发', themes:['休息','家庭','松弛','日常'], materials:['布料','海绵','弹簧','皮革'], forms:['装置','摄影','场景艺术'], desc:'沙发见证日常生活的全部——睡眠、交谈、哭泣、发呆。凹陷的坐痕记录生活的重量。' },
+  { name:'笔', themes:['表达','记录','创造','痕迹'], materials:['塑料','金属','墨水','石墨'], forms:['绘画','行为','装置'], desc:'笔是思想的延伸。纸上每一道痕迹都是选择的结果。' },
+  { name:'窗户', themes:['观望','希望','框架','内外'], materials:['玻璃','木材','铁框'], forms:['摄影','绘画','装置'], desc:'窗是内部与外部的交界。窗里的人在看外面，窗外的人在看里面。' },
+  { name:'蜡烛', themes:['燃烧','消逝','温暖','仪式'], materials:['蜡','棉芯','香料'], forms:['装置','摄影','行为'], desc:'蜡烛以燃烧自身换取光明。它终究会融化成一道静静的光。' }
+];
+
+function renderKB() {
+  const grid = document.getElementById('kbGrid');
+  const filter = document.getElementById('kbFilter').value.trim().toLowerCase();
+  let items = KB;
+  if (filter) {
+    items = KB.filter(k => k.name.includes(filter) || k.themes.some(t => t.includes(filter)) || k.materials.some(m => m.includes(filter)));
+  }
+  if (!items.length) {
+    grid.innerHTML = '<div class="empty-state" style="grid-column:1/-1"><div class="big">🔍</div>没有找到匹配的物件</div>';
+    return;
+  }
+  grid.innerHTML = items.map(k => `<div class="kb-card" onclick="this.classList.toggle('expanded')">
+    <div class="kb-name">${esc(k.name)}</div>
+    <div class="kb-themes">${k.themes.map(t => `<span>${esc(t)}</span>`).join('')}</div>
+    <div class="kb-meta">材料：${k.materials.join(' · ')} · 形式：${k.forms.join(' · ')}</div>
+    <div class="kb-detail">${esc(k.desc)}</div>
+  </div>`).join('');
+}
+
+// ══════════════════════════════════════════════════════════
+//  Init
+// ══════════════════════════════════════════════════════════
+document.getElementById('e2Date').value = getToday();
+updateAIStatus();
+renderE1();
+renderE2();
+renderE3();
+renderE4();
+renderKB();
+</script>
+</body>
+</html>

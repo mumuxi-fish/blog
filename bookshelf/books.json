@@ -1,0 +1,82 @@
+{
+  "books": [
+    {
+      "file": "红楼梦.pdf",
+      "title": "红楼梦",
+      "size": "8.5 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "苔丝.epub",
+      "title": "苔丝",
+      "size": "5.0 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "人一生要知道的艺术常识.pdf",
+      "title": "人一生要知道的艺术常识",
+      "size": "93.4 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "从偏见到仇恨.pdf",
+      "title": "从偏见到仇恨",
+      "size": "41.2 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "民国作家朱自清作品典藏全集（套装共十六册）.epub",
+      "title": "民国作家朱自清作品典藏全集（套装共十六册）",
+      "size": "2.8 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "创意行为：存在即答案.pdf",
+      "title": "创意行为：存在即答案",
+      "size": "16.7 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "Keep Going.pdf",
+      "title": "Keep Going",
+      "size": "27.9 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "庄子 方勇译注.pdf",
+      "title": "庄子 方勇译注",
+      "size": "20.7 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "肖邦的故事.pdf",
+      "title": "肖邦的故事",
+      "size": "6.2 MB",
+      "added": "2026-08-15"
+    },
+    {
+      "file": "Minecraft the unlikely tale of Markus Notch Persson and the game that changed everything.pdf",
+      "title": "Minecraft the unlikely tale of Markus Notch Persson and the game that changed everything",
+      "size": "9.3 MB",
+      "added": "2026-08-16"
+    },
+    {
+      "file": "二拍・二刻拍案惊奇.epub",
+      "title": "二拍・二刻拍案惊奇",
+      "size": "1.4 MB",
+      "added": "2026-08-16"
+    },
+    {
+      "file": "初刻拍案惊奇.epub",
+      "title": "初刻拍案惊奇",
+      "size": "1.1 MB",
+      "added": "2026-08-16"
+    },
+    {
+      "file": "孽海花, 初刻拍案惊奇, 警世通言, 喻世明言, 儒林外史, 说岳全传, 东周列国志, 老残游记, 封神演义, 二十年目睹之怪现状.epub",
+      "title": "孽海花, 初刻拍案惊奇, 警世通言, 喻世明言, 儒林外史, 说岳全传, 东周列国志, 老残游记, 封神演义, 二十年目睹之怪现状",
+      "size": "5.6 MB",
+      "added": "2026-08-16"
+    }
+  ]
+}

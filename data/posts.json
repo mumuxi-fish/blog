@@ -1,0 +1,74 @@
+[
+  {
+    "slug": "hello-world",
+    "title": "你好，世界",
+    "date": "2026-05-21",
+    "tag": "随笔",
+    "excerpt": "一个新的开始。在这里记录创作、思考和生活。",
+    "file": "hello-world.html"
+  },
+  {
+    "slug": "the-gadfly-letter",
+    "title": "牛虻给琼玛的信",
+    "date": "2026-05-21",
+    "tag": "台词",
+    "excerpt": "选自小说《牛虻》——亚瑟在就义前写给琼玛的信。不论我活着，或者我死掉，我都是一只快乐的飞虻！",
+    "file": "the-gadfly-letter.html"
+  },
+  {
+    "slug": "two-orioles",
+    "title": "古体诗：《两个黄鹂鸣翠柳》",
+    "date": "2026-05-21",
+    "tag": "台词",
+    "excerpt": "杜甫诗朗诵表演笔记。两个黄鹂鸣翠柳，一行白鹭上青天。",
+    "file": "two-orioles.html"
+  },
+  {
+    "slug": "prose-wo",
+    "title": "散文：《我》",
+    "date": "2026-05-21",
+    "tag": "台词",
+    "excerpt": "散文朗诵表演笔记。我怀念童年的我——我想哭就哭，我想笑就笑。",
+    "file": "prose-wo.html"
+  },
+  {
+    "slug": "yang-zirong",
+    "title": "杨子荣来到匪巢威虎山",
+    "date": "2026-05-21",
+    "tag": "台词",
+    "excerpt": "杨子荣舌战小炉匠——选自小说《林海雪原》。",
+    "file": "yang-zirong.html"
+  },
+  {
+    "slug": "langya-bang",
+    "title": "琅琊榜对白",
+    "date": "2026-05-21",
+    "tag": "台词",
+    "excerpt": "剧名：《琅琊榜》——梅长苏与萧景琰的密室对白。",
+    "file": "langya-bang.html"
+  },
+  {
+    "slug": "zhifou-minglan",
+    "title": "祖母与明兰",
+    "date": "2026-05-21",
+    "tag": "台词",
+    "excerpt": "剧名：《知否，知否，应是绿肥红瘦》——祖孙二人的一段对话。",
+    "file": "zhifou-minglan.html"
+  },
+  {
+    "slug": "making-3d-art",
+    "title": "用 Three.js 做 3D 艺术的笔记",
+    "date": "2026-05-20",
+    "tag": "创作",
+    "excerpt": "分享我在构建 3D Art Museum 过程中的一些心得和技术细节。",
+    "file": "making-3d-art.html"
+  },
+  {
+    "slug": "p5js-tips",
+    "title": "p5.js 创作技巧：从草图到作品",
+    "date": "2026-05-19",
+    "tag": "技术",
+    "excerpt": "一些 p5.js 编程绘图的小技巧，包括色彩、运动与交互设计。",
+    "file": "p5js-tips.html"
+  }
+]

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我仅用 3 天就做了一款 3D 游戏——资产全靠 AI 生成</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 720px; margin: 0 auto; padding: 64px 1em 2em; line-height: 1.8; color: #333; }
+h1 { font-size: 1.6em; margin-bottom: 0.5em; }
+.meta { color: #666; font-size: 0.9em; margin-bottom: 2em; }
+.meta span { margin-right: 1em; }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 2em 0; background: #f0f0f0; border-radius: 8px; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+.content p { margin: 1em 0; }
+blockquote { border-left: 4px solid #00a1d6; margin: 1.5em 0; padding: 0.5em 1em; background: #f8f8f8; color: #555; }
+hr { border: none; border-top: 1px solid #eee; margin: 2em 0; }
+.footer { color: #999; font-size: 0.85em; }
+.footer a { color: #666; }
+.audio-player { margin: 1.5em 0; padding: 1em; background: #f5f5f7; border-radius: 8px; }
+.audio-player audio { width: 100%; }
+.timed-subtitles { margin: 1.5em 0; }
+.sub-line { display: flex; gap: 0.6em; padding: 0.3em 0; border-bottom: 1px solid #f0f0f0; font-size: 0.95em; }
+.sub-time { color: #999; font-family: 'SF Mono', Menlo, monospace; font-size: 0.85em; white-space: nowrap; min-width: 3.5em; }
+.sub-text { flex: 1; }
+.sub-srt-download { display: inline-block; margin: 0.5em 0; padding: 0.3em 0.8em; background: #f0f0f0; border-radius: 4px; color: #666; font-size: 0.85em; text-decoration: none; }
+.sub-srt-download:hover { background: #e0e0e0; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="../" class="nav-logo">Aprilssky</a>
+    <div class="nav-links">
+      <a href="../">首页</a>
+      <a href="../lines/">台词</a>
+      <a href="./">文章</a>
+      <a href="../videos/">视频字幕</a>
+      <a href="../projects.html">项目</a>
+        <a href="../links/">常用网站</a>
+      <a href="../about.html">关于</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="切换主题"></button>
+    </div>
+    <button class="nav-toggle" aria-label="菜单">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 12h18M3 6h18M3 18h18"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<h1>我仅用 3 天就做了一款 3D 游戏——资产全靠 AI 生成</h1>
+
+<div class="meta">
+  <span>🎬 UP主 <strong>stefan_3d_ai</strong></span>
+  <span>⏱ 14:48</span>
+  <span>👁 366</span>
+</div>
+
+<div class="audio-player">
+  <audio controls preload="metadata">
+    <source src="https://mumuxi-fish.github.io/blog/audio/3--3d---ai.mp3" type="audio/mpeg">
+  </audio>
+</div>
+
+<div class="video-wrapper">
+  <iframe src="https://player.bilibili.com/player.html?bvid=BV1S1gP6WE9F&page=1&autoplay=0" allowfullscreen></iframe>
+</div>
+
+<div class="content">
+  <p class="sub-srt-download">
+    <a href="data:text/plain;base64,MQowMDowMC4wMDAgLS0+IDAwOjA0LjI0MgrkuIDkuKrkurrog73lnKjlh6DlpKnlhoXlgZrlh7rnnJ/mraPmuLTmnJvnmoQzROa4uOaIj+WQl++8nwoKMgowMDowNC4yNDIgLS0+IDAwOjExLjAzMQropoHnlLvpnaLnsr7nvo7jgIHov5DooYzmtYHnlYXkuJTnu4/ov4fkvJjljJbvvIzogIzkuJTog73lj6rnlKjkurrlt6Xmmbrog73nlJ/miJDnmoTntKDmnZDmnaXlrozmiJDlkJfvvJ8KCjMKMDA6MTEuMDMxIC0tPiAwMDoyOS4yNzQK5oiR5Yaz5a6a5oyR5oiY6Ieq5bex77yM5Zyo5LiJ5aSp5YaF54us6Ieq5a6M5oiQ5LiA5qy+6aOO5qC854us54m555qE5YWo5LiJ57u05bmz5Y+w5ri45oiP77yM5YWo56iL5L2/55So6aG25bCW55qE5LiJ5L2N5Lq65bel5pm66IO95py657uE77yM5bm257uT5ZCI5oiR5Liq5Lq655qE5LiJ5L2N5Yi25L2c5oqA6IO977yM5Lul5Y+K5oiR5Zyo6L+H5Y675YWt5Liq5pyI6YeM5pG457Si5Ye655qE5pyA5b+r5o235b6E77yM5YWo6YOo5pW05ZCI6L+R5LiA5aWX5bel5L2c5rWB5Lit44CCCgo0CjAwOjI5LjI3NCAtLT4gMDA6MzcuMzM3CuaIkeWwhuWcqOS7iuWkqeeahOinhumikemHjOWQkeWkp+WutuWxleekuuS7juWIm+aEj+aehOaAneWIsOWcqOiZmuW5u+W8leaTjueJqeS4reWunueOsOivvueOqea4uOaIj+eahOWujOaVtOi/h+eoi+OAggoKNQowMDozNy4zMzcgLS0+IDAwOjQ0LjEyNQrmiJHlsIbmjqLor5rlnLDliLblh7rkurrlt6Xmmbrog73lnKjpgqPkupvlnLDmlrnmr6vml6DnlKjlpITvvIzlj4jlnKjpgqPkupvlnLDmlrnlhbfmnInlt6jlpKfkvJjlir/jgIIKCjYKMDA6NDQuMTI1IC0tPiAwMDo0Ni4wMzQK5bim5LiK6Zu26aOf77yM5oiR5Lus5byA5aeL5ZCn44CCCgo3CjAwOjQ2LjAzNCAtLT4gMDA6NDkuMDAwCuS4gOWIh+mDveaYr+S4juWIm+aEj0kndmXngbXmhJ/ku47kvZXogIzmnaXvvJ8KCjgKMDA6NDkuMDAwIC0tPiAwMDo1Mi41OTQK6YCC5ZCI5LqG5aSp55Sf5oiQ6K+t6K6t57uD6L2s5o2i5Zmo5aS06ISR6aOO5pq05ZCX77yfCgo5CjAwOjUyLjU5NCAtLT4gMDA6NTcuODgxCuS4je+8jOW9k+eEtuS4jeaYr++8jOiAjOaYr+a6kOS6juWTsueQhuOAgeWIm+aEj+OAgeWTgeWRs+etieetie+8jOi/meS6m+mDveWcqOS9oOS7rOW/g+S4reOAggoKMTAKMDA6NTcuODgxIC0tPiAwMToxMi44OTYK5L2G6KaB5bCG5YW25oiQ5Z6L77yM5b2T54S25Y+v5Lul5YCf5Yqp5LqG5aSp55Sf5oiQ6K+t6K6t57uD6L2s5o2i5ZmobmFubyBiYW5hbmHnrYnlt6XlhbfvvIzmiJHop4nlvpfov5nlpKrmo5LkuobvvIzmiJHorqTkuLrlroPkvp3nhLbml6Dms5Xlj5bku6PkvaDnmoTliKTmlq3lipvmiJblk4HlkbPvvIzlroPlj5bku6PnmoTmmK/nuYHnkJDnmoTmtYHnqIvvvIzlsLHlg4/kvaDnmoTnlLvnrJTkuIDmoLfjgIIKCjExCjAxOjEyLjg5NiAtLT4gMDE6MTguMzk0Cuato+WmguS9oOivtOS6hu+8jOaIkeeahOesrOS4gOatpeW9k+eEtuaYr+S7jmNoYWdwdCBuYW5vIGJhbuW8gOWni++8jOacieaXtuS5n+S8mueUqOeahOOAggoKMTIKMDE6MTguMzk0IC0tPiAwMToyMC43MTkK5oiR5b2T5pe25Zyo5p6E5oCd5LiN5ZCM55qE55S15a2Q44CCCgoxMwowMToyMC43MTkgLS0+IDAxOjI3LjkwOQrmiJHmnIDllpzmrKLnmoTmuLjmiI/nsbvlnovmmK/lubPlj7DmnaHnuqbmuLjmiI/vvIzlsKTlhbbmmK/kuInkvY3lubPlj7DmnaHnuqbmuLjmiI/miJHnnJ/nmoTpnZ7luLjllpzmrKLjgIIKCjE0CjAxOjI3LjkwOSAtLT4gMDE6MzcuODQ5CuaIkeWWnOasoumCo+enjeaehOW7uuS4lueVjOeahOaWueW8j++8jOaIkeaDs+WBmueCuemFt+eahOS4nOilv++8jOiuqeS6uuaDs+i1t+S7u+WkqeWggu+8jOaDs+i1t+aIkeWwj+aXtuWAmeeOqeeahOa4uOaIj++8jOS9huWPiOimgeaciei2o+WIh+e6v+eahOaIkOeGn+OAggoKMTUKMDE6MzcuODQ5IC0tPiAwMTo0Mi4yOTAK5pyA5ZCO5oiR5oqK55Sf5YyW5aWH5YW15peg6ZmQ5ZKM54yr5ZKq5LiW55WM57uT5ZCI5Zyo5LqG5LiA6LW344CCCgoxNgowMTo0Mi4yOTAgLS0+IDAxOjQzLjU1OArll6/vvIzkuLrku4DkuYjkuI3lkaLvvJ8KCjE3CjAxOjQzLjU1OCAtLT4gMDE6NTQuNDM2CuaIkeaXqeacn+eahOamguW/teWbvueci+i1t+adpeecn+eahOW+iOajku+8jOaIkeWlpeWIqeS4geWTiOaIkeWujOWFqOWPr+S7peeUqOi/meS6m+avm+eahOWFg+e0oOWIm+mAoOWHuuS4gOS4qui2hemFt+eahOato+awlOaci+WFi+S4lueVjOOAggoKMTgKMDE6NTQuNDM2IC0tPiAwMjowMS44NDMK5aSp5ZGQ6YKj566A55u05aSq55av54uC5LqG77yM5omA5Lul6LW354K55bCx6L+Z5qC35a6a5LiL5p2l77yM6L+Z5YW25a6e5piv5pyA566A5Y2V55qE6YOo5YiG44CCCgoxOQowMjowMS44NDMgLS0+IDAyOjEwLjAxNgrmjqXnnYDmiJHnmoTlvIDlp4vmnoTlu7rnu4Tku7bvvIzogIzpurvng6bnmoTlnLDmlrnlsLHlnKjov5nlhL/vvIzmnInlvojlpJrlt6Xlhbflj6/ku6Xlrp7njrDoh6rliqjljJbjgIIKCjIwCjAyOjEwLjAxNiAtLT4gMDI6MjAuMjMzCumAmuW4uOadpeivtOi/meeahOiDveW4ruS9oOeUn+aIkOS4gOS6m+eJqeS9k++8jOeEtuWQjuWRouWGjemAkOS4quWIm+W7uu+8jOS9oOi/mOW+l+ehruS/neiHquW3seWWnOasoui/meenjemjjuagvO+8jOivuOWmguatpOexu+OAggoKMjEKMDI6MjAuMjMzIC0tPiAwMjoyMy44MDgK5piv55qE77yM5L2g5Y+v5Lul55yL5Yiw5o+Q5Y+W5LqG5b6I5aSa54mp5L2T44CCCgoyMgowMjoyMy44MDggLS0+IDAyOjI5LjY4Mgrlm6DkuLrlho3mrKHlvLrosIPlvZPkvaDmnoTlu7rnnJ/lrp7muLjmiI/ml7bkvJrmnInnm7jlvZPlpJrnmoTnu4boioLjgIIKCjIzCjAyOjI5LjY4MiAtLT4gMDI6MzUuNTU2CuWug+eci+i1t+adpeWPr+iDveWDj+aYr+S4gOS4queugOWNleeahOWcuuaZr++8jOS9huWunumZheS4iuWug+acieWkmuWkp++8nwoKMjQKMDI6MzUuNTU2IC0tPiAwMjo0My40NzQKNTDkuKrni6znibnnmoTniankvZPvvIzljIXmi6zog4zmma/kuK3nmoTniankvZPlj5jlvpfpnZ7luLjvvIzov5nmmK/miJHkvb/nlKjnmoTmnIDlj4LogIPotYTmlpnjgIIKCjI1CjAyOjQzLjQ3NCAtLT4gMDI6NTMuNzk2CuW7uuetkeaWuemdouacieW+iOWkmu+8jOi/mOacieWQhOenjeihqO+8jOavlOWmguWimeWjgeOAgeegluWdl+OAgeagheagj+OAgeair+WtkOS7peWPiuiuuOWkmuS4jeWQjOeKtuaAgeS4i+eahOeJqeS9k+OAggoKMjYKMDI6NTMuNzk2IC0tPiAwMzoxNC45MDcK6Iez5LqO5bu6562R56eN57G757mB5aSa77yM5qC35byP5ZCE5byC77yM5pyJ54Gv5aGU44CB6ZKf5qW877yM6L+Y5pyJ5b6I5aSa5YOP5Lmm5pys5biC5Zy65bu6562R5LmL57G755qE5Lic6KW/5L2c5b2T54S26L+Z5oiR55qE6Imy77yM6L+Z5piv5oiR55qE55qE5p6B5YW355qE55qE5q2m5Zmo77yM5Lul5Y+K5LiA5Lqb5bmz5Y+w6K6+6K6h5ri45oiP55qE6YGT5YW344CCCgoyNwowMzoxNC45MDcgLS0+IDAzOjIzLjgxNArov5nlj6/og73pnIDopoHlvojlpJrlt6XkvZzvvIzkvYbnlKjkuoblpKnnlJ/miJDor63orq3nu4PovazmjaLlmajlsLHlvojlrrnmmJPlgZrliLDjgIIKCjI4CjAzOjIzLjgxNCAtLT4gMDM6MjguNDMyCuWug+acieWKqeS6juaPkOWPluaPkOekuuivjeW5tueUn+aIkOWbvuWDj+OAggoKMjkKMDM6MjguNDMyIC0tPiAwMzozNC4zNzAK5LiL5LiA5q2l5piv5Yib5bu65bm25YeG5aSH5aW95omA5pyJ6L+Z5Lqb5LiJ57u05qih5Z6L44CCCgozMAowMzozNC4zNzAgLS0+IDAzOjM5LjAwOQrnm67liY3miJHnmoTpgInmi6nmmK/kuLvopoHljp/lm6DmmK/lroPnoa7lrp7mmK/mnIDlpb3nmoTjgIIKCjMxCjAzOjM5LjAwOSAtLT4gMDM6NDUuODA4CuagueaNruWumue6p+S4iee7tOS6uuW3peaZuuiDvee7j+aKgOWcuueahOaOkuWQjeS7peWPiuaIkeiHquW3seeahOa1i+ivle+8jOWug+eJueWIq+mAguWQiOS9juWkmui+ueaAp+eUn+aIkOOAggoKMzIKMDM6NDUuODA4IC0tPiAwMzo1Mi4wMjQK6ICM5Zyo6auY5aSa5Y+Y5oCn5ZKM57q555CG5pa56Z2i77yM5Yet5YCf5YW25pyA5paw55qEMy4x54mI5pys77yM5a6D55uu5YmN5Lmf5aSE5LqO6aKG5YWI5Zyw5L2N44CCCgozMwowMzo1Mi4wMjQgLS0+IDAzOjU3LjA3NArmraTlpJbvvIzkvaDov5jlj6/ku6Xnm7TmjqXlnKjov5nph4zkvb/nlKjmnIDpobblsJbnmoTlm77lg4/mqKHlnovmnaXnlJ/miJDlm77niYfjgIIKCjM0CjAzOjU3LjA3NCAtLT4gMDQ6MDAuNzY0CuS9huaIkeS4u+imgeeahOeUqOmAlOW9k+eEtuaYr+mrmOa4heaooeWei+WSjOaZuuiDvee9keagvOOAggoKMzUKMDQ6MDAuNzY0IC0tPiAwNDowOC43MjkK5pm66IO9572R5qC85Yqf6IO95Y+v5Lul6YCa6L+H5Y2V5byg5oiW5aSa5byg5Zu+54mH6K6p5L2g55u05o6l5Yib5bu655qE5aSa5Y+Y5oCn5qih5Z6L77yM6ICM5peg6ZyA6ZmQ5Yi25YGa6auY5aSa5Y+Y5b2i5qih5Z6L44CCCgozNgowNDowOC43MjkgLS0+IDA0OjEyLjIyNArmiJHmmK/or7TmiJHnnJ/nmoTpnZ7luLjllpzmrKLlroPnlJ/miJDnmoTnvZHmoLzmlYjmnpzjgIIKCjM3CjA0OjEyLjIyNCAtLT4gMDQ6MTkuMDI0CuS9oOeci+WwseaYr+i/meagt++8jOaIkeeahOaEj+aAneS9oOWPquS5juaUvuWFpeS4gOW8oOWbvueJh++8jOWug+WwseiDveeUn+aIkOi/keS5juWujOe+jueahOS9juWkmuWPmOW9ouaooeWei+OAggoKMzgKMDQ6MTkuMDI0IC0tPiAwNDoyOC4zNDYK5oiR5piv6K+06buR5a2Q5Lus5bC9566h6buR5ZCn77yM5L2G5oiR55u05o6l5oqK5a6D5YCS5YWlYmxkZXLvvIzmiJHkvJrlgZrkupvlvq7osIPvvIzkvJjlir/mmK/kuLrkuobliqjnlLvmlYjmnpzvvIzkvJjlir/lj6rmmK/kuLrkuobliKDmjonkuIDkupvlpJrkvZnpg6jliIbjgIIKCjM5CjA0OjI4LjM0NiAtLT4gMDQ6MzkuODE5CuS9huS9oOeci+eci+i/meS4quWcqOS4reW9k+S9oOeUn+aIkOeahOWkmuWPmOaAp+aooeWei+WQju+8jOWPr+S7pei/m+ihjOmTgeWbvu+8jOmTgeWbvuWujOaIkOWQjui/mOiDvea3u+WKoOWfuuS6jueJqeeQhueahOa4suafk+aViOaenO+8jOiuqeWug+abtOWHuuiJsu+8jOi/meWwseaYr+WujOaVtOa1geeoi+OAggoKNDAKMDQ6MzkuODE5IC0tPiAwNDo0NC4yNDAK55yL55yL6L+Z5Liq6KeS6Imy55qE5pWI5p6c77yM5oiR6KeJ5b6X55yf5piv5aSq5qOS5LqG44CCCgo0MQowNDo0NC4yNDAgLS0+IDA0OjUyLjgxOQrlr7nkuo7op5LoibLov5nmkYTlg4/mnLrmnInlpJrotLHvvIzmiJHlu7rorq7liIbpg6jku7bmnoTlu7rvvIzov5nmoLfog73mnInmm7Tlpb3nmoTmjqfliLblkozpm4blkIjnu5PmnoTjgIIKCjQyCjA0OjUyLjgxOSAtLT4gMDQ6NTguODAwCuaIkeWIm+W7uuWPjea0vuinkuiJsuaXtuS5n+aYr+i/meagt++8jOe7k+aenOS9oOeci+e9keagvOmdnuW4uOmdnuW4uOajkuOAggoKNDMKMDQ6NTguODAwIC0tPiAwNTowNi4wMzYK6YKj54m55Yir5piv5Zug5Li65oiR55qE6KeS6Imy5Lya5b6I5bCP77yM5omA5Lul5oiR5Y+q6ZyA6KaB5LuW5Lus57uP6L+H5LyY5YyW57q555CG77yM6ZSm5aa56L+Z566A55u05aSq5qOS5LqG44CCCgo0NAowNTowNi4wMzYgLS0+IDA1OjA5Ljc1OQrov5nmiY3mmK/ni6znq4vlvIDlj5HogIXnnJ/mraPpnIDopoHnmoTlt67lvILljJbkvJjlir/jgIIKCjQ1CjA1OjEwLjEzOSAtLT4gMDU6MjguNzc4CuaIkeWItuWBmuS6huatpuWZqO+8jOaJgOacieS4jee7meWTge+8jOaJgOacieWwj+mbtuS7tu+8jOaJgOacieS4nOilv+mDveaYr+WcqOi/memHjOWItuS9nOeahO+8jOeEtuWQjuWIsOWkhOmDvWJs5LuWLCDov5jmsqHmnInnmb7liIbkuYvnmb7lrozmiJDvvIzmiYDku6XmiJHku6zov5jpnIDopoHlgZrkupvlkI7nu63lt6XkvZzvvIznjrDlnKjorqnmiJHnu5nkvaDku6zlsZXnpLrkuIDkupvmiJHliLbkvZznmoTlhbbku5blvojphbfnmoTkvovlrZDvvIzorqnkvaDku6znnIvnnIvljp/lp4vovpPlh7rjgIIKCjQ2CjA1OjI4Ljc3OCAtLT4gMDU6MzUuMjA2CuS7luS7rOi/mOayoeacieWcqGJsZW5kZXLkuK3ov5vooYzku7vkvZXlpITnkIbvvIzkuJbnlYznlJ/miJDlh7rmnaXnmoTmlYjmnpzlsLHlt7Lnu4/lvojmo5LkuobjgIIKCjQ3CjA1OjM1LjIwNiAtLT4gMDU6NDkuMzQ2CuS8meiuoeS7rO+8jOWmguaenOS9oOS7rOaDs+WwneivleWOu+eahOaJgOaciei/meS6m+WKn+iDve+8jOaIkeacieS4gOS4queJueWIq+eahOS8mOaDoOeggee7meS9oOS7rO+8jOiAjOS4lOWmguaenOS9oOS7rOS9v+eUqOaIkeWcqOaPj+i/sOagj+mHjOeahOmTvuaOpe+8jOi/mOiDvemineWkluiOt+W+l+WFjei0ueenr+WIhu+8jOi/meaYr+aIkeeahOecn+W/g+aOqOiNkOOAggoKNDgKMDU6NDkuMzQ2IC0tPiAwNjowMy4wNjAKVHJp56Gu5a6e5piv55uu5YmN6aG25bCW55qE5qih5Z6L77yM6K6p5oiR5Lus6IO95LiT5rOo5LqO5Yib5L2c77yM6ICM6Z2e5qih5Z6L5LyY5YyW77yM5q2j5aaC5oiR5omA6K+077yM5pyJ5Lqb6LWE5Lqn5Zyo5a+85YWl5b6q546v5byV5pOO5YmN56Gu5a6e6ZyA6KaB6aKd5aSW5ram6Imy77yM5Zyo6L+Z6YeM5L2g5LiN6ZyA6KaB5LqG6Kej5omA5pyJ6L+Z5Lqb44CCCgo0OQowNjowNC43NzkgLS0+IDA2OjIzLjI4MwrlnKhibGRlcumHjO+8jOaIkemAmuW4uOS8muajgOafpeWHoOS7tuS6i++8jOmmluWFiOaIkeS8muajgOafpeeOi+agvOaYr+WQpuacieaYjuaYvueahOegtOaNn++8jOavlOWmguWvueS6juinkuiJsu+8jOaIkeS8muajgOafpeWbm+iCouetiemDqOS9jeaYr+WQpuaciei2s+Wkn+eahOS4jee6v++8jOS7peehruS/neiDveato+W4uOWKqOeUu+WMlu+8jOWvueS6jumBk+WFt++8jOaIkeWPr+iDveS8mui/m+ihjOS7jumrmOaooeWIsOS9juaooeeahOeDmOeEme+8jOaJgOS7peWcqOS4reWlpeaWr+ael+S8muWIm+W7uumrmOaooeOAggoKNTAKMDY6MjMuMjgzIC0tPiAwNjoyNi43NDAK54S25ZCO6L+b6KGM5ouW5biD77yM5oqK6L+Z5Lik5Liq5qih5Z6L6YO95a+85YWl6L+b5p2l44CCCgo1MQowNjoyNi43NDAgLS0+IDA2OjM1LjA3Ngrng5jnhJnnjq/looPlhYnms73mr5TotLTlm77mnInml7bkuZ/kvJrng5jnhJnlj5HnjrDotLTlm77lnKjkurrlt6Xmmbrog73kuK3ov5vooYznurnnkIblpITnkIbvvIzmnIDlkI7lsIblroPku6zmlbTlkIjlnKjkuIDotbfjgIIKCjUyCjA2OjM1LjA3NiAtLT4gMDY6NDAuMTYwCuWPpuWklueuseWtkOWPkeWFiei0tOWbvuaIluafkOS6m+WxnuaAp+i0tOWbvuWcqOi/memHjOiwg+aVtOS5n+mdnuW4uOaWueS+v+OAggoKNTMKMDY6NDAuMTYwIC0tPiAwNjo0NS40MzIK55u05bi455+z5pyJ5Y+N5bCE6Z2i6Iac77yM6YeR5bGe6KGo6Z2i77yM5Zyo6L+Z6YeM5Yi25L2c6Z2e5bi4566A5Y2V44CCCgo1NAowNjo0NS40MzIgLS0+IDA2OjU0LjIyMAroh6rlj5HlhYnotLTlm77kuZ/kuIDmoLfvvIzotoXnuqfnroDljZXvvIzkvaDlj6rpnIDlnKjlubPpnaLkuIrnu5jliLbovazlvIDotLTlm77vvIzlroPpnZ7luLjkvJjljJbvvIzmlYjmnpzkuZ/lvojlpb3jgIIKCjU1CjA2OjU0LjYwMCAtLT4gMDY6NTguODE3CuWGheWkqei/mOacieWFqOWbveS4jeW+l+mHjOi/meS4queugOWkqeeahOWnlOaJmOW3peWFt+WwseiDveWujOaIkOOAggoKNTYKMDY6NTguODE3IC0tPiAwNzowNC4zNzkK5q2j5aaC5oiR5omA6K+077yM5a+55LqO6KeS6Imy5qC55o2u5Y+v5Ye66L+b6Led5pyf55qE6L+c5pmv5bel5L2c6YeP5Y+v6IO95Lya56iN5aSn5LiA5Lqb44CCCgo1NwowNzowNC4zNzkgLS0+IDA3OjEwLjcwNgrlkIzmoLflpoLmnpzkvaDlnKjliLbkvZzlkajop5LvvIzpgqPlsLHkuIDlrpropoHliIbluIPov5vmnaXliJvlu7rvvIznoa7kv53kvaDmnInotrPlpJ/nmoTnu4boioLlkozntKDmnZDjgIIKCjU4CjA3OjEwLjcwNiAtLT4gMDc6MTUuMzA5CuWunumZheS4iuaIkeacieS4gOS4qumdnuW4uOWlveeahOa2iOaBr+imgeWRiuivieWkp+Wutu+8jOaIkeWcqOaDs+azleegtOaXp+OAggoKNTkKMDc6MTUuMzA5IC0tPiAwNzoyMi4wMjEK5oiR5L+u5YWL5LiJ57u05Lq65bel5pm66IO96K++56iL77yM5oiR5oqV5YWl5LqG5aSn6YeP5L+h5oGv77yM5bm25LiO5oiR5LiT5Lia5LiJ57u06Im65pyv5a625Zui6Zif5YWx5ZCM5byA5Y+R44CCCgo2MAowNzoyMi4wMjEgLS0+IDA3OjI2LjgxNArmiJHku6zmjqLntKLkuobmiYDmnInkuInnu7Tkurrlt6Xmmbrog73lt6XlhbflubbliLblrprnmoTmnIDkvbPlt6XkvZzmtYHnqIvjgIIKCjYxCjA3OjI2LjgxNCAtLT4gMDc6MzcuMzYwCuaIkeS7rOS4uuS9oOaPkOS+mzEwJeeahOS4iee7tOaZuuiDveWSjOWFs+S6juacgOS9s+S4iee7tOS6uuW3peaZuuiDveW3peWFt+eahOefpeivhu+8jOiuqeS9oOiDveWunueOsDkwJeeahOebruagh++8jOW5tuWIm+mAoOWHuuS9oOaipuaDs+S4reeahOa4uOaIj+OAggoKNjIKMDc6MzcuMzYwIC0tPiAwNzo0Mi41MzgK5YW35L2T5p2l6K+05oiR5Lus5LiT5rOo5LqO5LiJ57u06KeS6Imy77yM5L2G5ZCM5qC355qE5bel5L2c5rWB56iL5Lmf6YCC55So5LqO6YGT5YW344CCCgo2MwowNzo0Mi41MzggLS0+IDA3OjQ3LjcxNgrpgZPlhbfpgJrluLjmm7TlrrnmmJPvvIzmiJHku6znlKjpnZ7luLjnroDljZXnmoTor63oqIDmtrXnm5bkuobmiYDmnInnu4boioLlkozmlrnpnaLjgIIKCjY0CjA3OjQ3LjcxNiAtLT4gMDc6NTIuMTI3Cuivt+eci+S4gOeci+i/nuaOpe+8jOWwseWcqOinhumikeingeino+mHjO+8jOi/meaYr+ebruWJjeacgOWujOaVtOeahOivvueoi+OAggoKNjUKMDc6NTIuMTI3IC0tPiAwNzo1OS41NjUK5Yia5omN5oiR5b+r6YCf5qOA5p+l5LqG5qih5Z6L55qE6ZuG5ZCI57uT5p6E77yM55yL55yL5pyJ5rKh5pyJ55GV55a177yM54S25ZCO55u05o6l5oqK5a6D5YCS5YWl5LqGYWNjdXJhdGXjgIIKCjY2CjA3OjU5LjU2NSAtLT4gMDg6MDUuNjkwCkFjY3VyYXRl5piv5oiR546w5Zyo55qE6aaW6YCJ77yM54m55Yir5piv5Zyo5oiR5L2/55SoYmxlbmRlcueahOaXtuWAme+8jOWug+mdnuW4uOeyvuWHhuOAggoKNjcKMDg6MDUuNjkwIC0tPiAwODoxMi4yODYK5Zug5Li65a6D5pivYWNjdXJhdGXvvIzkvaDlnKjouqvkvZPlkozmiYvkuIrorr7nva7moIforrDngrnvvIzlroPmnInnm7jlvZPlpJrnmoTmjqfliLbpgInpobnjgIIKCjY4CjA4OjEyLjI4NiAtLT4gMDg6MTguODgyCueEtuWQjuS9oOWPqumcgOajgOafpee7k+aenO+8jOWcqOWkp+WkmuaVsOaDheWGteS4i+Wug+iDveaPkOS+m+mdnuW4uOmdnuW4uOWlveeahOaViOaenOOAggoKNjkKMDg6MTguODgyIC0tPiAwODo1MS4wMDUK5L2g5Y+v5Lul55u05o6l5bCG5YW25Yiw5aSE5b6u5bqP546v5byV5pOO6aqo5p6277yM5b2T5oiR6KaB6K+a5a6e55qE6K+055m+5YiG5LmL55m+55qE5oOF5Ya15LiL77yM5L2g6YO95b6X5oqK5a6D5YCS5ZueYmxkZXLljrvlloLmjonkuIDkupvlsI/nu4boioLvvIzmr5TlpoLmiJHnmoTnjKvlnKjku6XkuIvpg6jkvY3lsLHlvojmmI7mmL7mnInpl67popjvvIzkuZ/orrjmmK/lm6DkuLrmiJHnmoTlp7/lir/msqHmkYblpb3vvIzkuZ/orrjlnKjnu5HlrprkuYvliY3miJHlupTor6XlpJrlgZrkuIDkupvmj5DphpLlp7/lir/vvIzkvYbml6DorrrlpoLkvZXvvIzmgLvkvJrmnInkuIDkupvmgbzkurrnmoTlsI/pl67popjpnIDopoHlpITnkIbvvIzlr7nkuo7ov5nnp43mg4XlhrXvvIzkvaDnoa7lrp7pnIDopoHmjozmj6FibHVuZGVybHnnroDljZXnmoTmnYPph43nu5jliLblt6XlhbfvvIzku6Xkvr/lv6vpgJ/op6PlhrPjgIIKCjcwCjA4OjUxLjAwNSAtLT4gMDg6NTQuNzkzCui/meS4jeaYr+S7gOS5iOWkp+mXrumimO+8jOWkp+amgjMw5YiG6ZKf5bCx6IO95pCe5a6a44CCCgo3MQowODo1NC43OTMgLS0+IDA5OjAxLjczOArmiJHnmoTlvIDmiJHnmoTkuInnu7Tkurrlt6Xmmbrog73or77nqIvkuK3kuZ/or6bnu4borrLov4fvvIzlj6rpnIDmjozmj6Hlh6DkuKrlt6XlhbflsLHog73ovbvmnb7op6PlhrPjgIIKCjcyCjA5OjAxLjczOCAtLT4gMDk6MDkuNDQ2CuW9k+aIkeWvueadg+mHjea7oeaEj+WQju+8jOWwseWPr+S7peWvvOWHuuaWh+S7tuS6hu+8jOaIkeS7rOmAieaLqUYgQiBY5qC85byP5aW95LqG77yM546w5Zyo5piv5pe25YCZ6K6+572u5ri45oiP5LqG44CCCgo3MwowOTowOS40NDYgLS0+IDA5OjE0LjMzNwrpppblhYjmiJHopoHor7TmmI7vvIzmiJHlubbmsqHmnInlvIDlj5Hlh7rluKbmnInmiYDmnInmnLrliLbnmoTlrozmlbTmuLjmiI/jgIIKCjc0CjA5OjE0LjMzNyAtLT4gMDk6MTkuNDMzCuaIkeWunumZheS4iuaJvuWIsOS6huS4gOS4quaooeadv++8jOa2teebluS6huW5s+WPsOiuvuWHu+a4uOaIj+eahOmAu+i+ke+8jOWvueWQp++8nwoKNzUKMDk6MTkuNDMzIC0tPiAwOToyNi4zNjQK5omA5Lul6L+Z5piv5LiA5Liq5LiJ5L2N5bmz5Y+w5bCE5Ye75ri45oiP77yM5YW25Lit5YyF5ZCr5LqG5L2g5Y+v6IO96ZyA6KaB55qE5q2m5Zmo5ZKM5Z+656GA5q2m5Yqb6YC76L6R44CCCgo3NgowOToyNi4zNjQgLS0+IDA5OjMzLjA5MQrmiJHop4nlvpfov5nmraPmmK/miJHmiYDpnIDopoHnmoTvvIzogIzkuJTku7fmoLzpnZ7luLjkvr/lrpzvvIzlpKfnuqY1MOe+juWFg++8jOaIkeiupOS4uui/memdnuW4uOWIkueul+OAggoKNzcKMDk6MzMuMDkxIC0tPiAwOTozNy43NzkK5aaC5p6c5L2g5oOz5LqG6Kej5LiA5LiL6L+e5o6l77yM5bCx5Zyo5o+P6L+w6YeM5ZCR6L+Z5L2N5byA5Y+R6ICF6Ie05pWs44CCCgo3OAowOTozNy43NzkgLS0+IDA5OjQxLjMyMgrliLDkuobov5nkuKrpmLbmrrXvvIzmiJHku6zln7rmnKzlj6/ku6XlvIDlp4vliJvkvZzkuobjgIIKCjc5CjA5OjQxLjMyMiAtLT4gMDk6NTQuNjYwCuW+iOmBl+aGvuaIkeayoeiDveW9leS4i+acgOW8gOWni+eahOmDqOWIhu+8jOS9huWcqOi/memHjOS9oOWPr+S7peeci+WIsO+8jOaIkeW3sue7j+W8gOWni+aehOW7uuS4gOS6m+e0oOiPnOWSjOihl+mBk+S6hu+8jOaIkeWImuaKiuaIkeWHhuWkh+WlveeahOaJgOaciee0oOadkOmDvemZhue7reaNouW8leaTju+8jOeEtuWQjuWwseW8gOWni+WIm+S9nOS6huOAggoKODAKMDk6NTQuNjYwIC0tPiAwOTo1Ny4zNzAK5L2g5Lus55+l6YGT5pyA5qOS55qE6YOo5YiG5piv5LuA5LmI5ZCX77yfCgo4MQowOTo1Ny4zNzAgLS0+IDEwOjAzLjQxNArpgqPlsLHmmK/lvZPmiJHlvIDlp4vmkK3lu7rlhbPljaHml7bvvIzmiJHlubbmsqHmnInlm6DkuLrliLbkvZzntKDmnZDogIzmhJ/liLDnsr7nlrLlipvnq63jgIIKCjgyCjEwOjAzLjQxNCAtLT4gMTA6MDkuMDQyCuaJgOS7peaIkei/mOaciei2s+Wkn+eahOWIm+S9nOeyvuWKm+WOu+aehOaAneWHuumdnuW4uOajkueahOamguW/te+8jOi/meaEj+S5iemHjeWkp+OAggoKODMKMTA6MDkuMDQyIC0tPiAxMDoyMS4xMjkK5Zyo5bCd6K+V5YGa6L+Z57G75LqL5oOF5LmL5YmN77yM5b2T5L2g5byA5aeL5Yi25L2c5LiA5Lqb57Sg5p2Q77yM6ICM6L+Z6ZyA6KaB6ICX6LS55pWw5aSp55Sa6Iez5pWw5pyI5pe277yM5L2g5a6e6ZmF5LiK5Lya5b+Y6K6w5YW25LuW5omA5pyJ5LqL5oOF77yM5bCk5YW25piv5YWz5Y2h5pyA57uI5Lya5piv5LuA5LmI5qC344CCCgo4NAoxMDoyMS4xMjkgLS0+IDEwOjI3Ljc5OQrkvaDmg7PlnKjph4zpnaLlu7rpgKDku4DkuYjphbfngqvnmoTkuJzopb/vvIzmr5TlpoLkuIDkupvlsI/oioLpgZPjgIHnp5jlr4bljLrln5/miJblhbbku5bku7vkvZXkuJzopb/jgIIKCjg1CjEwOjI3Ljc5OSAtLT4gMTA6MzYuNzQwCuavlOWmguWcqOWItuS9nOi/meS4gOWFs+aXtu+8jOaIkeW/g+aDs+WTh++8jOWmguaenOaKiui/meS4quWutuS8meWBmuaIkOeMq+WSquWuh+WumemHjOeahOiHqueUseWls+elnuWDj++8jOmCo+ivpeWkmumFt+WViuOAggoKODYKMTA6MzYuNzQwIC0tPiAxMDo0NC43MzgK5LyZ6K6h5Lus77yM5oiR5Y+q55So5LqG5LqU5YiG6ZKf5bCx55Sf5oiQ5LqG6L+Z5Liq5qih5Z6L77yM5bm25oqK5a6D5pS+5Zyo5LqG5YyX5Lqs6YeM77yM55yL5pWI5p6c5aSa5qOS5a+55ZCn77yfCgo4NwoxMDo0NC43MzggLS0+IDEwOjQ5LjY3OArlvZPnhLblnKjov4fnqIvkuK3miJHkvJrmjInluo/mt7vliqDkuIDkupvntKDmnZDvvIzov5nlpKrnlq/ni4LkuobjgIIKCjg4CjEwOjQ5LjY3OCAtLT4gMTA6NTYuOTcxCuWwseWDj+S9oOinieW+l+mcgOimgeafkOS6m+eJqeS9k+S6lOWIhumSn+WwseiDveWIm+W7uuWHuuadpe+8jOeEtuWQjuS9oOWbnuWOu+e7p+e7reaehOW7uuWFs+WNoeOAggoKODkKMTA6NTYuOTcxIC0tPiAxMTowMC45NzEK6L+Z5bCx5piv5oiR6Z2e5bi45Zac5qyi55uu5YmN6L+Z56eN54q25oCB55qE5Y6f5Zug44CCCgo5MAoxMTowMC45NzEgLS0+IDExOjAzLjU1OQrkvaDlj6/ku6XnnJ/mraPkuJPms6jkuo7liJvpgKDlipvjgIIKCjkxCjExOjAzLjg5OSAtLT4gMTE6MTIuMDY2CuiuuOWkmuS4k+S4muS4ieS9jeiJuuacr+WutuaEn+WIsOmdnuW4uOayruS4p++8jOWboOS4uumrmOaooeaLluW4g+OAgei0tOWbvuetieW3peS9nOWkquiAl+aXtuS6huOAggoKOTIKMTE6MTIuMDY2IC0tPiAxMToxNy43ODMK5L2G6ICB5a6e6K+077yM6L+Z5Lqb6YO95piv5bi46KeE5bel5L2c77yM5Lul5YmN6ZyA6KaB6auY5r2u55qE5oqA5ben44CCCgo5MwoxMToxNy43ODMgLS0+IDExOjIyLjY4MgrkvYbml6DorrrmiJHku6zmgI7kuYjmg7PvvIzku5bku6znjrDlnKjpg73lnKjooqvoh6rliqjljJbjgIIKCjk0CjExOjIyLjY4MiAtLT4gMTE6MjYuNDk0CuWmguaenOaIkeS4jeWRiuivieS9oO+8jOWIq+S6uuS5n+S8muWRiuivieS9oOOAggoKOTUKMTE6MjYuNDk0IC0tPiAxMTozNC4zODkK5aaC5p6c5oiR55qE5bCB6ZSB77yM576O5Zu95ZKM5Lit5Zu955qE5omA5pyJ5Lq65bel5pm66IO95qih5Z6L77yM5LuW5Lus5L6d54S25Lya57un57ut56CU5Y+R44CCCgo5NgoxMTozNC4zODkgLS0+IDExOjQxLjczOQrljbPkvr/kuK3lm73lgZzmraLkuobvvIzkuZ/lt7Lnu4/mnInkuoblvIDmupDmqKHlnovvvIzmiYDku6XlroPnu4jnqbbkvJrooqvnoJTlj5Hkvb/nlKjjgIIKCjk3CjExOjQxLjczOSAtLT4gMTE6NDYuOTEyCuWvueaIkeiAjOiogO+8jOaIkeW+iOmrmOWFtOeOsOWcqOe7iOS6juiDvemHiuaUvuWIm+mAoOWKm+S6huOAggoKOTgKMTE6NDYuOTEyIC0tPiAxMTo1MS4yNjcK5Zyo5pCt5bu65aW95qO65Y2h5ZCO77yM5oiR5b2T54S26ZyA6KaB6YGT6Lev6KeS6Imy44CCCgo5OQoxMTo1MS4yNjcgLS0+IDExOjU2LjQ0MArmiYDku6Xpl67popjlr7nlkKfmiJHmiorkuIDkupvliqjlubbmjaLkuobmiJHniYjnmoTlhoXlrrnjgIIKCjEwMAoxMTo1Ny4wMzkgLS0+IDEyOjAzLjIzMArlvZPmiJHov7fojKvnmoTml7blgJnvvIzmiJHlhbblrp7kvJrljrvpl65jaGFncHTmiJZjbG91ZOadpeW4ruaIkeino+WGs+OAggoKMTAxCjEyOjAzLjIzMCAtLT4gMTI6MTAuODI3CuS8meiuoeS7rO+8jOi/meW5tuS4jemavu+8jOS9oOeUmuiHs+WPr+S7pee7mUNoYXRHUFTlhbHkuqvlsY/luZXor5Xor5Xmj5DmuKnvvIzov5nlpJrphbfllYrjgIIKCjEwMgoxMjoxMC44MjcgLS0+IDEyOjE4LjE0NAromb3nhLbpgJ/luqblj6/og73msqHpgqPkuYjlv6vvvIzkvYbnnJ/nmoTlvojmnInluK7liqnvvIzlm6DkuLrnmoTlsLrlr7jmr5TovoPnibnmrorjgIIKCjEwMwoxMjoxOC4xNDQgLS0+IDEyOjI0Ljg5OArkvYbmnIDnu4jmiJHkuI3liLDkuIDlsI/ml7blsLHmkJ7lrprkuobvvIzkuIDliIfpg73lvojliKnvvIzov5nkuI3mmK/lvojphbflkJfvvJ8KCjEwNAoxMjoyNC44OTggLS0+IDEyOjI5LjEyMArmiJHlr7npgqPkupvogIHpvKDkurrkuZ/lgZrkuoblkIzmoLfnmoTmk43kvZzjgIIKCjEwNQoxMjozNS4wMTkgLS0+IDEyOjQ1LjI5OArln7rmnKzkuIrpg73mmK/lkIzmoLfnmoTmk43kvZzlkaLvvIzlj6rpnIDorr7nva7lpb3mnZDotKjvvIzkvaDnoa7kv53mrablmajmmK/miJHmraPnoa7vvIzkvaDopoHmm7/mjaLok53lm77vvIzkvaDov5nmoLfmlYzkurrlsLHlgZrlpb3kuobjgIIKCjEwNgoxMjo0NS4yOTggLS0+IDEyOjUxLjY2MwrpgqPmiJHku6znlJroh7Plj6/ku6Xor5XnnYDlkozov5nkupvogIHpvKDnjqnkuIDkuIvvvIzkvaDnnIvotbfmnaXmlYjmnpzpnZ7luLjmo5LjgIIKCjEwNwoxMjo1MS42NjMgLS0+IDEzOjA0LjM4OQrogIzkuJTkvaDml6LnhLbmiYDmnInntKDmnZDpg73lh4blpIflpb3kuobvvIzmiJHov5jmnInml7bpl7TljrvliLbkvZzkuIDkupvlvojphbfnmoTliqjnlLvlk6bvvIzor7fmt7vkuIDmlbTlpYfnibnlho3lgZrvvIzorqnlhbbku5bkuJzopb/lj5jlvpfnvo7op4LkuJTlr4zmnInliqjmgIHjgIIKCjEwOAoxMzowNC4zODkgLS0+IDEzOjE0LjY2OQrlho3or7TkuIDmrKHvvIzmiJHmnIDlpKfnmoTmhJ/op6bmmK/miJHmnInnsr7lipvljrvlgZrov5nkupvkuovvvIzkuZ/mnInnsr7lipvljrvmgJ3ogIPvvIzogIzkuI3mmK/lj6rkuJPms6jkuo7lvIDlj5HkuIDkuKrkuInnu7TmqKHlnovjgIIKCjEwOQoxMzoxNC42NjkgLS0+IDEzOjIwLjI5OQrmiJHorrDlvpfljYHlubTliY3miJHlsJ3or5XliLblgZrkuIDmrL7muLjmiI/ml7bvvIzpgqPnnJ/mmK/lpKrmvKvplb/kuobjgIIKCjExMAoxMzoyMC45ODAgLS0+IDEzOjMwLjU0OArkvJnorqHku6zor7Tlrp7or53miJHlj6rnlKjkuobkuInlpKnml7bpl7TvvIzlnKjpnZ7luLjkuqvlj5fnmoTov4fnqIvkuK3lsLHliLbkvZzlh7rkuobov5nmrL7lrozmlbTnmoTkuInlvJ/lubPlj7DmuLjmiI/jgIIKCjExMQoxMzozMC41NDggLS0+IDEzOjQyLjMyNgrmiJHmiJHliIbkuqvkuIDlj6XmiJHku47mlq/pgqPph4zlkKznmoTor53vvIzlsLHmmK/pgqPkuKrliLbkvZzokZflkI3nlJznlJzlnIjmlZnmg4XnmoTkurrmiJHljYHlh6DlsoHnmoTml7blgJnlhbblrp7lsLHmmK/ot5/ku5bnmoTmlZnnqIvlrabkuaDnmoTjgIIKCjExMgoxMzo0Mi4zMjYgLS0+IDEzOjQ4LjIxNgrkuIDlkajliY3miJHnnIvkuobku5blgZrnmoTmvJTorrLvvIzkuZ/orqjorrrkuobkuInnu7Tpoobln5/nmoTkurrlt6Xmmbrog73jgIIKCjExMwoxMzo0OC4yMTYgLS0+IDEzOjUzLjYxNArlm6DkuLrov5nmmK/kuIDkuKrmnoHlhbfkuonorq7nmoTor53popjvvIzmk43kvZzlvojlpJrvvIzpnZ7pgZfkuZ/lvojlpJrjgIIKCjExNAoxMzo1My42MTQgLS0+IDEzOjU4Ljc2Nwrku5bnoa7lrp7or7TkuobkuIDlj6Xlvojmo5LnmoTor53vvIzmpoLmi6zkuobmraPlnKjlj5HnlJ/nmoTkuIDliIfjgIIKCjExNQoxMzo1OC43NjcgLS0+IDE0OjA2LjM3NArlpoLmnpzkvaDogIPlh7rljZblirPliqjlipvotZrpkrHvvIzpgqPkuYjku5blvojlj6/og73kvJrooqvkurrlt6Xmmbrog73miJblhbbku5blt6Xlhbfoh6rliqjljJbjgIIKCjExNgoxNDowNi4zNzQgLS0+IDE0OjEwLjI5OQrlkIzmoLfmiJHku6zlj6/ku6XnnIvliLDluINkZXLmmK/lpoLkvZXmvJTlj5jnmoTjgIIKCjExNwoxNDoxMC4yOTkgLS0+IDE0OjE4LjE1OQrnjrDlnKjmiJHku6zlnKhibGVuZGVy6YeM5Y+q6ZyA5LiA5Lu25a6M5oiQ55qE5pON5L2c77yM6L+H5Y675b6A5b6A6ZyA6KaB5pWw5raI5aSx77yM5L2G5oiR5Lus5LiN55+l5LiN6KeJ5bey57uP5Lmg5oOv5LqG44CCCgoxMTgKMTQ6MTguMTU5IC0tPiAxNDoyMi41MDQK5Zug5q2k77yM5YOP5ouW5biD44CB6LS05Zu+5ZKM6auY5qih5Yi25L2c562J5bel5L2c6YO95bCG6KKr6Ieq5Yqo5YyW44CCCgoxMTkKMTQ6MjIuNTA0IC0tPiAxNDoyNS4zOTkK5Li55bC855qE5a6h576O5ZKM5Yik5pat5Yqb5bCG5L6d54S26YeN6KaB44CCCgoxMjAKMTQ6MjUuMzk5IC0tPiAxNDozMy42NzMK5LuW6L+Y57uZ5Ye65LqG5LiA5Liq5b6I5aW955qE5L6L5a2Q77yM57uZ5pWw55m+5L2N5LiJ5L2N6Im65pyv5a625ZCM5LiA5Liq5Yib5oSP5Lu75Yqh77yM5L2g5Lya5b6X5Yiw5pWw55m+56eN5LiN5ZCM55qE57uT5p6c44CCCgoxMjEKMTQ6MzMuNjczIC0tPiAxNDozOS4yNTkK5omA5Lul5ZCE5L2N5oiR55yf55qE5oOz6byT5Yqx5aSn5a625Y675Yib5L2c77yM5bGV546w5L2g5Lus54us54m555qE6aOO5qC85ZKM5oS/5pmv44CCCgoxMjIKMTQ6MzkuMjU5IC0tPiAxNDo0My4zOTUK5peg6K665Yir5Lq65oCO5LmI6K+077yM5L2g5Lus6YO95Y+v5Lul6Ieq55Sx5L2/55So5Lu75L2V5bel5YW344CCCgoxMjMKMTQ6NDMuMzk1IC0tPiAxNDo0Ny4xMjAK5oiR5piv5LiA5aaC5pei5b6A6K+354K56LWe6K6i6ZiF77yM5oiR5Lus5LiL5pyf6KeG6aKR6KeB44CCCg==" download="3--3d---ai.srt">📥 下载字幕 (SRT)</a>
+  </p>
+  <div class="timed-subtitles">
+<p class="sub-line"><span class="sub-time">0:00</span> <span class="sub-text">一个人能在几天内做出真正渴望的3D游戏吗？</span></p>
+<p class="sub-line"><span class="sub-time">0:04</span> <span class="sub-text">要画面精美、运行流畅且经过优化，而且能只用人工智能生成的素材来完成吗？</span></p>
+<p class="sub-line"><span class="sub-time">0:11</span> <span class="sub-text">我决定挑战自己，在三天内独自完成一款风格独特的全三维平台游戏，全程使用顶尖的三位人工智能机组，并结合我个人的三位制作技能，以及我在过去六个月里摸索出的最快捷径，全部整合近一套工作流中。</span></p>
+<p class="sub-line"><span class="sub-time">0:29</span> <span class="sub-text">我将在今天的视频里向大家展示从创意构思到在虚幻引擎物中实现课玩游戏的完整过程。</span></p>
+<p class="sub-line"><span class="sub-time">0:37</span> <span class="sub-text">我将探诚地制出人工智能在那些地方毫无用处，又在那些地方具有巨大优势。</span></p>
+<p class="sub-line"><span class="sub-time">0:44</span> <span class="sub-text">带上零食，我们开始吧。</span></p>
+<p class="sub-line"><span class="sub-time">0:46</span> <span class="sub-text">一切都是与创意I've灵感从何而来？</span></p>
+<p class="sub-line"><span class="sub-time">0:49</span> <span class="sub-text">适合了天生成语训练转换器头脑风暴吗？</span></p>
+<p class="sub-line"><span class="sub-time">0:52</span> <span class="sub-text">不，当然不是，而是源于哲理、创意、品味等等，这些都在你们心中。</span></p>
+<p class="sub-line"><span class="sub-time">0:57</span> <span class="sub-text">但要将其成型，当然可以借助了天生成语训练转换器nano banana等工具，我觉得这太棒了，我认为它依然无法取代你的判断力或品味，它取代的是繁琐的流程，就像你的画笔一样。</span></p>
+<p class="sub-line"><span class="sub-time">1:12</span> <span class="sub-text">正如你说了，我的第一步当然是从chagpt nano ban开始，有时也会用的。</span></p>
+<p class="sub-line"><span class="sub-time">1:18</span> <span class="sub-text">我当时在构思不同的电子。</span></p>
+<p class="sub-line"><span class="sub-time">1:20</span> <span class="sub-text">我最喜欢的游戏类型是平台条约游戏，尤其是三位平台条约游戏我真的非常喜欢。</span></p>
+<p class="sub-line"><span class="sub-time">1:27</span> <span class="sub-text">我喜欢那种构建世界的方式，我想做点酷的东西，让人想起任天堂，想起我小时候玩的游戏，但又要有趣切线的成熟。</span></p>
+<p class="sub-line"><span class="sub-time">1:37</span> <span class="sub-text">最后我把生化奇兵无限和猫咪世界结合在了一起。</span></p>
+<p class="sub-line"><span class="sub-time">1:42</span> <span class="sub-text">嗯，为什么不呢？</span></p>
+<p class="sub-line"><span class="sub-time">1:43</span> <span class="sub-text">我早期的概念图看起来真的很棒，我奥利丁哈我完全可以用这些毛的元素创造出一个超酷的正气朋克世界。</span></p>
+<p class="sub-line"><span class="sub-time">1:54</span> <span class="sub-text">天呐那简直太疯狂了，所以起点就这样定下来，这其实是最简单的部分。</span></p>
+<p class="sub-line"><span class="sub-time">2:01</span> <span class="sub-text">接着我的开始构建组件，而麻烦的地方就在这儿，有很多工具可以实现自动化。</span></p>
+<p class="sub-line"><span class="sub-time">2:10</span> <span class="sub-text">通常来说这的能帮你生成一些物体，然后呢再逐个创建，你还得确保自己喜欢这种风格，诸如此类。</span></p>
+<p class="sub-line"><span class="sub-time">2:20</span> <span class="sub-text">是的，你可以看到提取了很多物体。</span></p>
+<p class="sub-line"><span class="sub-time">2:23</span> <span class="sub-text">因为再次强调当你构建真实游戏时会有相当多的细节。</span></p>
+<p class="sub-line"><span class="sub-time">2:29</span> <span class="sub-text">它看起来可能像是一个简单的场景，但实际上它有多大？</span></p>
+<p class="sub-line"><span class="sub-time">2:35</span> <span class="sub-text">50个独特的物体，包括背景中的物体变得非常，这是我使用的最参考资料。</span></p>
+<p class="sub-line"><span class="sub-time">2:43</span> <span class="sub-text">建筑方面有很多，还有各种表，比如墙壁、砖块、栅栏、梯子以及许多不同状态下的物体。</span></p>
+<p class="sub-line"><span class="sub-time">2:53</span> <span class="sub-text">至于建筑种类繁多，样式各异，有灯塔、钟楼，还有很多像书本市场建筑之类的东西作当然这我的色，这是我的的极具的的武器，以及一些平台设计游戏的道具。</span></p>
+<p class="sub-line"><span class="sub-time">3:14</span> <span class="sub-text">这可能需要很多工作，但用了天生成语训练转换器就很容易做到。</span></p>
+<p class="sub-line"><span class="sub-time">3:23</span> <span class="sub-text">它有助于提取提示词并生成图像。</span></p>
+<p class="sub-line"><span class="sub-time">3:28</span> <span class="sub-text">下一步是创建并准备好所有这些三维模型。</span></p>
+<p class="sub-line"><span class="sub-time">3:34</span> <span class="sub-text">目前我的选择是主要原因是它确实是最好的。</span></p>
+<p class="sub-line"><span class="sub-time">3:39</span> <span class="sub-text">根据定级三维人工智能经技场的排名以及我自己的测试，它特别适合低多边性生成。</span></p>
+<p class="sub-line"><span class="sub-time">3:45</span> <span class="sub-text">而在高多变性和纹理方面，凭借其最新的3.1版本，它目前也处于领先地位。</span></p>
+<p class="sub-line"><span class="sub-time">3:52</span> <span class="sub-text">此外，你还可以直接在这里使用最顶尖的图像模型来生成图片。</span></p>
+<p class="sub-line"><span class="sub-time">3:57</span> <span class="sub-text">但我主要的用途当然是高清模型和智能网格。</span></p>
+<p class="sub-line"><span class="sub-time">4:00</span> <span class="sub-text">智能网格功能可以通过单张或多张图片让你直接创建的多变性模型，而无需限制做高多变形模型。</span></p>
+<p class="sub-line"><span class="sub-time">4:08</span> <span class="sub-text">我是说我真的非常喜欢它生成的网格效果。</span></p>
+<p class="sub-line"><span class="sub-time">4:12</span> <span class="sub-text">你看就是这样，我的意思你只乎放入一张图片，它就能生成近乎完美的低多变形模型。</span></p>
+<p class="sub-line"><span class="sub-time">4:19</span> <span class="sub-text">我是说黑子们尽管黑吧，但我直接把它倒入blder，我会做些微调，优势是为了动画效果，优势只是为了删掉一些多余部分。</span></p>
+<p class="sub-line"><span class="sub-time">4:28</span> <span class="sub-text">但你看看这个在中当你生成的多变性模型后，可以进行铁图，铁图完成后还能添加基于物理的渲染效果，让它更出色，这就是完整流程。</span></p>
+<p class="sub-line"><span class="sub-time">4:39</span> <span class="sub-text">看看这个角色的效果，我觉得真是太棒了。</span></p>
+<p class="sub-line"><span class="sub-time">4:44</span> <span class="sub-text">对于角色这摄像机有多贱，我建议分部件构建，这样能有更好的控制和集合结构。</span></p>
+<p class="sub-line"><span class="sub-time">4:52</span> <span class="sub-text">我创建反派角色时也是这样，结果你看网格非常非常棒。</span></p>
+<p class="sub-line"><span class="sub-time">4:58</span> <span class="sub-text">那特别是因为我的角色会很小，所以我只需要他们经过优化纹理，锦妹这简直太棒了。</span></p>
+<p class="sub-line"><span class="sub-time">5:06</span> <span class="sub-text">这才是独立开发者真正需要的差异化优势。</span></p>
+<p class="sub-line"><span class="sub-time">5:10</span> <span class="sub-text">我制做了武器，所有不给品，所有小零件，所有东西都是在这里制作的，然后到处都bl他, 还没有百分之百完成，所以我们还需要做些后续工作，现在让我给你们展示一些我制作的其他很酷的例子，让你们看看原始输出。</span></p>
+<p class="sub-line"><span class="sub-time">5:28</span> <span class="sub-text">他们还没有在blender中进行任何处理，世界生成出来的效果就已经很棒了。</span></p>
+<p class="sub-line"><span class="sub-time">5:35</span> <span class="sub-text">伙计们，如果你们想尝试去的所有这些功能，我有一个特别的优惠码给你们，而且如果你们使用我在描述栏里的链接，还能额外获得免费积分，这是我的真心推荐。</span></p>
+<p class="sub-line"><span class="sub-time">5:49</span> <span class="sub-text">Tri确实是目前顶尖的模型，让我们能专注于创作，而非模型优化，正如我所说，有些资产在导入循环引擎前确实需要额外润色，在这里你不需要了解所有这些。</span></p>
+<p class="sub-line"><span class="sub-time">6:04</span> <span class="sub-text">在blder里，我通常会检查几件事，首先我会检查王格是否有明显的破损，比如对于角色，我会检查四肢等部位是否有足够的不线，以确保能正常动画化，对于道具，我可能会进行从高模到低模的烘焙，所以在中奥斯林会创建高模。</span></p>
+<p class="sub-line"><span class="sub-time">6:23</span> <span class="sub-text">然后进行拖布，把这两个模型都导入进来。</span></p>
+<p class="sub-line"><span class="sub-time">6:26</span> <span class="sub-text">烘焙环境光泽比贴图有时也会烘焙发现贴图在人工智能中进行纹理处理，最后将它们整合在一起。</span></p>
+<p class="sub-line"><span class="sub-time">6:35</span> <span class="sub-text">另外箱子发光贴图或某些属性贴图在这里调整也非常方便。</span></p>
+<p class="sub-line"><span class="sub-time">6:40</span> <span class="sub-text">直常石有反射面膜，金属表面，在这里制作非常简单。</span></p>
+<p class="sub-line"><span class="sub-time">6:45</span> <span class="sub-text">自发光贴图也一样，超级简单，你只需在平面上绘制转开贴图，它非常优化，效果也很好。</span></p>
+<p class="sub-line"><span class="sub-time">6:54</span> <span class="sub-text">内天还有全国不得里这个简天的委托工具就能完成。</span></p>
+<p class="sub-line"><span class="sub-time">6:58</span> <span class="sub-text">正如我所说，对于角色根据可出进距期的远景工作量可能会稍大一些。</span></p>
+<p class="sub-line"><span class="sub-time">7:04</span> <span class="sub-text">同样如果你在制作周角，那就一定要分布进来创建，确保你有足够的细节和素材。</span></p>
+<p class="sub-line"><span class="sub-time">7:10</span> <span class="sub-text">实际上我有一个非常好的消息要告诉大家，我在想法破旧。</span></p>
+<p class="sub-line"><span class="sub-time">7:15</span> <span class="sub-text">我修克三维人工智能课程，我投入了大量信息，并与我专业三维艺术家团队共同开发。</span></p>
+<p class="sub-line"><span class="sub-time">7:22</span> <span class="sub-text">我们探索了所有三维人工智能工具并制定的最佳工作流程。</span></p>
+<p class="sub-line"><span class="sub-time">7:26</span> <span class="sub-text">我们为你提供10%的三维智能和关于最佳三维人工智能工具的知识，让你能实现90%的目标，并创造出你梦想中的游戏。</span></p>
+<p class="sub-line"><span class="sub-time">7:37</span> <span class="sub-text">具体来说我们专注于三维角色，但同样的工作流程也适用于道具。</span></p>
+<p class="sub-line"><span class="sub-time">7:42</span> <span class="sub-text">道具通常更容易，我们用非常简单的语言涵盖了所有细节和方面。</span></p>
+<p class="sub-line"><span class="sub-time">7:47</span> <span class="sub-text">请看一看连接，就在视频见解里，这是目前最完整的课程。</span></p>
+<p class="sub-line"><span class="sub-time">7:52</span> <span class="sub-text">刚才我快速检查了模型的集合结构，看看有没有瑕疵，然后直接把它倒入了accurate。</span></p>
+<p class="sub-line"><span class="sub-time">7:59</span> <span class="sub-text">Accurate是我现在的首选，特别是在我使用blender的时候，它非常精准。</span></p>
+<p class="sub-line"><span class="sub-time">8:05</span> <span class="sub-text">因为它是accurate，你在身体和手上设置标记点，它有相当多的控制选项。</span></p>
+<p class="sub-line"><span class="sub-time">8:12</span> <span class="sub-text">然后你只需检查结果，在大多数情况下它能提供非常非常好的效果。</span></p>
+<p class="sub-line"><span class="sub-time">8:18</span> <span class="sub-text">你可以直接将其到处微序环引擎骨架，当我要诚实的说百分之百的情况下，你都得把它倒回blder去喂掉一些小细节，比如我的猫在以下部位就很明显有问题，也许是因为我的姿势没摆好，也许在绑定之前我应该多做一些提醒姿势，但无论如何，总会有一些恼人的小问题需要处理，对于这种情况，你确实需要掌握blunderly简单的权重绘制工具，以便快速解决。</span></p>
+<p class="sub-line"><span class="sub-time">8:51</span> <span class="sub-text">这不是什么大问题，大概30分钟就能搞定。</span></p>
+<p class="sub-line"><span class="sub-time">8:54</span> <span class="sub-text">我的开我的三维人工智能课程中也详细讲过，只需掌握几个工具就能轻松解决。</span></p>
+<p class="sub-line"><span class="sub-time">9:01</span> <span class="sub-text">当我对权重满意后，就可以导出文件了，我们选择F B X格式好了，现在是时候设置游戏了。</span></p>
+<p class="sub-line"><span class="sub-time">9:09</span> <span class="sub-text">首先我要说明，我并没有开发出带有所有机制的完整游戏。</span></p>
+<p class="sub-line"><span class="sub-time">9:14</span> <span class="sub-text">我实际上找到了一个模板，涵盖了平台设击游戏的逻辑，对吧？</span></p>
+<p class="sub-line"><span class="sub-time">9:19</span> <span class="sub-text">所以这是一个三位平台射击游戏，其中包含了你可能需要的武器和基础武力逻辑。</span></p>
+<p class="sub-line"><span class="sub-time">9:26</span> <span class="sub-text">我觉得这正是我所需要的，而且价格非常便宜，大约50美元，我认为这非常划算。</span></p>
+<p class="sub-line"><span class="sub-time">9:33</span> <span class="sub-text">如果你想了解一下连接，就在描述里向这位开发者致敬。</span></p>
+<p class="sub-line"><span class="sub-time">9:37</span> <span class="sub-text">到了这个阶段，我们基本可以开始创作了。</span></p>
+<p class="sub-line"><span class="sub-time">9:41</span> <span class="sub-text">很遗憾我没能录下最开始的部分，但在这里你可以看到，我已经开始构建一些素菜和街道了，我刚把我准备好的所有素材都陆续换引擎，然后就开始创作了。</span></p>
+<p class="sub-line"><span class="sub-time">9:54</span> <span class="sub-text">你们知道最棒的部分是什么吗？</span></p>
+<p class="sub-line"><span class="sub-time">9:57</span> <span class="sub-text">那就是当我开始搭建关卡时，我并没有因为制作素材而感到精疲力竭。</span></p>
+<p class="sub-line"><span class="sub-time">10:03</span> <span class="sub-text">所以我还有足够的创作精力去构思出非常棒的概念，这意义重大。</span></p>
+<p class="sub-line"><span class="sub-time">10:09</span> <span class="sub-text">在尝试做这类事情之前，当你开始制作一些素材，而这需要耗费数天甚至数月时，你实际上会忘记其他所有事情，尤其是关卡最终会是什么样。</span></p>
+<p class="sub-line"><span class="sub-time">10:21</span> <span class="sub-text">你想在里面建造什么酷炫的东西，比如一些小节道、秘密区域或其他任何东西。</span></p>
+<p class="sub-line"><span class="sub-time">10:27</span> <span class="sub-text">比如在制作这一关时，我心想哇，如果把这个家伙做成猫咪宇宙里的自由女神像，那该多酷啊。</span></p>
+<p class="sub-line"><span class="sub-time">10:36</span> <span class="sub-text">伙计们，我只用了五分钟就生成了这个模型，并把它放在了北京里，看效果多棒对吧？</span></p>
+<p class="sub-line"><span class="sub-time">10:44</span> <span class="sub-text">当然在过程中我会按序添加一些素材，这太疯狂了。</span></p>
+<p class="sub-line"><span class="sub-time">10:49</span> <span class="sub-text">就像你觉得需要某些物体五分钟就能创建出来，然后你回去继续构建关卡。</span></p>
+<p class="sub-line"><span class="sub-time">10:56</span> <span class="sub-text">这就是我非常喜欢目前这种状态的原因。</span></p>
+<p class="sub-line"><span class="sub-time">11:00</span> <span class="sub-text">你可以真正专注于创造力。</span></p>
+<p class="sub-line"><span class="sub-time">11:03</span> <span class="sub-text">许多专业三位艺术家感到非常沮丧，因为高模拖布、贴图等工作太耗时了。</span></p>
+<p class="sub-line"><span class="sub-time">11:12</span> <span class="sub-text">但老实说，这些都是常规工作，以前需要高潮的技巧。</span></p>
+<p class="sub-line"><span class="sub-time">11:17</span> <span class="sub-text">但无论我们怎么想，他们现在都在被自动化。</span></p>
+<p class="sub-line"><span class="sub-time">11:22</span> <span class="sub-text">如果我不告诉你，别人也会告诉你。</span></p>
+<p class="sub-line"><span class="sub-time">11:26</span> <span class="sub-text">如果我的封锁，美国和中国的所有人工智能模型，他们依然会继续研发。</span></p>
+<p class="sub-line"><span class="sub-time">11:34</span> <span class="sub-text">即便中国停止了，也已经有了开源模型，所以它终究会被研发使用。</span></p>
+<p class="sub-line"><span class="sub-time">11:41</span> <span class="sub-text">对我而言，我很高兴现在终于能释放创造力了。</span></p>
+<p class="sub-line"><span class="sub-time">11:46</span> <span class="sub-text">在搭建好棺卡后，我当然需要道路角色。</span></p>
+<p class="sub-line"><span class="sub-time">11:51</span> <span class="sub-text">所以问题对吧我把一些动并换了我版的内容。</span></p>
+<p class="sub-line"><span class="sub-time">11:57</span> <span class="sub-text">当我迷茫的时候，我其实会去问chagpt或cloud来帮我解决。</span></p>
+<p class="sub-line"><span class="sub-time">12:03</span> <span class="sub-text">伙计们，这并不难，你甚至可以给ChatGPT共享屏幕试试提温，这多酷啊。</span></p>
+<p class="sub-line"><span class="sub-time">12:10</span> <span class="sub-text">虽然速度可能没那么快，但真的很有帮助，因为的尺寸比较特殊。</span></p>
+<p class="sub-line"><span class="sub-time">12:18</span> <span class="sub-text">但最终我不到一小时就搞定了，一切都很利，这不是很酷吗？</span></p>
+<p class="sub-line"><span class="sub-time">12:24</span> <span class="sub-text">我对那些老鼠人也做了同样的操作。</span></p>
+<p class="sub-line"><span class="sub-time">12:35</span> <span class="sub-text">基本上都是同样的操作呢，只需设置好材质，你确保武器是我正确，你要替换蓝图，你这样敌人就做好了。</span></p>
+<p class="sub-line"><span class="sub-time">12:45</span> <span class="sub-text">那我们甚至可以试着和这些老鼠玩一下，你看起来效果非常棒。</span></p>
+<p class="sub-line"><span class="sub-time">12:51</span> <span class="sub-text">而且你既然所有素材都准备好了，我还有时间去制作一些很酷的动画哦，请添一整奇特再做，让其他东西变得美观且富有动态。</span></p>
+<p class="sub-line"><span class="sub-time">13:04</span> <span class="sub-text">再说一次，我最大的感触是我有精力去做这些事，也有精力去思考，而不是只专注于开发一个三维模型。</span></p>
+<p class="sub-line"><span class="sub-time">13:14</span> <span class="sub-text">我记得十年前我尝试制做一款游戏时，那真是太漫长了。</span></p>
+<p class="sub-line"><span class="sub-time">13:20</span> <span class="sub-text">伙计们说实话我只用了三天时间，在非常享受的过程中就制作出了这款完整的三弟平台游戏。</span></p>
+<p class="sub-line"><span class="sub-time">13:30</span> <span class="sub-text">我我分享一句我从斯那里听的话，就是那个制作著名甜甜圈教情的人我十几岁的时候其实就是跟他的教程学习的。</span></p>
+<p class="sub-line"><span class="sub-time">13:42</span> <span class="sub-text">一周前我看了他做的演讲，也讨论了三维领域的人工智能。</span></p>
+<p class="sub-line"><span class="sub-time">13:48</span> <span class="sub-text">因为这是一个极具争议的话题，操作很多，非遗也很多。</span></p>
+<p class="sub-line"><span class="sub-time">13:53</span> <span class="sub-text">他确实说了一句很棒的话，概括了正在发生的一切。</span></p>
+<p class="sub-line"><span class="sub-time">13:58</span> <span class="sub-text">如果你考出卖劳动力赚钱，那么他很可能会被人工智能或其他工具自动化。</span></p>
+<p class="sub-line"><span class="sub-time">14:06</span> <span class="sub-text">同样我们可以看到布der是如何演变的。</span></p>
+<p class="sub-line"><span class="sub-time">14:10</span> <span class="sub-text">现在我们在blender里只需一件完成的操作，过去往往需要数消失，但我们不知不觉已经习惯了。</span></p>
+<p class="sub-line"><span class="sub-time">14:18</span> <span class="sub-text">因此，像拖布、贴图和高模制作等工作都将被自动化。</span></p>
+<p class="sub-line"><span class="sub-time">14:22</span> <span class="sub-text">丹尼的审美和判断力将依然重要。</span></p>
+<p class="sub-line"><span class="sub-time">14:25</span> <span class="sub-text">他还给出了一个很好的例子，给数百位三位艺术家同一个创意任务，你会得到数百种不同的结果。</span></p>
+<p class="sub-line"><span class="sub-time">14:33</span> <span class="sub-text">所以各位我真的想鼓励大家去创作，展现你们独特的风格和愿景。</span></p>
+<p class="sub-line"><span class="sub-time">14:39</span> <span class="sub-text">无论别人怎么说，你们都可以自由使用任何工具。</span></p>
+<p class="sub-line"><span class="sub-time">14:43</span> <span class="sub-text">我是一如既往请点赞订阅，我们下期视频见。</span></p>
+</div>
+</div>
+
+<hr>
+<div class="footer">
+来源：<a href="https://www.bilibili.com/video/BV1S1gP6WE9F" target="_blank" rel="noopener noreferrer">B站视频《我仅用 3 天就做了一款 3D 游戏——资产全靠 AI 生成》</a>
+</div>
+
+<script src="../js/main.js"></script>
+
+</body>
+</html>

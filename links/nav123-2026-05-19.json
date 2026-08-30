@@ -1,0 +1,597 @@
+{
+  "websites": [
+    {
+      "id": "1772908247246",
+      "name": "GitHub",
+      "url": "https://github.com",
+      "icon": "💻",
+      "category": "开发",
+      "description": "",
+      "createdAt": "2026-03-07T18:30:47.246Z",
+      "updatedAt": "2026-03-07T18:30:47.246Z"
+    },
+    {
+      "id": "1772932243911",
+      "name": "天翼云",
+      "url": "http://203.83.228.3:9527/b4bcb51e68",
+      "icon": "☁️",
+      "category": "云服务",
+      "description": "天翼云服务",
+      "createdAt": "2026-03-08T01:10:43.911Z",
+      "updatedAt": "2026-03-08T01:10:43.911Z"
+    },
+    {
+      "id": "1772932248878",
+      "name": "京东云",
+      "url": "http://117.72.180.177:9527/dream",
+      "icon": "☁️",
+      "category": "云服务",
+      "description": "京东云服务",
+      "createdAt": "2026-03-08T01:10:48.878Z",
+      "updatedAt": "2026-03-08T01:10:48.878Z"
+    },
+    {
+      "id": "1772932248892",
+      "name": "kk网络2026-11-03",
+      "url": "http://150.242.81.12:9527/dream",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "kk网络服务",
+      "createdAt": "2026-03-08T01:10:48.892Z",
+      "updatedAt": "2026-03-08T01:10:48.892Z"
+    },
+    {
+      "id": "1772932248906",
+      "name": "香港狐蒂云2027-1-8",
+      "url": "http://103.106.189.120:9527/dream",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "香港狐蒂云服务",
+      "createdAt": "2026-03-08T01:10:48.906Z",
+      "updatedAt": "2026-03-08T01:10:48.906Z"
+    },
+    {
+      "id": "1772937255862",
+      "name": "Floor796",
+      "url": "https://floor796.com/#b3l3,284,955",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.862Z",
+      "updatedAt": "2026-03-10T13:35:32.788Z"
+    },
+    {
+      "id": "1772937255889",
+      "name": "instructables D'i'y 平台",
+      "url": "https://www.instructables.com/",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.889Z",
+      "updatedAt": "2026-03-10T13:35:39.025Z"
+    },
+    {
+      "id": "1772937255904",
+      "name": "【万字长文】K8s部署前后端分离web应用避坑指南之一：从源代码到docker compose到k8",
+      "url": "https://cloud.tencent.com/developer/article/2351935",
+      "icon": "🔖",
+      "category": "开发",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.904Z",
+      "updatedAt": "2026-03-10T13:35:43.373Z"
+    },
+    {
+      "id": "1772937255926",
+      "name": "1Panel-家",
+      "url": "http://150.242.81.12:6001/",
+      "icon": "🔖",
+      "category": "云服务",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.926Z",
+      "updatedAt": "2026-03-08T01:22:00.000Z"
+    },
+    {
+      "id": "1772937255939",
+      "name": "完美许愿器 - 所有的愿望都已标好了代价",
+      "url": "https://wish.closeai.moe/",
+      "icon": "🔖",
+      "category": "开发",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.939Z",
+      "updatedAt": "2026-03-08T02:34:15.939Z"
+    },
+    {
+      "id": "1772937255952",
+      "name": "第三章：注意力机制 · Transformers快速入门",
+      "url": "https://transformers.run/c1/attention/",
+      "icon": "🔖",
+      "category": "开发",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.952Z",
+      "updatedAt": "2026-03-10T13:44:04.466Z"
+    },
+    {
+      "id": "1772937255966",
+      "name": "Transformer模型详解 - Welcome to AI World",
+      "url": "https://terrifyzhao.github.io/2019/01/11/Transformer%E6%A8%A1%E5%9E%8B%E8%AF%A6%E8%A7%A3.html",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.966Z",
+      "updatedAt": "2026-03-10T13:44:11.616Z"
+    },
+    {
+      "id": "1772937255981",
+      "name": "moltbook - the front page of the agent internet",
+      "url": "https://www.moltbook.com/",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:15.981Z",
+      "updatedAt": "2026-03-10T12:37:54.289Z"
+    },
+    {
+      "id": "1772937256011",
+      "name": "PDF24",
+      "url": "https://tools.pdf24.org/zh/compress-pdf",
+      "icon": "🔖",
+      "category": "工具",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:16.011Z",
+      "updatedAt": "2026-03-10T13:44:20.300Z"
+    },
+    {
+      "id": "1772937256025",
+      "name": "刘明野的工具箱",
+      "url": "https://tools.liumingye.cn/#/",
+      "icon": "🔖",
+      "category": "工具",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:16.025Z",
+      "updatedAt": "2026-03-10T13:44:08.365Z"
+    },
+    {
+      "id": "1772937256043",
+      "name": "Access Authorization - SiYuan",
+      "url": "http://103.106.189.120:6806/check-auth?to=%2F",
+      "icon": "🔖",
+      "category": "未分类",
+      "description": "从书签导入",
+      "createdAt": "2026-03-08T02:34:16.043Z",
+      "updatedAt": "2026-03-08T02:34:16.043Z"
+    },
+    {
+      "id": "1741569600000",
+      "name": "言盏 StageWeaver",
+      "url": "http://103.106.189.120:10006",
+      "icon": "🎭",
+      "category": "我的服务",
+      "description": "StageWeaver 导演工作站 - 互动剧院系统",
+      "createdAt": "2026-03-10T00:24:00.000Z",
+      "updatedAt": "2026-03-10T13:44:04.466Z"
+    },
+    {
+      "id": "1741569600003",
+      "name": "Cockpit 控制面板",
+      "url": "https://103.106.189.120:9090",
+      "icon": "🔧",
+      "category": "我的服务",
+      "description": "Cockpit Web 控制台 - 系统和服务管理",
+      "createdAt": "2026-03-10T01:22:00.000Z",
+      "updatedAt": "2026-03-10T13:44:20.300Z"
+    },
+    {
+      "id": "1773149717715",
+      "name": "飞书",
+      "url": "https://g010j68b5yh.feishu.cn/next/messenger/",
+      "icon": "🌐",
+      "category": "工具",
+      "description": "",
+      "updatedAt": "2026-03-10T13:35:17.715Z"
+    },
+    {
+      "id": "1773150089307",
+      "name": "狐蒂云官网",
+      "url": "https://www.szhdy.com/servicedetail?id=38510",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "",
+      "updatedAt": "2026-03-10T13:41:29.307Z"
+    },
+    {
+      "id": "1773150132453",
+      "name": "一块剪贴板",
+      "url": "https://ykjtb.com/",
+      "icon": "📚",
+      "category": "工具",
+      "description": "",
+      "updatedAt": "2026-03-10T13:42:12.453Z"
+    },
+    {
+      "id": "1773849258237",
+      "name": "ai新闻",
+      "url": "https://tech.armyja-online.uk/rss",
+      "icon": "📰",
+      "category": "未分类",
+      "description": "",
+      "createdAt": "2026-03-18T15:54:18.237Z",
+      "updatedAt": "2026-03-18T15:54:18.237Z"
+    },
+    {
+      "id": "1741840000000",
+      "name": "3D跳绳游戏",
+      "url": "http://103.106.189.120:10011",
+      "icon": "🤸",
+      "category": "我的服务",
+      "description": "3D跳绳游戏 - 按空格键或点击屏幕控制角色跳绳，避开障碍物",
+      "createdAt": "2026-03-21T07:00:00.000Z",
+      "updatedAt": "2026-03-21T07:00:00.000Z"
+    },
+    {
+      "id": "1743312000000",
+      "name": "日程管理 Scheduler",
+      "url": "http://103.106.189.120:10012",
+      "icon": "📅",
+      "category": "我的服务",
+      "description": "Web 日程管理工具 - 支持日、周、月三种视图，24小时时间轴，事项管理",
+      "createdAt": "2026-03-26T10:30:00.000Z",
+      "updatedAt": "2026-03-26T10:30:00.000Z"
+    },
+    {
+      "id": "1743500000000",
+      "name": "🎭 舞台表演",
+      "url": "http://103.106.189.120:10013",
+      "icon": "🎭",
+      "category": "我的服务",
+      "description": "3D 交互式舞台场景 - 演员表演与舞台灯光控制",
+      "createdAt": "2026-03-30T12:50:00.000Z",
+      "updatedAt": "2026-03-30T16:20:00.000Z"
+    },
+    {
+      "id": "1775829242965",
+      "name": "文件服务器+便签",
+      "url": "http://103.106.189.120:10014",
+      "icon": "📁",
+      "category": "我的服务",
+      "description": "文件上传下载和便签记录服务",
+      "createdAt": "2026-04-10T13:54:02.965Z",
+      "updatedAt": "2026-04-10T14:47:00.000Z"
+    },
+    {
+      "id": "1744200000000",
+      "name": "OpenClaw Admin",
+      "url": "http://103.106.189.120:10015",
+      "icon": "🦞",
+      "category": "我的服务",
+      "description": "OpenClaw 管理后台 - 智能体管理、会话监控、模型配置、频道管理",
+      "createdAt": "2026-04-10T15:30:00.000Z",
+      "updatedAt": "2026-04-10T15:30:00.000Z"
+    },
+    {
+      "id": "1744300000000",
+      "name": "🧠 思维导图编辑器",
+      "url": "http://103.106.189.120:10016",
+      "icon": "🧠",
+      "category": "我的服务",
+      "description": "在线思维导图编辑器 - 自由布局节点编辑、拖拽连接、箭头方向设置",
+      "createdAt": "2026-04-11T16:10:00.000Z",
+      "updatedAt": "2026-04-11T16:10:00.000Z"
+    },
+    {
+      "id": "1746000000000",
+      "name": "🎨 p5.js 生成艺术",
+      "url": "http://103.106.189.120:10017",
+      "icon": "🎨",
+      "category": "我的服务",
+      "description": "p5.js 生成艺术平台 - 流场/粒子/波浪/万花筒/细胞自动机，多种艺术模式",
+      "createdAt": "2026-04-30T17:41:00.000Z",
+      "updatedAt": "2026-04-30T17:41:00.000Z"
+    },
+    {
+      "id": "1744700000000",
+      "name": "🏛️ 3D艺术博物馆",
+      "url": "http://103.106.189.120:10010",
+      "icon": "🏛️",
+      "category": "我的服务",
+      "description": "沉浸式3D虚拟博物馆 - 第一人称视角探索三个展厅，欣赏世界名画",
+      "createdAt": "2026-04-15T13:53:00.000Z",
+      "updatedAt": "2026-04-15T13:53:00.000Z"
+    },
+    {
+      "id": "1777572390643",
+      "name": "✏️ p5.js 作品集",
+      "url": "http://103.106.189.120:10018",
+      "icon": "🎨",
+      "category": "我的服务",
+      "description": "p5.js 艺术作品集编辑器 - 创建、编辑代码、实时预览效果",
+      "createdAt": "2026-04-30T18:06:30.643Z",
+      "updatedAt": "2026-04-30T18:06:30.644Z"
+    },
+    {
+      "id": "1777573138399",
+      "name": "DeepSeek平台",
+      "url": "https://platform.deepseek.com/usage",
+      "icon": "🌐",
+      "category": "云服务",
+      "description": "",
+      "createdAt": "2026-04-30T18:18:58.399Z",
+      "updatedAt": "2026-04-30T18:18:58.399Z"
+    },
+    {
+      "id": "1777783885569",
+      "name": "📑 网站导航",
+      "url": "http://103.106.189.120:10000",
+      "icon": "🧭",
+      "category": "我的服务",
+      "description": "Web导航管理页面",
+      "createdAt": "2026-05-03T04:51:25.568406",
+      "updatedAt": "2026-05-03T04:51:25.568429"
+    },
+    {
+      "id": "1777783885570",
+      "name": "📋 截止日管理",
+      "url": "http://103.106.189.120:10008",
+      "icon": "📅",
+      "category": "我的服务",
+      "description": "截止日与提醒管理",
+      "createdAt": "2026-05-03T04:51:25.568433",
+      "updatedAt": "2026-05-03T04:51:25.568434"
+    },
+    {
+      "id": "1746249879000",
+      "name": "CC-Connect 管理面板",
+      "url": "http://103.106.189.120:10019",
+      "icon": "🔗",
+      "category": "我的服务",
+      "description": "CC-Connect AI代理桥接管理面板",
+      "createdAt": "2026-05-03T05:24:00.000Z",
+      "updatedAt": "2026-05-03T05:24:00.000Z"
+    },
+    {
+      "id": "1777816849000",
+      "name": "🐟 服务舰队",
+      "url": "http://103.106.189.120:10020",
+      "icon": "🚢",
+      "category": "我的服务",
+      "createdAt": 1777816849000
+    },
+    {
+      "id": "1747641600001",
+      "name": "rectworld",
+      "url": "https://aprilssky.github.io/rectworld/",
+      "icon": "🌍",
+      "category": "GitHub Pages",
+      "description": "多人沙盒世界",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600002",
+      "name": "3D-art",
+      "url": "https://aprilssky.github.io/3D-art/",
+      "icon": "🖼️",
+      "category": "GitHub Pages",
+      "description": "3D艺术作品集",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600003",
+      "name": "fish-dream",
+      "url": "https://aprilssky.github.io/fish-dream/",
+      "icon": "🐟",
+      "category": "GitHub Pages",
+      "description": "鱼之梦",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600004",
+      "name": "4fun.github.io",
+      "url": "https://aprilssky.github.io/4fun.github.io/",
+      "icon": "🎮",
+      "category": "GitHub Pages",
+      "description": "娱乐小站",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600005",
+      "name": "resume",
+      "url": "https://aprilssky.github.io/resume/",
+      "icon": "📄",
+      "category": "GitHub Pages",
+      "description": "在线简历",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600006",
+      "name": "multi-agent-workflow",
+      "url": "https://aprilssky.github.io/multi-agent-workflow/",
+      "icon": "🤖",
+      "category": "GitHub Pages",
+      "description": "多Agent工作流",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600007",
+      "name": "p5js-art",
+      "url": "https://aprilssky.github.io/p5js-art/",
+      "icon": "🎨",
+      "category": "GitHub Pages",
+      "description": "p5.js生成艺术",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1747641600008",
+      "name": "3d-dominoes",
+      "url": "https://aprilssky.github.io/3d-dominoes/",
+      "icon": "🎲",
+      "category": "GitHub Pages",
+      "description": "3D多米诺骨牌",
+      "createdAt": "2026-05-19T14:26:00.000Z",
+      "updatedAt": "2026-05-19T14:26:00.000Z"
+    },
+    {
+      "id": "1779540511229",
+      "name": "3d-portfolio",
+      "url": "https://aprilssky.github.io/3d-portfolio/",
+      "icon": "🏛️",
+      "category": "GitHub Pages",
+      "description": "AI 3D Portfolio — 3D艺术作品集",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511230",
+      "name": "3d-skill-demo",
+      "url": "https://aprilssky.github.io/3d-skill-demo/",
+      "icon": "🔧",
+      "category": "GitHub Pages",
+      "description": "AI Blender → Three.js 3D Pipeline Demo",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511231",
+      "name": "blog",
+      "url": "https://aprilssky.github.io/blog/",
+      "icon": "✍️",
+      "category": "GitHub Pages",
+      "description": "个人博客",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511232",
+      "name": "bowling-game",
+      "url": "https://aprilssky.github.io/bowling-game/",
+      "icon": "🎳",
+      "category": "GitHub Pages",
+      "description": "Three.js 保龄球游戏",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511233",
+      "name": "md-docs",
+      "url": "https://aprilssky.github.io/md-docs/",
+      "icon": "📝",
+      "category": "GitHub Pages",
+      "description": "富文本 Markdown 编辑器",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511234",
+      "name": "multi-ai-chat",
+      "url": "https://aprilssky.github.io/multi-ai-chat/",
+      "icon": "💬",
+      "category": "GitHub Pages",
+      "description": "多AI群聊机器人",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511235",
+      "name": "r3f-editor",
+      "url": "https://aprilssky.github.io/r3f-editor/",
+      "icon": "🟩",
+      "category": "GitHub Pages",
+      "description": "R3F 编辑器",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1779540511236",
+      "name": "stock-trading",
+      "url": "https://aprilssky.github.io/stock-trading/",
+      "icon": "📈",
+      "category": "GitHub Pages",
+      "description": "模拟炒股 · 纯前端",
+      "createdAt": "2026-05-23T12:47:00.000Z",
+      "updatedAt": "2026-05-23T12:47:00.000Z"
+    },
+    {
+      "id": "1778264400000",
+      "name": "tools",
+      "url": "https://aprilssky.github.io/tools/",
+      "icon": "🧰",
+      "category": "GitHub Pages",
+      "description": "在线工具箱 — 10款实用小工具",
+      "createdAt": "2026-05-26T13:26:00.000Z",
+      "updatedAt": "2026-05-26T13:26:00.000Z"
+    },
+    {
+      "id": "1778264400001",
+      "name": "games",
+      "url": "https://aprilssky.github.io/games/",
+      "icon": "🎮",
+      "category": "GitHub Pages",
+      "description": "在线小游戏 — 数独·扫雷·消消乐·2048·贪吃蛇",
+      "createdAt": "2026-05-26T13:55:00.000Z",
+      "updatedAt": "2026-05-26T13:55:00.000Z"
+    },
+    {
+      "id": "1780045970110",
+      "name": "2026",
+      "url": "https://aprilssky.github.io/2026/",
+      "icon": "📅",
+      "category": "GitHub Pages",
+      "description": "365天格子日历 — 每天一个小格子",
+      "createdAt": "2026-05-29T09:12:50.000Z",
+      "updatedAt": "2026-05-29T09:12:50.000Z"
+    },
+    {
+      "id": "1780045970111",
+      "name": "butterfly-collection",
+      "url": "https://aprilssky.github.io/butterfly-collection/",
+      "icon": "🦋",
+      "category": "GitHub Pages",
+      "description": "世界蝴蝶图鉴 — 收集所有种类蝴蝶",
+      "createdAt": "2026-05-29T09:12:50.000Z",
+      "updatedAt": "2026-05-29T09:12:50.000Z"
+    },
+    {
+      "id": "1780045970112",
+      "name": "person-collection",
+      "url": "https://aprilssky.github.io/person-collection/",
+      "icon": "🎭",
+      "category": "GitHub Pages",
+      "description": "人物集 — 跨越时空的对话",
+      "createdAt": "2026-05-29T09:12:50.000Z",
+      "updatedAt": "2026-05-29T09:12:50.000Z"
+    },
+    {
+      "id": "1780045970113",
+      "name": "boids",
+      "url": "https://aprilssky.github.io/boids/",
+      "icon": "🐟",
+      "category": "GitHub Pages",
+      "description": "鱼群算法仿真 — Boid flocking simulation",
+      "createdAt": "2026-05-29T09:12:50.000Z",
+      "updatedAt": "2026-05-29T09:12:50.000Z"
+    },
+    {
+      "id": "1780045970114",
+      "name": "wqb-manager",
+      "url": "https://aprilssky.github.io/wqb-manager/",
+      "icon": "🧠",
+      "category": "GitHub Pages",
+      "description": "WQB Brain Alpha Manager",
+      "createdAt": "2026-05-29T09:12:50.000Z",
+      "updatedAt": "2026-05-29T09:12:50.000Z"
+    }
+  ],
+  "categoriesOrder": [
+    "GitHub Pages",
+    "我的服务",
+    "云服务",
+    "工具",
+    "开发",
+    "未分类"
+  ]
+}

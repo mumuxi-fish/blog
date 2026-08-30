@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>汉语拼音表 · Pinyin Table</title>
+<style>
+  :root {
+    --bg: #f5f0eb;
+    --card: #fff;
+    --text: #2c2c2c;
+    --text-light: #888;
+    --border: #e0d8d0;
+    --init-bg: #fcefe6;
+    --init-text: #c05a3a;
+    --final-bg: #e6f0fa;
+    --final-text: #2a6f97;
+    --cell-bg: #fff;
+    --cell-hover: #e8f5e9;
+    --cell-text: #333;
+    --empty-bg: #fafafa;
+    --empty-text: #ddd;
+    --header-bg: #f0ebe6;
+    --accent: #d4836a;
+    --tag-text: #777;
+    --highlight-bg: #fff3cd;
+    --highlight-color: #856404;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: -apple-system, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 24px;
+    min-height: 100vh;
+  }
+
+  .container { max-width: 1500px; margin: 0 auto; }
+
+  header { text-align: center; padding: 32px 0 16px; }
+  header h1 { font-size: 2.2em; font-weight: 700; color: var(--accent); letter-spacing: 4px; }
+  header p { color: var(--text-light); margin-top: 8px; font-size: 0.95em; }
+  .note { color: var(--text-light); font-size: 0.8em; margin-top: 6px; font-style: italic; }
+
+  .legend {
+    display: flex; justify-content: center; gap: 20px; margin: 10px 0 16px; flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.82em; color: var(--text-light); }
+  .legend-dot { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--border); flex-shrink: 0; }
+
+  .search-bar { display: flex; justify-content: center; margin-bottom: 14px; }
+  .search-bar input {
+    width: 100%; max-width: 360px; padding: 10px 16px;
+    border: 2px solid var(--border); border-radius: 24px;
+    font-size: 0.95em; outline: none; background: var(--card);
+    transition: border-color 0.2s; text-align: center;
+  }
+  .search-bar input:focus { border-color: var(--accent); }
+
+  .count-info { text-align: center; color: var(--text-light); font-size: 0.85em; margin-bottom: 12px; }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    background: var(--card);
+    padding: 8px;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 1100px; }
+  th, td { padding: 5px 6px; text-align: center; border: 1px solid var(--border); font-weight: 400; }
+
+  th { font-weight: 600; font-size: 0.88em; background: var(--header-bg); white-space: nowrap; }
+
+  th.init-header {
+    background: var(--init-bg); color: var(--init-text);
+    position: sticky; left: 0; z-index: 2; min-width: 42px;
+  }
+  th.final-header { background: var(--final-bg); color: var(--final-text); }
+  th.corner {
+    background: var(--header-bg); position: sticky; left: 0; z-index: 3;
+    min-width: 42px; color: var(--text-light); font-size: 0.78em;
+  }
+
+  td.init-label {
+    background: var(--init-bg); color: var(--init-text);
+    font-weight: 700; font-size: 1em;
+    position: sticky; left: 0; z-index: 1;
+    border-right: 2px solid var(--init-text);
+  }
+  td.init-label .initial-desc {
+    display: block; font-size: 0.62em; font-weight: 400;
+    color: var(--tag-text); margin-top: 1px;
+  }
+
+  td.cell {
+    background: var(--cell-bg); color: var(--cell-text);
+    cursor: pointer; transition: background 0.15s, transform 0.1s;
+    position: relative;
+  }
+  td.cell:hover {
+    background: var(--cell-hover); transform: scale(1.1);
+    z-index: 5; box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  }
+
+  td.cell .tone-examples {
+    display: none;
+    position: absolute; bottom: calc(100% + 6px); left: 50%;
+    transform: translateX(-50%);
+    background: #333; color: #fff;
+    padding: 5px 10px; border-radius: 6px;
+    font-size: 0.78em; white-space: nowrap; z-index: 10;
+    pointer-events: none;
+  }
+  td.cell:hover .tone-examples { display: block; }
+  td.cell .tone-examples::after {
+    content: ''; position: absolute; top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent; border-top-color: #333;
+  }
+
+  td.empty { background: var(--empty-bg); color: var(--empty-text); font-size: 0.65em; }
+
+  .final-group-label {
+    font-size: 0.65em; background: var(--final-bg); color: var(--final-text);
+    font-weight: 600; padding: 2px 0; letter-spacing: 1px;
+  }
+
+  footer { text-align: center; padding: 20px 0; color: var(--text-light); font-size: 0.8em; }
+
+  @media (max-width: 600px) {
+    body { padding: 10px; }
+    header h1 { font-size: 1.5em; }
+    table { font-size: 11px; }
+    th, td { padding: 3px 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1>▎汉语拼音表</h1>
+    <p>声母 × 韵母 · 点击复制 · 悬停查看声调示例</p>
+    <p class="note">※ bō pō mō fō 中的 o 实际读音为 uo（拼写省略介音）</p>
+  </header>
+
+  <div class="search-bar">
+    <input type="text" id="search" placeholder="🔍 搜索拼音… 如 bei, tuo, zhuang" autocomplete="off">
+  </div>
+
+  <div class="count-info">
+    共 <strong id="total-count">0</strong> 个有效拼音组合
+  </div>
+
+  <div class="table-wrapper">
+    <div id="table-container"></div>
+  </div>
+
+  <footer>Made by Aprilssky</footer>
+</div>
+
+<script>
+// ====== 韵母（横轴） ======
+const finals = [
+  { label: 'a',   group: '单' },
+  { label: 'o',   group: '单' },
+  { label: 'e',   group: '单' },
+  { label: 'i',   group: '单' },
+  { label: 'u',   group: '单' },
+  { label: 'ü',   group: '单' },
+
+  { label: 'ai',  group: '复' },
+  { label: 'ei',  group: '复' },
+  { label: 'ui',  group: '复' },
+  { label: 'ao',  group: '复' },
+  { label: 'ou',  group: '复' },
+  { label: 'iu',  group: '复' },
+  { label: 'ie',  group: '复' },
+  { label: 'üe',  group: '复' },
+
+  { label: 'ia',  group: 'i' },
+  { label: 'iao', group: 'i' },
+  { label: 'ian', group: 'i' },
+  { label: 'iang',group: 'i' },
+  { label: 'iong',group: 'i' },
+
+  { label: 'ua',  group: 'u' },
+  { label: 'uo',  group: 'u' },
+  { label: 'uai', group: 'u' },
+  { label: 'uan', group: 'u' },
+  { label: 'uang',group: 'u' },
+
+  { label: 'üan', group: 'ü' },
+
+  { label: 'er',  group: '特' },
+
+  { label: 'an',  group: '鼻' },
+  { label: 'en',  group: '鼻' },
+  { label: 'in',  group: '鼻' },
+  { label: 'un',  group: '鼻' },
+  { label: 'ün',  group: '鼻' },
+  { label: 'ang', group: '鼻' },
+  { label: 'eng', group: '鼻' },
+  { label: 'ing', group: '鼻' },
+  { label: 'ong', group: '鼻' },
+];
+
+// ====== 声母（纵轴） ======
+const initials = [
+  { label: 'b', desc: '玻' },
+  { label: 'p', desc: '坡' },
+  { label: 'm', desc: '摸' },
+  { label: 'f', desc: '佛' },
+  { label: 'd', desc: '得' },
+  { label: 't', desc: '特' },
+  { label: 'n', desc: '讷' },
+  { label: 'l', desc: '勒' },
+  { label: 'g', desc: '哥' },
+  { label: 'k', desc: '科' },
+  { label: 'h', desc: '喝' },
+  { label: 'j', desc: '基' },
+  { label: 'q', desc: '欺' },
+  { label: 'x', desc: '希' },
+  { label: 'zh', desc: '知' },
+  { label: 'ch', desc: '吃' },
+  { label: 'sh', desc: '诗' },
+  { label: 'r', desc: '日' },
+  { label: 'z', desc: '资' },
+  { label: 'c', desc: '雌' },
+  { label: 's', desc: '思' },
+  { label: 'y', desc: '衣' },
+  { label: 'w', desc: '屋' },
+];
+
+// ====== 有效组合 ======
+const valid = new Set();
+
+function add(inits, fins) {
+  for (const i of inits)
+    for (const f of fins || [])
+      valid.add(i + '+' + f);
+}
+
+// --- b p m f ---
+add('bpm', ['a','o','i','u','ai','ei','ao','ou','an','en','in','ang','eng','ing','ie','iao','ian']);
+add('bpm', ['iu']);       // miu
+add('b',   ['ei','eng']); // bei, beng only b
+add('p',   ['ei','eng','ang','iao','ian','in','ie']);  // pei, peng, pang, piao, pian, pin, pie
+add('m',   ['ei','ao','ou','an','en','ang','eng','ing','ie','iao','ian','iu']); // mei mao mou man men mang meng ming mie miao mian miu
+add('f',   ['a','o','u','ei','ou','an','en','ang','eng']);
+
+// --- d t n l ---
+add('dtnl', ['a','e','i','u','ai','ei','ui','ao','ou','iu','ie','an','en','in','un','ang','eng','ing','ong']);
+add('dtnl', ['ia','iao','ian','iang']);
+add('dtnl', ['uo','uan']);
+add('nl',   ['ü','üe','ün']);
+
+// --- g k h ---
+add('gkh', ['a','e','u','ai','ei','ui','ao','ou','an','en','un','ang','eng','ong']);
+add('gkh', ['ua','uo','uai','uan','uang']);
+
+// --- j q x ---
+add('jqx', ['i','ü','ia','ie','iu','iao','ian','in','iang','ing','iong','üe','üan','ün']);
+
+// --- zh ch sh r ---
+add('zhchshr', ['a','e','u','ai','ei','ui','ao','ou','an','en','un','ang','eng','ong']);
+add('zhchsh',  ['i','ua','uo','uai','uan','uang']);
+add('zhchshr', ['uan']);  // zhuan chuan shuan ruan
+add('r',       ['i','ou','an','en','ang','eng','ong','uo','uan','ui']);  // ri rou ran ren rang reng rong ruo ruan rui
+
+// --- z c s ---
+add('zcs', ['a','e','u','i','ai','ei','ui','ao','ou','an','en','un','ang','eng','ong']);
+add('zcs', ['uo','uan']);
+
+// --- y ---
+add('y', ['a','o','e','ai','ei','ao','ou','an','en','ang','eng']);
+add('y', ['i','in','ing']);  // yi yin ying
+add('y', ['u','ü','üe','üan','ün','ong']);  // wu yu yue yuan yun yong
+add('y', ['ia','iao','ian','iang','iong']); // ya yao yan yang yong
+add('y', ['ua','uo','uai','uan','uang']);   // wa wo wai wan wang
+
+// --- w ---
+add('w', ['a','o','ai','ei','an','en','ang','eng']);  // wa wo wai wei wan wen wang weng
+add('w', ['u']);   // wu
+add('w', ['ua','uo','uai','uan','uang']); // wa wo wai wan wang
+
+// ====== 声调示例 ======
+const toneExamples = {
+  'ba':'bā(八) bá(拔) bǎ(把) bà(爸)',   'bo':'bō(波) bó(伯) bǒ(跛) bò(簸)',
+  'bi':'bī(逼) bí(鼻) bǐ(比) bì(必)',   'bu':'bū(晡) bú(不) bǔ(补) bù(步)',
+  'bai':'bāi(掰) bái(白) bǎi(百) bài(败)', 'bei':'bēi(杯) bèi(被)',
+  'bao':'bāo(包) báo(薄) bǎo(宝) bào(报)', 'bie':'biē(憋) bié(别) biě(瘪) biè(别)',
+  'ban':'bān(班) bǎn(板) bàn(办)',       'ben':'bēn(奔) běn(本) bèn(笨)',
+  'bin':'bīn(宾) bìn(殡)',               'bang':'bāng(帮) bǎng(榜) bàng(棒)',
+  'beng':'bēng(崩) béng(甭) bèng(蹦)',  'bing':'bīng(冰) bǐng(饼) bìng(病)',
+  'biao':'biāo(标) biǎo(表) biào(鳔)',  'bian':'biān(边) biǎn(扁) biàn(变)',
+
+  'pa':'pā(趴) pá(爬) pà(怕)', 'po':'pō(泼) pó(婆) pǒ(叵) pò(破)',
+  'pi':'pī(批) pí(皮) pǐ(匹) pì(辟)', 'pu':'pū(扑) pú(仆) pǔ(普) pù(瀑)',
+  'pai':'pāi(拍) pái(排) pǎi(迫) pài(派)', 'pei':'pēi(胚) péi(陪) pèi(配)',
+  'pao':'pāo(抛) páo(跑) pǎo(跑) pào(炮)', 'pan':'pān(攀) pán(盘) pàn(盼)',
+  'pen':'pēn(喷) pén(盆)',               'pin':'pīn(拼) pín(贫) pǐn(品) pìn(聘)',
+  'pang':'pāng(胖) páng(旁) pàng(胖)',  'peng':'pēng(烹) péng(朋) pěng(捧) pèng(碰)',
+  'ping':'pīng(乒) píng(平)',            'piao':'piāo(飘) piáo(嫖) piǎo(漂) piào(票)',
+  'pian':'piān(偏) pián(便) piǎn(谝) piàn(片)', 'pie':'piē(瞥) piě(撇)',
+
+  'ma':'mā(妈) má(麻) mǎ(马) mà(骂)',   'mo':'mō(摸) mó(模) mǒ(抹) mò(莫)',
+  'me':'me(么)', 'mi':'mī(眯) mí(迷) mǐ(米) mì(密)', 'mu':'mú(模) mǔ(母) mù(木)',
+  'mai':'mái(埋) mǎi(买) mài(卖)',      'mei':'méi(没) měi(美) mèi(妹)',
+  'mao':'māo(猫) máo(毛) mǎo(卯) mào(帽)', 'mou':'móu(谋) mǒu(某)',
+  'miu':'miù(谬)', 'mie':'miē(咩) miè(灭)',
+  'man':'mán(瞒) mǎn(满) màn(慢)',      'men':'mén(门) men(们)',
+  'min':'mín(民) mǐn(敏)',              'mang':'máng(忙) mǎng(莽)',
+  'meng':'mēng(蒙) méng(萌) měng(猛) mèng(梦)', 'ming':'míng(明) mǐng(酩) mìng(命)',
+  'miao':'miáo(描) miǎo(秒) miào(妙)',  'mian':'mián(眠) miǎn(免) miàn(面)',
+
+  'fa':'fā(发) fá(罚) fǎ(法) fà(发)',   'fo':'fó(佛)',   'fu':'fū(夫) fú(福) fǔ(府) fù(父)',
+  'fei':'fēi(飞) féi(肥) fěi(匪) fèi(费)', 'fou':'fǒu(否)',
+  'fan':'fān(翻) fán(烦) fǎn(反) fàn(饭)', 'fen':'fēn(分) fén(焚) fěn(粉) fèn(份)',
+  'fang':'fāng(方) fáng(房) fǎng(访) fàng(放)', 'feng':'fēng(风) féng(逢) fěng(讽) fèng(凤)',
+
+  'da':'dā(搭) dá(达) dǎ(打) dà(大)',   'de':'dé(得) de(的)', 'di':'dī(低) dí(迪) dǐ(底) dì(地)',
+  'du':'dū(都) dú(读) dǔ(赌) dù(度)',   'dai':'dāi(呆) dǎi(逮) dài(代)', 'dei':'děi(得)',
+  'dui':'duī(堆) duì(对)',               'dao':'dāo(刀) dǎo(倒) dào(到)',
+  'dou':'dōu(都) dǒu(抖) dòu(斗)',      'diu':'diū(丢)',  'die':'diē(爹) dié(碟)',
+  'dan':'dān(单) dǎn(胆) dàn(蛋)',      'dun':'dūn(吨) dǔn(盹) dùn(顿)',
+  'dang':'dāng(当) dǎng(党) dàng(档)',  'deng':'dēng(灯) děng(等) dèng(邓)',
+  'ding':'dīng(丁) dǐng(顶) dìng(定)',  'dong':'dōng(东) dǒng(懂) dòng(动)',
+  'duo':'duō(多) duó(夺) duǒ(躲) duò(堕)', 'duan':'duān(端) duǎn(短) duàn(段)',
+  'dia':'diǎ(嗲)',  'diao':'diāo(雕) diào(掉)',  'dian':'diān(颠) diǎn(典) diàn(电)',
+  'diang':'diāng(𪠽)',
+  'diu':'diū(丢)',
+
+  'ta':'tā(他) tǎ(塔) tà(踏)',          'te':'tè(特)',   'ti':'tī(踢) tí(提) tǐ(体) tì(替)',
+  'tu':'tū(突) tú(图) tǔ(土) tù(兔)',  'tai':'tāi(胎) tái(台) tài(太)', 'tui':'tuī(推) tuǐ(腿) tuì(退)',
+  'tao':'tāo(掏) táo(逃) tǎo(讨) tào(套)', 'tou':'tōu(偷) tóu(头) tòu(透)',
+  'tie':'tiē(贴) tiě(铁) tiè(帖)',      'tan':'tān(摊) tán(谈) tǎn(坦) tàn(叹)',
+  'tun':'tūn(吞) tún(屯) tùn(褪)',      'tang':'tāng(汤) táng(唐) tǎng(躺) tàng(烫)',
+  'teng':'téng(疼)', 'ting':'tīng(听) tíng(停) tǐng(挺)',  'tong':'tōng(通) tóng(同) tǒng(统) tòng(痛)',
+  'tuo':'tuō(脱) tuó(驮) tuǒ(妥) tuò(拓)', 'tuan':'tuān(湍) tuán(团) tuàn(彖)',
+  'tiao':'tiāo(挑) tiáo(条) tiǎo(挑) tiào(跳)', 'tian':'tiān(天) tián(田) tiǎn(舔) tiàn(掭)',
+
+  'na':'ná(拿) nǎ(哪) nà(那)', 'ne':'ne(呢)', 'ni':'ní(尼) nǐ(你) nì(逆)',
+  'nu':'nú(奴) nǔ(努) nù(怒)', 'nü':'nǚ(女)', 'nai':'nǎi(乃) nài(耐)', 'nei':'nèi(内)',
+  'nao':'náo(挠) nǎo(脑) nào(闹)', 'nou':'nòu(耨)', 'niu':'niú(牛) niǔ(扭) niù(拗)',
+  'nie':'niē(捏) niè(聂)', 'nüe':'nüè(虐)', 'nan':'nán(南) nǎn(赧) nàn(难)', 'nen':'nèn(嫩)',
+  'nin':'nín(您)', 'nang':'náng(囊) nǎng(馕)', 'neng':'néng(能)',
+  'ning':'níng(宁) nǐng(拧) nìng(宁)', 'nong':'nóng(农) nòng(弄)',
+  'nuo':'nuó(挪) nuò(诺)', 'nuan':'nuǎn(暖)',
+  'niao':'niǎo(鸟) niào(尿)', 'nian':'nián(年) niǎn(碾) niàn(念)', 'niang':'niáng(娘) niàng(酿)',
+  'nüe':'nüè(虐)',
+
+  'la':'lā(拉) lǎ(喇) là(辣)', 'le':'lè(乐) le(了)', 'li':'lī(哩) lí(离) lǐ(里) lì(利)',
+  'lu':'lú(炉) lǔ(鲁) lù(路)', 'lü':'lǘ(驴) lǚ(旅) lǜ(绿)',
+  'lai':'lái(来) lài(赖)', 'lei':'léi(雷) lěi(磊) lèi(泪)',
+  'lao':'lāo(捞) láo(劳) lǎo(老) lào(涝)', 'lou':'lóu(楼) lǒu(搂) lòu(漏)',
+  'liu':'liú(流) liǔ(柳) liù(六)', 'lie':'liě(咧) liè(列)',
+  'lüe':'lüè(略)', 'lan':'lán(蓝) lǎn(懒) làn(烂)', 'lin':'lín(林) lǐn(凛) lìn(吝)',
+  'lun':'lún(轮) lùn(论)', 'lang':'láng(狼) lǎng(朗) làng(浪)', 'leng':'lěng(冷) lèng(愣)',
+  'ling':'líng(零) lǐng(领) lìng(令)', 'long':'lóng(龙) lǒng(拢) lòng(弄)',
+  'luo':'luō(啰) luó(罗) luò(落)', 'luan':'luàn(乱)',
+  'lia':'liǎ(俩)', 'liao':'liáo(聊) liǎo(了) liào(料)', 'lian':'lián(连) liǎn(脸) liàn(恋)',
+  'liang':'liáng(凉) liǎng(两) liàng(亮)',
+
+  'ga':'gā(嘎) gá(钆) gǎ(尬)', 'ge':'gē(歌) gé(格) gě(葛) gè(各)', 'gu':'gū(姑) gǔ(古) gù(故)',
+  'gai':'gāi(该) gǎi(改) gài(盖)', 'gei':'gěi(给)', 'gui':'guī(归) guǐ(鬼) guì(贵)',
+  'gao':'gāo(高) gǎo(稿) gào(告)', 'gou':'gōu(沟) gǒu(狗) gòu(够)',
+  'gan':'gān(干) gǎn(敢) gàn(干)', 'gen':'gēn(根) gèn(亘)', 'gun':'gǔn(滚) gùn(棍)',
+  'gang':'gāng(刚) gǎng(港) gàng(杠)', 'geng':'gēng(耕) gěng(梗) gèng(更)', 'gong':'gōng(工) gǒng(拱) gòng(共)',
+  'gua':'guā(瓜) guǎ(寡) guà(挂)', 'guo':'guō(锅) guó(国) guǒ(果) guò(过)',
+  'guai':'guāi(乖) guǎi(拐) guài(怪)', 'guan':'guān(关) guǎn(管) guàn(惯)',
+  'guang':'guāng(光) guǎng(广) guàng(逛)',
+  'gou':'gōu(沟) gǒu(狗) gòu(够)',
+  'gao':'gāo(高) gǎo(稿) gào(告)',
+
+  'ka':'kǎ(卡)', 'ke':'kē(科) ké(壳) kě(可) kè(课)', 'ku':'kū(哭) kǔ(苦) kù(库)',
+  'kai':'kāi(开) kǎi(楷) kài(忾)', 'kui':'kuī(亏) kuí(葵) kuǐ(傀) kuì(馈)',
+  'kao':'kǎo(考) kào(靠)', 'kou':'kōu(抠) kǒu(口) kòu(扣)',
+  'kan':'kān(刊) kǎn(砍) kàn(看)', 'ken':'kěn(肯) kèn(裉)', 'kun':'kūn(坤) kǔn(捆) kùn(困)',
+  'kang':'kāng(康) káng(扛) kàng(抗)', 'keng':'kēng(坑)', 'kong':'kōng(空) kǒng(恐) kòng(控)',
+  'kua':'kuā(夸) kuǎ(垮) kuà(跨)', 'kuo':'kuò(阔)', 'kuai':'kuài(快)',
+  'kuan':'kuān(宽) kuǎn(款)', 'kuang':'kuāng(筐) kuáng(狂) kuàng(矿)',
+
+  'ha':'hā(哈) há(蛤) hà(哈)', 'he':'hē(喝) hé(和) hè(贺)', 'hu':'hū(呼) hú(胡) hǔ(虎) hù(护)',
+  'hai':'hāi(嗨) hái(还) hǎi(海) hài(害)', 'hei':'hēi(黑)', 'hui':'huī(灰) huí(回) huǐ(毁) huì(会)',
+  'hao':'hāo(蒿) háo(毫) hǎo(好) hào(号)', 'hou':'hōu(齁) hóu(猴) hǒu(吼) hòu(后)',
+  'han':'hān(酣) hán(含) hǎn(喊) hàn(汉)', 'hen':'hén(痕) hěn(很) hèn(恨)', 'hun':'hūn(婚) hún(魂) hùn(混)',
+  'hang':'hāng(夯) háng(航) hàng(巷)', 'heng':'héng(横) hèng(横)', 'hong':'hōng(轰) hóng(红) hǒng(哄) hòng(讧)',
+  'hua':'huā(花) huá(滑) huà(画)', 'huo':'huō(豁) huó(活) huǒ(火) huò(或)',
+  'huai':'huái(怀) huài(坏)', 'huan':'huān(欢) huán(环) huǎn(缓) huàn(换)',
+  'huang':'huāng(荒) huáng(黄) huǎng(恍) huàng(晃)',
+  'hui':'huī(灰) huí(回) huǐ(毁) huì(会)',
+
+  'ji':'jī(机) jí(及) jǐ(几) jì(计)', 'ju':'jū(居) jú(局) jǔ(举) jù(句)',
+  'jia':'jiā(家) jiá(夹) jiǎ(甲) jià(价)', 'jie':'jiē(接) jié(节) jiě(姐) jiè(介)',
+  'jiao':'jiāo(交) jiǎo(角) jiào(叫)', 'jiu':'jiū(纠) jiǔ(九) jiù(就)',
+  'jian':'jiān(间) jiǎn(简) jiàn(见)', 'jin':'jīn(金) jǐn(紧) jìn(近)',
+  'jiang':'jiāng(江) jiǎng(讲) jiàng(将)', 'jing':'jīng(经) jǐng(景) jìng(静)',
+  'jiong':'jiǒng(炯)', 'jue':'juē(觉) jué(决) juè(倔)',
+  'juan':'juān(捐) juǎn(卷) juàn(倦)', 'jun':'jūn(军) jùn(俊)',
+
+  'qi':'qī(七) qí(其) qǐ(起) qì(气)', 'qu':'qū(区) qú(渠) qǔ(取) qù(去)',
+  'qia':'qiā(掐) qià(恰)', 'qie':'qiē(切) qié(茄) qiě(且) qiè(怯)',
+  'qiu':'qiū(秋) qiú(求)', 'qiao':'qiāo(敲) qiáo(桥) qiǎo(巧) qiào(窍)',
+  'qian':'qiān(千) qián(前) qiǎn(浅) qiàn(欠)', 'qin':'qīn(亲) qín(琴) qǐn(寝) qìn(沁)',
+  'qiang':'qiāng(枪) qiáng(强) qiǎng(抢) qiàng(呛)', 'qing':'qīng(清) qíng(情) qǐng(请) qìng(庆)',
+  'qiong':'qióng(穷)', 'que':'quē(缺) què(确)',
+  'quan':'quān(圈) quán(全) quǎn(犬) quàn(劝)', 'qun':'qún(群)',
+
+  'xi':'xī(西) xí(习) xǐ(喜) xì(系)', 'xu':'xū(需) xú(徐) xǔ(许) xù(序)',
+  'xia':'xiā(瞎) xiá(峡) xià(下)', 'xie':'xiē(些) xié(协) xiě(写) xiè(谢)',
+  'xiu':'xiū(修) xiǔ(朽) xiù(秀)', 'xiao':'xiāo(消) xiáo(淆) xiǎo(小) xiào(笑)',
+  'xian':'xiān(先) xián(闲) xiǎn(显) xiàn(现)', 'xin':'xīn(心) xìn(信)',
+  'xiang':'xiāng(相) xiáng(详) xiǎng(想) xiàng(向)', 'xing':'xīng(星) xíng(行) xǐng(醒) xìng(性)',
+  'xiong':'xiōng(兄) xióng(雄) xiòng(诇)', 'xue':'xuē(削) xué(学) xuě(雪) xuè(血)',
+  'xuan':'xuān(宣) xuán(玄) xuǎn(选) xuàn(炫)', 'xun':'xūn(熏) xún(寻) xùn(训)',
+
+  'zha':'zhā(扎) zhá(炸) zhǎ(眨) zhà(诈)', 'zhe':'zhē(遮) zhé(折) zhě(者) zhè(这)',
+  'zhi':'zhī(知) zhí(直) zhǐ(指) zhì(志)', 'zhu':'zhū(猪) zhú(竹) zhǔ(主) zhù(住)',
+  'zhai':'zhāi(摘) zhái(宅) zhǎi(窄) zhài(债)', 'zhei':'zhèi(这)', 'zhui':'zhuī(追) zhuì(坠)',
+  'zhao':'zhāo(招) zháo(着) zhǎo(找) zhào(照)', 'zhou':'zhōu(周) zhóu(轴) zhǒu(肘) zhòu(昼)',
+  'zhan':'zhān(沾) zhǎn(展) zhàn(站)', 'zhen':'zhēn(真) zhěn(诊) zhèn(阵)', 'zhun':'zhǔn(准)',
+  'zhang':'zhāng(张) zhǎng(长) zhàng(丈)', 'zheng':'zhēng(争) zhěng(整) zhèng(正)', 'zhong':'zhōng(中) zhǒng(种) zhòng(重)',
+  'zhua':'zhuā(抓) zhuǎ(爪)', 'zhuo':'zhuō(桌) zhuó(浊)',
+  'zhuai':'zhuǎi(转) zhuài(拽)', 'zhuan':'zhuān(专) zhuǎn(转) zhuàn(赚)',
+  'zhuang':'zhuāng(庄) zhuǎng(奘) zhuàng(撞)',
+  'zha':'zhā(扎) zhá(炸) zhǎ(眨) zhà(诈)',
+  'zhong':'zhōng(中) zhǒng(种) zhòng(重)',
+
+  'cha':'chā(插) chá(茶) chǎ(衩) chà(岔)', 'che':'chē(车) chě(扯) chè(撤)',
+  'chi':'chī(吃) chí(迟) chǐ(尺) chì(斥)', 'chu':'chū(出) chú(除) chǔ(处) chù(触)',
+  'chai':'chāi(拆) chái(柴)', 'chui':'chuī(吹) chuí(垂)', 'chao':'chāo(超) cháo(潮) chǎo(吵) chào(抄)',
+  'chou':'chōu(抽) chóu(愁) chǒu(丑) chòu(臭)',
+  'chan':'chān(掺) chán(缠) chǎn(产) chàn(颤)', 'chen':'chén(晨) chěn(碜) chèn(衬)',
+  'chun':'chūn(春) chún(纯) chǔn(蠢)', 'chang':'chāng(昌) cháng(长) chǎng(厂) chàng(唱)',
+  'cheng':'chēng(称) chéng(成) chěng(逞) chèng(秤)', 'chong':'chōng(充) chóng(虫) chǒng(宠) chòng(冲)',
+  'chua':'chuā(欻)', 'chuo':'chuō(戳) chuò(绰)',
+  'chuai':'chuāi(揣) chuǎi(揣) chuài(踹)', 'chuan':'chuān(穿) chuán(船) chuǎn(喘) chuàn(串)',
+  'chuang':'chuāng(窗) chuáng(床) chuǎng(闯) chuàng(创)',
+
+  'sha':'shā(沙) shá(啥) shǎ(傻) shà(煞)', 'she':'shē(赊) shé(舌) shě(舍) shè(社)',
+  'shi':'shī(师) shí(时) shǐ(史) shì(是)', 'shu':'shū(书) shú(熟) shǔ(数) shù(术)',
+  'shai':'shāi(筛) shǎi(色) shài(晒)', 'shei':'shéi(谁)', 'shui':'shuí(谁) shuǐ(水) shuì(睡)',
+  'shao':'shāo(烧) sháo(勺) shǎo(少) shào(绍)', 'shou':'shōu(收) shóu(熟) shǒu(手) shòu(受)',
+  'shan':'shān(山) shǎn(闪) shàn(善)', 'shen':'shēn(身) shén(神) shěn(审) shèn(甚)',
+  'shun':'shǔn(吮) shùn(顺)', 'shang':'shāng(商) shǎng(赏) shàng(上)',
+  'sheng':'shēng(生) shéng(绳) shěng(省) shèng(胜)',
+  'shua':'shuā(刷) shuǎ(耍)', 'shuo':'shuō(说) shuò(硕)',
+  'shuai':'shuāi(摔) shuǎi(甩) shuài(帅)', 'shuan':'shuān(栓) shuàn(涮)',
+  'shuang':'shuāng(双) shuǎng(爽)',
+
+  're':'rě(惹) rè(热)', 'ri':'rì(日)', 'ru':'rú(如) rǔ(乳) rù(入)',
+  'rui':'ruǐ(蕊) ruì(锐)', 'rao':'ráo(饶) rǎo(扰) rào(绕)', 'rou':'róu(柔) ròu(肉)',
+  'ran':'rán(然) rǎn(染)', 'ren':'rén(人) rěn(忍) rèn(认)', 'run':'rùn(润)',
+  'rang':'ráng(瓤) rǎng(壤) ràng(让)', 'reng':'rēng(扔) réng(仍)', 'rong':'róng(容) rǒng(冗)',
+  'ruo':'ruò(弱)', 'ruan':'ruǎn(软)',
+
+  'za':'zā(扎) zá(杂) zǎ(咋)', 'ze':'zé(则) zè(仄)', 'zi':'zī(资) zǐ(子) zì(自)', 'zu':'zū(租) zú(族) zǔ(组)',
+  'zai':'zāi(灾) zǎi(载) zài(在)', 'zei':'zéi(贼)', 'zui':'zuǐ(嘴) zuì(最)',
+  'zao':'zāo(糟) záo(凿) zǎo(早) zào(造)', 'zou':'zōu(邹) zǒu(走) zòu(奏)',
+  'zan':'zān(簪) zán(咱) zàn(赞)', 'zen':'zěn(怎) zèn(谮)', 'zun':'zūn(尊) zǔn(撙)',
+  'zang':'zāng(脏) zàng(藏)', 'zeng':'zēng(增) zèng(赠)', 'zong':'zōng(宗) zǒng(总) zòng(纵)',
+  'zuo':'zuō(作) zuó(昨) zuǒ(左) zuò(做)', 'zuan':'zuān(钻) zuàn(钻)',
+
+  'ca':'cā(擦)', 'ce':'cè(策)', 'ci':'cī(疵) cí(词) cǐ(此) cì(次)', 'cu':'cū(粗) cù(醋)',
+  'cai':'cāi(猜) cái(才) cǎi(采) cài(菜)', 'cui':'cuī(催) cuǐ(璀) cuì(脆)',
+  'cao':'cāo(操) cáo(曹) cǎo(草)', 'cou':'còu(凑)',
+  'can':'cān(餐) cán(残) cǎn(惨) càn(灿)', 'cen':'cēn(参) cén(岑)', 'cun':'cūn(村) cún(存) cǔn(忖) cùn(寸)',
+  'cang':'cāng(仓) cáng(藏)', 'ceng':'céng(层) cèng(蹭)', 'cong':'cōng(聪) cóng(从)',
+  'cuo':'cuō(搓) cuò(错)', 'cuan':'cuān(蹿) cuán(攒) cuàn(窜)',
+
+  'sa':'sā(撒) sǎ(洒) sà(萨)', 'se':'sè(色)', 'si':'sī(思) sǐ(死) sì(四)', 'su':'sū(苏) sù(速)',
+  'sai':'sāi(塞) sài(赛)', 'sui':'suī(虽) suí(随) suǐ(髓) suì(岁)',
+  'sao':'sāo(骚) sǎo(扫) sào(臊)', 'sou':'sōu(搜) sǒu(叟) sòu(嗽)',
+  'san':'sān(三) sǎn(散) sàn(散)', 'sen':'sēn(森)', 'sun':'sūn(孙) sǔn(损)',
+  'sang':'sāng(桑) sǎng(嗓) sàng(丧)', 'seng':'sēng(僧)', 'song':'sōng(松) sǒng(耸) sòng(送)',
+  'suo':'suō(缩) suǒ(所) suò(唢)', 'suan':'suān(酸) suàn(算)',
+
+  'ya':'yā(压) yá(牙) yǎ(雅) yà(亚)', 'yo':'yo(哟)', 'ye':'yē(椰) yé(爷) yě(也) yè(夜)',
+  'yi':'yī(一) yí(移) yǐ(已) yì(意)', 'yu':'yū(迂) yú(于) yǔ(雨) yù(玉)',
+  'yao':'yāo(要) yáo(摇) yǎo(咬) yào(药)', 'you':'yōu(优) yóu(由) yǒu(有) yòu(又)',
+  'yan':'yān(烟) yán(言) yǎn(眼) yàn(燕)', 'yin':'yīn(因) yín(银) yǐn(引) yìn(印)',
+  'yang':'yāng(央) yáng(阳) yǎng(养) yàng(样)', 'ying':'yīng(英) yíng(营) yǐng(影) yìng(映)',
+  'yong':'yōng(拥) yǒng(永) yòng(用)', 'yun':'yūn(晕) yún(云) yǔn(允) yùn(运)',
+  'yue':'yuē(约) yuè(月)', 'yuan':'yuān(冤) yuán(原) yuǎn(远) yuàn(院)',
+  'ya':'yā(压) yá(牙) yǎ(雅) yà(亚)',
+  'you':'yōu(优) yóu(由) yǒu(有) yòu(又)',
+  'wa':'wā(挖) wá(娃) wǎ(瓦) wà(袜)', 'wo':'wō(窝) wǒ(我) wò(卧)', 'wu':'wū(屋) wú(无) wǔ(五) wù(物)',
+  'wai':'wāi(歪) wǎi(崴) wài(外)', 'wei':'wēi(微) wéi(为) wěi(伟) wèi(位)',
+  'wan':'wān(弯) wán(完) wǎn(晚) wàn(万)', 'wen':'wēn(温) wén(文) wěn(稳) wèn(问)',
+  'wang':'wāng(汪) wáng(王) wǎng(网) wàng(望)', 'weng':'wēng(翁) wěng(蓊) wèng(瓮)',
+  'er':'ér(儿) ěr(耳) èr(二)',
+};
+
+// ====== 构建表格 ======
+
+function findPinyin(init, fin) {
+  let p = init + fin;
+  // ü transforms
+  if ('jqx'.includes(init) && fin === 'ü') return init + 'u';
+  if ('jqx'.includes(init) && fin.startsWith('ü')) return init + 'u' + fin.slice(1);
+  if (init === 'y' && fin === 'u') return 'wu';
+  if (init === 'y' && fin === 'ü') return 'yu';
+  if (init === 'y' && fin.startsWith('ü')) return 'y' + 'u' + fin.slice(1);
+  if (init === 'y' && fin === 'i') return 'yi';
+  if (init === 'y' && fin === 'in') return 'yin';
+  if (init === 'y' && fin === 'ing') return 'ying';
+  if (init === 'y' && fin === 'ong') return 'yong';
+  if (init === 'w' && fin === 'u') return 'wu';
+  return p;
+}
+
+function renderTable() {
+  const container = document.getElementById('table-container');
+  let html = '<table><thead><tr>';
+  html += '<th class="corner">声\\韵</th>';
+  for (const f of finals) html += `<th class="final-header">${f.label}</th>`;
+  html += '</tr>';
+
+  // group label row
+  html += '<tr><td class="corner"></td>';
+  for (let i = 0; i < finals.length;) {
+    const f = finals[i];
+    let count = 1;
+    while (i + count < finals.length && finals[i + count].group === f.group) count++;
+    html += `<td class="final-group-label" colspan="${count}">${f.group}</td>`;
+    i += count;
+  }
+  html += '</tr></thead><tbody>';
+
+  let total = 0;
+  for (const init of initials) {
+    html += '<tr>';
+    html += `<td class="init-label">${init.label}<span class="initial-desc">${init.desc}</span></td>`;
+    for (const fin of finals) {
+      const key = init.label + '+' + fin.label;
+      if (valid.has(key)) {
+        total++;
+        const pinyin = findPinyin(init.label, fin.label);
+        const example = toneExamples[pinyin] || '';
+        html += `<td class="cell" data-pinyin="${pinyin}">${pinyin}${example ? `<span class="tone-examples">${example}</span>` : ''}</td>`;
+      } else {
+        html += '<td class="empty">·</td>';
+      }
+    }
+    html += '</tr>';
+  }
+  html += '</tbody></table>';
+  container.innerHTML = html;
+  document.getElementById('total-count').textContent = total;
+}
+
+// ====== 搜索 ======
+document.getElementById('search').addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  document.querySelectorAll('.cell, .empty').forEach(c => { c.style.background = ''; c.style.color = ''; });
+  if (!q) return;
+  document.querySelectorAll('.cell').forEach(c => {
+    if (c.dataset.pinyin && c.dataset.pinyin.includes(q)) {
+      c.style.background = '#fff3cd'; c.style.color = '#856404';
+    }
+  });
+});
+
+// ====== 点击复制 ======
+document.addEventListener('click', function(e) {
+  const cell = e.target.closest('.cell');
+  if (cell && cell.dataset.pinyin) {
+    navigator.clipboard.writeText(cell.dataset.pinyin).catch(() => {});
+    cell.style.background = '#c8e6c9';
+    setTimeout(() => {
+      const q = document.getElementById('search').value.trim().toLowerCase();
+      cell.style.background = (q && cell.dataset.pinyin.includes(q)) ? '#fff3cd' : '';
+    }, 300);
+  }
+});
+
+renderTable();
+</script>
+</body>
+</html>
