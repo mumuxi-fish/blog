@@ -6,11 +6,12 @@
     "uploader": "每天学点法语听说读写",
     "duration": "5:20",
     "views": "1126",
-    "audioUrl": "https://mumuxi-fish.github.io/blog/audio/bilibili-1sy896.mp3",
+    "audioUrl": "https://files.just4.tech/audio/bilibili-1sy896.mp3",
     "bvid": "BV1SY896LEZN",
     "srtData": "",
     "srtFilename": "bilibili-1sy896.srt",
-    "subtitleLines": []
+    "subtitleLines": [],
+    "slug": "bilibili-1sy896"
   },
   {
     "slug": "bilibili-1ox876",
