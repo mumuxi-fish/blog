@@ -1,9 +1,10 @@
 const SHELF = document.getElementById('bookshelf');
 const BASE = window.location.pathname.replace(/\/[^/]*$/, '/');
+const BOOKS_BASE = 'https://files.just4.tech/books/';
 
 async function loadBooks() {
   try {
-    const res = await fetch('books.json?_=' + Date.now());
+    const res = await fetch(BOOKS_BASE + 'books.json?_=' + Date.now());
     if (!res.ok) throw new Error('Failed to load books.json');
     const data = await res.json();
     
@@ -31,7 +32,7 @@ async function loadBooks() {
       const author = book.author || '';
       const size = book.size || '';
       const added = book.added || '';
-      const bookUrl = `${BASE}books/${encodeURIComponent(book.file)}`;
+      const bookUrl = `${BOOKS_BASE}${encodeURIComponent(book.file)}`;
       // 注入安全:book.file 分别用于 JS 字符串(onclick)与 HTML 属性(download)上下文
       const fileJs = book.file.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/'/g, "\\'");
       const fileHtml = book.file.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
