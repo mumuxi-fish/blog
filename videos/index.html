@@ -464,7 +464,7 @@
           if (post.hasAudio) {
             el.innerHTML =
               '<span class="archive-date">' + dateStr + '</span>' +
-              '<span class="archive-title"><a href="/videos/watch.html?id=' + slug + '" target="_blank">' + post.title + '</a></span>' +
+              '<span class="archive-title"><a href="watch.html?id=' + slug + '" target="_blank">' + post.title + '</a></span>' +
               '<button class="play-btn">' +
                 '<svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>' +
               '</button>';
@@ -483,7 +483,7 @@
           } else {
             el.innerHTML =
               '<span class="archive-date">' + dateStr + '</span>' +
-              '<span class="archive-title"><a href="/videos/watch.html?id=' + slug + '" target="_blank">' + post.title + '</a></span>' +
+              '<span class="archive-title"><a href="watch.html?id=' + slug + '" target="_blank">' + post.title + '</a></span>' +
               '<span class="archive-tag" style="color:var(--text-muted);font-size:0.85em">无音频</span>';
           }
           
