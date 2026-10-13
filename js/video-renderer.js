@@ -51,7 +51,8 @@
 
   // 渲染页面
   function renderPost(post) {
-    var hasSubtitles = post.hasSubtitles || (post.subtitleLines && post.subtitleLines.length > 0);
+    var hasSubtitles = (post.hasSubtitles || (post.subtitleLines && post.subtitleLines.length > 0))
+      && post.subtitleLines && post.subtitleLines.length > 0;
     var hasBvid = post.bvid && post.bvid.length > 0;
     var hasAudio = post.hasAudio || (post.audioUrl && post.audioUrl.length > 0);
     var subtitleHtml = '';
@@ -60,9 +61,10 @@
       var subtitleLines = post.subtitleLines.map(function(line) {
         return '<p class="sub-line"><span class="sub-time">' + line.time + '</span> <span class="sub-text">' + line.text + '</span></p>';
       }).join('');
+      var srtHref = post.srtUrl || (BLOG + '/subtitles/' + encodeURIComponent(post.srtFilename));
       subtitleHtml = '<div class="timed-subtitles">' + subtitleLines + '</div>' +
         '<p class="sub-srt-download">' +
-          '<a href="' + post.srtData + '" download="' + post.srtFilename + '">📥 下载字幕 (SRT)</a>' +
+          '<a href="' + srtHref + '" download="' + post.srtFilename + '">📥 下载字幕 (SRT)</a>' +
         '</p>';
     } else {
       subtitleHtml = '<p style="color: var(--text-muted); font-size: 0.9em;">字幕待补充</p>';
@@ -127,6 +129,44 @@
     if (typeof initNav === 'function') initNav();
   }
 
+  // 解析 SRT 文本为 {time, text} 列表
+  function parseSrt(text) {
+    var out = [];
+    text.replace(/\r/g, '').split('\n\n').forEach(function(block) {
+      var lines = block.trim().split('\n');
+      var idx = lines.findIndex(function(l) { return l.indexOf('-->') !== -1; });
+      if (idx === -1) return;
+      // 兼容 HH:MM:SS.mmm 与旧版 MM:SS.mmm 两种时间轴写法
+      var parts = lines[idx].split('-->')[0].trim().split(/[.,]/)[0].split(':');
+      var time = parts.length >= 3 ? parts[parts.length - 2] + ':' + parts[parts.length - 1]
+                                   : parts[0] + ':' + (parts[1] || '00');
+      var body = lines.slice(idx + 1).join(' ').replace(/^\[[^\]]*\]\s*/, '').trim();
+      if (body) out.push({ time: time, text: body });
+    });
+    return out;
+  }
+
+  // 字幕正文不再内嵌在 JSON 里，按需拉取单个 .srt 文件
+  function loadSubtitles(post) {
+    if (!post.srtFilename) return Promise.resolve(post);
+    var candidates = [
+      BLOG + '/subtitles/' + encodeURIComponent(post.srtFilename),
+      'https://files.just4.tech/subtitles/' + encodeURIComponent(post.srtFilename)
+    ];
+    function attempt(i) {
+      if (i >= candidates.length) return Promise.resolve(post);
+      return fetch(candidates[i]).then(function(r) {
+        if (!r.ok) return attempt(i + 1);
+        return r.text().then(function(text) {
+          post.subtitleLines = parseSrt(text);
+          post.srtUrl = candidates[i];
+          return post;
+        });
+      }).catch(function() { return attempt(i + 1); });
+    }
+    return attempt(0);
+  }
+
   // 从 video-subtitles.json 获取基本信息
   function loadPostFromPostsJson(postId) {
     return fetch(BLOG + '/data/video-subtitles.json')
@@ -147,11 +187,10 @@
           uploader: post.uploader || '',
           duration: post.duration || '',
           views: post.views || '',
-          audioUrl: post.audioUrl || (post.hasAudio ? 'https://files.just4.tech/audio/' + postId + '.mp3' : ''),
+          audioUrl: post.audioUrl || (post.hasAudio && post.bvid ? 'https://files.just4.tech/audio/' + post.bvid + '.mp3' : ''),
           bvid: post.bvid || '',
-          srtData: post.srtData || '',
-          srtFilename: post.srtFilename || postId + '.srt',
-          subtitleLines: post.subtitleLines || [],
+          srtFilename: post.srtFilename || '',
+          subtitleLines: [],
           hasAudio: post.hasAudio || false,
           hasSubtitles: post.hasSubtitles || false
         };
@@ -161,6 +200,7 @@
   // 加载帖子数据
   function loadPost(postId) {
     loadPostFromPostsJson(postId)
+      .then(loadSubtitles)
       .then(function(post) {
         if (post) {
           renderPost(post);

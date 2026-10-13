@@ -19,7 +19,7 @@ const https = require('https');
 const ROOT = path.join(__dirname, '..');
 const CONFIG_FILE = path.join(ROOT, 'config.json');
 const PROCESSED_FILE = path.join(ROOT, 'data/processed-videos.json');
-const BILIBILI_POSTS_FILE = path.join(ROOT, 'data/bilibili-posts.json');
+const VIDEO_SUBTITLES_FILE = path.join(ROOT, 'data/video-subtitles.json');
 const POSTS_FILE = path.join(ROOT, 'data/posts.json');
 const AUDIO_DIR = path.join(ROOT, 'audio');
 
@@ -160,8 +160,7 @@ function formatSrtTime(seconds) {
 
 // 生成音频下载链接 (使用第三方服务或提示手动下载)
 function getAudioUrl(bvid) {
-  // 返回 B 站音频 API 或第三方服务链接
-  return `https://mumuxi-fish.github.io/blog/audio/${bvid}.mp3`;
+  return `https://files.just4.tech/audio/${bvid}.mp3`;
 }
 
 // 生成唯一 ID
@@ -191,22 +190,25 @@ function markProcessed(videoData) {
   fs.writeFileSync(PROCESSED_FILE, JSON.stringify(processed, null, 2), 'utf8');
 }
 
-// 添加到 bilibili-posts.json
+// 添加到 video-subtitles.json（只存索引，字幕正文在 subtitles/{bvid}.srt）
 function addToBilibiliPosts(videoData) {
   let posts = [];
-  if (fs.existsSync(BILIBILI_POSTS_FILE)) {
-    posts = JSON.parse(fs.readFileSync(BILIBILI_POSTS_FILE, 'utf8'));
+  if (fs.existsSync(VIDEO_SUBTITLES_FILE)) {
+    posts = JSON.parse(fs.readFileSync(VIDEO_SUBTITLES_FILE, 'utf8'));
   }
   
   // 检查是否已存在
-  if (posts.some(p => p.id === videoData.id)) {
-    console.log('视频已存在于 bilibili-posts.json');
+  if (posts.some(p => (videoData.bvid && p.bvid === videoData.bvid) || p.slug === videoData.slug)) {
+    console.log('视频已存在于 video-subtitles.json');
     return;
   }
   
-  posts.unshift(videoData); // 添加到开头
-  fs.writeFileSync(BILIBILI_POSTS_FILE, JSON.stringify(posts, null, 2), 'utf8');
-  console.log('已添加到 bilibili-posts.json');
+  const indexEntry = Object.fromEntries(
+    Object.entries(videoData).filter(([k]) => k !== 'srtData' && k !== 'subtitleLines')
+  );
+  posts.unshift(indexEntry); // 添加到开头
+  fs.writeFileSync(VIDEO_SUBTITLES_FILE, JSON.stringify(posts, null, 2), 'utf8');
+  console.log('已添加到 video-subtitles.json');
 }
 
 // 添加到 posts.json
@@ -339,11 +341,12 @@ async function processVideo(bvid) {
   const id = generateId(bvid);
   
   // 生成 SRT 文件名
-  const srtFilename = `${id}.srt`;
+  const srtFilename = `${bvid}.srt`;
   
   // 构建帖子数据
   const today = new Date().toISOString().split('T')[0];
   const postData = {
+    slug: id,
     id,
     title: videoInfo.title,
     date: today,
@@ -352,9 +355,10 @@ async function processVideo(bvid) {
     views: videoInfo.views,
     audioUrl: getAudioUrl(bvid),
     bvid: videoInfo.bvid,
-    srtData: `data:text/plain;base64,${Buffer.from(subtitles.srtContent).toString('base64')}`,
     srtFilename,
-    subtitleLines: subtitles.subtitleLines
+    subtitleLines: subtitles.subtitleLines,
+    hasAudio: true,
+    hasSubtitles: true
   };
   
   // 保存 SRT 文件 (可选)

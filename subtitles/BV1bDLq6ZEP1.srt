@@ -1,0 +1,899 @@
+1
+00:00:00.060 --> 00:00:01.520
+[S01] Flight got cancelled because of the war.
+
+2
+00:00:01.620 --> 00:00:02.419
+[S02] It's destiny.
+
+3
+00:00:02.810 --> 00:00:04.879
+[S03] 就我的公司，所以我什么都要做
+
+4
+00:00:04.940 --> 00:00:05.839
+[S04] 哦，你创业
+
+5
+00:00:05.860 --> 00:00:06.410
+[S03] 我创业
+
+6
+00:00:06.469 --> 00:00:08.269
+[S05] I didn't think you were Chinese either.
+
+7
+00:00:08.839 --> 00:00:09.339
+[S02] Oh, really?
+
+8
+00:00:09.359 --> 00:00:10.710
+[S05] I thought more like Japanese.
+
+9
+00:00:10.980 --> 00:00:11.810
+[S06] Guess my age.
+
+10
+00:00:12.910 --> 00:00:13.480
+[S02] Eighteen.
+
+11
+00:00:14.910 --> 00:00:15.539
+[S03] Okay, bye.
+
+12
+00:00:15.580 --> 00:00:17.879
+[S02] How much do you make in a month?
+
+13
+00:00:18.579 --> 00:00:18.940
+[S07] Hello.
+
+14
+00:00:19.579 --> 00:00:20.140
+[S02] Sabrina?
+
+15
+00:00:20.879 --> 00:00:21.280
+[S07] Yvonne.
+
+16
+00:00:21.309 --> 00:00:22.109
+[S02] Nice to meet you.
+
+17
+00:00:22.140 --> 00:00:26.309
+[S02] So can you introduce your name, your occupation, and where are you from?
+
+18
+00:00:26.510 --> 00:00:30.609
+[S07] So, I'm Yvonne, I'm thirty, and I'm a lawyer and an author from the UK.
+
+19
+00:00:31.010 --> 00:00:32.810
+[S07] I'm on a bit of a career break at the moment.
+
+20
+00:00:32.840 --> 00:00:35.039
+[S07] So I was living in the Middle East before the war.
+
+21
+00:00:35.079 --> 00:00:40.340
+[S07] And then I decided to kind of like quit my job and do a bit of solo travelling before going back to the UK.
+
+22
+00:00:40.380 --> 00:00:41.579
+[S07] And then the war happened.
+
+23
+00:00:41.609 --> 00:00:43.039
+[S07] Flight got cancelled because of the war.
+
+24
+00:00:43.179 --> 00:00:43.979
+[S02] It's destiny.
+
+25
+00:00:44.009 --> 00:00:44.939
+[S07] So yeah, exactly.
+
+26
+00:00:44.979 --> 00:00:47.109
+[S07] So that's why I decided to extend, and now I'm here.
+
+27
+00:00:47.409 --> 00:00:48.079
+[S08] I'm Marie.
+
+28
+00:00:48.109 --> 00:00:50.140
+[S08] I'm twenty-seven next week, actually.
+
+29
+00:00:50.240 --> 00:00:51.909
+[S08] I am executive assistant.
+
+30
+00:00:51.939 --> 00:00:53.810
+[S08] I do like um onboarding.
+
+31
+00:00:53.840 --> 00:00:56.079
+[S08] It's like a cosmetic brand.
+
+32
+00:00:56.109 --> 00:00:57.810
+[S08] I'm doing the onboarding at the moment.
+
+33
+00:00:57.840 --> 00:01:01.909
+[S08] And I try to help clarify all the processes with Notion.
+
+34
+00:01:02.509 --> 00:01:05.840
+[S03] So, 我叫Vincent，我来自台湾
+
+35
+00:01:05.879 --> 00:01:09.840
+[S03] 我做的项目现在跟科技也比较相关的
+
+36
+00:01:09.879 --> 00:01:10.340
+[S04] 这个是什么产品
+
+37
+00:01:10.379 --> 00:01:13.780
+[S03] 具体就是美国有所谓的中转商
+
+38
+00:01:13.810 --> 00:01:14.939
+[S03] 在票券方面
+
+39
+00:01:15.010 --> 00:01:18.010
+[S03] 就是他们会进仓票务跟出售票务
+
+40
+00:01:18.109 --> 00:01:18.510
+[S04] Yeah.
+
+41
+00:01:18.579 --> 00:01:23.180
+[S03] 对，然后中转商他们要有一个software去做一个inventory management
+
+42
+00:01:23.409 --> 00:01:24.409
+[S03] 然后去做pricing
+
+43
+00:01:24.439 --> 00:01:26.810
+[S04] 所以你们就是做B2B software for
+
+44
+00:01:26.840 --> 00:01:27.209
+[S03] 对对对
+
+45
+00:01:27.239 --> 00:01:28.480
+[S04] 卖演唱会跳的
+
+46
+00:01:28.510 --> 00:01:29.379
+[S03] 对对对对对
+
+47
+00:01:29.409 --> 00:01:30.209
+[S04] 公司，okay
+
+48
+00:01:30.239 --> 00:01:30.540
+[S03] 对
+
+49
+00:01:30.579 --> 00:01:32.540
+[S03] 原先是个中转商
+
+50
+00:01:32.579 --> 00:01:32.939
+[S04] 对
+
+51
+00:01:32.980 --> 00:01:35.010
+[S03] 然后我做了一个tool，然后我们自己使用
+
+52
+00:01:35.040 --> 00:01:35.340
+[S04] 嗯
+
+53
+00:01:35.379 --> 00:01:36.209
+[S03] 非常的好用
+
+54
+00:01:36.239 --> 00:01:36.780
+[S04] Okay
+
+55
+00:01:36.810 --> 00:01:37.909
+[S03] 然后想要拿去卖
+
+56
+00:01:38.409 --> 00:01:39.379
+[S04] 那what's your role?
+
+57
+00:01:39.409 --> 00:01:41.310
+[S04] Like，你在这里面主要是做什么呢？
+
+58
+00:01:41.340 --> 00:01:44.409
+[S03] 我就是说我是道馆
+
+59
+00:01:44.439 --> 00:01:45.310
+[S03] 就我的公司
+
+60
+00:01:45.340 --> 00:01:46.010
+[S04] 你创业
+
+61
+00:01:46.040 --> 00:01:46.780
+[S03] 我创业，是
+
+62
+00:01:46.810 --> 00:01:47.280
+[S04] Okay.
+
+63
+00:01:47.640 --> 00:01:49.109
+[S04] Are you a solo founder?
+
+64
+00:01:49.140 --> 00:01:49.780
+[S04] 还是你是有
+
+65
+00:01:49.810 --> 00:01:50.239
+[S03] I'm a solo founder.
+
+66
+00:01:50.280 --> 00:01:52.079
+[S04] 哦，okay，那你真的是什么都要做
+
+67
+00:01:52.109 --> 00:01:53.109
+[S03] 对，什么都要做
+
+68
+00:01:53.140 --> 00:01:56.640
+[S03] 我很想要找一个co-founder，可是co-founder不好找
+
+69
+00:01:56.709 --> 00:01:58.439
+[S04] 很难找，那你有个team吗？
+
+70
+00:01:58.510 --> 00:01:59.180
+[S03] 两个人
+
+71
+00:01:59.209 --> 00:02:00.239
+[S04] 那他也在这儿吗？
+
+72
+00:02:00.379 --> 00:02:01.010
+[S03] 都不在这儿
+
+73
+00:02:01.040 --> 00:02:02.109
+[S04] 都，都是远程
+
+74
+00:02:02.140 --> 00:02:02.780
+[S03] 对对对
+
+75
+00:02:02.840 --> 00:02:05.540
+[S05] Name, semi, age, twenty-six years old.
+
+76
+00:02:05.810 --> 00:02:07.810
+[S05] Born and raised in Netherlands, parents are Moroccan.
+
+77
+00:02:07.840 --> 00:02:10.110
+[S02] I feel like you don't look that Moroccan.
+
+78
+00:02:10.639 --> 00:02:12.240
+[S05] It's weird, I don't think so either.
+
+79
+00:02:12.280 --> 00:02:13.840
+[S05] But Moroccans, they can always
+
+80
+00:02:14.180 --> 00:02:15.240
+[S02] They can always tell you?
+
+81
+00:02:15.280 --> 00:02:15.740
+[S05] Yes.
+
+82
+00:02:15.780 --> 00:02:20.080
+[S05] One time I was at a gym here, and the guy across the gym just screams at me in Moroccan, like an Arabic.
+
+83
+00:02:20.110 --> 00:02:20.939
+[S05] How do you know?
+
+84
+00:02:21.379 --> 00:02:23.180
+[S05] I didn't think you were Chinese either.
+
+85
+00:02:23.740 --> 00:02:24.280
+[S02] Oh, really?
+
+86
+00:02:24.310 --> 00:02:27.080
+[S05] I don't know, maybe my judgment is just really bad.
+
+87
+00:02:27.110 --> 00:02:28.340
+[S05] I thought more like Japanese.
+
+88
+00:02:28.810 --> 00:02:29.740
+[S05] Is that a weird thing to say?
+
+89
+00:02:32.340 --> 00:02:33.979
+[S05] So for a living, I have a YouTube channel.
+
+90
+00:02:34.580 --> 00:02:36.939
+[S05] And that's my full-time passion and job.
+
+91
+00:02:37.009 --> 00:02:38.080
+[S02] What's the content?
+
+92
+00:02:38.610 --> 00:02:42.810
+[S05] So, the content is storytelling in the end, in the sport niche.
+
+93
+00:02:43.039 --> 00:02:46.710
+[S05] So I tell, I make mini documentaries about American football and about basketball.
+
+94
+00:02:47.009 --> 00:02:47.979
+[S02] What kind of stories?
+
+95
+00:02:48.009 --> 00:02:51.580
+[S05] So it's mostly stories that like show the toughness they went through.
+
+96
+00:02:51.610 --> 00:02:57.110
+[S05] So my whole goal is to like make you connect with the athlete by showing what they've been through.
+
+97
+00:02:57.240 --> 00:02:58.580
+[S02] I'm so curious now.
+
+98
+00:04:57.829 --> 00:04:59.889
+[S09] Which is, I think, five hundred dollars.
+
+99
+00:05:00.360 --> 00:05:01.459
+[S09] Pretty nice guess up.
+
+100
+00:05:01.459 --> 00:05:03.930
+[S10] Yeah, how much do you earn in a month?
+
+101
+00:05:04.300 --> 00:05:05.689
+[S11] Twenty or forty.
+
+102
+00:05:06.100 --> 00:05:06.519
+[S10] K?
+
+103
+00:05:06.550 --> 00:05:06.920
+[S11] Yeah.
+
+104
+00:05:07.209 --> 00:05:08.860
+[S10] Forty K per month in euros.
+
+105
+00:05:08.889 --> 00:05:10.800
+[S11] Between twenty or forty K.
+
+106
+00:05:11.040 --> 00:05:12.589
+[S10] That's a good amount of money.
+
+107
+00:05:13.529 --> 00:05:13.889
+[S10] Yeah.
+
+108
+00:05:13.910 --> 00:05:16.360
+[S11] I can't do better. I work too much for this.
+
+109
+00:05:16.389 --> 00:05:17.519
+[S10] That's so not French.
+
+110
+00:05:17.899 --> 00:05:18.360
+[S11] Yeah.
+
+111
+00:05:18.389 --> 00:05:19.689
+[S10] How much do you pay for rent?
+
+112
+00:05:19.720 --> 00:05:24.459
+[S11] When I just arrived, I was with French and we take like villa, villa, villa, villa.
+
+113
+00:05:24.660 --> 00:05:27.660
+[S11] And to be honest, like, for me, it's quite expensive.
+
+114
+00:05:27.689 --> 00:05:33.759
+[S11] Like, I was spending like between one point five K for living.
+
+115
+00:05:33.790 --> 00:05:38.259
+[S11] Spend like close to, between five hundred and one K.
+
+116
+00:05:38.660 --> 00:05:42.860
+[S12] So I've actually stayed in two places. The first place was around eighteen pounds a night.
+
+117
+00:05:43.189 --> 00:05:43.790
+[S10] Okay.
+
+118
+00:05:43.819 --> 00:05:47.519
+[S12] And then the place I am now is around twenty seven pounds.
+
+119
+00:05:47.550 --> 00:05:49.459
+[S10] So you said you are on a career break?
+
+120
+00:05:49.490 --> 00:05:49.920
+[S12] Yes.
+
+121
+00:05:50.230 --> 00:05:52.920
+[S10] How do you afford this lifestyle?
+
+122
+00:05:53.889 --> 00:05:57.459
+[S12] Um, well, I saved quite a bit of money because I knew I wanted to take a bit of a break.
+
+123
+00:05:57.490 --> 00:05:59.120
+[S12] So it's been like my savings.
+
+124
+00:05:59.149 --> 00:06:04.060
+[S12] And then on top of that, I wrote and published a book last year on modern dating.
+
+125
+00:06:04.089 --> 00:06:06.319
+[S12] So in the ups and downs of my experiences.
+
+126
+00:06:06.350 --> 00:06:08.889
+[S12] Well, how to navigate the dating world, basically.
+
+127
+00:06:09.629 --> 00:06:11.920
+[S12] And just kind of sharing all the experiences that I've had.
+
+128
+00:06:11.949 --> 00:06:13.689
+[S12] So that's kind of like selling online as well.
+
+129
+00:06:13.720 --> 00:06:15.459
+[S13] 你现在有收入吗？
+
+130
+00:06:15.689 --> 00:06:17.920
+[S14] 现在有啊，就公司的收入。
+
+131
+00:06:18.120 --> 00:06:20.290
+[S13] 公司的收入，可是不是还没有开始卖吗？
+
+132
+00:06:20.519 --> 00:06:25.319
+[S14] 就原先的中转商的公司还是有在赚钱，对。
+
+133
+00:06:25.350 --> 00:06:25.920
+[S13] 哦，okay.
+
+134
+00:06:25.949 --> 00:06:30.120
+[S14] 然后现在就是多了一个这个，然后想把重心挪过去吧。
+
+135
+00:06:30.149 --> 00:06:31.589
+[S10] Do you live in Bali now?
+
+136
+00:06:31.720 --> 00:06:33.189
+[S15] Yeah, it's been a year.
+
+137
+00:06:33.829 --> 00:06:34.990
+[S10] How do you like Bali?
+
+138
+00:06:35.259 --> 00:06:39.720
+[S15] I love Bali. I needed to live in a warm climate.
+
+139
+00:06:39.750 --> 00:06:42.120
+[S15] It's very chill to live in Bali. Everything is easy.
+
+140
+00:06:42.149 --> 00:06:42.459
+[S10] Yeah.
+
+141
+00:06:42.490 --> 00:06:46.259
+[S15] You do nothing, like, it was cooking, cleaning, everything, which is nice.
+
+142
+00:06:46.290 --> 00:06:48.290
+[S10] Are you planning to stay here for long term?
+
+143
+00:06:48.319 --> 00:06:49.120
+[S15] Uh, I think so.
+
+144
+00:06:49.149 --> 00:06:58.990
+[S14] 就这边很适合运动，然后大家都在，就有一个氛围，大家都在工作嘛，然后就天气好，然后比较relax一点，我觉得。
+
+145
+00:06:59.019 --> 00:06:59.389
+[S10] Yeah.
+
+146
+00:06:59.519 --> 00:07:04.860
+[S09] I chose Bali because I think there are a lot of people here who are focused on building a business.
+
+147
+00:07:04.889 --> 00:07:06.519
+[S09] Especially like the phase where they're scaling.
+
+148
+00:07:06.550 --> 00:07:11.050
+[S09] So not that the phase where they already have fifty people working for them, but they're still like scaling.
+
+149
+00:07:11.089 --> 00:07:15.120
+[S09] It's cheap as well. I can save money here, so I can reinvest more into the business.
+
+150
+00:07:15.759 --> 00:07:17.519
+[S09] Sunny, it's an island, there's a beach.
+
+151
+00:07:17.550 --> 00:07:19.990
+[S09] The productivity level here, this is actually the most important one.
+
+152
+00:07:20.230 --> 00:07:21.230
+[S10] I think so too.
+
+153
+00:07:21.259 --> 00:07:23.860
+[S09] Yeah, the productivity level in Bali is just next level.
+
+154
+00:07:24.230 --> 00:07:26.689
+[S09] Because you don't have to worry about anything except working.
+
+155
+00:07:26.720 --> 00:07:31.790
+[S09] You can just order, like, the thought of cooking or doing groceries is just eliminated.
+
+156
+00:07:31.819 --> 00:07:33.689
+[S09] There's a lot of distractions here too, don't get me wrong.
+
+157
+00:07:33.829 --> 00:07:37.629
+[S09] I do think that's one of the hardest challenges, like the nightlife for me.
+
+158
+00:07:37.660 --> 00:07:40.829
+[S09] You have this FOMO, like, I want to check them out.
+
+159
+00:07:40.860 --> 00:07:44.829
+[S09] But I think if you're here long term, kind of, the FOMO is less.
+
+160
+00:07:44.860 --> 00:07:46.959
+[S10] Can you describe Bali in three words?
+
+161
+00:07:46.990 --> 00:07:51.360
+[S15] I think Bali, I would say is the chillest place in the world.
+
+162
+00:07:51.389 --> 00:07:55.829
+[S15] People are so nice. Life work balance is really good, the most important one.
+
+163
+00:07:55.860 --> 00:07:58.290
+[S15] Welcoming and pretty.
+
+164
+00:07:59.360 --> 00:08:06.589
+[S14] 三个词，就舒服，某种程度上是静养吧，在我个，就是身体跟心灵层面上都是。
+
+165
+00:08:06.620 --> 00:08:07.259
+[S13] Peaceful.
+
+166
+00:08:07.290 --> 00:08:10.459
+[S14] Peaceful,对。Rejuvenating,就是有。
+
+167
+00:08:10.490 --> 00:08:10.959
+[S13] Okay.
+
+168
+00:08:11.089 --> 00:08:14.990
+[S14] 可以让你更多的新新的能量去做更多事情，对。
+
+169
+00:08:15.019 --> 00:08:17.720
+[S13] 就都跟新生灵，心，心，身心灵。
+
+170
+00:08:17.750 --> 00:08:19.189
+[S14] 身心灵相关的，对。
+
+171
+00:08:19.459 --> 00:08:20.120
+[S13] Okay.
+
+172
+00:08:20.259 --> 00:08:24.990
+[S14] 我来这边主要也是觉得这边可以带来很多这这方面东西。
+
+173
+00:08:25.189 --> 00:08:26.360
+[S09] Bali in three words.
+
+174
+00:08:35.889 --> 00:08:38.190
+[S09] Poof, that's a tough one. I'm not really good with this.
+
+175
+00:08:38.220 --> 00:08:40.389
+[S10] Yeah, like, whatever came to your mind?
+
+176
+00:08:40.889 --> 00:08:46.360
+[S09] Number one is positivity. Number two is, for me, productivity. I would say networking.
+
+177
+00:08:46.490 --> 00:08:47.389
+[S10] Networking.
+
+178
+00:08:47.759 --> 00:08:50.360
+[S09] I've made some friends, like, I met so many cool people here.
+
+179
+00:08:50.519 --> 00:08:52.860
+[S11] Happiness, freedom, peace.
+
+180
+00:08:53.490 --> 00:08:54.389
+[S10] Yeah, peace.
+
+181
+00:08:54.519 --> 00:08:55.460
+[S11] What's your three words?
+
+182
+00:08:56.090 --> 00:08:59.860
+[S10] Freedom, creativity, very peaceful.
+
+183
+00:09:00.559 --> 00:09:02.389
+[S10] Yeah, just happiness, a lot of happiness.
+
+184
+00:09:02.419 --> 00:09:03.629
+[S11] Is the high land of God?
+
+185
+00:09:03.759 --> 00:09:04.889
+[S10] Very stable too.
+
+186
+00:09:05.519 --> 00:09:07.990
+[S10] Like, you stay in happiness.
+
+187
+00:09:08.019 --> 00:09:10.389
+[S11] Yeah, yeah, you don't like drop. And if you up.
+
+188
+00:09:10.960 --> 00:09:12.190
+[S10] Yeah, exactly.
+
+189
+00:09:12.220 --> 00:09:16.830
+[S12] I feel like everybody here is like, yeah, very like creative and doing something innovative.
+
+190
+00:09:16.960 --> 00:09:20.389
+[S12] Um, and also I'd say free. I feel like everyone's just like free to be themselves.
+
+191
+00:09:20.409 --> 00:09:22.830
+[S12] They're not kind of like worried about what other people think, yeah.
+
+192
+00:09:22.860 --> 00:09:25.289
+[S10] Hmm, that's what I like about Bali too.
+
+193
+00:09:25.320 --> 00:09:28.190
+[S12] I can just shop and be, yeah, it's like no pressure.
+
+194
+00:09:28.220 --> 00:09:31.789
+[S10] There are a lot of people who wants to be digital nomads, right? Like, work whenever.
+
+195
+00:09:32.259 --> 00:09:32.559
+[S09] Yeah.
+
+196
+00:09:32.590 --> 00:09:33.190
+[S10] Wherever.
+
+197
+00:09:33.460 --> 00:09:39.120
+[S10] Uh, do you have any advice for people who are stuck in like their corporate job?
+
+198
+00:09:39.259 --> 00:09:41.389
+[S10] But wanting to have this kind of lifestyle?
+
+199
+00:09:41.519 --> 00:09:44.720
+[S09] I would say just either develop a skill or use a skill you have.
+
+200
+00:10:58.029 --> 00:11:02.240
+[S16] Tomorrow, some skills I just learn in three months, two months, one month.
+
+201
+00:11:02.259 --> 00:11:04.990
+[S16] And I can be paid like a lot just because of this.
+
+202
+00:11:05.019 --> 00:11:10.490
+[S16] You can learn copywriting, you can learn editing, you can learn everything.
+
+203
+00:11:10.509 --> 00:11:14.029
+[S17] Anything online nowadays and learn business models.
+
+204
+00:11:14.399 --> 00:11:14.940
+[S16] Exactly.
+
+205
+00:11:14.990 --> 00:11:17.389
+[S17] Yeah, yeah. Well, thank you so much.
+
+206
+00:11:17.409 --> 00:11:19.129
+[S17] So about this book that you wrote.
+
+207
+00:11:19.149 --> 00:11:19.440
+[S18] Yeah.
+
+208
+00:11:19.470 --> 00:11:20.899
+[S17] What are the dating advice?
+
+209
+00:11:20.950 --> 00:11:22.860
+[S18] I think there's two key ones for me.
+
+210
+00:11:22.889 --> 00:11:24.629
+[S18] So number one, be firm with your boundaries.
+
+211
+00:11:24.649 --> 00:11:26.830
+[S18] And if something bothers you, I wouldn't let it slide.
+
+212
+00:11:26.860 --> 00:11:31.860
+[S18] And then the second thing is also just not to get so hung up about the things that don't go well.
+
+213
+00:11:31.889 --> 00:11:35.490
+[S18] So if someone doesn't text you back or you thought it was gonna work out and it didn't.
+
+214
+00:11:35.509 --> 00:11:37.230
+[S18] Just try not to let it consume you.
+
+215
+00:11:37.259 --> 00:11:40.259
+[S18] You've got friends, you can go out, you can travel, you can do all these things.
+
+216
+00:11:40.559 --> 00:11:42.990
+[S18] I feel like romantic love is not a be all and end all.
+
+217
+00:11:43.090 --> 00:11:47.590
+[S18] And so if you think of it like that, then you don't put all your self-worth into having a partner.
+
+218
+00:11:47.620 --> 00:11:49.090
+[S17] How many men have you dated?
+
+219
+00:11:49.460 --> 00:11:50.629
+[S18] I'm looking for my husband.
+
+220
+00:11:51.129 --> 00:11:53.230
+[S18] So hopefully just one more when my husband comes along.
+
+221
+00:11:53.259 --> 00:11:53.990
+[S17] One last one.
+
+222
+00:11:54.429 --> 00:11:54.710
+[S18] Yeah.
+
+223
+00:11:55.710 --> 00:11:56.559
+[S17] Well, good luck.
+
+224
+00:11:56.590 --> 00:11:58.330
+[S18] Thank you very much. It's lovely to meet you.
+
+225
+00:11:58.360 --> 00:11:59.710
+[S17] It's lovely to meet you too.

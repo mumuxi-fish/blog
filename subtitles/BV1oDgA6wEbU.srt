@@ -1,0 +1,3167 @@
+1
+00:00:00.350 --> 00:00:04.809
+[S01] So we're gonna start that today by talking about something we've really ignored
+
+2
+00:00:04.839 --> 00:00:09.380
+[S01] in the course so far, which is uncertainty.
+
+3
+00:00:09.410 --> 00:00:14.939
+[S01] And how uncertainty affects your decision making.
+
+4
+00:00:14.970 --> 00:00:19.640
+[S01] So we've done so far in this class is we've sort of said, look, we've assumed whatever
+
+5
+00:00:19.670 --> 00:00:23.739
+[S01] you make decisions, you make them with full knowledge and full certainty.
+
+6
+00:00:23.769 --> 00:00:28.989
+[S01] But many, many decisions in life are made under conditions of uncertainty.
+
+7
+00:00:29.019 --> 00:00:33.679
+[S01] Okay, so consider your decision to study for the final in this class.
+
+8
+00:00:33.710 --> 00:00:39.020
+[S01] In our model so far, you could optimize your studying across different units of the class.
+
+9
+00:00:39.039 --> 00:00:42.979
+[S01] So our model so far, you'd know on the final which unit would be represented with what
+
+10
+00:00:43.009 --> 00:00:45.960
+[S01] proportion, and you'd optimize your studying appropriately.
+
+11
+00:00:45.990 --> 00:00:47.780
+[S01] But of course, you don't know that.
+
+12
+00:00:47.810 --> 00:00:51.259
+[S01] You face uncertainty about what will be covered in the final and what proportion.
+
+13
+00:00:51.289 --> 00:00:54.060
+[S01] You know, the whole course is, you're responsible for the whole class.
+
+14
+00:00:54.090 --> 00:00:57.780
+[S01] But obviously allocate your time, you're uncertain about how to allocate your time
+
+15
+00:00:57.810 --> 00:00:59.979
+[S01] across the different subjects on the test.
+
+16
+00:01:00.009 --> 00:01:02.219
+[S01] So how do you make that decision?
+
+17
+00:01:02.250 --> 00:01:07.840
+[S01] Nothing, we need to bring our tools to bear on thinking about these kinds of decision
+
+18
+00:01:07.870 --> 00:01:11.200
+[S01] making under uncertainty situations.
+
+19
+00:01:11.230 --> 00:01:15.730
+[S01] And this isn't just about the test, you know, I decide whether to bring my umbrella today.
+
+20
+00:01:15.769 --> 00:01:18.060
+[S01] Okay, if I bring my umbrella, there's a chance I'm gonna lose it, but I don't wanna get
+
+21
+00:01:18.090 --> 00:01:21.609
+[S01] wet, I have to think about whether it's gonna rain, it all depends on how certain I am it's
+
+22
+00:01:21.640 --> 00:01:23.099
+[S01] gonna rain, etc.
+
+23
+00:01:23.129 --> 00:01:28.280
+[S01] There's decisions about, you know, whether to bet on a sporting event.
+
+24
+00:01:28.310 --> 00:01:31.290
+[S01] That's decision uncertainty, and that's all the fun stuff in your life.
+
+25
+00:01:31.319 --> 00:01:33.750
+[S01] We get to the anxiety ridden adult life.
+
+26
+00:01:33.780 --> 00:01:38.209
+[S01] You've got things like whether to buy a seven year mortgage or a 30 year mortgage, whether
+
+27
+00:01:38.239 --> 00:01:41.609
+[S01] to buy health insurance, what school to put your kids in.
+
+28
+00:01:41.640 --> 00:01:45.060
+[S01] All these things involve a huge amount of uncertainty.
+
+29
+00:01:45.090 --> 00:01:48.810
+[S01] And we have not yet developed the tools to deal with this.
+
+30
+00:01:48.840 --> 00:01:56.489
+[S01] What's really cool is that economics has a very useful tool to think about exactly
+
+31
+00:01:56.519 --> 00:02:00.569
+[S01] these kinds of situations, that much like the other tools who dealt this semester,
+
+32
+00:02:00.599 --> 00:02:05.170
+[S01] is pretty easy once you understand it, but it's a huge amount of power for explaining
+
+33
+00:02:05.200 --> 00:02:06.170
+[S01] the world.
+
+34
+00:02:06.200 --> 00:02:14.659
+[S01] And that's the tool of expected utility theory.
+
+35
+00:02:14.689 --> 00:02:17.780
+[S01] And that's what we'll focus on today, that's what we'll learn today, the tool of expected
+
+36
+00:02:17.810 --> 00:02:19.469
+[S01] utility theory.
+
+37
+00:02:19.509 --> 00:02:23.310
+[S01] Okay, now, I'm gonna ask you a question, as always, I don't want you to try to outsmart
+
+38
+00:02:23.340 --> 00:02:25.780
+[S01] me, I just want a quick gut reaction.
+
+39
+00:02:25.810 --> 00:02:29.610
+[S01] Okay, I'm gonna offer you a bet, not really, but imagine I was.
+
+40
+00:02:29.629 --> 00:02:36.250
+[S01] I'm gonna flip a coin, heads you get 125 dollars, tails you give me 100 dollars.
+
+41
+00:02:36.280 --> 00:02:41.879
+[S01] So you win 125 versus lose 100, how many of you take that bet?
+
+42
+00:02:41.909 --> 00:02:46.060
+[S01] Okay, so, yeah, you're a slightly more aggressive class than usual, about 40% of
+
+43
+00:02:46.090 --> 00:02:49.120
+[S01] you taking the bet, usually I get more, about 20, 25%.
+
+44
+00:02:49.150 --> 00:02:52.689
+[S01] Okay, now, yeah?
+
+45
+00:02:52.719 --> 00:02:55.289
+[S01] Uh, no, it's a one time bet.
+
+46
+00:02:55.319 --> 00:03:00.530
+[S01] Okay, so basically, now, how do we think about this, whether it's a good idea or not?
+
+47
+00:03:00.560 --> 00:03:05.219
+[S01] Now, those who raised your hand probably quickly did the math and did in your head
+
+48
+00:03:05.250 --> 00:03:09.509
+[S01] what we call an expected value, expected value calculation.
+
+49
+00:03:09.539 --> 00:03:11.900
+[S01] What's the expected value of any gamble?
+
+50
+00:03:11.930 --> 00:03:20.719
+[S01] The expected value of any gamble is the probability that you win times what you win, plus the
+
+51
+00:03:20.750 --> 00:03:25.340
+[S01] probability that you lose times what you lose.
+
+52
+00:03:25.370 --> 00:03:28.719
+[S01] So you did that calculation in your head, you said, as long as he's not cheating using
+
+53
+00:03:28.750 --> 00:03:38.939
+[S01] a fair coin, there's a 0.5 times 125, plus 0.5 times minus 100.
+
+54
+00:03:38.969 --> 00:03:46.810
+[S01] Okay, and that is an expected value of 1250.
+
+55
+00:03:46.840 --> 00:03:50.120
+[S01] So those who raised your hand probably did that calculation quickly in your head and
+
+56
+00:03:50.150 --> 00:03:53.169
+[S01] said, yeah, this is a positive expected value.
+
+57
+00:03:53.199 --> 00:03:59.719
+[S01] This is what we call in economics, a more than fair bet.
+
+58
+00:03:59.750 --> 00:04:00.939
+[S01] More than fair.
+
+59
+00:04:00.969 --> 00:04:05.289
+[S01] A fair bet is one with an expected value of zero.
+
+60
+00:04:05.319 --> 00:04:08.250
+[S01] So a fair bet is one that the expected value is zero.
+
+61
+00:04:08.280 --> 00:04:12.310
+[S01] So a bet with a positive expected value is more than fair.
+
+62
+00:04:12.340 --> 00:04:17.250
+[S01] And you in your head said, I did that through, it's more than fair.
+
+63
+00:04:17.269 --> 00:04:21.120
+[S01] And that's why some of you raised your hands, but many of you didn't.
+
+64
+00:04:21.139 --> 00:04:23.019
+[S01] And that doesn't mean you were wrong.
+
+65
+00:04:23.040 --> 00:04:26.199
+[S01] It just means this is not the right way to think about it.
+
+66
+00:04:26.220 --> 00:04:30.769
+[S01] Okay, the right way to think about it is that what you care about is not dollars.
+
+67
+00:04:30.800 --> 00:04:33.180
+[S01] What you care about is utility.
+
+68
+00:04:33.199 --> 00:04:34.910
+[S01] Dollars are meaningless.
+
+69
+00:04:34.939 --> 00:04:38.139
+[S01] What you care about as a consumer is your utility.
+
+70
+00:04:38.170 --> 00:04:41.889
+[S01] And so we don't wanna think about expected value.
+
+71
+00:04:41.920 --> 00:04:45.139
+[S01] We wanna think about expected utility.
+
+72
+00:04:45.170 --> 00:04:46.680
+[S01] Now, what is expected utility?
+
+73
+00:04:46.699 --> 00:04:50.769
+[S01] It's the same kind of formula as this, but with one change.
+
+74
+00:04:50.800 --> 00:04:57.389
+[S01] Expected utility is the probability that you win times your utility if you win.
+
+75
+00:04:58.970 --> 00:05:01.610
+[S02] Plus the probability that you lose
+
+76
+00:05:03.319 --> 00:05:05.209
+[S02] times your utility if you lose.
+
+77
+00:05:07.819 --> 00:05:10.310
+[S02] And that is somewhat different than expected value.
+
+78
+00:05:11.240 --> 00:05:16.370
+[S02] And the reason is because utility is not a linear weighting of dollars.
+
+79
+00:05:17.089 --> 00:05:19.519
+[S02] Utility is a concave weighting of dollars.
+
+80
+00:05:20.720 --> 00:05:24.800
+[S02] Okay, as such, because utility is a concave weighting of dollars,
+
+81
+00:05:25.160 --> 00:05:29.509
+[S02] it exhibits diminishing marginal rate of, uh, diminishing marginal utility,
+
+82
+00:05:29.509 --> 00:05:31.279
+[S02] diminishing marginal rate of substitution.
+
+83
+00:05:32.120 --> 00:05:36.620
+[S02] Diminishing marginal rate of substitution, as we talked about ad nauseam in consumer theory.
+
+84
+00:05:37.759 --> 00:05:38.329
+[S02] Okay.
+
+85
+00:05:39.529 --> 00:05:45.379
+[S02] That means that the next dollar is worth less to you than the previous dollar.
+
+86
+00:05:46.699 --> 00:05:50.180
+[S02] Okay, the next dollar is worth, just think of diminishing utility.
+
+87
+00:05:50.329 --> 00:05:52.939
+[S02] The next slice of pizza is worth less to you than the previous slice of pizza.
+
+88
+00:05:53.209 --> 00:05:56.420
+[S02] Likewise, the next dollar is worth less to you than the previous dollar.
+
+89
+00:05:57.230 --> 00:06:03.410
+[S02] As a result, losing a dollar makes you sadder than winning a dollar makes you happy.
+
+90
+00:06:04.069 --> 00:06:08.209
+[S02] There's a non-linearity that comes from diminishing marginal utility,
+
+91
+00:06:08.209 --> 00:06:09.800
+[S02] diminishing marginal rate of substitution.
+
+92
+00:06:10.819 --> 00:06:13.910
+[S02] So for example, let's think about our typical utility function
+
+93
+00:06:13.910 --> 00:06:15.709
+[S02] that we used previously to consumer theory.
+
+94
+00:06:16.160 --> 00:06:18.319
+[S02] Utility equals the square root of consumption.
+
+95
+00:06:18.889 --> 00:06:21.290
+[S02] And let's just say you consume all your income, as we always did.
+
+96
+00:06:21.410 --> 00:06:23.389
+[S02] We've talked about savings the last couple lectures.
+
+97
+00:06:23.509 --> 00:06:26.660
+[S02] Let's put savings aside again and just assume people consume all their income.
+
+98
+00:06:27.319 --> 00:06:29.899
+[S02] Okay, and so utility is the square root of consumption.
+
+99
+00:06:30.290 --> 00:06:36.649
+[S02] Okay, and let's say you start, your initial consumption, C zero, is a hundred.
+
+100
+00:06:37.069 --> 00:06:39.560
+[S02] You start with a hundred dollars of consumption.
+
+101
+00:06:40.310 --> 00:06:43.069
+[S02] Okay, okay, your C zero is a hundred.
+
+102
+00:06:43.459 --> 00:06:47.329
+[S02] So your initial utility, U zero, is 10.
+
+103
+00:06:49.639 --> 00:06:52.850
+[S02] Now, I give you, I offer you this bet.
+
+104
+00:06:53.329 --> 00:06:55.279
+[S02] What's the expected utility of this bet?
+
+105
+00:06:55.550 --> 00:06:59.420
+[S02] Well, the expected utility of this bet is the probability you win,
+
+106
+00:06:59.750 --> 00:07:02.480
+[S02] 0.5 times utility if you win.
+
+107
+00:07:03.259 --> 00:07:06.949
+[S02] Well, utility if you win is the square root of your consumption if you win.
+
+108
+00:07:07.519 --> 00:07:09.139
+[S02] What is your consumption if you win?
+
+109
+00:07:11.449 --> 00:07:13.209
+[S02] If you win the bet, what is your consumption?
+
+110
+00:07:14.600 --> 00:07:15.620
+[S02] So raise your hand and tell me.
+
+111
+00:07:17.269 --> 00:07:20.209
+[S02] Starting with a hundred, and I made this bet with you, yeah?
+
+112
+00:07:20.300 --> 00:07:20.899
+[S03] Two twenty-five.
+
+113
+00:07:20.930 --> 00:07:21.740
+[S02] Two twenty-five.
+
+114
+00:07:22.370 --> 00:07:24.459
+[S02] You started with a hundred and you won one twenty-five.
+
+115
+00:07:25.149 --> 00:07:26.600
+[S02] If you lose the bet,
+
+116
+00:07:28.209 --> 00:07:28.959
+[S02] what do you have?
+
+117
+00:07:33.199 --> 00:07:34.339
+[S02] What do you have if you lose the bet?
+
+118
+00:07:35.680 --> 00:07:37.370
+[S02] Zero, okay?
+
+119
+00:07:38.029 --> 00:07:43.370
+[S02] So your expected utility is 0.5 times this utility of what you get if you win,
+
+120
+00:07:44.509 --> 00:07:47.360
+[S02] plus 0.5 times utility what if you lose.
+
+121
+00:07:47.990 --> 00:07:49.250
+[S02] Now, if you do that math,
+
+122
+00:07:50.029 --> 00:07:53.930
+[S02] you will find that that is 7.5.
+
+123
+00:07:55.220 --> 00:07:58.069
+[S02] Your expected utility of this bet is 7.5,
+
+124
+00:07:58.970 --> 00:08:01.819
+[S02] which is less than your initial utility.
+
+125
+00:08:02.720 --> 00:08:04.160
+[S02] So you should not take the bet,
+
+126
+00:08:05.660 --> 00:08:09.110
+[S02] which is through the mechanism of psychology, why many of you didn't.
+
+127
+00:08:10.699 --> 00:08:12.410
+[S02] Okay, you should not take the bet.
+
+128
+00:08:13.040 --> 00:08:19.220
+[S02] Okay, and the reason is because you are what we call risk,
+
+129
+00:08:19.310 --> 00:08:22.339
+[S02] and humans are what we call risk averse.
+
+130
+00:08:24.709 --> 00:08:30.050
+[S02] That we, that risk is inherently negative value to us.
+
+131
+00:08:30.379 --> 00:08:35.059
+[S02] That a do, a certain dollar is worth much more to us than an uncertain dollar.
+
+132
+00:08:35.750 --> 00:08:38.210
+[S02] Just like a dollar today is worth more than a dollar tomorrow.
+
+133
+00:08:38.690 --> 00:08:41.360
+[S02] A certain dollar is worth much more than an uncertain dollar.
+
+134
+00:08:42.500 --> 00:08:45.830
+[S02] To see why, the best way to do this intuition here is graphical.
+
+135
+00:08:46.159 --> 00:08:47.840
+[S02] So let's go to figure 20 dash 1,
+
+136
+00:08:48.320 --> 00:08:50.090
+[S02] and just sort of slowly walk through this.
+
+137
+00:08:50.450 --> 00:08:51.470
+[S02] It's a little confusing graph.
+
+138
+00:08:51.980 --> 00:08:55.639
+[S02] On the x-axis is your wealth, your total consumption or money you have.
+
+139
+00:08:55.669 --> 00:08:56.809
+[S02] You consume everything you have.
+
+140
+00:08:57.169 --> 00:08:58.820
+[S02] So it's wealth or alternatively consumption.
+
+141
+00:08:59.929 --> 00:09:02.750
+[S02] On the y-axis of figure 20 dash 1 is your utility.
+
+142
+00:09:04.100 --> 00:09:06.740
+[S02] It's a graph of how much you consume against your utility.
+
+143
+00:09:07.370 --> 00:09:10.789
+[S02] And as you can see, this is a concave graph.
+
+144
+00:09:10.820 --> 00:09:14.360
+[S02] It is, it's exhibiting diminishing marginal utility.
+
+145
+00:09:15.129 --> 00:09:19.570
+[S02] Okay, each dollar, each dollar of wealth adds utility,
+
+146
+00:09:19.730 --> 00:09:21.379
+[S02] but less and less over time.
+
+147
+00:09:21.799 --> 00:09:25.490
+[S02] Just like each slice of pizza makes you happier, but less and less over time.
+
+148
+00:09:26.720 --> 00:09:30.009
+[S02] Okay, you get that, so the shape of this curve
+
+149
+00:09:30.759 --> 00:09:35.120
+[S02] is true for any utility function that features diminishing marginal utility.
+
+150
+00:09:35.120 --> 00:09:37.399
+[S02] That's pretty much any utility function we have used this semester,
+
+151
+00:09:37.789 --> 00:09:38.899
+[S02] except we're trying to trick you.
+
+152
+00:09:39.320 --> 00:09:41.539
+[S02] Okay, has diminishing marginal utility.
+
+153
+00:09:42.110 --> 00:09:44.059
+[S02] So as a result, it has this shape.
+
+154
+00:09:45.259 --> 00:09:48.759
+[S02] Okay, now, with the utility function of this shape,
+
+155
+00:09:49.820 --> 00:09:52.879
+[S02] let's evaluate the gamble I just gave you.
+
+156
+00:09:54.129 --> 00:09:57.679
+[S02] You start with wealth of a hundred.
+
+157
+00:09:57.940 --> 00:10:00.129
+[S02] So you see in the x-axis, the hundred point.
+
+158
+00:10:00.950 --> 00:10:05.210
+[S04] That corresponds to utility of 10, right?
+
+159
+00:10:05.240 --> 00:10:08.840
+[S04] So you can trace up that 100 to utility curve,
+
+160
+00:10:08.870 --> 00:10:11.149
+[S04] and then you go over to the y-axis.
+
+161
+00:10:11.179 --> 00:10:13.820
+[S04] So that corresponds to utility of 10, okay?
+
+162
+00:10:13.850 --> 00:10:17.539
+[S04] Now, think about what the gamble does.
+
+163
+00:10:17.570 --> 00:10:19.370
+[S04] What the gamble does is say, look,
+
+164
+00:10:19.399 --> 00:10:22.429
+[S04] there's two possible outcomes with 50% chance each.
+
+165
+00:10:22.460 --> 00:10:25.370
+[S04] One is wealth of 225.
+
+166
+00:10:25.399 --> 00:10:27.830
+[S04] That is the point all the way to the right.
+
+167
+00:10:27.860 --> 00:10:30.799
+[S04] That leaves utility of 15.
+
+168
+00:10:30.830 --> 00:10:32.929
+[S04] The other is wealth of 0.
+
+169
+00:10:32.960 --> 00:10:35.240
+[S04] That's the point all the way to the left.
+
+170
+00:10:35.269 --> 00:10:38.330
+[S04] That leaves utility of 0.
+
+171
+00:10:38.360 --> 00:10:39.860
+[S04] What is the average of those two?
+
+172
+00:10:39.889 --> 00:10:42.230
+[S04] Well, it's just a linear combination, right?
+
+173
+00:10:42.259 --> 00:10:44.029
+[S04] It's a 50% chance of each.
+
+174
+00:10:44.059 --> 00:10:46.669
+[S04] So the average of those two
+
+175
+00:10:46.700 --> 00:10:50.059
+[S04] is a wealth of 112.5,
+
+176
+00:10:50.090 --> 00:10:53.120
+[S04] but an expected utility of 7.5.
+
+177
+00:10:53.149 --> 00:10:56.539
+[S04] So you draw a chord between those two points,
+
+178
+00:10:56.570 --> 00:10:58.879
+[S04] between the 0 point and point B.
+
+179
+00:10:58.909 --> 00:11:01.070
+[S04] You find the midpoint of that chord.
+
+180
+00:11:01.100 --> 00:11:02.840
+[S04] That's wealth of 112.5.
+
+181
+00:11:02.870 --> 00:11:06.230
+[S04] But then you trace that over to utility function.
+
+182
+00:11:06.259 --> 00:11:11.840
+[S04] And you see the expected utility is only 7.5.
+
+183
+00:11:11.870 --> 00:11:15.919
+[S04] And that's because we're not using a linear combination.
+
+184
+00:11:15.950 --> 00:11:17.929
+[S04] We're using a nonlinear combination,
+
+185
+00:11:17.950 --> 00:11:20.179
+[S04] a nonlinear concave combination,
+
+186
+00:11:20.200 --> 00:11:23.240
+[S04] which means that moving up in terms of wealth
+
+187
+00:11:23.269 --> 00:11:24.769
+[S04] makes you less happy
+
+188
+00:11:24.799 --> 00:11:26.990
+[S04] than moving down in terms of wealth makes you sad.
+
+189
+00:11:27.019 --> 00:11:29.600
+[S04] And you're really sad at 0.
+
+190
+00:11:29.629 --> 00:11:33.529
+[S04] So it's going from 100 down to 0 makes you way sadder.
+
+191
+00:11:33.559 --> 00:11:37.129
+[S04] The go from 100 up to 225 makes you happier.
+
+192
+00:11:37.159 --> 00:11:40.669
+[S04] And that's all because diminishing marginal utility of income.
+
+193
+00:11:40.700 --> 00:11:44.750
+[S04] So it's natural that this gamble would make you worse off,
+
+194
+00:11:44.779 --> 00:11:47.480
+[S04] even though it's more than fair.
+
+195
+00:11:47.509 --> 00:11:49.549
+[S04] Because yeah, you're somewhat happier if you win.
+
+196
+00:11:49.580 --> 00:11:52.789
+[S04] If you win, utility goes up from 10 to 15.
+
+197
+00:11:52.820 --> 00:11:54.259
+[S04] That's great.
+
+198
+00:11:54.289 --> 00:11:56.629
+[S04] But if you lose, utility goes down from 10 to 0.
+
+199
+00:11:56.659 --> 00:11:58.370
+[S04] That's really bad.
+
+200
+00:11:58.399 --> 00:12:01.789
+[S04] So you don't want to take this risk, okay?
+
+201
+00:12:01.820 --> 00:12:04.070
+[S04] Which is why, although you may not realize it,
+
+202
+00:12:04.100 --> 00:12:08.149
+[S04] many of you wouldn't want to take that gamble.
+
+203
+00:12:08.179 --> 00:12:10.159
+[S04] So using this graph, we can ask, okay,
+
+204
+00:12:10.190 --> 00:12:12.049
+[S04] there are questions about that?
+
+205
+00:12:12.080 --> 00:12:12.620
+[S04] Yeah?
+
+206
+00:12:12.649 --> 00:12:16.659
+[S05] Do we take the bet if our unitarity outweighs our loss's utility?
+
+207
+00:12:16.690 --> 00:12:20.379
+[S05] Or will we not take the bet if our utility is lower?
+
+208
+00:12:20.409 --> 00:12:23.960
+[S04] Well, you've answered, it's the same.
+
+209
+00:12:23.990 --> 00:12:25.370
+[S04] The answers to those two questions are the same.
+
+210
+00:12:25.399 --> 00:12:26.779
+[S04] It just depends on the probabilities.
+
+211
+00:12:26.809 --> 00:12:28.940
+[S04] If the probabilities are 0.5 each,
+
+212
+00:12:28.970 --> 00:12:31.460
+[S04] then those two answers, two questions are exactly the same.
+
+213
+00:12:31.490 --> 00:12:34.279
+[S04] Because 0.5 each would be gain outweighing,
+
+214
+00:12:34.309 --> 00:12:36.379
+[S04] loss is the same as on net positive.
+
+215
+00:12:36.409 --> 00:12:37.639
+[S04] But if the probabilities aren't 0.5,
+
+216
+00:12:37.669 --> 00:12:39.409
+[S04] you want to use this equation.
+
+217
+00:12:39.440 --> 00:12:40.580
+[S04] So you basically want to say,
+
+218
+00:12:40.610 --> 00:12:44.120
+[S04] it's about the weighted average change in utility essentially,
+
+219
+00:12:44.149 --> 00:12:47.419
+[S04] where the weights are these probabilities.
+
+220
+00:12:47.450 --> 00:12:48.080
+[S04] Yeah?
+
+221
+00:12:48.110 --> 00:12:50.779
+[S06] Is there any utility calculation in actually gambling?
+
+222
+00:12:50.809 --> 00:12:52.610
+[S06] Like, could someone dislike gambling?
+
+223
+00:12:52.639 --> 00:12:54.080
+[S04] Hold on, I'm going to come to that.
+
+224
+00:12:54.110 --> 00:12:54.950
+[S04] We're going to come back to gambling.
+
+225
+00:12:54.980 --> 00:12:57.379
+[S04] We'll talk all about the lottery at the end, okay?
+
+226
+00:12:57.409 --> 00:13:01.879
+[S04] So, okay, but do people understand the basics of this graph?
+
+227
+00:13:01.909 --> 00:13:06.379
+[S04] Okay, so, using this graph, tell me the following.
+
+228
+00:13:06.409 --> 00:13:09.080
+[S04] How much?
+
+229
+00:13:09.110 --> 00:13:16.759
+[S04] Answer the following, it's a following question, okay?
+
+230
+00:13:16.789 --> 00:13:20.029
+[S04] How much, let's say, this is a hard question.
+
+231
+00:13:20.059 --> 00:13:21.320
+[S04] See if you can get this.
+
+232
+00:13:21.350 --> 00:13:23.210
+[S04] Let's say that I said, you know what, class?
+
+233
+00:13:23.240 --> 00:13:25.519
+[S04] I'm going to force you to take this gamble.
+
+234
+00:13:25.549 --> 00:13:26.840
+[S04] I'm going to come in here and I'm going to tell you,
+
+235
+00:13:26.870 --> 00:13:28.220
+[S04] I'm locking the door.
+
+236
+00:13:28.250 --> 00:13:31.669
+[S04] You're not leaving without taking this gamble
+
+237
+00:13:31.700 --> 00:13:35.690
+[S04] unless you pay me not to force you.
+
+238
+00:13:35.720 --> 00:13:39.169
+[S04] So I'm going to offer you a more than fair bet.
+
+239
+00:13:39.200 --> 00:13:42.320
+[S04] Would you be willing to pay me to get out of that bet?
+
+240
+00:13:42.350 --> 00:13:44.960
+[S04] And how much would you be willing to pay me?
+
+241
+00:13:44.990 --> 00:13:45.409
+[S04] Yeah?
+
+242
+00:13:45.440 --> 00:13:49.700
+[S07] If you're willing to pay you up to $2.50?
+
+243
+00:13:49.730 --> 00:13:51.950
+[S04] Up to $2.50?
+
+244
+00:13:51.980 --> 00:13:55.370
+[S07] Your end unitarity, expected end unitarity.
+
+245
+00:13:55.399 --> 00:13:59.480
+[S04] $2.50? I don't understand.
+
+246
+00:15:01.879 --> 00:15:07.220
+[S08] And you will pay me almost half of your entire wealth to avoid taking that bet.
+
+247
+00:15:08.360 --> 00:15:10.909
+[S08] And that's only with our standard utility function we always use.
+
+248
+00:15:12.259 --> 00:15:13.309
+[S08] That's risk aversion.
+
+249
+00:15:13.519 --> 00:15:16.250
+[S08] And the reason is because zero sucks so badly.
+
+250
+00:15:17.360 --> 00:15:17.809
+[S08] Okay?
+
+251
+00:15:18.019 --> 00:15:20.379
+[S08] The reason is because you're so sad going to zero
+
+252
+00:15:21.080 --> 00:15:23.360
+[S08] that you really don't want to be in that situation.
+
+253
+00:15:24.200 --> 00:15:27.710
+[S08] And so you will actually pay me forty-three seventy-five
+
+254
+00:15:28.250 --> 00:15:30.529
+[S08] to avoid a more than fair bet.
+
+255
+00:15:30.710 --> 00:15:31.549
+[S08] That's what's crazy.
+
+256
+00:15:32.450 --> 00:15:32.960
+[S08] Okay?
+
+257
+00:15:33.710 --> 00:15:36.350
+[S08] So another way to see this, let me ask you another question.
+
+258
+00:15:37.389 --> 00:15:41.240
+[S08] How large, let's say after you the same bet, flip a coin,
+
+259
+00:15:42.259 --> 00:15:45.230
+[S08] tails you lose a hundred, heads you win X.
+
+260
+00:15:46.009 --> 00:15:48.409
+[S08] How large would X have to be for you to take the bet?
+
+261
+00:15:50.750 --> 00:15:53.360
+[S08] Tails you lose a hundred, heads you win X.
+
+262
+00:15:53.570 --> 00:15:53.929
+[S08] Yeah?
+
+263
+00:15:54.049 --> 00:15:54.860
+[S09] Three hundred dollars?
+
+264
+00:15:54.889 --> 00:15:55.610
+[S08] Three hundred, why?
+
+265
+00:15:56.149 --> 00:15:58.159
+[S09] Because then your expected utility is ten.
+
+266
+00:15:58.460 --> 00:15:59.330
+[S08] Right, exactly.
+
+267
+00:15:59.509 --> 00:16:03.080
+[S08] If it's three hundred, then I'm doing the square root of four hundred,
+
+268
+00:16:03.470 --> 00:16:05.509
+[S08] which is twenty, and the square root of zero.
+
+269
+00:16:05.539 --> 00:16:08.750
+[S08] You average those and you're going to get expect utility of ten.
+
+270
+00:16:09.649 --> 00:16:12.169
+[S08] So for you to take that bet, I would have to say
+
+271
+00:16:12.620 --> 00:16:15.019
+[S08] tails you lose a hundred, heads you win three hundred.
+
+272
+00:16:15.889 --> 00:16:18.320
+[S08] I'd need to give you like a monstrously more than fair bet.
+
+273
+00:16:19.460 --> 00:16:21.220
+[S08] And that is due to
+
+274
+00:16:21.889 --> 00:16:23.480
+[S08] the principle of risk aversion.
+
+275
+00:16:24.379 --> 00:16:26.899
+[S08] That basically because of diminishing margin utility,
+
+276
+00:16:27.019 --> 00:16:29.509
+[S08] risk aversion is something like made up, it's not some crazy concept.
+
+277
+00:16:29.659 --> 00:16:32.330
+[S08] It just falls naturally out of diminishing margin utility.
+
+278
+00:16:33.320 --> 00:16:35.149
+[S08] Because making you sad,
+
+279
+00:16:36.110 --> 00:16:39.950
+[S08] because losing, because moving down makes you sad, or the moving up makes you happier.
+
+280
+00:16:41.029 --> 00:16:41.480
+[S08] Okay?
+
+281
+00:16:41.840 --> 00:16:42.740
+[S08] Any questions about that?
+
+282
+00:16:42.919 --> 00:16:43.250
+[S08] Yeah?
+
+283
+00:16:43.940 --> 00:16:47.960
+[S10] Uh, I guess next question is then like, isn't this kind of more depend on utility?
+
+284
+00:16:47.990 --> 00:16:48.620
+[S10] Because I know like
+
+285
+00:16:48.710 --> 00:16:50.750
+[S08] Right, okay, stop there, let's go to the next section.
+
+286
+00:16:50.779 --> 00:16:52.039
+[S08] You guys are way ahead of me as always.
+
+287
+00:16:52.340 --> 00:16:54.200
+[S08] Let's go, let's talk about a couple of extensions.
+
+288
+00:16:59.659 --> 00:17:01.039
+[S08] Let's talk about a couple of extensions.
+
+289
+00:17:01.610 --> 00:17:02.570
+[S08] First extension,
+
+290
+00:17:03.350 --> 00:17:04.579
+[S08] change utility function.
+
+291
+00:17:05.269 --> 00:17:05.720
+[S08] Okay?
+
+292
+00:17:05.900 --> 00:17:11.450
+[S08] Suppose your utility function was of the form U equals zero point one times C.
+
+293
+00:17:12.980 --> 00:17:16.099
+[S08] Now I've chosen this particular form because the initial conditions are the same.
+
+294
+00:17:16.400 --> 00:17:17.960
+[S08] With C zero of a hundred,
+
+295
+00:17:18.529 --> 00:17:19.849
+[S08] U zero is still ten.
+
+296
+00:17:20.450 --> 00:17:22.670
+[S08] So I'm starting from the same point as I was before.
+
+297
+00:17:24.460 --> 00:17:25.430
+[S08] But now,
+
+298
+00:17:26.269 --> 00:17:27.619
+[S08] would you take the bet and why?
+
+299
+00:17:30.559 --> 00:17:33.710
+[S08] If that's utility function, would you take the bet and why?
+
+300
+00:17:35.809 --> 00:17:36.559
+[S08] Just do the math.
+
+301
+00:17:38.240 --> 00:17:38.809
+[S08] Do the math.
+
+302
+00:17:39.259 --> 00:17:41.059
+[S08] What's your expected utility of that bet?
+
+303
+00:17:41.359 --> 00:17:46.730
+[S08] Your expected utility is zero point five times your utility of two twenty-five.
+
+304
+00:17:47.089 --> 00:17:50.150
+[S08] So it's times point one times two twenty-five
+
+305
+00:17:52.130 --> 00:17:56.240
+[S08] plus zero point five times your utility of zero.
+
+306
+00:17:56.420 --> 00:17:58.460
+[S08] So it's zero point one times zero.
+
+307
+00:17:59.720 --> 00:18:00.230
+[S08] Okay?
+
+308
+00:18:01.430 --> 00:18:05.930
+[S08] And if you write that out and solve it, you get eleven point two five,
+
+309
+00:18:07.250 --> 00:18:08.359
+[S08] which is greater than ten.
+
+310
+00:18:09.049 --> 00:18:10.309
+[S08] So you would take the bet.
+
+311
+00:18:11.420 --> 00:18:13.069
+[S08] Does anyone, any question about the math?
+
+312
+00:18:14.450 --> 00:18:16.519
+[S08] I just did the expect utility evaluation.
+
+313
+00:18:17.329 --> 00:18:18.500
+[S08] So you would take the bet.
+
+314
+00:18:19.160 --> 00:18:20.119
+[S08] What's the difference?
+
+315
+00:18:20.329 --> 00:18:21.500
+[S08] Why do you take the bet here?
+
+316
+00:18:23.329 --> 00:18:23.599
+[S08] Yeah?
+
+317
+00:18:24.319 --> 00:18:25.369
+[S08] Yeah, let me get, yeah, go ahead.
+
+318
+00:18:25.609 --> 00:18:28.130
+[S10] This is a linear utility function, so.
+
+319
+00:18:29.150 --> 00:18:32.960
+[S08] If your linear utility function, what you care about is expected value.
+
+320
+00:18:33.500 --> 00:18:34.609
+[S08] So you can see that,
+
+321
+00:18:35.299 --> 00:18:38.000
+[S08] do I have that, yeah, in figure twenty-two.
+
+322
+00:18:38.839 --> 00:18:42.019
+[S08] This is the case we call risk neutrality.
+
+323
+00:18:42.799 --> 00:18:45.769
+[S08] With a linear utility function, you're risk neutral.
+
+324
+00:18:45.920 --> 00:18:49.819
+[S08] Because the linear utility function does not have what?
+
+325
+00:18:51.920 --> 00:18:53.690
+[S08] Does not have diminishing margin utility.
+
+326
+00:18:54.380 --> 00:18:58.009
+[S08] As a result, you're, you're just, you just care about expected value.
+
+327
+00:18:58.759 --> 00:19:01.519
+[S08] Okay, there's, there's no difference in expected value and expect utility.
+
+328
+00:19:01.970 --> 00:19:04.759
+[S08] It's all just, now, the number's a little bit different because of the functional form,
+
+329
+00:19:05.029 --> 00:19:06.170
+[S08] but it gives the same outcome.
+
+330
+00:19:06.200 --> 00:19:07.609
+[S08] You'll always take a more than fair bet.
+
+331
+00:19:08.210 --> 00:19:09.529
+[S08] And you reject a less than fair bet.
+
+332
+00:19:10.250 --> 00:19:14.869
+[S08] So as people become, move from risk averse to risk neutral,
+
+333
+00:19:15.529 --> 00:19:18.680
+[S08] or as utility features less and less diminishing margin utility,
+
+334
+00:19:19.009 --> 00:19:20.869
+[S08] they'll be more and more willing to take gambles.
+
+335
+00:19:22.309 --> 00:19:24.289
+[S08] But it doesn't have to stop there, we can go further.
+
+336
+00:20:06.109 --> 00:20:11.269
+[S11] Okay, and the expected utility in that case is 25.3.
+
+337
+00:20:11.299 --> 00:20:16.549
+[S11] The expected utility equals 25.3, which is way bigger than 10.
+
+338
+00:20:16.579 --> 00:20:18.279
+[S11] So you take this gamble.
+
+339
+00:20:18.309 --> 00:20:19.119
+[S11] Why?
+
+340
+00:20:19.150 --> 00:20:21.660
+[S11] Because now you're risk-loving.
+
+341
+00:20:21.690 --> 00:20:26.450
+[S11] Because what does this say about diminishing marginal utility of income?
+
+342
+00:20:26.480 --> 00:20:30.000
+[S11] This actually says you have increasing marginal utility of consumption.
+
+343
+00:20:30.029 --> 00:20:34.970
+[S11] A utility function like this says the next slice of pizza makes you even happier than the previous slice of pizza.
+
+344
+00:20:35.000 --> 00:20:37.250
+[S11] So look at figure 20-3.
+
+345
+00:20:37.279 --> 00:20:39.970
+[S11] This is the risk-loving case.
+
+346
+00:20:40.000 --> 00:20:44.039
+[S11] Where you actually have increasing marginal utility of consumption.
+
+347
+00:20:44.069 --> 00:20:46.730
+[S11] Okay, we don't really talk about this case because it sort of doesn't make sense.
+
+348
+00:20:46.759 --> 00:20:49.369
+[S11] But just to understand how this works.
+
+349
+00:20:49.400 --> 00:20:50.289
+[S11] Okay?
+
+350
+00:20:50.319 --> 00:20:55.250
+[S11] Same calculations before, you start at a point like A.
+
+351
+00:20:55.279 --> 00:20:57.490
+[S11] If you win, you go to B.
+
+352
+00:20:57.519 --> 00:20:59.279
+[S11] If you lose, you go to 0.
+
+353
+00:20:59.309 --> 00:21:05.809
+[S11] Well, this shape utility function, going to B makes you way happier than going to 0 makes you sad.
+
+354
+00:21:05.839 --> 00:21:08.130
+[S11] So you love the gamble.
+
+355
+00:21:08.160 --> 00:21:08.970
+[S11] Okay?
+
+356
+00:21:08.990 --> 00:21:15.109
+[S11] In fact, you, with this utility function, you would take an unfair bet.
+
+357
+00:21:15.150 --> 00:21:15.809
+[S11] Okay?
+
+358
+00:21:15.839 --> 00:21:24.609
+[S11] So for example, imagine I change the gamble to one where it's win 100, I'm sorry, win 75, lose 100.
+
+359
+00:21:24.630 --> 00:21:28.490
+[S11] So I changed the gamble now, win 75, lose 100, I made it an unfair bet.
+
+360
+00:21:28.519 --> 00:21:30.809
+[S11] The expected value is negative.
+
+361
+00:21:30.839 --> 00:21:31.490
+[S11] Okay?
+
+362
+00:21:31.519 --> 00:21:34.490
+[S11] Well, this person will still take that bet.
+
+363
+00:21:34.519 --> 00:21:39.089
+[S11] If you do the math, if they win 75, they get 175.
+
+364
+00:21:39.119 --> 00:21:43.329
+[S11] You do, just replace this with 175.
+
+365
+00:21:43.359 --> 00:21:44.930
+[S11] And you do the math.
+
+366
+00:21:44.960 --> 00:21:45.730
+[S11] Okay?
+
+367
+00:21:45.759 --> 00:21:53.970
+[S11] You're going to find that the expected utility in that case is 15.3.
+
+368
+00:21:54.000 --> 00:21:56.609
+[S11] Which is greater than 10.
+
+369
+00:21:56.640 --> 00:22:06.970
+[S11] So even an unfair bet, lose 100, win 75, will still leave these risk-loving people better off than if they hadn't taken a bet.
+
+370
+00:22:07.000 --> 00:22:08.279
+[S11] Yeah?
+
+371
+00:22:08.309 --> 00:22:15.809
+[S12] So when we're doing the losses, when we set that to 0, we're assuming that they're starting off with the amount that they could possibly lose, correct?
+
+372
+00:22:15.839 --> 00:22:18.250
+[S11] Oh, that's it, okay, great, I'm going to come to that next.
+
+373
+00:22:18.279 --> 00:22:21.970
+[S11] That's in these examples, but you've called me on an important assumption I'm making.
+
+374
+00:22:22.000 --> 00:22:22.450
+[S11] Okay?
+
+375
+00:22:22.480 --> 00:22:23.490
+[S11] These examples I have.
+
+376
+00:22:23.519 --> 00:22:25.450
+[S11] Let's make sure we understand risk-neutral, risk-loving.
+
+377
+00:22:25.480 --> 00:22:27.529
+[S11] Do people understand that?
+
+378
+00:22:27.559 --> 00:22:28.250
+[S11] Okay?
+
+379
+00:22:28.279 --> 00:22:33.769
+[S11] So now, let's, um, now you actually have raised another issue.
+
+380
+00:22:33.799 --> 00:22:34.809
+[S11] Let me ask a new question.
+
+381
+00:22:34.839 --> 00:22:37.250
+[S11] Once again, forget everything you've learned.
+
+382
+00:22:37.279 --> 00:22:38.250
+[S11] Gut instincts.
+
+383
+00:22:38.279 --> 00:22:39.529
+[S11] Here's the bet I'm offering you.
+
+384
+00:22:39.559 --> 00:22:40.839
+[S11] Flip a coin.
+
+385
+00:22:40.869 --> 00:22:43.250
+[S11] Heads, you win 1250.
+
+386
+00:22:43.279 --> 00:22:44.839
+[S11] Tails, you lose 10 dollars.
+
+387
+00:22:44.869 --> 00:22:46.559
+[S11] Who takes that bet?
+
+388
+00:22:46.589 --> 00:22:49.490
+[S11] Raise your hands if you take that bet.
+
+389
+00:22:49.519 --> 00:22:50.809
+[S11] Okay, that's backwards.
+
+390
+00:22:50.839 --> 00:22:53.609
+[S11] More of you should take that bet, not less of you.
+
+391
+00:22:53.640 --> 00:22:54.130
+[S11] Okay?
+
+392
+00:22:54.160 --> 00:22:55.410
+[S11] And why is that?
+
+393
+00:22:55.440 --> 00:22:58.289
+[S11] Because of exactly what you just pointed out.
+
+394
+00:22:58.319 --> 00:23:03.690
+[S11] It's because, basically, if you think about that, um, think about that bet.
+
+395
+00:23:03.720 --> 00:23:06.690
+[S11] Think about, let's go back to our old utility function.
+
+396
+00:23:06.720 --> 00:23:08.609
+[S11] U equals square root of C.
+
+397
+00:23:08.640 --> 00:23:09.769
+[S11] Okay?
+
+398
+00:23:09.799 --> 00:23:11.490
+[S11] Let's think about that bet.
+
+399
+00:23:11.519 --> 00:23:14.009
+[S11] So it's, what's the expected utility?
+
+400
+00:23:14.039 --> 00:23:18.210
+[S11] It's 0.5 times you win 1250.
+
+401
+00:23:18.240 --> 00:23:22.289
+[S11] So it's square root of 112.5.
+
+402
+00:23:22.319 --> 00:23:26.170
+[S11] Plus 0.5 times you lose 10.
+
+403
+00:23:26.200 --> 00:23:28.250
+[S11] Square root of 90.
+
+404
+00:23:28.279 --> 00:23:34.369
+[S11] And that expected utility, okay, is 10.5.
+
+405
+00:23:34.400 --> 00:23:36.009
+[S11] Which is greater than 10.
+
+406
+00:23:36.039 --> 00:23:38.849
+[S11] So you should take that bet.
+
+407
+00:23:38.880 --> 00:23:40.250
+[S11] What changed?
+
+408
+00:23:40.279 --> 00:23:41.569
+[S11] You're still risk averse.
+
+409
+00:23:41.599 --> 00:23:45.529
+[S11] This is the guy who would have paid me 44 bucks to avoid the other bet.
+
+410
+00:23:45.559 --> 00:23:47.769
+[S11] Is now happy to take this bet.
+
+411
+00:23:47.799 --> 00:23:49.089
+[S11] Same person.
+
+412
+00:23:49.119 --> 00:23:51.650
+[S11] What changed?
+
+413
+00:23:51.680 --> 00:23:52.250
+[S11] What changed?
+
+414
+00:23:52.279 --> 00:23:52.569
+[S11] Yeah?
+
+415
+00:23:52.599 --> 00:23:54.569
+[S12] Smaller portion of the income.
+
+416
+00:23:54.599 --> 00:23:58.569
+[S11] Right, and why does a smaller portion of the income change things here?
+
+417
+00:23:58.599 --> 00:24:01.170
+[S12] Like if you do not know that little bit of this curve.
+
+418
+00:24:01.200 --> 00:24:05.369
+[S11] Exactly, because ultimately, infinitesimally, it's a linear curve.
+
+419
+00:24:05.400 --> 00:24:08.490
+[S11] So if you go back to figure 21.
+
+420
+00:24:08.519 --> 00:24:14.450
+[S11] At any given, for any given epsilon change from point A, it's linear.
+
+421
+00:25:06.029 --> 00:25:07.150
+[S13] Last point.
+
+422
+00:25:07.180 --> 00:25:09.890
+[S13] Why did so many of you still not take that bet?
+
+423
+00:25:11.029 --> 00:25:17.089
+[S13] Well, the answer is that even the model we've taught so far misses an important psychological phenomenon.
+
+424
+00:25:17.329 --> 00:25:20.549
+[S13] So now I'm stepping out of standard micro into the realm of behavioral economics.
+
+425
+00:25:20.690 --> 00:25:24.490
+[S13] Unfortunately, due to time semester, I'm not going to get to my lecture on behavioral economics.
+
+426
+00:25:24.690 --> 00:25:27.890
+[S13] But if you guys want to learn, I'll talk a little bit about it in the next few lectures, I'll sprinkle it in.
+
+427
+00:25:28.190 --> 00:25:33.589
+[S13] But course 1113 is a fascinating course we offer here about how you build psychology and think about economics.
+
+428
+00:25:33.690 --> 00:25:34.690
+[S13] And here's one example.
+
+429
+00:25:35.130 --> 00:25:41.450
+[S13] Why is it that even with this gamble, even if I'd done the 12 and a half, 10 cent gamble, a bunch of you still wouldn't have taken it?
+
+430
+00:25:42.240 --> 00:25:43.089
+[S13] Why is that?
+
+431
+00:25:43.190 --> 00:25:48.950
+[S13] That's because humans not only feature risk aversion, humans also feature loss aversion.
+
+432
+00:25:51.490 --> 00:25:59.650
+[S13] Which is we have an irrational behavioral bias that losing by itself makes us sad relative to winning.
+
+433
+00:26:00.890 --> 00:26:05.089
+[S13] Taking away something we have makes us sadder than getting something new.
+
+434
+00:26:05.990 --> 00:26:07.950
+[S13] So here's a standard experiment that's run.
+
+435
+00:26:09.829 --> 00:26:14.849
+[S13] They take, they make, they get, they get a bunch of like $5 mugs, mugs worth about $5.
+
+436
+00:26:15.329 --> 00:26:21.720
+[S13] They take people and randomly, half of the people, they ask, "How much would you pay for this mug?"
+
+437
+00:26:22.579 --> 00:26:26.950
+[S13] And half the people, they give them the mug and say, "How much would you sell your mug for?"
+
+438
+00:26:27.490 --> 00:26:30.990
+[S13] Okay, half the people, they say, "Here's a mug, how much would you pay for it?"
+
+439
+00:26:31.490 --> 00:26:35.390
+[S13] Half the people say, "Here's a mug, it's yours, but I want to buy it back, how much would you sell it to me for?"
+
+440
+00:26:36.390 --> 00:26:42.549
+[S13] The average person will pay $3, but the average person wants $7 to sell it back.
+
+441
+00:26:43.190 --> 00:26:44.190
+[S13] That makes no sense.
+
+442
+00:26:44.930 --> 00:26:48.990
+[S13] Either way, it's a mug, it's trivial, it's just a mug, it's trivial relative to your wealth.
+
+443
+00:26:49.789 --> 00:26:51.289
+[S13] It's just a mug, it doesn't really matter.
+
+444
+00:26:51.829 --> 00:26:56.150
+[S13] But once people have it, they feel like, "No, that's already mine, I don't want to sell it."
+
+445
+00:26:56.690 --> 00:26:57.950
+[S13] That's loss aversion.
+
+446
+00:26:59.029 --> 00:27:01.890
+[S13] People are biased by their starting points.
+
+447
+00:27:03.089 --> 00:27:07.750
+[S13] Okay, your very starting point dictates your willingness to take a gamble.
+
+448
+00:27:08.829 --> 00:27:14.450
+[S13] Which is not true in a standard economic model, but it's true in all laboratory experiments in psychology.
+
+449
+00:27:15.450 --> 00:27:22.390
+[S13] So not only, so the reason people don't like gambles are not only, uh, because they're risk averse,
+
+450
+00:27:22.589 --> 00:27:24.240
+[S13] but even more, they're loss averse.
+
+451
+00:27:24.450 --> 00:27:32.089
+[S13] So for example, there's great economic studies which show that there's a massive bias
+
+452
+00:27:32.210 --> 00:27:35.849
+[S13] against selling your house for anything under the price you paid for it.
+
+453
+00:27:36.529 --> 00:27:40.450
+[S13] The people sort of, they're very sort of linear in the middle, sell the house above the price you paid for it,
+
+454
+00:27:40.450 --> 00:27:42.349
+[S13] but there's this huge notch at the price you paid for it.
+
+455
+00:27:42.450 --> 00:27:44.490
+[S13] They simply don't want to sell it unless they paid for it.
+
+456
+00:27:44.680 --> 00:27:46.240
+[S13] And that's this loss aversion idea.
+
+457
+00:27:46.609 --> 00:27:48.349
+[S13] Okay, this comes up in many of their contexts.
+
+458
+00:27:48.809 --> 00:27:52.849
+[S13] So that's, so there's two reasons why people are risk averse, people won't take gambles.
+
+459
+00:27:52.849 --> 00:27:55.849
+[S13] The standard reason and this sort of extra psychological bias.
+
+460
+00:27:57.549 --> 00:28:02.690
+[S13] Now, this raises, this leads us naturally to the next section I want to go to,
+
+461
+00:28:02.890 --> 00:28:05.089
+[S13] which is to talk about applications
+
+462
+00:28:07.549 --> 00:28:10.049
+[S13] of this theory and why it's important.
+
+463
+00:28:10.210 --> 00:28:13.190
+[S13] And the first application I want to talk about is insurance.
+
+464
+00:28:15.450 --> 00:28:17.890
+[S13] Insurance is big business in America.
+
+465
+00:28:18.990 --> 00:28:24.549
+[S13] Individuals in America pay individuals, forget the government, just people,
+
+466
+00:28:24.950 --> 00:28:31.250
+[S13] spend 1.5 trillion dollars a year on insurance products, almost 10% of GDP.
+
+467
+00:28:32.009 --> 00:28:35.390
+[S13] The 10% of our entire economy is people buying insurance.
+
+468
+00:28:35.450 --> 00:28:41.950
+[S13] Health insurance is the biggest, life insurance, casualty and property insurance, auto insurance, et cetera.
+
+469
+00:28:42.289 --> 00:28:44.789
+[S13] Add it all up, it's almost a tenth of our entire economy.
+
+470
+00:28:45.930 --> 00:28:47.250
+[S13] Okay, why?
+
+471
+00:28:48.089 --> 00:28:50.950
+[S13] Because they're risk averse and also loss averse.
+
+472
+00:28:50.950 --> 00:28:53.289
+[S13] I'm going to put loss aversion aside and just use the standard framework.
+
+473
+00:28:53.410 --> 00:28:54.849
+[S13] That just strengthens the argument.
+
+474
+00:28:55.410 --> 00:28:56.890
+[S13] But it's because they're risk averse.
+
+475
+00:28:58.009 --> 00:29:00.490
+[S13] So let's, let's do the math, okay?
+
+476
+00:29:00.789 --> 00:29:03.450
+[S13] Imagine you're a single 25-year-old male.
+
+477
+00:29:03.490 --> 00:29:06.690
+[S13] I just, I'm only being gender biased here because there's no risk of pregnancy.
+
+478
+00:29:07.009 --> 00:29:09.849
+[S13] Okay, so you're a single 25-year-old male in perfect health.
+
+479
+00:29:10.410 --> 00:29:13.490
+[S13] So the only risk you face health-wise is getting hit by a car.
+
+480
+00:29:14.130 --> 00:29:17.190
+[S13] Okay, that's basically a risk, otherwise you're basically not going to go to the doctor.
+
+481
+00:29:17.730 --> 00:29:23.650
+[S13] Okay, um, so essentially, um, let's say your income is $40,000.
+
+482
+00:29:25.089 --> 00:29:26.089
+[S13] That's your income.
+
+483
+00:29:26.950 --> 00:29:32.150
+[S13] And let's say that there's a 1%, since it's Cambridge, there's a non-trivial chance you get hit by a car.
+
+484
+00:29:32.539 --> 00:29:40.589
+[S13] Okay, let's say there's a 1% chance, probably 0.01, you'll get hit by a car every year.
+
+485
+00:29:41.630 --> 00:29:46.289
+[S13] And if you do, you're going to face $30,000 in medical bills.
+
+486
+00:29:47.890 --> 00:29:50.190
+[S13] Okay, so you have a $40,000 income.
+
+487
+00:29:51.289 --> 00:29:56.789
+[S13] There's a 1% chance you get hit by a car, and if you do, you'll face $30,000 in medical bills.
+
+488
+00:29:57.289 --> 00:30:00.450
+[S13] And let's assume for the minute you'll still get to work, your income will always be there.
+
+489
+00:30:00.490 --> 00:30:02.039
+[S13] You're just going to have to face a bunch of medical bills.
+
+490
+00:30:02.039 --> 00:30:05.289
+[S13] There's a separate issue about whether you might have to miss your job, that makes this even worse.
+
+491
+00:30:05.589 --> 00:30:06.490
+[S13] But let's ignore that.
+
+492
+00:30:10.009 --> 00:30:13.130
+[S14] And thirty thousand dollars is nothing, by the way, for a hospital bill.
+
+493
+00:30:13.670 --> 00:30:17.930
+[S14] Okay, a typical, for example, heart attack hospital bill is well over a hundred thousand dollars.
+
+494
+00:30:18.410 --> 00:30:20.059
+[S14] Okay, so thirty thousand dollars is pretty modest, yeah.
+
+495
+00:30:21.019 --> 00:30:24.859
+[S15] The person that hit the guy, does their insurance cover the medical bills?
+
+496
+00:30:24.859 --> 00:30:27.069
+[S14] Well, let's, let's ignore that for a second.
+
+497
+00:30:27.069 --> 00:30:29.319
+[S14] Right now, we're talking about why you want insurance overall.
+
+498
+00:30:29.359 --> 00:30:32.509
+[S14] We'll later get into who, you know, we can discuss later who's, who should own that insurance,
+
+499
+00:30:32.509 --> 00:30:33.109
+[S14] who should bear the risk.
+
+500
+00:30:33.109 --> 00:30:35.329
+[S14] Right now, it's just simply why you'd want insurance.
+
+501
+00:30:36.049 --> 00:30:36.500
+[S14] Okay?
+
+502
+00:30:37.730 --> 00:30:42.769
+[S14] So, the expected cost, the expected cost of getting hit by a car,
+
+503
+00:30:43.220 --> 00:30:48.920
+[S14] the expected value, or expected cost, because it's negative, is minus three hundred.
+
+504
+00:30:49.549 --> 00:30:53.569
+[S14] So every year, you have a three hundred dollar expected cost of getting hit by a car.
+
+505
+00:30:55.250 --> 00:31:00.410
+[S14] And let's say your utility function is u equals square root of c,
+
+506
+00:31:01.099 --> 00:31:03.470
+[S14] and let's assume there's no savings, you consume all your income.
+
+507
+00:31:05.569 --> 00:31:05.930
+[S14] Okay?
+
+508
+00:31:06.799 --> 00:31:09.769
+[S14] How much will this person be willing to pay for insurance?
+
+509
+00:31:11.359 --> 00:31:18.619
+[S14] Well, we can solve that by asking, at what insurance price would they be better off
+
+510
+00:31:18.619 --> 00:31:20.720
+[S14] being insured versus uninsured?
+
+511
+00:31:22.099 --> 00:31:23.630
+[S14] Well, so let's just do the math.
+
+512
+00:31:24.380 --> 00:31:26.319
+[S14] Okay, if they're uninsured,
+
+513
+00:31:28.640 --> 00:31:29.450
+[S14] uninsured,
+
+514
+00:31:30.710 --> 00:31:31.880
+[S14] what, what's going to happen to them?
+
+515
+00:31:31.910 --> 00:31:33.619
+[S14] Well, what's their expected utility?
+
+516
+00:31:33.619 --> 00:31:39.950
+[S14] Well, there's a zero point one chance that they are going to get hit.
+
+517
+00:31:40.430 --> 00:31:44.960
+[S14] And so their net income will drop from forty thousand to ten thousand,
+
+518
+00:31:45.470 --> 00:31:47.359
+[S14] because they'll have to pay thirty thousand dollars in medical bills.
+
+519
+00:31:47.509 --> 00:31:50.660
+[S14] So point one percent chance their net income will be ten thousand dollars.
+
+520
+00:31:52.069 --> 00:31:54.319
+[S14] And there's a ninety nine percent chance
+
+521
+00:31:56.450 --> 00:31:59.539
+[S14] that their net income, that their net income will be forty thousand dollars.
+
+522
+00:32:02.599 --> 00:32:03.049
+[S14] Okay?
+
+523
+00:32:03.529 --> 00:32:05.150
+[S14] That's utility without insurance.
+
+524
+00:32:05.750 --> 00:32:08.210
+[S14] Okay, add that up and you get a hundred ninety nine.
+
+525
+00:32:09.019 --> 00:32:12.799
+[S14] So their expected utility without insurance is one ninety nine.
+
+526
+00:32:13.250 --> 00:32:17.779
+[S14] That's their expected utility, expected utility with no insurance.
+
+527
+00:32:18.970 --> 00:32:23.470
+[S14] Now, let's do the expected utility with insurance, but with insurance with an uncertain price.
+
+528
+00:32:23.750 --> 00:32:25.130
+[S14] Let's call the price x.
+
+529
+00:32:26.529 --> 00:32:27.079
+[S14] Okay?
+
+530
+00:32:27.769 --> 00:32:29.960
+[S14] What's the utility with insurance?
+
+531
+00:32:30.470 --> 00:32:37.369
+[S14] Well, with insurance, there's a zero point one percent chance that they get hit.
+
+532
+00:32:37.369 --> 00:32:39.559
+[S14] Zero point oh one, I'm sorry, it should be an oh one, my bad.
+
+533
+00:32:40.460 --> 00:32:42.559
+[S14] Wow, I can't believe you guys missed that, you guys are a little tired today.
+
+534
+00:32:43.670 --> 00:32:44.630
+[S14] Zero point oh one.
+
+535
+00:32:47.029 --> 00:32:50.180
+[S14] Zero point oh one percent chance that I get hit.
+
+536
+00:32:50.779 --> 00:32:54.440
+[S14] Now, if I get hit with insurance, I don't have to pay my medical bill,
+
+537
+00:32:55.130 --> 00:32:56.900
+[S14] but I do have to pay my insurance premium.
+
+538
+00:32:57.980 --> 00:33:00.470
+[S14] So what I have is I have forty thousand
+
+539
+00:33:02.869 --> 00:33:05.059
+[S14] minus x, which is my insurance premium.
+
+540
+00:33:05.059 --> 00:33:07.130
+[S14] I always have to pay my insurance premium every year, no matter what.
+
+541
+00:33:08.930 --> 00:33:10.279
+[S14] If I don't get hit,
+
+542
+00:33:12.380 --> 00:33:15.859
+[S14] then I get my forty thousand, but I also have to pay my insurance premium.
+
+543
+00:33:19.130 --> 00:33:21.019
+[S14] So basically, these things are the same.
+
+544
+00:33:21.019 --> 00:33:24.109
+[S14] So my expected utility is square root of forty thousand
+
+545
+00:33:25.700 --> 00:33:26.569
+[S14] minus x.
+
+546
+00:33:26.960 --> 00:33:28.250
+[S14] That's my expected utility.
+
+547
+00:33:30.230 --> 00:33:32.119
+[S14] So how do I solve for the optimal x?
+
+548
+00:33:32.569 --> 00:33:36.980
+[S14] Well, I ask, at what x am I better off than being uninsured?
+
+549
+00:33:37.940 --> 00:33:40.759
+[S14] So I set this equal to one ninety nine.
+
+550
+00:33:41.900 --> 00:33:46.220
+[S14] I ask, at what x would I be better off than being uninsured?
+
+551
+00:33:47.150 --> 00:33:48.410
+[S14] And if you solve that,
+
+552
+00:33:49.460 --> 00:33:52.700
+[S14] you get that the x star,
+
+553
+00:33:52.910 --> 00:33:55.250
+[S14] the point at which you would rather be insured than uninsured,
+
+554
+00:33:55.519 --> 00:33:58.190
+[S14] is a premium of three hundred ninety nine dollars.
+
+555
+00:34:00.950 --> 00:34:06.980
+[S14] So you will pay, you would rather have insurance at a cost of three ninety nine
+
+556
+00:34:07.640 --> 00:34:09.079
+[S14] than you would go uninsured.
+
+557
+00:34:10.610 --> 00:34:11.719
+[S14] Okay, clear on that?
+
+558
+00:34:13.400 --> 00:34:17.000
+[S14] You'd rather pay a premium of three ninety nine than you would go uninsured.
+
+559
+00:34:18.440 --> 00:34:19.730
+[S14] Now, think about what that means.
+
+560
+00:34:19.940 --> 00:34:23.719
+[S14] Remember, the expected cost of this accident was only three hundred dollars.
+
+561
+00:34:24.860 --> 00:34:27.610
+[S14] That means that you have a ninety nine dollar
+
+562
+00:34:29.170 --> 00:34:31.250
+[S14] risk premium.
+
+563
+00:34:34.480 --> 00:34:38.659
+[S14] You are willing to pay ninety nine dollars to avoid bearing this risk.
+
+564
+00:34:39.019 --> 00:34:42.500
+[S14] That is what you're willing to pay, before you're willing to pay me forty three seventy five
+
+565
+00:34:42.650 --> 00:34:45.440
+[S14] to get out of that gamble, that was your risk premium.
+
+566
+00:34:45.829 --> 00:34:49.219
+[S14] It's how much you'll pay to get out of taking a gamble.
+
+567
+00:34:49.820 --> 00:34:52.639
+[S14] Now, before, I was offering you a gamble.
+
+568
+00:34:53.000 --> 00:34:55.579
+[S14] But here's the thing, being uninsured is a gamble.
+
+569
+00:34:57.019 --> 00:34:59.420
+[S14] Being uninsured is like taking the gamble.
+
+570
+00:34:59.539 --> 00:35:01.519
+[S14] So the example I had before, I locked you in the room,
+
+571
+00:35:01.730 --> 00:35:05.059
+[S14] and you have to pay me if you want to avoid the bet, that's insurance.
+
+572
+00:35:05.780 --> 00:35:08.210
+[S14] You're locked in this life, you're locked into being in Cambridge.
+
+573
+00:35:08.909 --> 00:35:11.900
+[S16] You're dealing with a 1% risk getting hit by a car always.
+
+574
+00:35:11.929 --> 00:35:16.860
+[S16] So the question is, how much will you pay to avoid the least financial cost?
+
+575
+00:35:16.889 --> 00:35:21.460
+[S16] Forget the trauma, the financial costs of being hit by that car.
+
+576
+00:35:21.489 --> 00:35:27.739
+[S16] And the answer is you'll pay $99 above the expected damage it will do.
+
+577
+00:35:27.769 --> 00:35:31.460
+[S16] And that is why insurance is big business.
+
+578
+00:35:31.489 --> 00:35:37.460
+[S16] Because people will pay to avoid being put in risky situations.
+
+579
+00:35:37.489 --> 00:35:40.989
+[S16] Okay, so insurance is a very profit extender.
+
+580
+00:35:41.019 --> 00:35:45.260
+[S16] Now, in fact, of course, the insurance industry is like any other industry, the supply side and competition.
+
+581
+00:35:45.289 --> 00:35:49.380
+[S16] And whether that'll lead to profits and stuff like that, it depends on the whole supply side.
+
+582
+00:35:49.409 --> 00:35:50.980
+[S16] This is just the demand side.
+
+583
+00:35:51.010 --> 00:35:54.179
+[S16] But the point is that there's going to be huge demand for insurance.
+
+584
+00:35:54.210 --> 00:35:58.380
+[S16] And people will be willing to pay much more than the insurance, it costs the insurance companies.
+
+585
+00:35:58.409 --> 00:36:03.579
+[S16] The insurance companies expect to pay $300 a year, and they're getting almost $400 a year in premium.
+
+586
+00:36:03.610 --> 00:36:06.579
+[S16] So the insurance company makes that money.
+
+587
+00:36:06.610 --> 00:36:11.139
+[S16] Okay, and basically, that's why insurance is big business.
+
+588
+00:36:11.170 --> 00:36:16.780
+[S16] Now, here's a couple of things I'd like you to show yourself in your copia spare time.
+
+589
+00:36:16.809 --> 00:36:24.329
+[S16] Okay, first of all, this risk premium should be bigger as the loss gets bigger.
+
+590
+00:36:24.360 --> 00:36:29.719
+[S16] Why? Because you're moving away from that linear part towards the nonlinear part utility function.
+
+591
+00:36:29.750 --> 00:36:35.780
+[S16] Similarly, this risk premium should fall as your income is higher.
+
+592
+00:36:35.809 --> 00:36:39.730
+[S16] Why? Because once again, that makes you more towards the linear part.
+
+593
+00:36:39.760 --> 00:36:46.179
+[S16] The bottom line is, the bigger the risk is relative to your income, the more risk averse you become.
+
+594
+00:36:46.210 --> 00:36:49.980
+[S16] The more you move from that linear part of the curve onto the nonlinear part of the curve.
+
+595
+00:36:50.010 --> 00:36:52.059
+[S16] Okay, so that's the key thing.
+
+596
+00:36:52.090 --> 00:36:56.780
+[S16] Bigger risk, what matters is risk relative to your income.
+
+597
+00:36:56.809 --> 00:37:00.340
+[S16] That's going to determine your value, your value, your willingness to pay for insurance.
+
+598
+00:37:00.369 --> 00:37:07.500
+[S16] So for example, let's think of your decision to go buy consumer electronics and the warranty.
+
+599
+00:37:07.530 --> 00:37:09.659
+[S16] And they always offer you a warranty.
+
+600
+00:37:09.690 --> 00:37:13.539
+[S16] Now, those warranties are expected value negative.
+
+601
+00:37:13.570 --> 00:37:20.059
+[S16] Okay, if you take the odds of your machine breaking, if you're going to buy a new stereo.
+
+602
+00:37:20.090 --> 00:37:21.619
+[S16] I think people don't buy stereos anymore.
+
+603
+00:37:21.650 --> 00:37:24.210
+[S16] You're going to buy a car stereo, okay?
+
+604
+00:37:24.239 --> 00:37:25.380
+[S16] People still buy those.
+
+605
+00:37:25.400 --> 00:37:28.059
+[S16] You buy a car stereo, okay?
+
+606
+00:37:28.090 --> 00:37:32.460
+[S16] You take the odds of that breaking, times the cost it would take to fix it.
+
+607
+00:37:32.489 --> 00:37:37.489
+[S16] Those multiplied are less than what they'll charge you for the insurance premium.
+
+608
+00:37:37.530 --> 00:37:41.340
+[S16] It's a bad bet, but it's insurance.
+
+609
+00:37:41.369 --> 00:37:43.179
+[S16] And so the question is, should you take that?
+
+610
+00:37:43.210 --> 00:37:46.460
+[S16] Well, that depends on how wealthy you are.
+
+611
+00:37:46.489 --> 00:37:53.059
+[S16] I should never take that, because my car radio cost is tiny relative to my income.
+
+612
+00:37:53.090 --> 00:37:57.340
+[S16] Someone with low income might decide that's a large gamble relative to my income.
+
+613
+00:37:57.369 --> 00:38:02.739
+[S16] I don't want to take that, so I want to buy the insurance offered by the manufacturer.
+
+614
+00:38:02.769 --> 00:38:07.659
+[S16] Okay, so once again, it's all about the size of the risk relative to your income.
+
+615
+00:38:07.690 --> 00:38:08.179
+[S16] Yeah?
+
+616
+00:38:08.210 --> 00:38:11.539
+[S17] What if I have to increase chance of breaking my phone?
+
+617
+00:38:11.570 --> 00:38:15.380
+[S16] Well, that's a separate issue. We'll talk about that later. That's called moral hazard.
+
+618
+00:38:15.409 --> 00:38:19.659
+[S16] You might, it's not moral hazard, it's just, what you're saying is, there's heterogeneity.
+
+619
+00:38:19.690 --> 00:38:24.380
+[S16] And you know that you're, that you're actually, that for you, it is a fair bet, because you're clumsy.
+
+620
+00:38:24.409 --> 00:38:25.860
+[S16] Well, then you should definitely take it.
+
+621
+00:38:25.889 --> 00:38:28.059
+[S16] This is saying risk aversion works in favor of you taking it.
+
+622
+00:38:28.090 --> 00:38:30.340
+[S16] Clumsiness further works in favor of you taking it.
+
+623
+00:38:30.369 --> 00:38:35.539
+[S16] And we'll talk about that in a lecture or two, and we talk about government provision of insurance.
+
+624
+00:38:35.570 --> 00:38:40.460
+[S16] Okay, so that's, so that's sort of the first application, which is thinking about insurance
+
+625
+00:38:40.489 --> 00:38:42.099
+[S16] and why it's such big business in America.
+
+626
+00:38:42.130 --> 00:38:44.500
+[S16] And it is, it is huge business in America.
+
+627
+00:38:44.530 --> 00:38:49.659
+[S16] Okay, the second application is thinking about our friend, the lottery.
+
+628
+00:38:49.690 --> 00:38:54.460
+[S16] Big news lately, we talked, there was a huge, couple of huge lottery payouts.
+
+629
+00:38:54.489 --> 00:38:59.699
+[S16] So let's talk about, actually, let's do this, let's talk about the lottery.
+
+630
+00:38:59.730 --> 00:39:04.380
+[S16] Now, the lottery is a total ripoff.
+
+631
+00:39:04.409 --> 00:39:09.500
+[S16] Okay, the expected value of a lottery purchase is 50%.
+
+632
+00:39:09.530 --> 00:39:14.500
+[S16] So every dollar you spend on the lottery, overall lottery options, for every dollar you spend,
+
+633
+00:39:14.530 --> 00:39:20.460
+[S16] the expected payout is 50 cents, is a much, much less than fair bet.
+
+634
+00:39:20.489 --> 00:39:23.340
+[S16] Okay, and yet, lotteries are wildly popular.
+
+635
+00:39:23.369 --> 00:39:27.619
+[S16] Actually, the beginnings of this country, the US were financed by a lottery.
+
+636
+00:39:27.650 --> 00:39:31.099
+[S16] Much of the money we raised, government raised initially to set up America, came from a lottery.
+
+637
+00:39:31.130 --> 00:39:36.340
+[S16] And state lotteries are a huge source of public financing right now across America.
+
+638
+00:39:36.349 --> 00:39:42.059
+[S16] Okay, now, why do people play lotteries?
+
+639
+00:39:42.090 --> 00:39:46.179
+[S16] Well, there's basically four theories for why people play lotteries.
+
+640
+00:39:46.210 --> 00:39:52.289
+[S16] The first is that people are risk-loving.
+
+641
+00:39:52.320 --> 00:39:56.260
+[S16] In fact, that we're wrong, people are risk-loving, and that's why they play lotteries.
+
+642
+00:39:56.289 --> 00:40:00.179
+[S16] How do we know that theory is wrong?
+
+643
+00:40:00.210 --> 00:40:05.409
+[S16] How do we know that theory is on its face wrong, that people are risk-loving?
+
+644
+00:40:05.440 --> 00:40:05.909
+[S16] Yeah?
+
+645
+00:40:09.710 --> 00:40:11.849
+[S18] Well, that's one way we might know.
+
+646
+00:40:11.849 --> 00:40:13.610
+[S18] But how do we know more globally?
+
+647
+00:40:13.610 --> 00:40:15.469
+[S18] You guys could be a weird bunch.
+
+648
+00:40:15.469 --> 00:40:16.349
+[S18] How do we know more globally?
+
+649
+00:40:16.349 --> 00:40:16.849
+[S18] Yeah?
+
+650
+00:40:18.989 --> 00:40:22.349
+[S18] Yeah, but that's absolutely right theoretically.
+
+651
+00:40:22.349 --> 00:40:24.050
+[S18] But theoretically, in the real world,
+
+652
+00:40:24.050 --> 00:40:25.550
+[S18] what piece of evidence can you immediately point to
+
+653
+00:40:25.550 --> 00:40:28.119
+[S18] that I recently pointed out that could show this is wrong?
+
+654
+00:40:28.119 --> 00:40:28.619
+[S18] Yeah?
+
+655
+00:40:29.349 --> 00:40:30.690
+[S18] People buy insurance.
+
+656
+00:40:30.690 --> 00:40:32.969
+[S18] If they're risk-loving, why they buy an insurance?
+
+657
+00:40:32.969 --> 00:40:34.369
+[S18] So clearly, people aren't risk-loving.
+
+658
+00:40:34.369 --> 00:40:36.610
+[S18] They wouldn't spend 10% of GDP on insurance.
+
+659
+00:40:36.610 --> 00:40:37.769
+[S18] So that theory is clearly wrong.
+
+660
+00:40:38.969 --> 00:40:39.710
+[S18] Okay?
+
+661
+00:40:39.710 --> 00:40:40.570
+[S18] That's theory one.
+
+662
+00:40:41.449 --> 00:40:44.590
+[S18] Now, the second theory is a somewhat subtler version
+
+663
+00:40:44.590 --> 00:40:46.199
+[S18] of this theory, which is quite interesting.
+
+664
+00:40:47.369 --> 00:40:51.269
+[S18] Which is that people are both risk averse and risk-loving.
+
+665
+00:40:52.309 --> 00:40:54.650
+[S18] So that risk aversion varies.
+
+666
+00:40:55.250 --> 00:40:59.489
+[S18] Risk tolerance, let's call it, varies.
+
+667
+00:41:00.170 --> 00:41:02.869
+[S18] And then in particular, people are risk averse
+
+668
+00:41:02.869 --> 00:41:06.409
+[S18] over small gambles, but risk-loving over big gambles.
+
+669
+00:41:07.190 --> 00:41:09.369
+[S18] So let's look at figure 20-4.
+
+670
+00:41:10.289 --> 00:41:13.010
+[S18] This is an example of what we call Friedman-Savage preferences.
+
+671
+00:41:13.010 --> 00:41:14.210
+[S18] You don't need to know that.
+
+672
+00:41:14.210 --> 00:41:18.179
+[S18] But they had this idea that maybe people are locally risk averse,
+
+673
+00:41:18.179 --> 00:41:19.610
+[S18] but globally risk-loving.
+
+674
+00:41:20.179 --> 00:41:20.960
+[S18] Let's see what this...
+
+675
+00:41:20.960 --> 00:41:21.460
+[S18] Let's give it...
+
+676
+00:41:21.460 --> 00:41:22.889
+[S18] Let me explain this, okay?
+
+677
+00:41:23.679 --> 00:41:24.820
+[S18] This is sort of complicated.
+
+678
+00:41:25.369 --> 00:41:30.170
+[S18] So imagine that I'm going to offer you a 50-50 gamble
+
+679
+00:41:31.969 --> 00:41:35.309
+[S18] between W1 and W3.
+
+680
+00:41:36.289 --> 00:41:39.250
+[S18] So a gamble leads you to W1, a gamble leads to W3,
+
+681
+00:41:39.250 --> 00:41:40.329
+[S18] 50% chance.
+
+682
+00:41:41.110 --> 00:41:41.769
+[S18] Okay?
+
+683
+00:41:41.769 --> 00:41:44.010
+[S18] Well, if we look between W1 and W3,
+
+684
+00:41:44.010 --> 00:41:46.289
+[S18] we're on the concave part of the utility function.
+
+685
+00:41:47.210 --> 00:41:50.010
+[S18] And as a result, I will not take that gamble.
+
+686
+00:41:50.010 --> 00:41:51.809
+[S18] That gamble leads me to point B,
+
+687
+00:41:53.050 --> 00:41:54.369
+[S18] which is below B*.
+
+688
+00:41:54.809 --> 00:41:55.309
+[S18] Okay?
+
+689
+00:41:55.309 --> 00:41:58.349
+[S18] So basically, I will not take that gamble.
+
+690
+00:41:58.349 --> 00:42:00.110
+[S18] That leaves me worse off than just having
+
+691
+00:42:00.110 --> 00:42:02.489
+[S18] W1 plus W3 over 2 with certainty.
+
+692
+00:42:02.489 --> 00:42:04.349
+[S18] This is just if you hold your hand...
+
+693
+00:42:04.349 --> 00:42:06.510
+[S18] If you hold your hands with W1, W3,
+
+694
+00:42:06.510 --> 00:42:07.969
+[S18] that's just the graph we saw before.
+
+695
+00:42:08.690 --> 00:42:09.690
+[S18] You won't take that bet.
+
+696
+00:42:11.570 --> 00:42:14.090
+[S18] But now, let's say, once you get above W3,
+
+697
+00:42:14.090 --> 00:42:16.769
+[S18] once you're rich enough, you're risk-loving.
+
+698
+00:42:18.139 --> 00:42:20.489
+[S18] So let's say people are risk averse at first,
+
+699
+00:42:20.489 --> 00:42:22.010
+[S18] but then get risk-loving.
+
+700
+00:42:22.010 --> 00:42:23.510
+[S18] So if you started at...
+
+701
+00:42:23.510 --> 00:42:27.889
+[S18] If you said you were started at W3 plus W5 over 2,
+
+702
+00:42:27.889 --> 00:42:30.199
+[S18] and if you would gamble between W3 and W5,
+
+703
+00:42:30.199 --> 00:42:33.199
+[S18] then you're risk-loving in that range, and you take it.
+
+704
+00:42:34.449 --> 00:42:36.699
+[S18] So once you get rich enough, you start to get risk-loving.
+
+705
+00:42:36.699 --> 00:42:38.110
+[S18] So I talked about before getting richer,
+
+706
+00:42:38.110 --> 00:42:40.269
+[S18] getting more and more risk-neutral as you get richer.
+
+707
+00:42:40.269 --> 00:42:41.110
+[S18] What if it goes the other way?
+
+708
+00:42:41.110 --> 00:42:42.889
+[S18] Well, you actually get risk-loving when you get richer.
+
+709
+00:42:43.730 --> 00:42:47.090
+[S18] Well, then, if you think about the whole mega millions thing,
+
+710
+00:42:47.090 --> 00:42:49.389
+[S18] you could see that over the whole distribution
+
+711
+00:42:49.389 --> 00:42:52.570
+[S18] from W1 to W5, people might want to take that risk.
+
+712
+00:42:53.409 --> 00:42:55.650
+[S18] That you could actually be risk-loving
+
+713
+00:42:55.650 --> 00:42:56.570
+[S18] over an entire...
+
+714
+00:42:56.570 --> 00:42:59.210
+[S18] Over these gambles, over these giant gambles.
+
+715
+00:42:59.210 --> 00:43:02.130
+[S18] And that's just why people may play mega millions.
+
+716
+00:43:02.130 --> 00:43:04.389
+[S18] That over the giant gambles, they're risk-loving,
+
+717
+00:43:04.389 --> 00:43:07.090
+[S18] even if over more moderate gambles, they're risk averse.
+
+718
+00:43:07.849 --> 00:43:09.510
+[S18] You don't insure yourself for a billion dollars.
+
+719
+00:43:09.510 --> 00:43:11.449
+[S18] You insure yourself for a few thousand dollars.
+
+720
+00:43:11.449 --> 00:43:11.949
+[S18] Yeah?
+
+721
+00:43:12.369 --> 00:43:13.610
+[S19] How is the size of the gamble?
+
+722
+00:43:13.610 --> 00:43:15.289
+[S19] We're talking about the term, and we're talking about like
+
+723
+00:43:15.289 --> 00:43:16.849
+[S19] small bets that were more linear.
+
+724
+00:43:16.849 --> 00:43:19.510
+[S19] Is it based on what the player puts in
+
+725
+00:43:19.510 --> 00:43:20.849
+[S19] or what they get in return?
+
+726
+00:43:20.849 --> 00:43:21.769
+[S18] Uh, both.
+
+727
+00:43:22.550 --> 00:43:23.110
+[S18] Both.
+
+728
+00:43:23.110 --> 00:43:24.449
+[S18] It's basically about...
+
+729
+00:43:24.449 --> 00:43:26.869
+[S18] It's about expect utility calculations.
+
+730
+00:43:26.869 --> 00:43:28.170
+[S18] Yes, it's true for mega millions,
+
+731
+00:43:28.170 --> 00:43:30.909
+[S18] you put in $2, the chance of winning 1.6 billion.
+
+732
+00:43:30.909 --> 00:43:33.369
+[S18] But your probability is way, way lower
+
+733
+00:43:33.369 --> 00:43:35.070
+[S18] than 2 and 1.6 billion.
+
+734
+00:43:35.070 --> 00:43:36.090
+[S18] So it's still unfair.
+
+735
+00:43:37.090 --> 00:43:37.849
+[S18] Okay?
+
+736
+00:45:10.070 --> 00:45:12.250
+[S20] Okay, my wife, against my better judgment,
+
+737
+00:45:12.250 --> 00:45:13.570
+[S20] went out and bought a Mega Millions ticket.
+
+738
+00:45:14.570 --> 00:45:18.570
+[S20] Okay, and she got utility out of waiting for that number to come up.
+
+739
+00:45:19.300 --> 00:45:21.400
+[S20] And it was pretty cheap utility, it cost her two bucks.
+
+740
+00:45:22.429 --> 00:45:26.829
+[S20] So in that sense, maybe you play the lottery a lot for entertainment.
+
+741
+00:45:27.469 --> 00:45:28.329
+[S20] That's one theory.
+
+742
+00:45:29.150 --> 00:45:33.570
+[S20] Unfortunately, the other theory is ignorance.
+
+743
+00:45:36.000 --> 00:45:39.000
+[S20] That basically, you know, the saying is the lottery is a tax on the stupid.
+
+744
+00:45:39.969 --> 00:45:43.869
+[S20] Okay, that basically just don't understand what a bad deal this is.
+
+745
+00:45:45.170 --> 00:45:48.369
+[S20] And the problem is, we don't know which of these theories is right.
+
+746
+00:45:49.170 --> 00:45:52.469
+[S20] And they have very different implications for government policy.
+
+747
+00:45:53.170 --> 00:45:53.670
+[S20] Okay?
+
+748
+00:45:55.070 --> 00:45:58.070
+[S20] If this theory is right, entertainment theory is right,
+
+749
+00:45:58.170 --> 00:46:00.070
+[S20] then the government should support lotteries.
+
+750
+00:46:00.800 --> 00:46:04.469
+[S20] Where essentially, the government is essentially getting paid for providing entertainment.
+
+751
+00:46:05.730 --> 00:46:08.429
+[S20] It's what the lottery is often called a voluntary tax.
+
+752
+00:46:09.269 --> 00:46:11.829
+[S20] That I am basically giving the government money that can run our schools
+
+753
+00:46:11.829 --> 00:46:13.599
+[S20] and in return for the government giving me the entertainment value
+
+754
+00:46:13.599 --> 00:46:14.869
+[S20] of seeing whether my scratch-off won.
+
+755
+00:46:15.170 --> 00:46:15.869
+[S20] That's great.
+
+756
+00:46:16.400 --> 00:46:17.730
+[S20] That's welfare improving.
+
+757
+00:46:19.369 --> 00:46:21.829
+[S20] Under this theory, okay?
+
+758
+00:46:23.170 --> 00:46:26.500
+[S20] We should be discouraging lotteries.
+
+759
+00:46:27.230 --> 00:46:29.030
+[S20] That all we're doing is taking a bunch of ignorant people
+
+760
+00:46:29.030 --> 00:46:30.099
+[S20] and wasting their money.
+
+761
+00:46:31.260 --> 00:46:31.760
+[S20] Yeah?
+
+762
+00:46:33.130 --> 00:46:34.829
+[S21] Is there not also the possibility that like,
+
+763
+00:46:35.300 --> 00:46:37.469
+[S21] there is this concept of having nothing to lose?
+
+764
+00:46:37.469 --> 00:46:41.769
+[S21] Like if you're already like too poor to be able to afford your basic needs,
+
+765
+00:46:42.130 --> 00:46:45.329
+[S21] then you might be like, I may as well try and win the lottery
+
+766
+00:46:45.599 --> 00:46:47.000
+[S21] and then I would be like all set.
+
+767
+00:46:47.269 --> 00:46:48.429
+[S20] That is abso- that's-
+
+768
+00:46:49.369 --> 00:46:52.230
+[S21] Not just be a tax on the stupid, but a tax on the already ready for it.
+
+769
+00:46:52.300 --> 00:46:53.400
+[S20] That's exactly this.
+
+770
+00:46:54.400 --> 00:46:56.469
+[S20] That wouldn't explain why I'd pay the $20 scratch-off.
+
+771
+00:46:57.199 --> 00:46:58.699
+[S20] That's an absolute reason why I'd go ahead,
+
+772
+00:46:58.699 --> 00:47:00.570
+[S20] even if I was starving and played the Mega Millions.
+
+773
+00:47:01.030 --> 00:47:03.269
+[S20] And that's the Friedman-Savage hypothesis, absolutely.
+
+774
+00:47:03.469 --> 00:47:07.369
+[S20] But that can't explain why, in fact, in some low-income communities,
+
+775
+00:47:07.630 --> 00:47:08.929
+[S20] among some low-income groups,
+
+776
+00:47:09.070 --> 00:47:12.369
+[S20] they'll spend as much as 20% of their income every year on the lottery.
+
+777
+00:47:12.869 --> 00:47:13.500
+[S20] A net.
+
+778
+00:47:14.599 --> 00:47:15.099
+[S20] Okay?
+
+779
+00:47:15.369 --> 00:47:18.130
+[S20] They're losing huge amounts of money on scratch-off tickets.
+
+780
+00:47:19.599 --> 00:47:23.630
+[S20] So the question is, is that a rational decision because they find it entertaining?
+
+781
+00:47:24.230 --> 00:47:27.730
+[S20] Or an irrational decision because they just don't understand what's going on?
+
+782
+00:47:28.130 --> 00:47:30.599
+[S20] And unfortunately, we know the answer,
+
+783
+00:47:30.599 --> 00:47:32.400
+[S20] but we do know it's very important.
+
+784
+00:47:33.469 --> 00:47:36.869
+[S20] It's important because it's big bucks and many, in many low-income communities,
+
+785
+00:47:37.030 --> 00:47:38.599
+[S20] it's a huge source of expenditure.
+
+786
+00:47:39.469 --> 00:47:40.630
+[S20] So I can't give you the answer today.
+
+787
+00:47:40.630 --> 00:47:41.800
+[S20] I can just tell you it's an important question.
+
+788
+00:47:41.800 --> 00:47:44.329
+[S20] I hope someday, you know, someone will figure out how to think about this
+
+789
+00:47:44.329 --> 00:47:45.730
+[S20] because it's got very important implications.
+
+790
+00:47:46.300 --> 00:47:47.269
+[S20] So let me stop there.
+
+791
+00:47:47.360 --> 00:47:48.670
+[S20] That's what I want to say about uncertainty.
+
+792
+00:47:48.860 --> 00:47:51.929
+[S20] And we'll come back and do another topic on Wednesday.
