@@ -323,6 +323,7 @@
       var isPlaying = false;
       var allVideos = [];
       var currentFilter = 'all';
+      var skipStreak = 0;
 
       // 播放指定索引
       function playAt(index) {
@@ -330,8 +331,9 @@
         
         var item = playlist[index];
         currentIndex = index;
+        skipStreak = 0;
         
-        audio.src = 'https://files.just4.tech/audio/' + item.slug + '.mp3';
+        audio.src = item.url || 'https://files.just4.tech/audio/' + item.bvid + '.mp3';
         audio.load();
         audio.play().catch(function() {
           // 音频不存在，尝试下一首
@@ -453,7 +455,8 @@
             playlist.push({
               slug: slug,
               title: post.title,
-              bvid: post.bvid || ''
+              bvid: post.bvid || '',
+              url: post.audioUrl || (post.bvid ? 'https://files.just4.tech/audio/' + post.bvid + '.mp3' : '')
             });
           }
           
@@ -506,11 +509,17 @@
       });
 
       audio.addEventListener('error', function() {
-        // 音频加载失败，跳过
-        if (playlist.length > 1) {
+        // 连续失败说明地址整体有问题，别把整个列表滚一遍
+        skipStreak++;
+        if (playlist.length > 1 && skipStreak < 3) {
           playNext();
+        } else {
+          isPlaying = false;
+          updateUI();
         }
       });
+
+      audio.addEventListener('playing', function() { skipStreak = 0; });
 
       function formatTime(sec) {
         var m = Math.floor(sec / 60);
