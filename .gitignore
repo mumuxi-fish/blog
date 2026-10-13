@@ -1,2 +1,7 @@
 audio/*.mp3
 audio/*.m4a
+
+# 视频数据放 TC，不进仓库（见 videos/README.md）
+subtitles/
+data/video-subtitles.json
+data/processed-videos.json

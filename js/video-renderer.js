@@ -15,6 +15,19 @@
     }
   })();
 
+  // 数据源在 TC，站点运行时读取，新增视频不需要改仓库
+  // 放在 /subtitles/ 下是为了复用那条已开启 CORS、TTL 300 秒的 nginx location
+  var MANIFEST = 'https://files.just4.tech/subtitles/manifest.json';
+
+  // 按 TC 的 max-age=300 取整加查询串，既走 CDN 又不会长期读到旧清单
+  function loadManifest() {
+    var bust = '?v=' + Math.floor(Date.now() / 300000);
+    return fetch(MANIFEST + bust).then(function(r) {
+      if (!r.ok) throw new Error('manifest ' + r.status);
+      return r.json();
+    });
+  }
+
   // 导航栏 HTML
   var NAV_HTML = '<nav>' +
     '<div class="nav-inner">' +
@@ -61,7 +74,7 @@
       var subtitleLines = post.subtitleLines.map(function(line) {
         return '<p class="sub-line"><span class="sub-time">' + line.time + '</span> <span class="sub-text">' + line.text + '</span></p>';
       }).join('');
-      var srtHref = post.srtUrl || (BLOG + '/subtitles/' + encodeURIComponent(post.srtFilename));
+      var srtHref = post.srtUrl || (SRT_BASE + encodeURIComponent(post.srtFilename));
       subtitleHtml = '<div class="timed-subtitles">' + subtitleLines + '</div>' +
         '<p class="sub-srt-download">' +
           '<a href="' + srtHref + '" download="' + post.srtFilename + '">📥 下载字幕 (SRT)</a>' +
@@ -146,31 +159,26 @@
     return out;
   }
 
-  // 字幕正文不再内嵌在 JSON 里，按需拉取单个 .srt 文件
+  // 字幕正文不再内嵌在清单里，按需拉取单个 .srt；清单和字幕都只在 TC，
+  // 所以新视频上架不用改仓库代码
+  var SRT_BASE = 'https://files.just4.tech/subtitles/';
+
   function loadSubtitles(post) {
     if (!post.srtFilename) return Promise.resolve(post);
-    var candidates = [
-      BLOG + '/subtitles/' + encodeURIComponent(post.srtFilename),
-      'https://files.just4.tech/subtitles/' + encodeURIComponent(post.srtFilename)
-    ];
-    function attempt(i) {
-      if (i >= candidates.length) return Promise.resolve(post);
-      return fetch(candidates[i]).then(function(r) {
-        if (!r.ok) return attempt(i + 1);
-        return r.text().then(function(text) {
-          post.subtitleLines = parseSrt(text);
-          post.srtUrl = candidates[i];
-          return post;
-        });
-      }).catch(function() { return attempt(i + 1); });
-    }
-    return attempt(0);
+    var url = SRT_BASE + encodeURIComponent(post.srtFilename);
+    return fetch(url).then(function(r) {
+      if (!r.ok) return post;
+      return r.text().then(function(text) {
+        post.subtitleLines = parseSrt(text);
+        post.srtUrl = url;
+        return post;
+      });
+    }).catch(function() { return post; });
   }
 
-  // 从 video-subtitles.json 获取基本信息
+  // 从 TC 上的清单获取基本信息
   function loadPostFromPostsJson(postId) {
-    return fetch(BLOG + '/data/video-subtitles.json')
-      .then(function(r) { return r.json(); })
+    return loadManifest()
       .then(function(posts) {
         // 查找匹配的帖子
         var post = posts.find(function(p) { 

@@ -26,44 +26,29 @@ git clone https://github.com/Aprilssky/blog.git
 
 ## 添加视频字幕
 
-### 方式一：自动检测收藏夹（推荐）
+视频数据不进这个仓库：清单、字幕、音频都放 TC 服务器，站点运行时读取。
+新增视频在本机的转录后台里跑，跑完就生效，**不需要改代码也不需要提交**。
 
-1. 复制配置文件并填入 B 站 Cookie：
-   ```bash
-   cp config.example.json config.json
-   # 编辑 config.json，填入 BILIBILI_COOKIE 和 FAVORITES_MEDIA_ID
-   ```
+```bash
+cd ~/services/blog-transcribe
+./sync_favorites.py --dry-run    # 看收藏夹里有几个新的
+./sync_favorites.py             # 下载音频 → 转写 → 字幕传 TC → 发布清单
+```
 
-2. 运行脚本检查收藏夹变化：
-   ```bash
-   node scripts/add-bilibili.js --check-favorites
-   ```
-
-3. 或手动添加指定视频：
-   ```bash
-   node scripts/add-bilibili.js BVxxxxxxxxxx
-   ```
-
-### 方式二：手动添加
-
-1. 在 `data/bilibili-posts.json` 添加视频数据
-2. 在 `data/posts.json` 添加列表项
-3. 提交并推送
+数据源与流程细节见 `videos/README.md`。
 
 ## 文件结构
 
 ```
 ├── videos/
-│   ├── index.html          # 视频列表页
-│   └── watch.html          # 视频播放页（动态加载）
+│   ├── index.html          # 视频列表页（播 TC 上的 manifest.json）
+│   ├── watch.html          # 视频播放页（动态加载）
+│   └── README.md           # 视频字幕数据说明
 ├── js/
 │   ├── main.js             # 主脚本
 │   └── video-renderer.js   # 视频渲染器
 ├── data/
-│   ├── posts.json          # 所有文章数据
-│   └── bilibili-posts.json # 视频字幕数据
-└── scripts/
-    └── add-bilibili.js     # B站视频添加脚本
+│   └── posts.json          # 文章列表元信息
 ```
 
 ## 许可
